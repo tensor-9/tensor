@@ -24,9 +24,9 @@ Use meaningful, lowercase slugs. Guides describe current workflows, behavior and
 limitations. Ground their claims in the implementation and verify examples
 through the supported entry points.
 
-Follow the [repository guidance on where to keep planning and architecture records](https://github.com/morluto/tensor/blob/main/AGENTS.md#development)
+Follow the [repository guidance on where to keep planning and architecture records](https://github.com/tensor-9/tensor/blob/main/AGENTS.md#development)
 and the
-[contribution scope](https://github.com/morluto/tensor/blob/main/CONTRIBUTING.md#contribution-scope)
+[contribution scope](https://github.com/tensor-9/tensor/blob/main/CONTRIBUTING.md#contribution-scope)
 for proposals that require a maintainer decision.
 
 ## Links and public routes
@@ -35,7 +35,7 @@ Use relative links to physical Markdown files so GitHub readers can follow them.
 Link repository files outside `docs/` with their full GitHub URLs. Preserve
 existing heading anchors when moving a guide.
 
-[`documentation.ts`](https://github.com/morluto/tensor/blob/main/docs/.vitepress/documentation.ts)
+[`documentation.ts`](https://github.com/tensor-9/tensor/blob/main/docs/.vitepress/documentation.ts)
 owns categorized site navigation and the existing guides' stable public routes.
 Update it and the [documentation directory](../README.md) when adding or
 recategorizing a guide. VitePress rewrites categorized sources

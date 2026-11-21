@@ -12,11 +12,11 @@
 [![npm version](https://img.shields.io/npm/v/tensor-agents?style=flat-square&color=cb3837)](https://www.npmjs.com/package/tensor-agents)
 [![MCP tool catalog](https://img.shields.io/badge/MCP-tool_catalog-5c4ee5?style=flat-square)](../reference/mcp-contracts.md#generated-catalog)
 [![Node.js requirements](https://img.shields.io/badge/Node.js-requirements-339933?style=flat-square&logo=nodedotjs&logoColor=white)](#എന്തൊക്കെ-വിശകലനം-ചെയ്യാം)
-[![skills.sh](https://skills.sh/b/morluto/tensor?style=flat-square)](https://skills.sh/morluto/tensor/reverse-engineer-anything)
+[![skills.sh](https://skills.sh/b/tensor-9/tensor?style=flat-square)](https://skills.sh/tensor-9/tensor/reverse-engineer-anything)
 [![MIT license](https://img.shields.io/badge/license-MIT-f4c430?style=flat-square)](../../LICENSE)
 [![Discord](https://img.shields.io/discord/1556595354999332884?logo=discord&logoColor=white&label=Discord&color=5865F2)](https://discord.gg/GkcryMnJDM)
 
-<a href="https://trendshift.io/repositories/82054?utm_source=repository-badge&amp;utm_medium=badge&amp;utm_campaign=badge-repository-82054" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/repositories/82054" alt="morluto%2Ftensor | Trendshift" width="250" height="55"/></a>
+<a href="https://trendshift.io/repositories/82054?utm_source=repository-badge&amp;utm_medium=badge&amp;utm_campaign=badge-repository-82054" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/repositories/82054" alt="tensor-9%2Ftensor | Trendshift" width="250" height="55"/></a>
 
 **[വെബ്സൈറ്റ്](https://tensor.tools/) · [ഗൈഡുകൾ](https://tensor.tools/guides/) · [ഉദാഹരണങ്ങൾ](https://tensor.tools/showcase/)**
 
@@ -29,7 +29,7 @@
 </div>
 
 > [!IMPORTANT]
-> Tensor ലഭ്യമാക്കേണ്ടത് [morluto/tensor](https://github.com/morluto/tensor),
+> Tensor ലഭ്യമാക്കേണ്ടത് [tensor-9/tensor](https://github.com/tensor-9/tensor),
 > [tensor.tools](https://tensor.tools/), അല്ലെങ്കിൽ [tensor-agents npm package](https://www.npmjs.com/package/tensor-agents) എന്നിവയിൽ നിന്നാണ്.
 > ഈ ഔദ്യോഗിക ഉറവിടങ്ങളിലെ ഇൻസ്റ്റലേഷൻ, റിലീസ് ലിങ്കുകൾ പിന്തുടരുക. സമാനമായ
 > repository പേരോ പകർത്തിയ README-യോ മാത്രം ഒരു download ഔദ്യോഗികമാണെന്ന് ഉറപ്പാക്കുന്നില്ല.
@@ -249,7 +249,7 @@ Renderer-ന്റെ clipboard API കണ്ടെത്തി, അതിനെ
 [പരിതസ്ഥിതി നിർമ്മാണ മാർഗ്ഗദർശി](https://tensor.tools/guides/rl-environments/) ·
 [X-ൽ ഡെമോ കാണുക](https://x.com/tensortools/status/2112574822584918075?s=20)
 
-Tensor ഉപയോഗിച്ച് നിങ്ങൾ രസകരമായ എന്തെങ്കിലും പരിശോധിച്ചിട്ടുണ്ടെങ്കിൽ അത് കാണാൻ ഞങ്ങൾ ആഗ്രഹിക്കുന്നു. പരിശോധിച്ച target, നിങ്ങളുടെ ചോദ്യം, Tensor എങ്ങനെ സഹായിച്ചു, നിങ്ങൾ കണ്ടെത്തിയത് എന്നിവ ഉൾപ്പെടുത്തി [issue](https://github.com/morluto/tensor/issues) അല്ലെങ്കിൽ [pull request](https://github.com/morluto/tensor/pulls) വഴി നിങ്ങളുടെ case പങ്കിടുക.
+Tensor ഉപയോഗിച്ച് നിങ്ങൾ രസകരമായ എന്തെങ്കിലും പരിശോധിച്ചിട്ടുണ്ടെങ്കിൽ അത് കാണാൻ ഞങ്ങൾ ആഗ്രഹിക്കുന്നു. പരിശോധിച്ച target, നിങ്ങളുടെ ചോദ്യം, Tensor എങ്ങനെ സഹായിച്ചു, നിങ്ങൾ കണ്ടെത്തിയത് എന്നിവ ഉൾപ്പെടുത്തി [issue](https://github.com/tensor-9/tensor/issues) അല്ലെങ്കിൽ [pull request](https://github.com/tensor-9/tensor/pulls) വഴി നിങ്ങളുടെ case പങ്കിടുക.
 
 <a id="build-rl-environments"></a>
 
@@ -354,7 +354,7 @@ tensor update
 npx tensor-agents@latest setup
 ```
 
-നിങ്ങൾ agent ഉപയോഗിക്കുന്നുണ്ടെങ്കിൽ, [setup പുതുക്കൽ](#tensor-അപ്‌ഡേറ്റ്-ചെയ്യുക) പൂർത്തിയാക്കി അത് വീണ്ടും ആരംഭിക്കുക. അതേ task വീണ്ടും ശ്രമിക്കുക. പ്രശ്നം തുടരുകയാണെങ്കിൽ, നിങ്ങളുടെ Tensor version, target type, പ്രശ്നം ആവർത്തിക്കാൻ ആവശ്യമായ ഘട്ടങ്ങൾ, error output എന്നിവ ഉൾപ്പെടുത്തി [issue തുറക്കുക](https://github.com/morluto/tensor/issues).
+നിങ്ങൾ agent ഉപയോഗിക്കുന്നുണ്ടെങ്കിൽ, [setup പുതുക്കൽ](#tensor-അപ്‌ഡേറ്റ്-ചെയ്യുക) പൂർത്തിയാക്കി അത് വീണ്ടും ആരംഭിക്കുക. അതേ task വീണ്ടും ശ്രമിക്കുക. പ്രശ്നം തുടരുകയാണെങ്കിൽ, നിങ്ങളുടെ Tensor version, target type, പ്രശ്നം ആവർത്തിക്കാൻ ആവശ്യമായ ഘട്ടങ്ങൾ, error output എന്നിവ ഉൾപ്പെടുത്തി [issue തുറക്കുക](https://github.com/tensor-9/tensor/issues).
 
 </details>
 
@@ -377,11 +377,11 @@ npx tensor-agents@latest setup
 
 Tensor ഉപയോഗിക്കുന്നവർക്കും, bugs റിപ്പോർട്ട് ചെയ്യുന്നവർക്കും, features ആവശ്യപ്പെടുന്നവർക്കും, builds പരിശോധിക്കുന്നവർക്കും, fixes സംഭാവന ചെയ്യുന്നവർക്കും നന്ദി.
 
-<a href="https://www.star-history.com/?repos=morluto%2Ftensor&amp;type=date">
+<a href="https://www.star-history.com/?repos=tensor-9%2Ftensor&amp;type=date">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=morluto/tensor&amp;type=date&amp;theme=dark&amp;legend=top-left" />
-    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=morluto/tensor&amp;type=date" />
-    <img alt="Tensor GitHub star ചരിത്രം" src="https://api.star-history.com/chart?repos=morluto/tensor&amp;type=date" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=tensor-9/tensor&amp;type=date&amp;theme=dark&amp;legend=top-left" />
+    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=tensor-9/tensor&amp;type=date" />
+    <img alt="Tensor GitHub star ചരിത്രം" src="https://api.star-history.com/chart?repos=tensor-9/tensor&amp;type=date" />
   </picture>
 </a>
 
@@ -395,7 +395,7 @@ Tensor ഉപയോഗിക്കുന്നവർക്കും, bugs റി
 
 ## സംഭാവനകൾ
 
-Tensor-യ്ക്കായി നിങ്ങളുടെ സഹായം ഞങ്ങൾ സ്വാഗതം ചെയ്യുന്നു! bug റിപ്പോർട്ട് ചെയ്യാനോ feature നിർദ്ദേശിക്കാനോ [issue തുറക്കുക](https://github.com/morluto/tensor/issues), code അല്ലെങ്കിൽ docs മെച്ചപ്പെടുത്താൻ [pull request അയയ്ക്കുക](https://github.com/morluto/tensor/pulls).
+Tensor-യ്ക്കായി നിങ്ങളുടെ സഹായം ഞങ്ങൾ സ്വാഗതം ചെയ്യുന്നു! bug റിപ്പോർട്ട് ചെയ്യാനോ feature നിർദ്ദേശിക്കാനോ [issue തുറക്കുക](https://github.com/tensor-9/tensor/issues), code അല്ലെങ്കിൽ docs മെച്ചപ്പെടുത്താൻ [pull request അയയ്ക്കുക](https://github.com/tensor-9/tensor/pulls).
 
 Development setup-നും checks-നും [CONTRIBUTING.md](../../CONTRIBUTING.md), verification lanes-നായി [testing](../development/testing.md) എന്നിവ കാണുക.
 

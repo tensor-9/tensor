@@ -1272,7 +1272,7 @@ msgctxt "page:blog/reverse-engineering-models/index.html"
 msgid "Evidence and model attribution"
 msgstr ""
 
-#. {ph0}: <a href="https://github.com/morluto/tensor/blob/main/website/evidence/reverse-
+#. {ph0}: <a href="https://github.com/tensor-9/tensor/blob/main/website/evidence/reverse-
 #. engineering-models.md" >
 #. {ph1}: </a >
 #: website/public/blog/reverse-engineering-models/index.html:785
@@ -2703,7 +2703,7 @@ msgctxt "page:contributors/index.html"
 msgid "Find a contributor"
 msgstr ""
 
-#. {ph0}: <a href="https://github.com/morluto/tensor/graphs/contributors">
+#. {ph0}: <a href="https://github.com/tensor-9/tensor/graphs/contributors">
 #. {ph1}: </a>
 #. {ph2}: <time datetime="2026-10-15" translate="no">2026-10-15</time>
 #: website/public/contributors/index.html:1116
@@ -3536,7 +3536,7 @@ msgid ""
 " already fix the problem."
 msgstr ""
 
-#. {ph0}: <a href="https://github.com/morluto/tensor/issues/new/choose" >
+#. {ph0}: <a href="https://github.com/tensor-9/tensor/issues/new/choose" >
 #. {ph1}: </a >
 #: website/public/faq/index.html:519
 #, python-brace-format
@@ -3569,9 +3569,9 @@ msgctxt "page:faq/index.html"
 msgid "How can I share an example or contribute?"
 msgstr ""
 
-#. {ph0}: <a href="https://github.com/morluto/tensor/issues/new/choose" >
+#. {ph0}: <a href="https://github.com/tensor-9/tensor/issues/new/choose" >
 #. {ph1}: </a >
-#. {ph2}: <a href="https://github.com/morluto/tensor/pulls">
+#. {ph2}: <a href="https://github.com/tensor-9/tensor/pulls">
 #. {ph3}: </a >
 #: website/public/faq/index.html:545
 #, python-brace-format
@@ -4583,7 +4583,7 @@ msgstr ""
 
 #. {ph0}: <a href="https://claude.ai/download">
 #. {ph1}: </a>
-#. {ph2}: <a href="https://github.com/morluto/tensor/blob/main/docs/getting-started/client-
+#. {ph2}: <a href="https://github.com/tensor-9/tensor/blob/main/docs/getting-started/client-
 #. configuration.md#claude-desktop" >
 #. {ph3}: </a >
 #: website/public/get-started/index.html:599
@@ -4655,10 +4655,10 @@ msgid ""
 "requires npm 6.8.0 or later."
 msgstr ""
 
-#. {ph0}: <a href="https://github.com/morluto/tensor/blob/main/docs/getting-started/client-
+#. {ph0}: <a href="https://github.com/tensor-9/tensor/blob/main/docs/getting-started/client-
 #. configuration.md" >
 #. {ph1}: </a >
-#. {ph2}: <a href="https://github.com/morluto/tensor/blob/main/docs/getting-
+#. {ph2}: <a href="https://github.com/tensor-9/tensor/blob/main/docs/getting-
 #. started/installation.md#released-package-and-main" >
 #. {ph3}: </a >
 #: website/public/get-started/index.html:759
@@ -4682,7 +4682,7 @@ msgid ""
 "on the Bot's computer:"
 msgstr ""
 
-#. {ph0}: <a href="https://github.com/morluto/tensor/blob/main/docs/getting-started/client-
+#. {ph0}: <a href="https://github.com/tensor-9/tensor/blob/main/docs/getting-started/client-
 #. configuration.md#other-client-settings" >
 #. {ph1}: </a >
 #: website/public/get-started/index.html:790
@@ -5046,7 +5046,7 @@ msgid ""
 "Settings → Privacy & Security → Automation, then retry."
 msgstr ""
 
-#. {ph0}: <a href="https://github.com/morluto/tensor/blob/main/docs/getting-
+#. {ph0}: <a href="https://github.com/tensor-9/tensor/blob/main/docs/getting-
 #. started/installation.md#hopper" >
 #. {ph1}: </a >
 #: website/public/get-started/index.html:1101
@@ -5149,7 +5149,7 @@ msgid ""
 "your computer:"
 msgstr ""
 
-#. {ph0}: <a href="https://github.com/morluto/tensor/blob/main/docs/getting-
+#. {ph0}: <a href="https://github.com/tensor-9/tensor/blob/main/docs/getting-
 #. started/installation.md#missing-macos-native-decompiler" >
 #. {ph1}: </a >
 #: website/public/get-started/index.html:1218
@@ -5158,7 +5158,7 @@ msgctxt "page:get-started/index.html"
 msgid "{ph0}macOS · Intel{ph1}"
 msgstr ""
 
-#. {ph0}: <a href="https://github.com/morluto/tensor/blob/main/docs/getting-
+#. {ph0}: <a href="https://github.com/tensor-9/tensor/blob/main/docs/getting-
 #. started/installation.md#macos-arm64-native-decompiler" >
 #. {ph1}: </a >
 #: website/public/get-started/index.html:1224
@@ -5189,10 +5189,10 @@ msgid ""
 " approve the updated client configuration, then restart your agent."
 msgstr ""
 
-#. {ph0}: <a href="https://github.com/morluto/tensor/blob/main/docs/getting-
+#. {ph0}: <a href="https://github.com/tensor-9/tensor/blob/main/docs/getting-
 #. started/installation.md#ghidra" >
 #. {ph1}: </a >
-#. {ph2}: <a href="https://github.com/morluto/tensor/blob/main/docs/providers/windows-
+#. {ph2}: <a href="https://github.com/tensor-9/tensor/blob/main/docs/providers/windows-
 #. ghidra-p0.md" >
 #. {ph3}: </a >
 #: website/public/get-started/index.html:1260
@@ -5223,7 +5223,7 @@ msgid ""
 "has its own version and platform requirements."
 msgstr ""
 
-#. {ph0}: <a href="https://github.com/morluto/tensor/blob/main/CONTRIBUTING.md#development-
+#. {ph0}: <a href="https://github.com/tensor-9/tensor/blob/main/CONTRIBUTING.md#development-
 #. setup" >
 #. {ph1}: </a >
 #. {ph2}: <code>6.4.0</code>
@@ -5291,7 +5291,7 @@ msgid ""
 "and restart your agent."
 msgstr ""
 
-#. {ph0}: <a href="https://github.com/morluto/tensor/blob/main/docs/providers/ida-
+#. {ph0}: <a href="https://github.com/tensor-9/tensor/blob/main/docs/providers/ida-
 #. provider.md" >
 #. {ph1}: </a >
 #: website/public/get-started/index.html:1378
@@ -5446,14 +5446,14 @@ msgctxt "page:get-started/index.html"
 msgid "Process behavior"
 msgstr ""
 
-#. {ph0}: <a href="https://github.com/morluto/tensor/blob/main/docs/guides/android/flutter-
+#. {ph0}: <a href="https://github.com/tensor-9/tensor/blob/main/docs/guides/android/flutter-
 #. analysis.md" >
 #. {ph1}: </a >
 #. {ph2}: <a
-#. href="https://github.com/morluto/tensor/blob/main/docs/guides/javascript/javascript-
+#. href="https://github.com/tensor-9/tensor/blob/main/docs/guides/javascript/javascript-
 #. artifact-reconstruction.md" >
 #. {ph3}: </a >
-#. {ph4}: <a href="https://github.com/morluto/tensor/blob/main/docs/guides/evm/evm-
+#. {ph4}: <a href="https://github.com/tensor-9/tensor/blob/main/docs/guides/evm/evm-
 #. bytecode.md" >
 #. {ph5}: </a >
 #. {ph6}: <a href="../guides/">
@@ -5693,7 +5693,7 @@ msgid ""
 "client configuration and skill."
 msgstr ""
 
-#. {ph0}: <a href="https://github.com/morluto/tensor/blob/main/docs/getting-
+#. {ph0}: <a href="https://github.com/tensor-9/tensor/blob/main/docs/getting-
 #. started/installation.md#diagnose-update-and-remove" >
 #. {ph1}: </a >
 #: website/public/get-started/index.html:1814
@@ -5724,7 +5724,7 @@ msgid ""
 "app and a browser.{ph3}"
 msgstr ""
 
-#. {ph0}: <a href="https://github.com/morluto/tensor/issues">
+#. {ph0}: <a href="https://github.com/tensor-9/tensor/issues">
 #. {ph1}: </a >
 #. {ph2}: <span>
 #. {ph3}: </span>
@@ -6239,7 +6239,7 @@ msgid ""
 "workflow{ph1} to follow files and process boundaries."
 msgstr ""
 
-#. {ph0}: <a href="https://github.com/morluto/tensor/blob/main/docs/guides/web/web-network-
+#. {ph0}: <a href="https://github.com/tensor-9/tensor/blob/main/docs/guides/web/web-network-
 #. captures.md" >
 #. {ph1}: </a >
 #: website/public/guides/browser/index.html:489
@@ -7903,10 +7903,10 @@ msgid ""
 "places to review; they do not remove those values."
 msgstr ""
 
-#. {ph0}: <a href="https://github.com/morluto/tensor/blob/main/docs/agent-environments-
+#. {ph0}: <a href="https://github.com/tensor-9/tensor/blob/main/docs/agent-environments-
 #. quickstart.md" >
 #. {ph1}: </a >
-#. {ph2}: <a href="https://github.com/morluto/tensor/blob/main/docs/agent-environments.md"
+#. {ph2}: <a href="https://github.com/tensor-9/tensor/blob/main/docs/agent-environments.md"
 #. >
 #. {ph3}: </a >
 #: website/public/guides/rl-environments/index.html:476
@@ -9212,7 +9212,7 @@ msgctxt "page:index.html"
 msgid "{ph0}Join Discord{ph1} to get help and discuss your investigations."
 msgstr ""
 
-#. {ph0}: <a href="https://github.com/morluto/tensor/issues/new/choose" >
+#. {ph0}: <a href="https://github.com/tensor-9/tensor/issues/new/choose" >
 #. {ph1}: </a >
 #: website/public/index.html:1287
 #, python-brace-format
@@ -9876,7 +9876,7 @@ msgstr ""
 
 #. {ph0}: <a href="../../get-started/">
 #. {ph1}: </a>
-#. {ph2}: <a href="https://github.com/morluto/tensor/blob/main/docs/guides/android/android-
+#. {ph2}: <a href="https://github.com/tensor-9/tensor/blob/main/docs/guides/android/android-
 #. analysis.md" >
 #. {ph3}: </a >
 #: website/public/showcase/aegis/index.html:716
@@ -10575,7 +10575,7 @@ msgstr ""
 #. href="https://github.com/DownUnderCTF/Challenges_2023_Public/blob/b48f83db2984bc7fa2ec7879a32d7efb1be8d333/rev/masked-
 #. squares-flag-checker/ctfcli.yaml" >
 #. {ph3}: </a >
-#. {ph4}: <a href="https://github.com/morluto/tensor/blob/main/website/evidence/ctf-masked-
+#. {ph4}: <a href="https://github.com/tensor-9/tensor/blob/main/website/evidence/ctf-masked-
 #. squares.md" >
 #. {ph5}: </a >
 #: website/public/showcase/ctf/index.html:706

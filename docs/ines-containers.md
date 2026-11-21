@@ -85,8 +85,8 @@ values are header declarations, not proof of cartridge hardware or runtime
 behavior. Bank switching, 6502/65816 disassembly, emulator
 sessions and interpretation of console-specific trailing data remain outside
 this lane. Raw-binary Ghidra analysis is a separate workflow. This container
-increment addresses the first milestone of [#2072](https://github.com/morluto/tensor/issues/2072);
-the related [#1641](https://github.com/morluto/tensor/issues/1641) tracks 6502/65816
+increment addresses the first milestone of [#2072](https://github.com/tensor-9/tensor/issues/2072);
+the related [#1641](https://github.com/tensor-9/tensor/issues/1641) tracks 6502/65816
 native analysis with explicit load addresses and provider limitations. Extracted
 PRG units still need caller-selected CPU windows before static code analysis;
 their physical file offsets do not establish those addresses.

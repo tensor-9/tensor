@@ -63,7 +63,7 @@ describe("release configuration", () => {
 
     expect(packageJson).toMatchObject({
       name: "tensor-agents",
-      mcpName: "io.github.morluto/tensor",
+      mcpName: "io.github.tensor-9/tensor",
     });
     expect(serverJson).toMatchObject({
       name: packageJson.mcpName,

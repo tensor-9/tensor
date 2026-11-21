@@ -3,11 +3,11 @@
   "version": "6.10.1",
   "description": "Reverse engineer anything with agents, from app behavior down to native binaries.",
   "author": {
-    "name": "morluto",
-    "url": "https://github.com/morluto"
+    "name": "tensor-9",
+    "url": "https://github.com/tensor-9"
   },
   "homepage": "https://tensor.tools/",
-  "repository": "https://github.com/morluto/tensor",
+  "repository": "https://github.com/tensor-9/tensor",
   "license": "MIT",
   "keywords": [
     "reverse-engineering",
@@ -21,7 +21,7 @@
     "displayName": "Tensor",
     "shortDescription": "Reverse engineer anything",
     "longDescription": "Reverse engineer anything with agents, from app behavior down to native binaries.",
-    "developerName": "morluto",
+    "developerName": "tensor-9",
     "category": "Developer Tools",
     "capabilities": [
       "Interactive",

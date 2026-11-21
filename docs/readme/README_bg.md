@@ -12,11 +12,11 @@
 [![Версия в npm](https://img.shields.io/npm/v/tensor-agents?style=flat-square&color=cb3837)](https://www.npmjs.com/package/tensor-agents)
 [![Каталог с MCP инструменти](https://img.shields.io/badge/MCP-tool_catalog-5c4ee5?style=flat-square)](../reference/mcp-contracts.md#generated-catalog)
 [![Изисквания за Node.js](https://img.shields.io/badge/Node.js-requirements-339933?style=flat-square&logo=nodedotjs&logoColor=white)](#current-status)
-[![skills.sh](https://skills.sh/b/morluto/tensor?style=flat-square)](https://skills.sh/morluto/tensor/reverse-engineer-anything)
+[![skills.sh](https://skills.sh/b/tensor-9/tensor?style=flat-square)](https://skills.sh/tensor-9/tensor/reverse-engineer-anything)
 [![Лиценз MIT](https://img.shields.io/badge/license-MIT-f4c430?style=flat-square)](../../LICENSE)
 [![Discord](https://img.shields.io/discord/1556595354999332884?logo=discord&logoColor=white&label=Discord&color=5865F2)](https://discord.gg/GkcryMnJDM)
 
-<a href="https://trendshift.io/repositories/82054?utm_source=repository-badge&amp;utm_medium=badge&amp;utm_campaign=badge-repository-82054" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/repositories/82054" alt="morluto%2Ftensor | Trendshift" width="250" height="55"/></a>
+<a href="https://trendshift.io/repositories/82054?utm_source=repository-badge&amp;utm_medium=badge&amp;utm_campaign=badge-repository-82054" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/repositories/82054" alt="tensor-9%2Ftensor | Trendshift" width="250" height="55"/></a>
 
 **[Уебсайт](https://tensor.tools/) · [Ръководства](https://tensor.tools/guides/) · [Примери](https://tensor.tools/showcase/)**
 
@@ -29,7 +29,7 @@
 </div>
 
 > [!IMPORTANT]
-> Изтегляйте Tensor от [morluto/tensor](https://github.com/morluto/tensor),
+> Изтегляйте Tensor от [tensor-9/tensor](https://github.com/tensor-9/tensor),
 > [tensor.tools](https://tensor.tools/) или [npm пакета tensor-agents](https://www.npmjs.com/package/tensor-agents).
 > Следвайте връзките за инсталиране и издания от тези официални източници. Подобно
 > име на хранилище или копиран README не доказва, че дадено изтегляне е официално.
@@ -315,8 +315,8 @@ Ghidra поддържа и [анализ на 16-битов DOS код](../provi
 [Гледайте видеото](https://x.com/tensortools/status/2112574822584918075?s=20)
 
 Ако сте използвали Tensor за нещо интересно, ще се радваме да го видим. Споделете
-случая си в [issue](https://github.com/morluto/tensor/issues) или
-[pull request](https://github.com/morluto/tensor/pulls), като включите целта,
+случая си в [issue](https://github.com/tensor-9/tensor/issues) или
+[pull request](https://github.com/tensor-9/tensor/pulls), като включите целта,
 въпроса си, как ви помогна Tensor и какво открихте.
 
 <a id="build-rl-environments"></a>
@@ -448,7 +448,7 @@ npx tensor-agents@latest setup
 Ако използвате агент, извършете
 [опресняването на настройката](#обновяване-на-tensor) и го рестартирайте. Опитайте
 отново същата задача. Ако проблемът продължава,
-[отворете issue](https://github.com/morluto/tensor/issues), като посочите версията
+[отворете issue](https://github.com/tensor-9/tensor/issues), като посочите версията
 на Tensor, типа на целта, стъпките за възпроизвеждане и изхода с грешката.
 
 </details>
@@ -472,11 +472,11 @@ npx tensor-agents@latest setup
 
 Благодарим на всички, които използват Tensor, съобщават за грешки, предлагат нови функции, тестват версии и допринасят с поправки.
 
-<a href="https://www.star-history.com/?repos=morluto%2Ftensor&amp;type=date">
+<a href="https://www.star-history.com/?repos=tensor-9%2Ftensor&amp;type=date">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=morluto/tensor&amp;type=date&amp;theme=dark&amp;legend=top-left" />
-    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=morluto/tensor&amp;type=date" />
-    <img alt="История на звездите на Tensor в GitHub" src="https://api.star-history.com/chart?repos=morluto/tensor&amp;type=date" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=tensor-9/tensor&amp;type=date&amp;theme=dark&amp;legend=top-left" />
+    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=tensor-9/tensor&amp;type=date" />
+    <img alt="История на звездите на Tensor в GitHub" src="https://api.star-history.com/chart?repos=tensor-9/tensor&amp;type=date" />
   </picture>
 </a>
 
@@ -494,9 +494,9 @@ Tensor е предназначен за законни изследвания, �
 
 ## Принос към проекта
 
-Ще се радваме на помощта ви с Tensor! [Отворете issue](https://github.com/morluto/tensor/issues),
+Ще се радваме на помощта ви с Tensor! [Отворете issue](https://github.com/tensor-9/tensor/issues),
 за да съобщите за грешка или да предложите функция, или
-[изпратете pull request](https://github.com/morluto/tensor/pulls), за да подобрите
+[изпратете pull request](https://github.com/tensor-9/tensor/pulls), за да подобрите
 кода или документацията.
 
 Вижте [CONTRIBUTING.md](../../CONTRIBUTING.md) за настройка на средата за

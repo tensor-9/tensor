@@ -1,16 +1,16 @@
 {
   "name": "tensor-agents",
-  "mcpName": "io.github.morluto/tensor",
+  "mcpName": "io.github.tensor-9/tensor",
   "version": "6.10.1",
   "description": "Reverse engineer anything from your terminal or agent with one CLI and MCP server.",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/morluto/tensor.git"
+    "url": "git+https://github.com/tensor-9/tensor.git"
   },
-  "homepage": "https://github.com/morluto/tensor#readme",
+  "homepage": "https://github.com/tensor-9/tensor#readme",
   "bugs": {
-    "url": "https://github.com/morluto/tensor/issues"
+    "url": "https://github.com/tensor-9/tensor/issues"
   },
   "keywords": [
     "reverse-engineering",

@@ -143,7 +143,7 @@ async function initializeWebsite() {
 
     try {
       const response = await fetch(
-        "https://api.github.com/repos/morluto/tensor",
+        "https://api.github.com/repos/tensor-9/tensor",
         {
           headers: { Accept: "application/vnd.github+json" },
           credentials: "omit",

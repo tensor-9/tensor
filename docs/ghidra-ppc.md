@@ -3,8 +3,8 @@
 This lane extends native ELF analysis to 32-bit big-endian PowerPC and to
 64-bit PowerPC (PPC64) executables that use the ELFv2 ABI, in either byte
 order; it does not execute PowerPC code. The 32-bit lane is the first milestone
-of [#1741](https://github.com/morluto/tensor/issues/1741), and the PPC64 lane
-answers [#12085](https://github.com/morluto/tensor/issues/12085). GameCube/Wii DOL
+of [#1741](https://github.com/tensor-9/tensor/issues/1741), and the PPC64 lane
+answers [#12085](https://github.com/tensor-9/tensor/issues/12085). GameCube/Wii DOL
 executables are covered by [GameCube DOL analysis](ghidra-dol.md). ELFv1 PPC64,
 PPC64 shared images and other PowerPC variants remain separate follow-ups.
 

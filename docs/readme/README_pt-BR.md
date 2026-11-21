@@ -12,11 +12,11 @@
 [![npm version](https://img.shields.io/npm/v/tensor-agents?style=flat-square&color=cb3837)](https://www.npmjs.com/package/tensor-agents)
 [![MCP tool catalog](https://img.shields.io/badge/MCP-tool_catalog-5c4ee5?style=flat-square)](../reference/mcp-contracts.md#generated-catalog)
 [![Node.js requirements](https://img.shields.io/badge/Node.js-requirements-339933?style=flat-square&logo=nodedotjs&logoColor=white)](#current-status)
-[![skills.sh](https://skills.sh/b/morluto/tensor?style=flat-square)](https://skills.sh/morluto/tensor/reverse-engineer-anything)
+[![skills.sh](https://skills.sh/b/tensor-9/tensor?style=flat-square)](https://skills.sh/tensor-9/tensor/reverse-engineer-anything)
 [![MIT license](https://img.shields.io/badge/license-MIT-f4c430?style=flat-square)](../../LICENSE)
 [![Discord](https://img.shields.io/discord/1556595354999332884?logo=discord&logoColor=white&label=Discord&color=5865F2)](https://discord.gg/GkcryMnJDM)
 
-<a href="https://trendshift.io/repositories/82054?utm_source=repository-badge&amp;utm_medium=badge&amp;utm_campaign=badge-repository-82054" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/repositories/82054" alt="morluto%2Ftensor | Trendshift" width="250" height="55"/></a>
+<a href="https://trendshift.io/repositories/82054?utm_source=repository-badge&amp;utm_medium=badge&amp;utm_campaign=badge-repository-82054" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/repositories/82054" alt="tensor-9%2Ftensor | Trendshift" width="250" height="55"/></a>
 
 **[Site](https://tensor.tools/pt-BR/) · [Guias](https://tensor.tools/pt-BR/guides/) · [Casos de uso](https://tensor.tools/pt-BR/showcase/)**
 
@@ -29,7 +29,7 @@
 </div>
 
 > [!IMPORTANT]
-> Fontes oficiais do Tensor: [morluto/tensor](https://github.com/morluto/tensor), [tensor.tools](https://tensor.tools/), [tensor-agents](https://www.npmjs.com/package/tensor-agents) (npm).
+> Fontes oficiais do Tensor: [tensor-9/tensor](https://github.com/tensor-9/tensor), [tensor.tools](https://tensor.tools/), [tensor-agents](https://www.npmjs.com/package/tensor-agents) (npm).
 > Use os links de instalação e de versões dessas fontes oficiais. Um nome de repositório parecido ou um README copiado não comprova que um download seja oficial.
 
 <div align="center">
@@ -245,7 +245,7 @@ Grave uma sessão de aplicativo web, transforme sua API em ferramentas e exporte
 [Guia para criar um ambiente](https://tensor.tools/guides/rl-environments/) ·
 [Veja a demonstração no X](https://x.com/tensortools/status/2112574822584918075?s=20)
 
-Se você usou o Tensor em algo interessante, gostaríamos de conhecer. Compartilhe seu caso em uma [issue](https://github.com/morluto/tensor/issues) ou um [pull request](https://github.com/morluto/tensor/pulls), incluindo o alvo, sua pergunta, como o Tensor ajudou e o que descobriu.
+Se você usou o Tensor em algo interessante, gostaríamos de conhecer. Compartilhe seu caso em uma [issue](https://github.com/tensor-9/tensor/issues) ou um [pull request](https://github.com/tensor-9/tensor/pulls), incluindo o alvo, sua pergunta, como o Tensor ajudou e o que descobriu.
 
 <a id="build-rl-environments"></a>
 
@@ -350,7 +350,7 @@ Para configurar o agente por `npx`:
 npx tensor-agents@latest setup
 ```
 
-Se você usa um agente, conclua a [atualização da configuração](#atualize-o-tensor) e reinicie-o. Tente executar a mesma tarefa novamente. Se o problema persistir, [abra uma issue](https://github.com/morluto/tensor/issues) com sua versão do Tensor, o tipo de alvo, os passos para reproduzir e a saída do erro.
+Se você usa um agente, conclua a [atualização da configuração](#atualize-o-tensor) e reinicie-o. Tente executar a mesma tarefa novamente. Se o problema persistir, [abra uma issue](https://github.com/tensor-9/tensor/issues) com sua versão do Tensor, o tipo de alvo, os passos para reproduzir e a saída do erro.
 
 </details>
 
@@ -372,11 +372,11 @@ Relate vulnerabilidades conforme [SECURITY.md](../../SECURITY.md).
 
 Obrigado a todos que usam o Tensor, relatam bugs, sugerem funcionalidades, testam builds e contribuem com correções.
 
-<a href="https://www.star-history.com/?repos=morluto%2Ftensor&amp;type=date">
+<a href="https://www.star-history.com/?repos=tensor-9%2Ftensor&amp;type=date">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=morluto/tensor&amp;type=date&amp;theme=dark&amp;legend=top-left" />
-    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=morluto/tensor&amp;type=date" />
-    <img alt="Histórico de estrelas do Tensor no GitHub" src="https://api.star-history.com/chart?repos=morluto/tensor&amp;type=date" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=tensor-9/tensor&amp;type=date&amp;theme=dark&amp;legend=top-left" />
+    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=tensor-9/tensor&amp;type=date" />
+    <img alt="Histórico de estrelas do Tensor no GitHub" src="https://api.star-history.com/chart?repos=tensor-9/tensor&amp;type=date" />
   </picture>
 </a>
 
@@ -392,7 +392,7 @@ applicable licenses.
 
 ## Contribuir
 
-Sua ajuda com o Tensor é bem-vinda! [Abra uma issue](https://github.com/morluto/tensor/issues) para relatar um bug ou sugerir uma funcionalidade, ou [envie um pull request](https://github.com/morluto/tensor/pulls) para melhorar o código ou a documentação.
+Sua ajuda com o Tensor é bem-vinda! [Abra uma issue](https://github.com/tensor-9/tensor/issues) para relatar um bug ou sugerir uma funcionalidade, ou [envie um pull request](https://github.com/tensor-9/tensor/pulls) para melhorar o código ou a documentação.
 
 Consulte [CONTRIBUTING.md](../../CONTRIBUTING.md) para configurar o ambiente de desenvolvimento e as verificações, o [guia de testes](../development/testing.md) para os fluxos de verificação.
 

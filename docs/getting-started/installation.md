@@ -512,7 +512,7 @@ Tensor's managed shared and Claude Code personal skill locations. See the
 
 If Tensor exits with `ERR_MODULE_NOT_FOUND` before `doctor` can produce a report,
 inspect the missing path in the error. A path under npm's `_npx/<key>/node_modules`
-identifies a package-runner installation. In [#5259](https://github.com/morluto/tensor/issues/5259),
+identifies a package-runner installation. In [#5259](https://github.com/tensor-9/tensor/issues/5259),
 the missing file was `@modelcontextprotocol/client/dist/index.mjs`. That file is
 present in a clean Windows installation of Tensor 6.7.0; its absence alone does not
 establish an incompatible dependency release or explain how the file went missing.
@@ -598,7 +598,7 @@ that performed setup. Installing newer instructions does not update a
 running server or its registration.
 
 The npm release checked on **2026-10-11** was **6.4.0**, published from
-[`a56f7bb6`](https://github.com/morluto/tensor/commit/a56f7bb668ab23fec8d33f7af353ac7ed2fe1895).
+[`a56f7bb6`](https://github.com/tensor-9/tensor/commit/a56f7bb668ab23fec8d33f7af353ac7ed2fe1895).
 The actual registry package accepted dry-run setup plans for the 17 client IDs
 in that release, including Qwen Code, Pi and Hermes. Seven client IDs are
 included from 6.5.0 and were absent from the checked npm 6.4.0 package: `droid`,
@@ -610,7 +610,7 @@ OpenCode's plan selected
 used an isolated home on macOS with Node 24; they verify planning and argument
 admission, without writing client configuration or establishing live integration
 with every client. This resolves the npm 6.3.0 setup gaps tracked in
-[#1650](https://github.com/morluto/tensor/issues/1650).
+[#1650](https://github.com/tensor-9/tensor/issues/1650).
 
 Main's catalog describes the current code. A source build or a subsequent
 release containing changes after this checkpoint is required for newer
@@ -629,7 +629,7 @@ To run code that is not released yet, build a checkout with the Node.js
 version in `.nvmrc`:
 
 ```bash
-git clone https://github.com/morluto/tensor.git
+git clone https://github.com/tensor-9/tensor.git
 cd tensor
 npm ci
 npm run build:cached
@@ -663,12 +663,12 @@ archive](../desktop-build-computer.md#requirements) again.
 ## Skill-only installation
 
 ```bash
-npx skills add morluto/tensor --skill reverse-engineer-anything
+npx skills add tensor-9/tensor --skill reverse-engineer-anything
 ```
 
 This installs agent instructions and bundled references, not Tensor MCP
 registration or analysis engines. Follow the skill's
-[conditional connection guide](https://github.com/morluto/tensor/blob/main/.agents/skills/reverse-engineer-anything/SKILL.md#connect-only-when-needed).
+[conditional connection guide](https://github.com/tensor-9/tensor/blob/main/.agents/skills/reverse-engineer-anything/SKILL.md#connect-only-when-needed).
 Working tools can be used immediately. If tools are missing, inspect the current
 client's registration with `doctor --client codex --json` (substitute its client
 ID), then plan repairs with `setup --client codex --dry-run --json`. Show and
@@ -1583,8 +1583,8 @@ If `tensor doctor --json` reports `native_decompiler` as missing on macOS x64 or
 arm64, the official release archive does not ship a macOS decompiler. Ghidra
 12.2's `ghidra_12.2_PUBLIC_20261016.zip` includes only `os/linux_x86_64` and
 `os/win_x86_64`, the same gap tracked in
-[#7018](https://github.com/morluto/tensor/issues/7018) and
-[#7019](https://github.com/morluto/tensor/issues/7019). The archive includes the
+[#7018](https://github.com/tensor-9/tensor/issues/7018) and
+[#7019](https://github.com/tensor-9/tensor/issues/7019). The archive includes the
 decompiler source. For Ghidra 12.2, you can build the executable manually with
 an existing Xcode Command Line Tools installation, `make`, and `bison`:
 
@@ -2026,19 +2026,19 @@ A source plugin uses the locally built runtime and generated skill; rebuild afte
 source changes. Missing builds and mismatched version pins fail with an actionable
 error. The authored `.agents/skills/` tree is not the plugin's shipped skill layout.
 Windows source workflows that need native controls still require the
-[Windows source-checkout build](https://github.com/morluto/tensor/blob/main/native/windows/README.md#build).
+[Windows source-checkout build](https://github.com/tensor-9/tensor/blob/main/native/windows/README.md#build).
 
 In Claude Code:
 
 ```text
-/plugin marketplace add morluto/tensor
+/plugin marketplace add tensor-9/tensor
 /plugin install tensor@tensor
 ```
 
 In Codex CLI, add the marketplace and install Tensor:
 
 ```bash
-codex plugin marketplace add morluto/tensor
+codex plugin marketplace add tensor-9/tensor
 codex plugin add tensor@tensor
 ```
 
@@ -2139,11 +2139,11 @@ This repository change does not submit the plugin.
 
 ## MCP Registry
 
-Tensor is published in the official MCP Registry as `io.github.morluto/tensor`. Registry
+Tensor is published in the official MCP Registry as `io.github.tensor-9/tensor`. Registry
 clients can discover the server and install the existing public `tensor-agents` npm
 package; the Registry entry does not introduce a second distribution artifact.
 
-For a client that supports Registry discovery, search for `io.github.morluto/tensor`
+For a client that supports Registry discovery, search for `io.github.tensor-9/tensor`
 and select the npm package. The published metadata launches the existing stdio
 server through `npx` with the `mcp` command.
 
@@ -2254,7 +2254,7 @@ An `npx` launch can inspect the caller's npm project before executing Tensor. Fo
 example, a direct dependency whose override conflicts with its declared spec
 can cause npm's `EOVERRIDE`, even when the requested Tensor package is already
 cached. This is a package-runner failure: Tensor has not started and cannot return
-an MCP error. [#3690](https://github.com/morluto/tensor/issues/3690) reproduced it
+an MCP error. [#3690](https://github.com/tensor-9/tensor/issues/3690) reproduced it
 outside OpenCode as well as through that client's workspace-default launch.
 
 Use the direct global-installation setup flow above to replace the affected
@@ -2271,7 +2271,7 @@ without asking npm to resolve the workspace's dependency graph.
 The optional curl wrapper installs only the global npm package:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/morluto/tensor/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/tensor-9/tensor/main/install.sh | bash
 ```
 
 It prints the version, runtime, npm command, and destination before installing. When a controlling terminal exists it starts `tensor setup`; otherwise it prints the command to run later.
@@ -2279,7 +2279,7 @@ It prints the version, runtime, npm command, and destination before installing. 
 Pass options with `bash -s --`:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/morluto/tensor/main/install.sh |
+curl -fsSL https://raw.githubusercontent.com/tensor-9/tensor/main/install.sh |
   bash -s -- --dry-run
 ```
 
@@ -2288,7 +2288,7 @@ version, download its tagged script, and inspect the downloaded file:
 
 ```bash
 tensor_version=6.7.0
-curl -fsSL "https://raw.githubusercontent.com/morluto/tensor/tensor-agents-${tensor_version}/install.sh" -o tensor-install.sh
+curl -fsSL "https://raw.githubusercontent.com/tensor-9/tensor/tensor-agents-${tensor_version}/install.sh" -o tensor-install.sh
 less tensor-install.sh
 ```
 

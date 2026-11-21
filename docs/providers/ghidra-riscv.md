@@ -2,7 +2,7 @@
 
 This lane extends native ELF analysis for `EM_RISCV` targets. It does not
 execute RISC-V code, emulate a boot sequence, or rehost firmware. It addresses
-[#2063](https://github.com/morluto/tensor/issues/2063) and follows the same
+[#2063](https://github.com/tensor-9/tensor/issues/2063) and follows the same
 lane shape as [generic MIPS support](ghidra-mips.md).
 
 ## Admission boundary
@@ -100,7 +100,7 @@ not yet re-run on 12.2. With an ilp32 build of the fixture in
 
 ### Decision record: D3, RISC-V float ABIs
 
-Decided in [#7477](https://github.com/morluto/tensor/issues/7477).
+Decided in [#7477](https://github.com/tensor-9/tensor/issues/7477).
 
 - **Choice.**
   - Admit little-endian ELF32 `ET_EXEC` images that declare the soft-float ABI
@@ -280,8 +280,8 @@ Use the [supported Ghidra and JDK range](../getting-started/installation.md#ghid
 On macOS the official release zip ships no host decompiler binary, so
 `Decompiler/os/<platform>/decompile` and `sleigh` must come from your own build;
 see that page and
-[#7018](https://github.com/morluto/tensor/issues/7018) /
-[#7019](https://github.com/morluto/tensor/issues/7019).
+[#7018](https://github.com/tensor-9/tensor/issues/7018) /
+[#7019](https://github.com/tensor-9/tensor/issues/7019).
 
 Run `npm run verify:ghidra:riscv` with that installation and a RISC-V-capable
 Clang, LLD, LLVM readelf and LLVM objdump. The verifier acquires no tools and

@@ -274,7 +274,7 @@ private runtime files; crash-time transactional deletion is not claimed.
 
 ## Verification
 
-See [native controls](https://github.com/morluto/tensor/blob/main/native/windows/README.md) for the separate artifact
+See [native controls](https://github.com/tensor-9/tensor/blob/main/native/windows/README.md) for the separate artifact
 build lane and native boundary checks. Development tarballs without the built
 artifact report native controls unavailable; publishing requires the verified
 artifact and manifest.

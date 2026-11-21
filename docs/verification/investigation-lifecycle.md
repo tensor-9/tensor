@@ -1,7 +1,7 @@
 # Investigation record lifetime verification
 
 Verified on Linux with Node v24.22.1 and local Codex CLI 0.165.0 for
-[#8347](https://github.com/morluto/tensor/issues/8347). The final production revision is
+[#8347](https://github.com/tensor-9/tensor/issues/8347). The final production revision is
 `40ec9fe79b221b7550bf6a652f55389ea0b7e54f`, including main
 `d54a4661da20382ad8456564a08569fdd24131c5`. Its runtime manifest SHA-256 is
 `f4e55abdc5cb9fc2a86efcec5c410f2b5bc3eb5a7109a8d5ab88f07f8511c48b`.
@@ -11,7 +11,7 @@ remained unchanged.
 
 The [MCP contract](../reference/mcp-contracts.md) separates engine cleanup, investigation
 reset and explicit checkpointing. Automatic journaling remains tracked in
-[#4809](https://github.com/morluto/tensor/issues/4809).
+[#4809](https://github.com/tensor-9/tensor/issues/4809).
 
 ## Response publication qualification
 

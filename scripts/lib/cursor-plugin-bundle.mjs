@@ -13,7 +13,7 @@ const AUTHORED_SKILL_DIRECTORY = ".agents/skills/reverse-engineer-anything";
 const CURSOR_PLUGIN_SKILLS = ".cursor-plugin/skills";
 const CURSOR_PLUGIN_SKILL = "reverse-engineer-anything";
 const CURSOR_PLUGIN_LOGO = "assets/tensor-plugin.png";
-const CURSOR_PLUGIN_REPOSITORY = "https://github.com/morluto/tensor";
+const CURSOR_PLUGIN_REPOSITORY = "https://github.com/tensor-9/tensor";
 const GENERATE_COMMAND = "node scripts/generate-cursor-plugin-skill.mjs";
 const INSTALL_LINK_MARKERS = ["install-mcp", "deeplink/mcp", "mcp-install"];
 

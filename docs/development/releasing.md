@@ -70,7 +70,7 @@ the original run after a partial publication.
 
 tensor-agents 6.9.0 advertised a pattern that RE2 and Rust's `regex` cannot
 compile, so clients rejected the whole tools list
-([#10830](https://github.com/morluto/tensor/issues/10830)). Release qualification
+([#10830](https://github.com/tensor-9/tensor/issues/10830)). Release qualification
 runs `ci.yml` on the release revision, and its build job checks the advertised
 catalog with every client engine and, in full qualification, Python
 `jsonschema`; a refusal fails qualification, so publication does not start.
@@ -89,7 +89,7 @@ success or failure without replacing your shell's own trap.
   set -eu
   work="$(mktemp -d)"
   trap 'rm -rf "$work"' EXIT
-  gh run download "$RELEASE_RUN_ID" --repo morluto/tensor \
+  gh run download "$RELEASE_RUN_ID" --repo tensor-9/tensor \
     --name verified-release-package --dir "$work/verified"
   npm install --ignore-scripts --no-save --no-package-lock --no-audit --no-fund \
     --prefix "$work/prefix" "$work/verified/package.tgz"
@@ -216,14 +216,14 @@ already-applied patch fails closed.
 
 ## Contributor-aware release notes
 
-Use [the tensor-changelog-update skill](https://github.com/morluto/tensor/blob/main/.agents/skills/tensor-changelog-update/SKILL.md)
+Use [the tensor-changelog-update skill](https://github.com/tensor-9/tensor/blob/main/.agents/skills/tensor-changelog-update/SKILL.md)
 to turn the bot draft into grouped Highlights, Changes, and Fixes with inline
 `Thanks @...` credit. `npm run release:notes -- inventory` collects the full
 selected Git range and paginated GitHub PR/author/closing-issue metadata;
 `record --summary` produces a compact provenance link for public notes, while
 `record` produces the full record for review. Credit a contribution once even
 when it appears in highlights, details and migrations; omit maintainer
-`@morluto` self-thanks. Keep complete authorship metadata in the inventory
+`@tensor-9` self-thanks. Keep complete authorship metadata in the inventory
 instead of duplicating a credit ledger in the release body. `check` validates credits
 and optional PR-body equality, and `render` writes the verified release section.
 Run a subcommand without its required options to see its usage. GitHub reads
@@ -434,7 +434,7 @@ the combined contracts with the released package version.
 Before merging, check whether GitHub permits merge commits:
 
 ```bash
-gh api repos/morluto/tensor --jq .allow_merge_commit
+gh api repos/tensor-9/tensor --jq .allow_merge_commit
 ```
 
 If disabled, a maintainer must arrange an approved ancestry-preserving merge

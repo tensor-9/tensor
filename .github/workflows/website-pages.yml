@@ -158,7 +158,7 @@ jobs:
           def open_public(url, accept=None):
               headers = {
                   "Cache-Control": "no-cache",
-                  "User-Agent": "Tensor-Website-Verifier/1.0 (+https://github.com/morluto/tensor)",
+                  "User-Agent": "Tensor-Website-Verifier/1.0 (+https://github.com/tensor-9/tensor)",
               }
               if accept:
                   headers["Accept"] = accept

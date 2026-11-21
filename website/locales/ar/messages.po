@@ -2655,7 +2655,7 @@ msgstr ""
 "الأخير قد أصلح المشكلة بالفعل."
 
 # Reviewed for readable instructions and accurate software terminology.
-#. {ph0}: <a href="https://github.com/morluto/tensor/issues/new/choose" >
+#. {ph0}: <a href="https://github.com/tensor-9/tensor/issues/new/choose" >
 #. {ph1}: </a >
 #: website/public/faq/index.html:517
 #, python-brace-format
@@ -2695,9 +2695,9 @@ msgid "How can I share an example or contribute?"
 msgstr "كيف يمكنني مشاركة مثال أو المساهمة?"
 
 # Reviewed for readable instructions and accurate software terminology.
-#. {ph0}: <a href="https://github.com/morluto/tensor/issues/new/choose" >
+#. {ph0}: <a href="https://github.com/tensor-9/tensor/issues/new/choose" >
 #. {ph1}: </a >
-#. {ph2}: <a href="https://github.com/morluto/tensor/pulls">
+#. {ph2}: <a href="https://github.com/tensor-9/tensor/pulls">
 #. {ph3}: </a >
 #: website/public/faq/index.html:543
 #, python-brace-format
@@ -3659,7 +3659,7 @@ msgstr ""
 "{ph0}اختر دليل التحقيق{ph1}{ph2}أمثلة عملت لثنائي ، وهو Electron التطبيق "
 "ومتصفح.{ph3}"
 
-#. {ph0}: <a href="https://github.com/morluto/tensor/issues">
+#. {ph0}: <a href="https://github.com/tensor-9/tensor/issues">
 #. {ph1}: </a >
 #. {ph2}: <span>
 #. {ph3}: </span>
@@ -7460,7 +7460,7 @@ msgstr ""
 #. squares-flag-checker/ctfcli.yaml" >
 #. {ph3}: </a >
 #. {ph4}: <a
-#. href="https://github.com/morluto/tensor/blob/main/website/evidence/ctf-masked-
+#. href="https://github.com/tensor-9/tensor/blob/main/website/evidence/ctf-masked-
 #. squares.md" >
 #. {ph5}: </a >
 #: website/public/showcase/ctf/index.html:704
@@ -11523,7 +11523,7 @@ msgid "Switch to dark mode"
 msgstr "التبديل إلى الوضع الداكن"
 
 #. {ph0}: <a
-#. href="https://github.com/morluto/tensor/blob/main/docs/guides/web/web-network-
+#. href="https://github.com/tensor-9/tensor/blob/main/docs/guides/web/web-network-
 #. captures.md" >
 #. {ph1}: </a >
 #: website/public/guides/browser/index.html:487
@@ -12836,7 +12836,7 @@ msgid "Back to top"
 msgstr "العودة للأعلى"
 
 #. {ph0}: <a
-#. href="https://github.com/morluto/tensor/blob/main/website/evidence/reverse-
+#. href="https://github.com/tensor-9/tensor/blob/main/website/evidence/reverse-
 #. engineering-models.md" >
 #. {ph1}: </a >
 #: website/public/blog/reverse-engineering-models/index.html:783
@@ -13124,7 +13124,7 @@ msgstr "Claude Desktop · استخدم محادثة سطح المكتب"
 
 #. {ph0}: <a href="https://claude.ai/download">
 #. {ph1}: </a>
-#. {ph2}: <a href="https://github.com/morluto/tensor/blob/main/docs/getting-
+#. {ph2}: <a href="https://github.com/tensor-9/tensor/blob/main/docs/getting-
 #. started/client-configuration.md#claude-desktop" >
 #. {ph3}: </a >
 #: website/public/get-started/index.html:597
@@ -13170,10 +13170,10 @@ msgctxt "page:get-started/index.html"
 msgid "Setup ID"
 msgstr "معرّف الإعداد"
 
-#. {ph0}: <a href="https://github.com/morluto/tensor/blob/main/docs/getting-
+#. {ph0}: <a href="https://github.com/tensor-9/tensor/blob/main/docs/getting-
 #. started/client-configuration.md" >
 #. {ph1}: </a >
-#. {ph2}: <a href="https://github.com/morluto/tensor/blob/main/docs/getting-
+#. {ph2}: <a href="https://github.com/tensor-9/tensor/blob/main/docs/getting-
 #. started/installation.md#released-package-and-main" >
 #. {ph3}: </a >
 #: website/public/get-started/index.html:757
@@ -13201,7 +13201,7 @@ msgstr ""
 "في محادثة Grok Bot، اطلب منه إضافة خادم MCP مخصص باسم {ph0} باستخدام هذا "
 "الأمر على جهاز Bot:"
 
-#. {ph0}: <a href="https://github.com/morluto/tensor/blob/main/docs/getting-
+#. {ph0}: <a href="https://github.com/tensor-9/tensor/blob/main/docs/getting-
 #. started/client-configuration.md#other-client-settings" >
 #. {ph1}: </a >
 #: website/public/get-started/index.html:788
@@ -13463,7 +13463,7 @@ msgstr ""
 "إذا طلب macOS إذن Automation، فاسمح للتطبيق الذي يبدأ Tensor في System Settings"
 " → Privacy & Security → Automation، ثم أعد المحاولة."
 
-#. {ph0}: <a href="https://github.com/morluto/tensor/blob/main/docs/getting-
+#. {ph0}: <a href="https://github.com/tensor-9/tensor/blob/main/docs/getting-
 #. started/installation.md#hopper" >
 #. {ph1}: </a >
 #: website/public/get-started/index.html:1099
@@ -13540,11 +13540,11 @@ msgstr ""
 "نفّذ هذه الأوامر في جلسة الطرفية نفسها. أعد تشغيل الإعداد بعد تعيين "
 "المسارات، ووافق على إعداد التطبيق المحدّث ثم أعد تشغيل مساعدك."
 
-#. {ph0}: <a href="https://github.com/morluto/tensor/blob/main/docs/getting-
+#. {ph0}: <a href="https://github.com/tensor-9/tensor/blob/main/docs/getting-
 #. started/installation.md#ghidra" >
 #. {ph1}: </a >
 #. {ph2}: <a
-#. href="https://github.com/morluto/tensor/blob/main/docs/providers/windows-
+#. href="https://github.com/tensor-9/tensor/blob/main/docs/providers/windows-
 #. ghidra-p0.md" >
 #. {ph3}: </a >
 #: website/public/get-started/index.html:1258
@@ -13595,7 +13595,7 @@ msgstr ""
 "ومساعدك."
 
 #. {ph0}: <a
-#. href="https://github.com/morluto/tensor/blob/main/docs/providers/ida-
+#. href="https://github.com/tensor-9/tensor/blob/main/docs/providers/ida-
 #. provider.md" >
 #. {ph1}: </a >
 #: website/public/get-started/index.html:1376
@@ -13744,15 +13744,15 @@ msgid "Process behavior"
 msgstr "سلوك العمليات"
 
 #. {ph0}: <a
-#. href="https://github.com/morluto/tensor/blob/main/docs/guides/android/flutter-
+#. href="https://github.com/tensor-9/tensor/blob/main/docs/guides/android/flutter-
 #. analysis.md" >
 #. {ph1}: </a >
 #. {ph2}: <a
-#. href="https://github.com/morluto/tensor/blob/main/docs/guides/javascript/javascript-
+#. href="https://github.com/tensor-9/tensor/blob/main/docs/guides/javascript/javascript-
 #. artifact-reconstruction.md" >
 #. {ph3}: </a >
 #. {ph4}: <a
-#. href="https://github.com/morluto/tensor/blob/main/docs/guides/evm/evm-
+#. href="https://github.com/tensor-9/tensor/blob/main/docs/guides/evm/evm-
 #. bytecode.md" >
 #. {ph5}: </a >
 #. {ph6}: <a href="../guides/">
@@ -13851,7 +13851,7 @@ msgstr ""
 "إذا ثبّتَّ CLI العام، فحدّثه باستخدام {ph0}. استخدم {ph1} لإزالة إعداد "
 "تطبيقات Tensor ومهارته."
 
-#. {ph0}: <a href="https://github.com/morluto/tensor/blob/main/docs/getting-
+#. {ph0}: <a href="https://github.com/tensor-9/tensor/blob/main/docs/getting-
 #. started/installation.md#diagnose-update-and-remove" >
 #. {ph1}: </a >
 #: website/public/get-started/index.html:1812
@@ -14075,7 +14075,7 @@ msgstr ""
 "على macOS، يتطلب البناء Xcode Command Line Tools وmake وbison. استخدم الدليل"
 " المناسب لجهازك:"
 
-#. {ph0}: <a href="https://github.com/morluto/tensor/blob/main/docs/getting-
+#. {ph0}: <a href="https://github.com/tensor-9/tensor/blob/main/docs/getting-
 #. started/installation.md#missing-macos-native-decompiler" >
 #. {ph1}: </a >
 #: website/public/get-started/index.html:1216
@@ -14084,7 +14084,7 @@ msgctxt "page:get-started/index.html"
 msgid "{ph0}macOS · Intel{ph1}"
 msgstr "{ph0}macOS · Intel{ph1}"
 
-#. {ph0}: <a href="https://github.com/morluto/tensor/blob/main/docs/getting-
+#. {ph0}: <a href="https://github.com/tensor-9/tensor/blob/main/docs/getting-
 #. started/installation.md#macos-arm64-native-decompiler" >
 #. {ph1}: </a >
 #: website/public/get-started/index.html:1222
@@ -14496,7 +14496,7 @@ msgid ""
 msgstr "اتبع تعليمات الإعداد لربط وكيلك. إذا لم تظهر، شغّل {ph0}."
 
 #. {ph0}: <a
-#. href="https://github.com/morluto/tensor/blob/main/CONTRIBUTING.md#development-
+#. href="https://github.com/tensor-9/tensor/blob/main/CONTRIBUTING.md#development-
 #. setup" >
 #. {ph1}: </a >
 #. {ph2}: <code>6.4.0</code>
@@ -14621,7 +14621,7 @@ msgctxt "page:contributors/index.html"
 msgid "Find a contributor"
 msgstr "البحث عن مساهم"
 
-#. {ph0}: <a href="https://github.com/morluto/tensor/graphs/contributors">
+#. {ph0}: <a href="https://github.com/tensor-9/tensor/graphs/contributors">
 #. {ph1}: </a>
 #. {ph2}: <time datetime="2026-10-15" translate="no">2026-10-15</time>
 #: website/public/contributors/index.html:1114
@@ -15072,10 +15072,10 @@ msgid ""
 "name warnings identify places to review; they do not remove those values."
 msgstr ""
 
-#. {ph0}: <a href="https://github.com/morluto/tensor/blob/main/docs/agent-
+#. {ph0}: <a href="https://github.com/tensor-9/tensor/blob/main/docs/agent-
 #. environments-quickstart.md" >
 #. {ph1}: </a >
-#. {ph2}: <a href="https://github.com/morluto/tensor/blob/main/docs/agent-
+#. {ph2}: <a href="https://github.com/tensor-9/tensor/blob/main/docs/agent-
 #. environments.md" >
 #. {ph3}: </a >
 #: website/public/guides/rl-environments/index.html:474
@@ -15391,7 +15391,7 @@ msgctxt "page:index.html"
 msgid "{ph0}Join Discord{ph1} to get help and discuss your investigations."
 msgstr "{ph0}انضم إلى Discord{ph1} للحصول على المساعدة ومناقشة تحليلاتك."
 
-#. {ph0}: <a href="https://github.com/morluto/tensor/issues/new/choose" >
+#. {ph0}: <a href="https://github.com/tensor-9/tensor/issues/new/choose" >
 #. {ph1}: </a >
 #: website/public/index.html:1285
 #, python-brace-format
@@ -15461,7 +15461,7 @@ msgstr ""
 #. {ph0}: <a href="../../get-started/">
 #. {ph1}: </a>
 #. {ph2}: <a
-#. href="https://github.com/morluto/tensor/blob/main/docs/guides/android/android-
+#. href="https://github.com/tensor-9/tensor/blob/main/docs/guides/android/android-
 #. analysis.md" >
 #. {ph3}: </a >
 #: website/public/showcase/aegis/index.html:714

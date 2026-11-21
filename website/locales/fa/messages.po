@@ -2670,7 +2670,7 @@ msgstr ""
 "{ph0}به روز رسانی Tensor {ph1}، مامور خود را دوباره راه اندازی کنید و همان کار "
 "را دوباره امتحان کنید. انتشار اخیر ممکن است مشکل را حل کند."
 
-#. {ph0}: <a href="https://github.com/morluto/tensor/issues/new/choose" >
+#. {ph0}: <a href="https://github.com/tensor-9/tensor/issues/new/choose" >
 #. {ph1}: </a >
 #: website/public/faq/index.html:517
 #, python-brace-format
@@ -2708,9 +2708,9 @@ msgctxt "page:faq/index.html"
 msgid "How can I share an example or contribute?"
 msgstr "چگونه می توانم یک مثال را به اشتراک بگذارم یا کمک کنم ؟"
 
-#. {ph0}: <a href="https://github.com/morluto/tensor/issues/new/choose" >
+#. {ph0}: <a href="https://github.com/tensor-9/tensor/issues/new/choose" >
 #. {ph1}: </a >
-#. {ph2}: <a href="https://github.com/morluto/tensor/pulls">
+#. {ph2}: <a href="https://github.com/tensor-9/tensor/pulls">
 #. {ph3}: </a >
 #: website/public/faq/index.html:543
 #, python-brace-format
@@ -3690,7 +3690,7 @@ msgstr ""
 "{ph0}راهنمای تحقیق را انتخاب کنید{ph1}{ph2}نمونه های کار شده برای یک باینری "
 "، یک برنامه Electron و یک مرورگر.{ph3}"
 
-#. {ph0}: <a href="https://github.com/morluto/tensor/issues">
+#. {ph0}: <a href="https://github.com/tensor-9/tensor/issues">
 #. {ph1}: </a >
 #. {ph2}: <span>
 #. {ph3}: </span>
@@ -7529,7 +7529,7 @@ msgstr ""
 #. squares-flag-checker/ctfcli.yaml" >
 #. {ph3}: </a >
 #. {ph4}: <a
-#. href="https://github.com/morluto/tensor/blob/main/website/evidence/ctf-masked-
+#. href="https://github.com/tensor-9/tensor/blob/main/website/evidence/ctf-masked-
 #. squares.md" >
 #. {ph5}: </a >
 #: website/public/showcase/ctf/index.html:704
@@ -11620,7 +11620,7 @@ msgid "Switch to dark mode"
 msgstr "تغییر به حالت تیره"
 
 #. {ph0}: <a
-#. href="https://github.com/morluto/tensor/blob/main/docs/guides/web/web-network-
+#. href="https://github.com/tensor-9/tensor/blob/main/docs/guides/web/web-network-
 #. captures.md" >
 #. {ph1}: </a >
 #: website/public/guides/browser/index.html:487
@@ -12946,7 +12946,7 @@ msgid "Back to top"
 msgstr "بازگشت به بالا"
 
 #. {ph0}: <a
-#. href="https://github.com/morluto/tensor/blob/main/website/evidence/reverse-
+#. href="https://github.com/tensor-9/tensor/blob/main/website/evidence/reverse-
 #. engineering-models.md" >
 #. {ph1}: </a >
 #: website/public/blog/reverse-engineering-models/index.html:783
@@ -13241,7 +13241,7 @@ msgstr "Claude Desktop · از گفت‌وگوی دسکتاپ استفاده ک�
 
 #. {ph0}: <a href="https://claude.ai/download">
 #. {ph1}: </a>
-#. {ph2}: <a href="https://github.com/morluto/tensor/blob/main/docs/getting-
+#. {ph2}: <a href="https://github.com/tensor-9/tensor/blob/main/docs/getting-
 #. started/client-configuration.md#claude-desktop" >
 #. {ph3}: </a >
 #: website/public/get-started/index.html:597
@@ -13288,10 +13288,10 @@ msgctxt "page:get-started/index.html"
 msgid "Setup ID"
 msgstr "شناسهٔ راه‌اندازی"
 
-#. {ph0}: <a href="https://github.com/morluto/tensor/blob/main/docs/getting-
+#. {ph0}: <a href="https://github.com/tensor-9/tensor/blob/main/docs/getting-
 #. started/client-configuration.md" >
 #. {ph1}: </a >
-#. {ph2}: <a href="https://github.com/morluto/tensor/blob/main/docs/getting-
+#. {ph2}: <a href="https://github.com/tensor-9/tensor/blob/main/docs/getting-
 #. started/installation.md#released-package-and-main" >
 #. {ph3}: </a >
 #: website/public/get-started/index.html:757
@@ -13319,7 +13319,7 @@ msgstr ""
 "در گفت‌وگوی Grok Bot از آن بخواهید یک سرور MCP سفارشی به نام {ph0} با این "
 "فرمان روی رایانهٔ Bot اضافه کند:"
 
-#. {ph0}: <a href="https://github.com/morluto/tensor/blob/main/docs/getting-
+#. {ph0}: <a href="https://github.com/tensor-9/tensor/blob/main/docs/getting-
 #. started/client-configuration.md#other-client-settings" >
 #. {ph1}: </a >
 #: website/public/get-started/index.html:788
@@ -13588,7 +13588,7 @@ msgstr ""
 "Automation به برنامه‌ای که Tensor را اجرا می‌کند اجازه بدهید و دوباره امتحان "
 "کنید."
 
-#. {ph0}: <a href="https://github.com/morluto/tensor/blob/main/docs/getting-
+#. {ph0}: <a href="https://github.com/tensor-9/tensor/blob/main/docs/getting-
 #. started/installation.md#hopper" >
 #. {ph1}: </a >
 #: website/public/get-started/index.html:1099
@@ -13666,11 +13666,11 @@ msgstr ""
 "راه‌اندازی را دوباره اجرا کنید، پیکربندی به‌روز برنامه را تأیید کنید و "
 "دستیار را دوباره اجرا کنید."
 
-#. {ph0}: <a href="https://github.com/morluto/tensor/blob/main/docs/getting-
+#. {ph0}: <a href="https://github.com/tensor-9/tensor/blob/main/docs/getting-
 #. started/installation.md#ghidra" >
 #. {ph1}: </a >
 #. {ph2}: <a
-#. href="https://github.com/morluto/tensor/blob/main/docs/providers/windows-
+#. href="https://github.com/tensor-9/tensor/blob/main/docs/providers/windows-
 #. ghidra-p0.md" >
 #. {ph3}: </a >
 #: website/public/get-started/index.html:1258
@@ -13720,7 +13720,7 @@ msgstr ""
 "راه‌اندازی و دستیار را دوباره اجرا کنید."
 
 #. {ph0}: <a
-#. href="https://github.com/morluto/tensor/blob/main/docs/providers/ida-
+#. href="https://github.com/tensor-9/tensor/blob/main/docs/providers/ida-
 #. provider.md" >
 #. {ph1}: </a >
 #: website/public/get-started/index.html:1376
@@ -13869,15 +13869,15 @@ msgid "Process behavior"
 msgstr "رفتار فرایند"
 
 #. {ph0}: <a
-#. href="https://github.com/morluto/tensor/blob/main/docs/guides/android/flutter-
+#. href="https://github.com/tensor-9/tensor/blob/main/docs/guides/android/flutter-
 #. analysis.md" >
 #. {ph1}: </a >
 #. {ph2}: <a
-#. href="https://github.com/morluto/tensor/blob/main/docs/guides/javascript/javascript-
+#. href="https://github.com/tensor-9/tensor/blob/main/docs/guides/javascript/javascript-
 #. artifact-reconstruction.md" >
 #. {ph3}: </a >
 #. {ph4}: <a
-#. href="https://github.com/morluto/tensor/blob/main/docs/guides/evm/evm-
+#. href="https://github.com/tensor-9/tensor/blob/main/docs/guides/evm/evm-
 #. bytecode.md" >
 #. {ph5}: </a >
 #. {ph6}: <a href="../guides/">
@@ -13980,7 +13980,7 @@ msgstr ""
 "اگر CLI سراسری را نصب کرده‌اید، آن را با {ph0} به‌روز کنید. از {ph1} برای "
 "حذف پیکربندی برنامه‌ها و مهارت Tensor استفاده کنید."
 
-#. {ph0}: <a href="https://github.com/morluto/tensor/blob/main/docs/getting-
+#. {ph0}: <a href="https://github.com/tensor-9/tensor/blob/main/docs/getting-
 #. started/installation.md#diagnose-update-and-remove" >
 #. {ph1}: </a >
 #: website/public/get-started/index.html:1812
@@ -14209,7 +14209,7 @@ msgstr ""
 "در macOS، ساخت به Xcode Command Line Tools، ‏make وbison نیاز دارد. از "
 "راهنمای رایانه‌تان استفاده کنید:"
 
-#. {ph0}: <a href="https://github.com/morluto/tensor/blob/main/docs/getting-
+#. {ph0}: <a href="https://github.com/tensor-9/tensor/blob/main/docs/getting-
 #. started/installation.md#missing-macos-native-decompiler" >
 #. {ph1}: </a >
 #: website/public/get-started/index.html:1216
@@ -14218,7 +14218,7 @@ msgctxt "page:get-started/index.html"
 msgid "{ph0}macOS · Intel{ph1}"
 msgstr "{ph0}macOS · Intel{ph1}"
 
-#. {ph0}: <a href="https://github.com/morluto/tensor/blob/main/docs/getting-
+#. {ph0}: <a href="https://github.com/tensor-9/tensor/blob/main/docs/getting-
 #. started/installation.md#macos-arm64-native-decompiler" >
 #. {ph1}: </a >
 #: website/public/get-started/index.html:1222
@@ -14643,7 +14643,7 @@ msgstr ""
 " را اجرا کنید."
 
 #. {ph0}: <a
-#. href="https://github.com/morluto/tensor/blob/main/CONTRIBUTING.md#development-
+#. href="https://github.com/tensor-9/tensor/blob/main/CONTRIBUTING.md#development-
 #. setup" >
 #. {ph1}: </a >
 #. {ph2}: <code>6.4.0</code>
@@ -14771,7 +14771,7 @@ msgctxt "page:contributors/index.html"
 msgid "Find a contributor"
 msgstr "جستجوی مشارکت‌کننده"
 
-#. {ph0}: <a href="https://github.com/morluto/tensor/graphs/contributors">
+#. {ph0}: <a href="https://github.com/tensor-9/tensor/graphs/contributors">
 #. {ph1}: </a>
 #. {ph2}: <time datetime="2026-10-15" translate="no">2026-10-15</time>
 #: website/public/contributors/index.html:1114
@@ -15224,10 +15224,10 @@ msgid ""
 "name warnings identify places to review; they do not remove those values."
 msgstr ""
 
-#. {ph0}: <a href="https://github.com/morluto/tensor/blob/main/docs/agent-
+#. {ph0}: <a href="https://github.com/tensor-9/tensor/blob/main/docs/agent-
 #. environments-quickstart.md" >
 #. {ph1}: </a >
-#. {ph2}: <a href="https://github.com/morluto/tensor/blob/main/docs/agent-
+#. {ph2}: <a href="https://github.com/tensor-9/tensor/blob/main/docs/agent-
 #. environments.md" >
 #. {ph3}: </a >
 #: website/public/guides/rl-environments/index.html:474
@@ -15550,7 +15550,7 @@ msgstr ""
 "برای دریافت کمک و گفت‌وگو دربارهٔ تحلیل‌هایتان، {ph0}به Discord "
 "بپیوندید{ph1}."
 
-#. {ph0}: <a href="https://github.com/morluto/tensor/issues/new/choose" >
+#. {ph0}: <a href="https://github.com/tensor-9/tensor/issues/new/choose" >
 #. {ph1}: </a >
 #: website/public/index.html:1285
 #, python-brace-format
@@ -15621,7 +15621,7 @@ msgstr ""
 #. {ph0}: <a href="../../get-started/">
 #. {ph1}: </a>
 #. {ph2}: <a
-#. href="https://github.com/morluto/tensor/blob/main/docs/guides/android/android-
+#. href="https://github.com/tensor-9/tensor/blob/main/docs/guides/android/android-
 #. analysis.md" >
 #. {ph3}: </a >
 #: website/public/showcase/aegis/index.html:714

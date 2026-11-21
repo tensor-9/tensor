@@ -46,7 +46,7 @@ continues to carry source-bound unknowns and partial semantic coverage.
 
 ## Real input and reproduction
 
-Use the [official Joplin v3.7.21 acquisition and extraction instructions](https://github.com/morluto/tensor/blob/c7f6b8bad1a34d5efb30ff2a017672dea1fcdabb/docs/verification/javascript-native-handoff-identity-2026-10-15.md).
+Use the [official Joplin v3.7.21 acquisition and extraction instructions](https://github.com/tensor-9/tensor/blob/c7f6b8bad1a34d5efb30ff2a017672dea1fcdabb/docs/verification/javascript-native-handoff-identity-2026-10-15.md).
 The AppImage SHA-256 is
 `5d202dcaca31e14206826aa3f04125e7c218dbc3dc3d98479d811efbd6b856c1`;
 ASAR SHA-256 is
@@ -118,7 +118,7 @@ verifier resources. They are not presented as inline metadata answers.
 A control that also requested the complete outgoing `package.json` feature trace
 hit stdio admission twice: at least 10,587,373 bytes against a 10,484,736-byte
 result budget, with identical retained parent/trace identities. It is not a
-completed equivalent task or an efficiency baseline. [#4190](https://github.com/morluto/tensor/issues/4190)
+completed equivalent task or an efficiency baseline. [#4190](https://github.com/tensor-9/tensor/issues/4190)
 records the separate need for exact retained metadata/native fact views. Complete
 export remains available. Do not compare costs across these different tasks.
 
@@ -145,7 +145,7 @@ controls in every recorded non-timing field.
 
 The whole verifier includes input hashing, analysis, three native trace rounds,
 applicable structured queries, export, CLI parity and tokenization. Every heavy
-run uses the preserved [resource observer](https://github.com/morluto/tensor/blob/b3bdabab694af1f9801eff7caf75001b92314a58/experiments/analysis-efficiency/resource-run.py):
+run uses the preserved [resource observer](https://github.com/tensor-9/tensor/blob/b3bdabab694af1f9801eff7caf75001b92314a58/experiments/analysis-efficiency/resource-run.py):
 one CPU, 8 GiB hard cap, 6 GiB early stop and no swap. Cgroup peaks include charged
 file cache, not summed RSS. Counters are observed at payload exit while the
 observer remains alive, not final whole-scope counters. Completed runs verify
@@ -220,7 +220,7 @@ and an invalid top-level semantic-module-path absence check. Both were corrected
 before their assertions were used as proof. Corrected cancellation reproduction
 shows the actual native AST scope and phantom module on the baseline. Final
 source and execution-driver versions, source pins, input digests, prior attempts
-and resource receipts are in the [compact JSON record](https://github.com/morluto/tensor/blob/main/docs/verification/javascript-interruption-applicability-2026-10-15.json).
+and resource receipts are in the [compact JSON record](https://github.com/tensor-9/tensor/blob/main/docs/verification/javascript-interruption-applicability-2026-10-15.json).
 
 Before review, `npm run check && npm run docs:check` passed, including five consistency
 tests: 165.553 s wall / 150.247257 s CPU /

@@ -84,7 +84,7 @@ export default defineConfig({
       { text: "Get started", link: "/installation" },
       { text: "Documentation", link: "/documentation" },
       { text: "Reference", link: "/mcp-contracts" },
-      { text: "Issues", link: "https://github.com/morluto/tensor/issues" },
+      { text: "Issues", link: "https://github.com/tensor-9/tensor/issues" },
     ],
     sidebar: [
       {
@@ -102,11 +102,11 @@ export default defineConfig({
     ],
     search: { provider: "local" },
     socialLinks: [
-      { icon: "github", link: "https://github.com/morluto/tensor" },
+      { icon: "github", link: "https://github.com/tensor-9/tensor" },
       { icon: "discord", link: "https://discord.gg/GkcryMnJDM" },
     ],
     editLink: {
-      pattern: "https://github.com/morluto/tensor/edit/main/docs/:path",
+      pattern: "https://github.com/tensor-9/tensor/edit/main/docs/:path",
     },
     footer: {
       message: "Released under the MIT License.",

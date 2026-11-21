@@ -239,7 +239,7 @@ analyzed as native code (75k methods on arm64) and decompiled through both
 CLI and MCP with explicit unit selection, plus the thin Java wrapper and
 decoded manifest. The dedicated Dart snapshot processor and `run_script`
 remained GUI-only surfaces in that headless build.
-The separate [Linux CE native audit](https://github.com/morluto/tensor/blob/42e1a17d6e6c0487f17be0bae248553c4caba7f7/experiments/analysis-efficiency/jeb-linux-native.md)
+The separate [Linux CE native audit](https://github.com/tensor-9/tensor/blob/42e1a17d6e6c0487f17be0bae248553c4caba7f7/experiments/analysis-efficiency/jeb-linux-native.md)
 uses the official CE `5.48.0.202610071539` direct CLI launcher and real
 CLI/stdio MCP ELF workflows. That audit does not qualify CE Java/Android
 decompilation or GUI project opening, and it does not replace the licensed
@@ -425,7 +425,7 @@ other engine versions and architectures remain unverified; see the
 
 Native IDA MCP verification uses `"protocol": "native"` with an already-running native plugin and requires `--second-procedure other_function --second-marker unique_second_body_text` to exercise GUI function switching and a return to the first function. These options remain optional for other profiles. The literal marker must appear in the second function's pseudocode and be absent from the first. Native cloud/widget failures are reported without hidden retries.
 
-The initial Linux x64 IDA Free 9.4 run used native MCP 1.1.2 with a local navigation correction. Windows x64 verification uses **IDA Pro 9.3**, the two-function public fixture, and the shipped Windows `whoami.exe` application. The native plugin was built from upstream `c9d15d98e8a143fc74f6e14037c48f63889b6d6c`, including the merged navigation fix, with a local loopback-listener change. Production CLI/MCP parity, switching, identity and cleanup passed. Correctness and performance measurements are recorded in the [Windows native verification notes](https://github.com/morluto/tensor/blob/a2e2c29b59e8775b0e6aedb09a9eb16adf32646b/experiments/analysis-efficiency/ida-native-windows.md). Stock 1.1.2 switching, native macOS, and Windows IDA Free remain unverified. See the [native bridge prerequisites](providers/ida-provider.md#native-ida-mcp-bridge).
+The initial Linux x64 IDA Free 9.4 run used native MCP 1.1.2 with a local navigation correction. Windows x64 verification uses **IDA Pro 9.3**, the two-function public fixture, and the shipped Windows `whoami.exe` application. The native plugin was built from upstream `c9d15d98e8a143fc74f6e14037c48f63889b6d6c`, including the merged navigation fix, with a local loopback-listener change. Production CLI/MCP parity, switching, identity and cleanup passed. Correctness and performance measurements are recorded in the [Windows native verification notes](https://github.com/tensor-9/tensor/blob/a2e2c29b59e8775b0e6aedb09a9eb16adf32646b/experiments/analysis-efficiency/ida-native-windows.md). Stock 1.1.2 switching, native macOS, and Windows IDA Free remain unverified. See the [native bridge prerequisites](providers/ida-provider.md#native-ida-mcp-bridge).
 
 ## Kuna lane
 
@@ -468,7 +468,7 @@ zlib 1.3.2 `minigzip`, coreutils 9.9 `sort` and the sqlite
 3.54.0 shell, built at `-O2` for ELF x86-64, ELF AArch64, Mach-O arm64 and
 Mach-O x86-64, each with symbols and stripped. A separate Linux x86-64 run verified
 the fixture and system zlib 1.2.13 / SQLite 3.40.1 libraries through MCP, including
-cached byte spans and a Ghidra comparison. See the [Linux report](https://github.com/morluto/tensor/pull/3854#issuecomment-6185870391)
+cached byte spans and a Ghidra comparison. See the [Linux report](https://github.com/tensor-9/tensor/pull/3854#issuecomment-6185870391)
 for measured scope and limitations. Windows, PE and universal Mach-O remain
 unverified by this lane.
 
@@ -581,7 +581,7 @@ and after only when it did. The decompiler effect on the original MIPS case
 was observed on the reporter's binary, not in this lane. The lane never
 executes the fixture and needs the [supported Ghidra and JDK installation](getting-started/installation.md#ghidra)
 with the native decompiler and a Linux C compiler. The
-change-selected [Ghidra bridge CI lane](https://github.com/morluto/tensor/blob/main/.github/workflows/ghidra-bridge-sources.yml)
+change-selected [Ghidra bridge CI lane](https://github.com/tensor-9/tensor/blob/main/.github/workflows/ghidra-bridge-sources.yml)
 runs it with its checksum-verified Ghidra distribution. Read-only sessions
 (Windows P0 and caller-owned existing projects) record the same limitation but
 mark nothing volatile; no real-provider lane covers them.

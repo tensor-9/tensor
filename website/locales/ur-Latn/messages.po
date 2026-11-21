@@ -1314,7 +1314,7 @@ msgid "Evidence and model attribution"
 msgstr ""
 
 #. {ph0}: <a
-#. href="https://github.com/morluto/tensor/blob/main/website/evidence/reverse-
+#. href="https://github.com/tensor-9/tensor/blob/main/website/evidence/reverse-
 #. engineering-models.md" >
 #. {ph1}: </a >
 #: website/public/blog/reverse-engineering-models/index.html:783
@@ -2791,7 +2791,7 @@ msgctxt "page:contributors/index.html"
 msgid "Find a contributor"
 msgstr ""
 
-#. {ph0}: <a href="https://github.com/morluto/tensor/graphs/contributors">
+#. {ph0}: <a href="https://github.com/tensor-9/tensor/graphs/contributors">
 #. {ph1}: </a>
 #. {ph2}: <time datetime="2026-10-15" translate="no">2026-10-15</time>
 #: website/public/contributors/index.html:1114
@@ -3640,7 +3640,7 @@ msgid ""
 "release may already fix the problem."
 msgstr ""
 
-#. {ph0}: <a href="https://github.com/morluto/tensor/issues/new/choose" >
+#. {ph0}: <a href="https://github.com/tensor-9/tensor/issues/new/choose" >
 #. {ph1}: </a >
 #: website/public/faq/index.html:517
 #, python-brace-format
@@ -3673,9 +3673,9 @@ msgctxt "page:faq/index.html"
 msgid "How can I share an example or contribute?"
 msgstr ""
 
-#. {ph0}: <a href="https://github.com/morluto/tensor/issues/new/choose" >
+#. {ph0}: <a href="https://github.com/tensor-9/tensor/issues/new/choose" >
 #. {ph1}: </a >
-#. {ph2}: <a href="https://github.com/morluto/tensor/pulls">
+#. {ph2}: <a href="https://github.com/tensor-9/tensor/pulls">
 #. {ph3}: </a >
 #: website/public/faq/index.html:543
 #, python-brace-format
@@ -4723,7 +4723,7 @@ msgstr ""
 
 #. {ph0}: <a href="https://claude.ai/download">
 #. {ph1}: </a>
-#. {ph2}: <a href="https://github.com/morluto/tensor/blob/main/docs/getting-
+#. {ph2}: <a href="https://github.com/tensor-9/tensor/blob/main/docs/getting-
 #. started/client-configuration.md#claude-desktop" >
 #. {ph3}: </a >
 #: website/public/get-started/index.html:597
@@ -4772,10 +4772,10 @@ msgctxt "page:get-started/index.html"
 msgid "Setup ID"
 msgstr ""
 
-#. {ph0}: <a href="https://github.com/morluto/tensor/blob/main/docs/getting-
+#. {ph0}: <a href="https://github.com/tensor-9/tensor/blob/main/docs/getting-
 #. started/client-configuration.md" >
 #. {ph1}: </a >
-#. {ph2}: <a href="https://github.com/morluto/tensor/blob/main/docs/getting-
+#. {ph2}: <a href="https://github.com/tensor-9/tensor/blob/main/docs/getting-
 #. started/installation.md#released-package-and-main" >
 #. {ph3}: </a >
 #: website/public/get-started/index.html:757
@@ -4800,7 +4800,7 @@ msgid ""
 " command on the Bot's computer:"
 msgstr ""
 
-#. {ph0}: <a href="https://github.com/morluto/tensor/blob/main/docs/getting-
+#. {ph0}: <a href="https://github.com/tensor-9/tensor/blob/main/docs/getting-
 #. started/client-configuration.md#other-client-settings" >
 #. {ph1}: </a >
 #: website/public/get-started/index.html:788
@@ -5159,7 +5159,7 @@ msgid ""
 "System Settings → Privacy & Security → Automation, then retry."
 msgstr ""
 
-#. {ph0}: <a href="https://github.com/morluto/tensor/blob/main/docs/getting-
+#. {ph0}: <a href="https://github.com/tensor-9/tensor/blob/main/docs/getting-
 #. started/installation.md#hopper" >
 #. {ph1}: </a >
 #: website/public/get-started/index.html:1099
@@ -5266,7 +5266,7 @@ msgid ""
 "guide for your computer:"
 msgstr ""
 
-#. {ph0}: <a href="https://github.com/morluto/tensor/blob/main/docs/getting-
+#. {ph0}: <a href="https://github.com/tensor-9/tensor/blob/main/docs/getting-
 #. started/installation.md#missing-macos-native-decompiler" >
 #. {ph1}: </a >
 #: website/public/get-started/index.html:1216
@@ -5275,7 +5275,7 @@ msgctxt "page:get-started/index.html"
 msgid "{ph0}macOS · Intel{ph1}"
 msgstr ""
 
-#. {ph0}: <a href="https://github.com/morluto/tensor/blob/main/docs/getting-
+#. {ph0}: <a href="https://github.com/tensor-9/tensor/blob/main/docs/getting-
 #. started/installation.md#macos-arm64-native-decompiler" >
 #. {ph1}: </a >
 #: website/public/get-started/index.html:1222
@@ -5307,11 +5307,11 @@ msgid ""
 "agent."
 msgstr ""
 
-#. {ph0}: <a href="https://github.com/morluto/tensor/blob/main/docs/getting-
+#. {ph0}: <a href="https://github.com/tensor-9/tensor/blob/main/docs/getting-
 #. started/installation.md#ghidra" >
 #. {ph1}: </a >
 #. {ph2}: <a
-#. href="https://github.com/morluto/tensor/blob/main/docs/providers/windows-
+#. href="https://github.com/tensor-9/tensor/blob/main/docs/providers/windows-
 #. ghidra-p0.md" >
 #. {ph3}: </a >
 #: website/public/get-started/index.html:1258
@@ -5344,7 +5344,7 @@ msgid ""
 msgstr ""
 
 #. {ph0}: <a
-#. href="https://github.com/morluto/tensor/blob/main/CONTRIBUTING.md#development-
+#. href="https://github.com/tensor-9/tensor/blob/main/CONTRIBUTING.md#development-
 #. setup" >
 #. {ph1}: </a >
 #. {ph2}: <code>6.4.0</code>
@@ -5415,7 +5415,7 @@ msgid ""
 msgstr ""
 
 #. {ph0}: <a
-#. href="https://github.com/morluto/tensor/blob/main/docs/providers/ida-
+#. href="https://github.com/tensor-9/tensor/blob/main/docs/providers/ida-
 #. provider.md" >
 #. {ph1}: </a >
 #: website/public/get-started/index.html:1376
@@ -5580,15 +5580,15 @@ msgid "Process behavior"
 msgstr ""
 
 #. {ph0}: <a
-#. href="https://github.com/morluto/tensor/blob/main/docs/guides/android/flutter-
+#. href="https://github.com/tensor-9/tensor/blob/main/docs/guides/android/flutter-
 #. analysis.md" >
 #. {ph1}: </a >
 #. {ph2}: <a
-#. href="https://github.com/morluto/tensor/blob/main/docs/guides/javascript/javascript-
+#. href="https://github.com/tensor-9/tensor/blob/main/docs/guides/javascript/javascript-
 #. artifact-reconstruction.md" >
 #. {ph3}: </a >
 #. {ph4}: <a
-#. href="https://github.com/morluto/tensor/blob/main/docs/guides/evm/evm-
+#. href="https://github.com/tensor-9/tensor/blob/main/docs/guides/evm/evm-
 #. bytecode.md" >
 #. {ph5}: </a >
 #. {ph6}: <a href="../guides/">
@@ -5835,7 +5835,7 @@ msgid ""
 "Tensor's client configuration and skill."
 msgstr ""
 
-#. {ph0}: <a href="https://github.com/morluto/tensor/blob/main/docs/getting-
+#. {ph0}: <a href="https://github.com/tensor-9/tensor/blob/main/docs/getting-
 #. started/installation.md#diagnose-update-and-remove" >
 #. {ph1}: </a >
 #: website/public/get-started/index.html:1812
@@ -5867,7 +5867,7 @@ msgid ""
 " Electron app and a browser.{ph3}"
 msgstr ""
 
-#. {ph0}: <a href="https://github.com/morluto/tensor/issues">
+#. {ph0}: <a href="https://github.com/tensor-9/tensor/issues">
 #. {ph1}: </a >
 #. {ph2}: <span>
 #. {ph3}: </span>
@@ -6403,7 +6403,7 @@ msgid ""
 msgstr ""
 
 #. {ph0}: <a
-#. href="https://github.com/morluto/tensor/blob/main/docs/guides/web/web-network-
+#. href="https://github.com/tensor-9/tensor/blob/main/docs/guides/web/web-network-
 #. captures.md" >
 #. {ph1}: </a >
 #: website/public/guides/browser/index.html:487
@@ -10114,7 +10114,7 @@ msgstr ""
 #. squares-flag-checker/ctfcli.yaml" >
 #. {ph3}: </a >
 #. {ph4}: <a
-#. href="https://github.com/morluto/tensor/blob/main/website/evidence/ctf-masked-
+#. href="https://github.com/tensor-9/tensor/blob/main/website/evidence/ctf-masked-
 #. squares.md" >
 #. {ph5}: </a >
 #: website/public/showcase/ctf/index.html:704
@@ -13525,10 +13525,10 @@ msgid ""
 "name warnings identify places to review; they do not remove those values."
 msgstr ""
 
-#. {ph0}: <a href="https://github.com/morluto/tensor/blob/main/docs/agent-
+#. {ph0}: <a href="https://github.com/tensor-9/tensor/blob/main/docs/agent-
 #. environments-quickstart.md" >
 #. {ph1}: </a >
-#. {ph2}: <a href="https://github.com/morluto/tensor/blob/main/docs/agent-
+#. {ph2}: <a href="https://github.com/tensor-9/tensor/blob/main/docs/agent-
 #. environments.md" >
 #. {ph3}: </a >
 #: website/public/guides/rl-environments/index.html:474
@@ -13841,7 +13841,7 @@ msgctxt "page:index.html"
 msgid "{ph0}Join Discord{ph1} to get help and discuss your investigations."
 msgstr ""
 
-#. {ph0}: <a href="https://github.com/morluto/tensor/issues/new/choose" >
+#. {ph0}: <a href="https://github.com/tensor-9/tensor/issues/new/choose" >
 #. {ph1}: </a >
 #: website/public/index.html:1285
 #, python-brace-format
@@ -13911,7 +13911,7 @@ msgstr ""
 #. {ph0}: <a href="../../get-started/">
 #. {ph1}: </a>
 #. {ph2}: <a
-#. href="https://github.com/morluto/tensor/blob/main/docs/guides/android/android-
+#. href="https://github.com/tensor-9/tensor/blob/main/docs/guides/android/android-
 #. analysis.md" >
 #. {ph3}: </a >
 #: website/public/showcase/aegis/index.html:714

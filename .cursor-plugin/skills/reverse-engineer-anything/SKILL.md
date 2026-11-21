@@ -99,16 +99,16 @@ explicit path or endpoint and do not need it.
   for selected member fields/pages. A complete small inventory can cost less
   than extra calls and schemas. Runtime options are metadata, not files.
   Compact delivery still inventories and hashes members. See the
-  [Python packaged applications guide](https://github.com/morluto/tensor/blob/main/docs/python-packaged-applications.md).
+  [Python packaged applications guide](https://github.com/tensor-9/tensor/blob/main/docs/python-packaged-applications.md).
 - Bun `--compile` executable: `open_binary`, then `inspect_artifact`; the Bun
   module graph is the application layer. Extract stored modules and analyze the
-  JavaScript. See [Bun standalone executables](https://github.com/morluto/tensor/blob/main/docs/bun-standalone.md).
+  JavaScript. See [Bun standalone executables](https://github.com/tensor-9/tensor/blob/main/docs/bun-standalone.md).
 - Deno `deno compile` executable: `open_binary`, then `inspect_artifact`; the
   embedded virtual filesystem is the application layer. Extract stored files and
   analyze compatible JavaScript. Environment-file values and CA certificate bytes
   are retained in local Evidence with their counts and byte lengths. The npm
   snapshot length is reported and not decoded, and the executable is not run. See
-  [Deno compile executables](https://github.com/morluto/tensor/blob/main/docs/deno-standalone.md).
+  [Deno compile executables](https://github.com/tensor-9/tensor/blob/main/docs/deno-standalone.md).
 - Apple app plist, Interface Builder, asset catalog, or keyed archive resources:
   `open_bundle_resources`, then the selected resource tool. This does not
   require `CFBundleExecutable` or a deep provider. Resource sessions have no
@@ -121,7 +121,7 @@ explicit path or endpoint and do not need it.
   For external firmware scanning or extraction on Linux, use
   `inspect_firmware_regions` or `extract_firmware` with caller-supplied
   Binwalk or Unblob. Extraction needs a caller-selected new absolute output
-  directory. See the [firmware guide](https://github.com/morluto/tensor/blob/main/docs/guides/firmware/firmware-analysis.md).
+  directory. See the [firmware guide](https://github.com/tensor-9/tensor/blob/main/docs/guides/firmware/firmware-analysis.md).
 - ESP32-family app or bootloader image (`0xE9` magic): `inspect_artifact`
   without a provider; see the ESP section of `references/native-and-artifacts.md`.
 - .NET NativeAOT PE/ELF: native Ghidra analysis. Native code can yield pseudocode;
@@ -167,7 +167,7 @@ explicit path or endpoint and do not need it.
   old-generation heap is `TENSOR_CAPTURE_DECODER_OLD_GENERATION_MIB` (default 192 MiB,
   floor 8, maximum 16384), set where Tensor starts. Host memory and `NODE_OPTIONS` do not
   raise it. See
-  [historical captures](https://github.com/morluto/tensor/blob/main/docs/guides/web/web-network-captures.md) for the exact upstream
+  [historical captures](https://github.com/tensor-9/tensor/blob/main/docs/guides/web/web-network-captures.md) for the exact upstream
   profile and credential exclusions. Qlog support starts with aioquic 1.5.0
   JSON 0.3; stream coverage and endpoint loss declarations do not recover bodies
   or establish network loss. Prefer detail summary, then kind qlog trace/stream
@@ -175,7 +175,7 @@ explicit path or endpoint and do not need it.
   Facts retain all-recorded-events-before-selection scope. Other qlog layouts
   and PCAP correlation are unsupported.
 - User-owned Electron runtime already open: `list_electron_targets`. Before an electron-main Inspector attempt, check packaged fuses with `inspect_electron_fuses`; disabled `EnableNodeCliInspectArguments` means the app ignores `--inspect`.
-- Shipped application exposure for a local `.app`, install directory, ASAR, or executable: `audit_release_exposure` / `tensor audit-release-exposure`. Each check has a stable id, a status, and fixed remediation. Unknown and unassessed checks stay in the report. This does not establish that an application is secure. Credential-marker hits report the rule id and location only. See [release exposure](https://github.com/morluto/tensor/blob/main/docs/release-exposure.md).
+- Shipped application exposure for a local `.app`, install directory, ASAR, or executable: `audit_release_exposure` / `tensor audit-release-exposure`. Each check has a stable id, a status, and fixed remediation. Unknown and unassessed checks stay in the report. This does not establish that an application is secure. Credential-marker hits report the rule id and location only. See [release exposure](https://github.com/tensor-9/tensor/blob/main/docs/release-exposure.md).
 - Packet-field discovery: `inspect_packet_fields` searches installed protocols
   and field names/types before choosing fields for `inspect_packet_capture`.
   Query/page the relevant records; registrations do not establish observed traffic.
@@ -183,7 +183,7 @@ explicit path or endpoint and do not need it.
   display filters and decode-as rules. Requires Linux, util-linux prlimit and
   TShark 4.x on an absolute `PATH` entry or via the optional absolute
   `TENSOR_TSHARK_COMMAND` override; see
-  [capture guide](https://github.com/morluto/tensor/blob/main/docs/guides/data/packet-captures.md).
+  [capture guide](https://github.com/tensor-9/tensor/blob/main/docs/guides/data/packet-captures.md).
   Packet limits count input packets before filtering. Output defaults to 50 matching
   frames; use `match_offset` / `match_limit` for later pages, or explicit null
   limit for complete matching output. Preserve the source digest across pages.
@@ -191,7 +191,7 @@ explicit path or endpoint and do not need it.
   For address/DNS/SNI/protocol summaries use `inspect_pcap_capture` with MCP
   detail summary, then retained kind pcap pages. Requires Wireshark 4.x tshark
   and capinfos, with Linux prlimit or Windows Job Objects; see
-  [packet summaries](https://github.com/morluto/tensor/blob/main/docs/guides/data/pcap-analysis.md).
+  [packet summaries](https://github.com/tensor-9/tensor/blob/main/docs/guides/data/pcap-analysis.md).
   Select an exact DNS question for address pages; page exhaustion does not prove
   network completeness. This reads recordings and does not acquire traffic.
 - Decoder discovery: `inspect_signal_decoders` searches installed decoder IDs
@@ -199,7 +199,7 @@ explicit path or endpoint and do not need it.
   relevant details before choosing settings; this does not scan hardware.
 - Recorded logic/signal traces: `decode_signal_recording` with explicit decoder,
   channel and protocol settings. On Linux with util-linux prlimit, supply sigrok-cli 0.7.2 through
-  `TENSOR_SIGROK_COMMAND`; see [recording guide](https://github.com/morluto/tensor/blob/main/docs/guides/signals/signal-recordings.md).
+  `TENSOR_SIGROK_COMMAND`; see [recording guide](https://github.com/tensor-9/tensor/blob/main/docs/guides/signals/signal-recordings.md).
   Output defaults to 50 literal lines; select annotation classes and page with
   `line_offset` / `line_limit`, or explicit null for all remaining output.
   Window counts are display lines, not annotations or samples. Preserve source digests across pages.
@@ -208,7 +208,7 @@ explicit path or endpoint and do not need it.
   through `TENSOR_WABT_BIN_DIRECTORY`; retain exact byte/tool identity and decoded WAT.
   Select JavaScript glue and candidate paths explicitly and preserve URL/path
   ambiguity. No implicit fetch or target execution; WAT is not original source.
-  See the [WASM guide](https://github.com/morluto/tensor/blob/main/docs/guides/wasm/wasm-artifacts.md).
+  See the [WASM guide](https://github.com/tensor-9/tensor/blob/main/docs/guides/wasm/wasm-artifacts.md).
 - Explicit local Android APK (or ZIP/AAB) signing: `inspect_apk_signature`.
   Prefer its summary or selected signer/digest/lineage page; retain complete
   Evidence and use `inspect_analysis_view` kind `apk-signature` for follow-ups.
@@ -216,7 +216,7 @@ explicit path or endpoint and do not need it.
   certificate SHA-256 fingerprint (v1 included, from its PKCS#7 block), v3 key-rotation lineage, source stamp, and
   whether each signed digest still matches the bytes (self-consistency). This
   is identity and integrity, not a trust or authenticity verdict.
-  See the [APK signature guide](https://github.com/morluto/tensor/blob/main/docs/apk-signature.md).
+  See the [APK signature guide](https://github.com/tensor-9/tensor/blob/main/docs/apk-signature.md).
 - Explicit local EVM bytecode carrier: `inspect_evm_interface` with caller-selected
   `raw` or `hex` encoding. The owned worker deadline is `timeout_ms` (default
   30000 ms, range 1..2147483647, next call). Select byte, address-space and CPU
@@ -229,7 +229,7 @@ explicit path or endpoint and do not need it.
   Evidence stays retained under its original identity. Use the returned
   `parent_evidence_id` for exact function or `bytecode_hex`/stdout/stderr pages.
   Candidate coverage does not establish interface completeness. See the
-  [EVM bytecode guide](https://github.com/morluto/tensor/blob/main/docs/guides/evm/evm-bytecode.md).
+  [EVM bytecode guide](https://github.com/tensor-9/tensor/blob/main/docs/guides/evm/evm-bytecode.md).
 - Embedded Go compiler, module, build-setting metadata, or static `(ptr, len)`
   string literals: `inspect_go_binary` with the explicit local file (pass
   `include_string_literals: true` and optional `max_string_literals` for bounded
@@ -239,7 +239,7 @@ explicit path or endpoint and do not need it.
   raw module bytes and source ranges; absent metadata does not prove a binary is
   not Go, static string recovery excludes compiler-inlined stack or immediate
   strings, and unparsed text records remain explicit. See the
-  [Go binary guide](https://github.com/morluto/tensor/blob/main/docs/guides/native/go-binaries.md).
+  [Go binary guide](https://github.com/tensor-9/tensor/blob/main/docs/guides/native/go-binaries.md).
 - Embedded CUDA/HIP code objects: `inspect_gpu_code_objects`; inventory targets
   first, then decode selected payloads and query retained GPU Evidence.
 - Bundled GGUF or safetensors model declarations: `inspect_model_artifact`
@@ -250,7 +250,7 @@ explicit path or endpoint and do not need it.
   batched metadata keys, tensor names or type totals, selected fields and pages.
   Preserve header-scoped indices and array preview omissions; do not infer model
   behavior from declared architecture or tensor types. See the
-  [model file guide](https://github.com/morluto/tensor/blob/main/docs/model-artifacts.md).
+  [model file guide](https://github.com/tensor-9/tensor/blob/main/docs/model-artifacts.md).
 - Unity IL2CPP names, member owners and string literals from `global-metadata.dat`:
   `inspect_il2cpp_metadata` with the explicit local file; MCP defaults to compact
   counts. Query sections, images, types, methods, fields, properties, events,
@@ -261,7 +261,7 @@ explicit path or endpoint and do not need it.
   Versions 24, 27, 29, 31 and 39; no Unity, IL2CPP
   binary or disassembler is run. Unrecognized magic (possibly encrypted) and
   other versions are unsupported. Optional matching `binary_path` enables static native addresses and type references; query `method_addresses` with indices or addresses/states, preserving every shared-body method and both artifact identities. Without a linked binary native counts remain unknown. Byte-pattern fallback is inferred; no runtime behavior or same-build pairing is proved. See the
-  [IL2CPP metadata guide](https://github.com/morluto/tensor/blob/main/docs/il2cpp-metadata.md).
+  [IL2CPP metadata guide](https://github.com/tensor-9/tensor/blob/main/docs/il2cpp-metadata.md).
 - Embedded cargo-auditable Rust dependency metadata: `inspect_rust_binary`
   with the explicit local ELF, PE, thin Mach-O, or WebAssembly core-module
   file. This built-in target-free inspection requires no Rust installation or
@@ -276,7 +276,7 @@ explicit path or endpoint and do not need it.
   subsequent filters. Keep the complete parent Evidence accessible; CLI compact
   delivery requires `--evidence_output`.
   See the
-  [Rust binary guide](https://github.com/morluto/tensor/blob/main/docs/rust-binaries.md).
+  [Rust binary guide](https://github.com/tensor-9/tensor/blob/main/docs/rust-binaries.md).
 - Maven POM or Gradle module metadata: `inspect_maven_gradle_metadata` with
   the explicit local `pom.xml` or `.module` file. This built-in target-free
   inspection requires no Maven or Gradle. Preserve coordinates as spelled,
@@ -284,7 +284,7 @@ explicit path or endpoint and do not need it.
   rich versions, and unresolved property or parent references. Interpolation,
   inheritance, tree resolution, and repository access are not performed. See
   the
-  [Maven POM and Gradle module metadata guide](https://github.com/morluto/tensor/blob/main/docs/maven-gradle-metadata.md).
+  [Maven POM and Gradle module metadata guide](https://github.com/tensor-9/tensor/blob/main/docs/maven-gradle-metadata.md).
 - PE Authenticode certificate table: `inspect_pe_certificates` with the explicit
   local PE32/PE32+ file. This built-in target-free inspection requires no
   Windows SDK. Preserve WIN_CERTIFICATE ranges, types, payload SHA-256, and
@@ -292,7 +292,7 @@ explicit path or endpoint and do not need it.
   when the signer uses that form. A missing security directory is observed
   absence of that table, not proof the image is unsigned in every catalog sense.
   Signatures are not verified. See the
-  [PE certificate guide](https://github.com/morluto/tensor/blob/main/docs/pe-certificates.md).
+  [PE certificate guide](https://github.com/tensor-9/tensor/blob/main/docs/pe-certificates.md).
 - PE import and delay-load tables: `inspect_pe_imports` with the explicit
   local PE32/PE32+ file. This built-in target-free inspection requires no
   Windows SDK. Preserve DLL names, named and ordinal functions, ILT/IAT RVAs,
@@ -300,7 +300,7 @@ explicit path or endpoint and do not need it.
   table. A missing import directory is observed absence of that table, not
   proof the image never imported APIs through another table. Bound snapshots
   and loaded IAT contents remain unobserved. See the
-  [PE import guide](https://github.com/morluto/tensor/blob/main/docs/pe-imports.md).
+  [PE import guide](https://github.com/tensor-9/tensor/blob/main/docs/pe-imports.md).
 - Windows Shell Link shortcuts: `inspect_windows_shortcut` with the explicit
   local `.lnk` file. This built-in target-free inspection requires no Windows
   SDK or COM. Preserve header flags and FILETIMEs, IDList items, LinkInfo
@@ -308,7 +308,7 @@ explicit path or endpoint and do not need it.
   signatures, and Tracker droid facts labelled derived. Unknown IDList items
   and ExtraData signatures stay raw with SHA-256. The target path is not
   resolved or executed. See the
-  [Windows shortcut guide](https://github.com/morluto/tensor/blob/main/docs/guides/native/windows-shortcut.md).
+  [Windows shortcut guide](https://github.com/tensor-9/tensor/blob/main/docs/guides/native/windows-shortcut.md).
 - PE TLS callbacks and load configuration: `inspect_pe_load_config` with the
   explicit local PE32/PE32+ file. This built-in target-free inspection requires
   no Windows SDK. Preserve callback VAs as strings with their RVA, file offset
@@ -316,7 +316,7 @@ explicit path or endpoint and do not need it.
   EH-continuation and XFG fields. Guard-flag mitigation claims are inferred
   linker declarations, not proof of enforcement. A missing directory is observed
   absence of that declaration. See the
-  [PE load configuration guide](https://github.com/morluto/tensor/blob/main/docs/pe-load-config.md).
+  [PE load configuration guide](https://github.com/tensor-9/tensor/blob/main/docs/pe-load-config.md).
 - ELF, PE, and Mach-O hardening: `inspect_binary_hardening` with the explicit
   local file. This built-in target-free inspection requires no pwntools or other
   host tool. One image per Mach-O slice. Each property is `enabled`, `disabled`,
@@ -325,13 +325,13 @@ explicit path or endpoint and do not need it.
   proof the protection was omitted. Authenticode and Mach-O code signatures
   report presence, not validity. Hardened runtime stays unknown and names
   `inspect_signature`. The image is not executed. See the
-  [binary hardening guide](https://github.com/morluto/tensor/blob/main/docs/binary-hardening.md).
+  [binary hardening guide](https://github.com/tensor-9/tensor/blob/main/docs/binary-hardening.md).
 - ELF note tables: `inspect_elf_notes` with the explicit local ELF32/ELF64
   file. This built-in target-free inspection requires no disassembler. Preserve
   PT_NOTE and SHT_NOTE ranges, owners, types, descriptor SHA-256, and GNU
   build-id or ABI-tag fields. A missing table is observed absence of those
   declarations, not proof the image never carried notes. See the
-  [ELF notes guide](https://github.com/morluto/tensor/blob/main/docs/elf-notes.md).
+  [ELF notes guide](https://github.com/tensor-9/tensor/blob/main/docs/elf-notes.md).
 - DWARF compile units: `inspect_dwarf_units` with the explicit local ELF,
   Mach-O, or PE file, or the DWARF file inside a `.dSYM` bundle. This built-in
   target-free inspection requires no disassembler. It reads DWARF 2 through 5
@@ -342,7 +342,7 @@ explicit path or endpoint and do not need it.
   applies to this file only. Per-unit gaps stay in `issues`. Child DIEs, types,
   line tables, and location expressions are not read. Universal Mach-O
   requires `architecture`. See the
-  [DWARF compile units guide](https://github.com/morluto/tensor/blob/main/docs/guides/native/dwarf-units.md).
+  [DWARF compile units guide](https://github.com/tensor-9/tensor/blob/main/docs/guides/native/dwarf-units.md).
 
 - Separate ELF debug files: `inspect_elf_debug_link` with the explicit local
   ELF32/ELF64 file. This built-in target-free inspection requires no
@@ -353,7 +353,7 @@ explicit path or endpoint and do not need it.
   does_not_match, or cannot_verify. A missing section is observed absence only
   when section names are complete. The `.gnu_debugdata` xz payload is not
   decoded. See the
-  [ELF debug files guide](https://github.com/morluto/tensor/blob/main/docs/guides/native/elf-debug-link.md).
+  [ELF debug files guide](https://github.com/tensor-9/tensor/blob/main/docs/guides/native/elf-debug-link.md).
 
 - ELF load-time dynamic dependencies: `inspect_elf_dependencies` with the
   explicit local ELF32/ELF64 `ET_EXEC` or `ET_DYN` file. This built-in
@@ -368,7 +368,7 @@ explicit path or endpoint and do not need it.
   `inspect_recorded_crash`. For large inventories prefer `detail: "summary"`
   plus `inspect_analysis_view` kind `elf-dependencies`. CLI summary requires
   `--evidence_output`. See the
-  [ELF dependencies guide](https://github.com/morluto/tensor/blob/main/docs/elf-dependencies.md).
+  [ELF dependencies guide](https://github.com/tensor-9/tensor/blob/main/docs/elf-dependencies.md).
 
 - Code that runs before `main` or at exit in ELF or Mach-O:
   `inspect_native_initializers` with the explicit local file (and
@@ -376,7 +376,7 @@ explicit path or endpoint and do not need it.
   disassembler. Preserve slot and target addresses, the `resolution` of each
   entry, and its limitations. An `unresolved` slot is not a zero pointer, and a
   missing table is not proof that no constructor exists. See the
-  [initializer guide](https://github.com/morluto/tensor/blob/main/docs/guides/native/native-initializers.md).
+  [initializer guide](https://github.com/tensor-9/tensor/blob/main/docs/guides/native/native-initializers.md).
 
 - ELF unwind function ranges: `inspect_elf_unwind_ranges` with the explicit
   local ELF32/ELF64 file. This built-in target-free inspection requires no
@@ -386,7 +386,7 @@ explicit path or endpoint and do not need it.
   not proof the image has no functions. `.debug_frame` is reported present
   or absent and is not decoded. CFA instructions are counted and not
   evaluated. See the
-  [ELF unwind ranges guide](https://github.com/morluto/tensor/blob/main/docs/guides/native/elf-unwind-ranges.md).
+  [ELF unwind ranges guide](https://github.com/tensor-9/tensor/blob/main/docs/guides/native/elf-unwind-ranges.md).
 - Apple `.ips` crash reports: `inspect_apple_ips` with the explicit local
   file. This built-in target-free inspection requires no Xcode, atos, or
   pwntools. Preserve first-line metadata, `bug_type` as a string, process and
@@ -396,7 +396,7 @@ explicit path or endpoint and do not need it.
   Select an optional `join_path` for UUID-and-architecture matching to one
   local Mach-O or dSYM; preserve slice identity and unjoined reasons. Joined
   static addresses do not resolve function names or dSYM symbols. See the
-  [Apple IPS guide](https://github.com/morluto/tensor/blob/main/docs/apple-ips.md).
+  [Apple IPS guide](https://github.com/tensor-9/tensor/blob/main/docs/apple-ips.md).
 - Linux kernel module metadata: `inspect_kernel_module` with the explicit local
   ELF32/ELF64 relocatable file. This built-in target-free inspection requires
   no Linux host or `modinfo`. Preserve `.modinfo` key order and duplicate keys,
@@ -406,7 +406,7 @@ explicit path or endpoint and do not need it.
   `struct module` is not decoded. The signature is not validated. gzip, xz, and
   zstd containers are unsupported; decompress into a separate file with an
   external codec utility, then inspect the decompressed `ET_REL` image. See the
-  [kernel module guide](https://github.com/morluto/tensor/blob/main/docs/kernel-modules.md).
+  [kernel module guide](https://github.com/tensor-9/tensor/blob/main/docs/kernel-modules.md).
 - Linux kernel version and build config (`CONFIG_*` options such as
   `CONFIG_SECURITY_SELINUX`): `inspect_kernel_build_config` with the explicit
   local `vmlinux`, raw `Image`, x86 `bzImage`, or `configs.ko`. This built-in
@@ -416,14 +416,14 @@ explicit path or endpoint and do not need it.
   and `IKCFG_ED`. An absent config may mean the kernel was built without
   `CONFIG_IKCONFIG`. Non-gzip payloads are unsupported; decompress externally,
   then inspect the result. See the
-  [kernel build config guide](https://github.com/morluto/tensor/blob/main/docs/guides/native/kernel-build-config.md).
+  [kernel build config guide](https://github.com/tensor-9/tensor/blob/main/docs/guides/native/kernel-build-config.md).
 - CPython 3.7–3.15 `.pyc` header, nested marshal code objects and bytecode
   identity: `inspect_python_pyc` with the explicit local file. This built-in
   target-free inspection requires no Python installation. Preserve magic,
   PEP 552 hash or mtime/size, nested names, and bytecode SHA-256. Bytecode is
   not decompiled, and a decoded header does not prove the matching `.py` is
   present. See the
-  [CPython pyc guide](https://github.com/morluto/tensor/blob/main/docs/python-pyc.md).
+  [CPython pyc guide](https://github.com/tensor-9/tensor/blob/main/docs/python-pyc.md).
 - Erlang BEAM IFF container: `inspect_erlang_beam` with the explicit local
   `.beam` file. This built-in target-free inspection requires no Erlang
   installation. Preserve chunk names, atom order, export/import/lambda tables,
@@ -431,7 +431,7 @@ explicit path or endpoint and do not need it.
   `beam` view (collection, names/indices, fields and paging), retaining the full
   Evidence. CLI summary requires `--evidence_output`. Missing table counts stay
   null; decoded empty tables count zero. Bytecode is not executed. See the
-  [Erlang BEAM guide](https://github.com/morluto/tensor/blob/main/docs/erlang-beam.md).
+  [Erlang BEAM guide](https://github.com/tensor-9/tensor/blob/main/docs/erlang-beam.md).
 - NuGet `.nupkg` package identity, dependency groups and ZIP inventory:
   `inspect_nuget_nupkg` with the explicit local file. This built-in
   target-free inspection does not restore the package, execute it, or contact a
@@ -439,7 +439,7 @@ explicit path or endpoint and do not need it.
   spelled, and path-derived member roles. Missing, ambiguous, or malformed
   `.nuspec` members still return the inventory with limitations. Encrypted
   members are listed and not extracted. See the
-  [NuGet packages guide](https://github.com/morluto/tensor/blob/main/docs/guides/managed/nuget-nupkg.md).
+  [NuGet packages guide](https://github.com/tensor-9/tensor/blob/main/docs/guides/managed/nuget-nupkg.md).
 
 - Explicit local SQLite database snapshot: `inspect_sqlite_database`. Inspect
   with Node.js 24.x >=24.15 or 26+ providing native SQLite limits. Read schema
@@ -448,17 +448,17 @@ explicit path or endpoint and do not need it.
   20 rows; request `schema_scope: "database"` for the complete stored schema. Preserve both database and existing sibling WAL identity; row samples
   report truncation and have unspecified order. Use a quiescent snapshot rather
   than assuming a live database/WAL pair was copied atomically. See the
-  [SQLite guide](https://github.com/morluto/tensor/blob/main/docs/guides/data/sqlite-databases.md).
+  [SQLite guide](https://github.com/tensor-9/tensor/blob/main/docs/guides/data/sqlite-databases.md).
 - Explicit Linux ELF file for offline layout, symbols, relocations or static
   mitigation evidence: `inspect_binary_layout`. This target-free operation uses
   caller-supplied pwntools without opening a disassembler database. Preserve its
   raw locations and inference/coverage limits; see the
-  [offline binary guide](https://github.com/morluto/tensor/blob/main/docs/guides/native/binary-diagnostics.md).
+  [offline binary guide](https://github.com/tensor-9/tensor/blob/main/docs/guides/native/binary-diagnostics.md).
 - Supplied Linux x86-64 ELF core: `inspect_recorded_crash`. Read every recorded
   thread, raw note and source-bound register without opening a live target.
   Historical PIDs do not select live processes. Request `include_debugger_context`
   only when core-only mapping candidates help; see the
-  [recorded crash guide](https://github.com/morluto/tensor/blob/main/docs/guides/native/recorded-crashes.md).
+  [recorded crash guide](https://github.com/tensor-9/tensor/blob/main/docs/guides/native/recorded-crashes.md).
 - PE resource type/name/language trees and static icon group references:
   `inspect_pe_resources` with an explicit path. This portable operation requires
   no active target or engine; opaque payloads retain file ranges and SHA-256.
@@ -482,10 +482,10 @@ The native attached profile binds the already-open GUI input by SHA-256 and
 leaves its database open. The modern headless profile creates and closes an
 owned private database without saving; it reuses
 [mrexodia/ida-pro-mcp](https://github.com/mrexodia/ida-pro-mcp). See the
-[IDA provider guide](https://github.com/morluto/tensor/blob/main/docs/providers/ida-provider.md).
+[IDA provider guide](https://github.com/tensor-9/tensor/blob/main/docs/providers/ida-provider.md).
 A registration naming the removed ida-pro-mcp 1.4 `"legacy"` protocol is
 refused; follow the guide's
-[legacy attached migration](https://github.com/morluto/tensor/blob/main/docs/providers/ida-provider.md#migrate-a-legacy-attached-registration)
+[legacy attached migration](https://github.com/tensor-9/tensor/blob/main/docs/providers/ida-provider.md#migrate-a-legacy-attached-registration)
 instead of editing the protocol value. No IDA profile provides direct callers;
 check session availability and the guide's verification limits.
 Proceed directly to `analyze_function`, pseudocode, or function/string searches
@@ -505,7 +505,7 @@ answer can come from a single-function run (its limitations say so); assembly
 waits for the export. For pseudocode and assembly, `raw_result.source` names the
 cached `.c`/`.asm` file and byte span, which you may search directly instead of
 calling per function. See the
-[Kuna provider guide](https://github.com/morluto/tensor/blob/main/docs/kuna-provider.md).
+[Kuna provider guide](https://github.com/tensor-9/tensor/blob/main/docs/kuna-provider.md).
 
 If the user says only "my app" without a name, path, or target already selected
 for this task, ask which app before searching for artifacts. Paths in unrelated

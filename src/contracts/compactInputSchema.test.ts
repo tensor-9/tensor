@@ -256,7 +256,7 @@ it("keeps pattern-admitted property names open in reduced schemas", () => {
 });
 
 it("inlines the Kimi/Moonshot-rejected reference pattern from #9581", () => {
-  // Minimal trigger from morluto/tensor#9581: Moonshot rejects a $ref whose
+  // Minimal trigger from tensor-9/tensor#9581: Moonshot rejects a $ref whose
   // target is a oneOf whose branches contain another $ref ("detected
   // infinite recursion without termination condition"), even though none
   // of these schemas actually recurse. The compact presentation inlines

@@ -12,11 +12,11 @@
 [![npm version](https://img.shields.io/npm/v/tensor-agents?style=flat-square&color=cb3837)](https://www.npmjs.com/package/tensor-agents)
 [![MCP tool catalog](https://img.shields.io/badge/MCP-tool_catalog-5c4ee5?style=flat-square)](../reference/mcp-contracts.md#generated-catalog)
 [![Node.js requirements](https://img.shields.io/badge/Node.js-requirements-339933?style=flat-square&logo=nodedotjs&logoColor=white)](#current-status)
-[![skills.sh](https://skills.sh/b/morluto/tensor?style=flat-square)](https://skills.sh/morluto/tensor/reverse-engineer-anything)
+[![skills.sh](https://skills.sh/b/tensor-9/tensor?style=flat-square)](https://skills.sh/tensor-9/tensor/reverse-engineer-anything)
 [![MIT license](https://img.shields.io/badge/license-MIT-f4c430?style=flat-square)](../../LICENSE)
 [![Discord](https://img.shields.io/discord/1556595354999332884?logo=discord&logoColor=white&label=Discord&color=5865F2)](https://discord.gg/GkcryMnJDM)
 
-<a href="https://trendshift.io/repositories/82054?utm_source=repository-badge&amp;utm_medium=badge&amp;utm_campaign=badge-repository-82054" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/repositories/82054" alt="morluto%2Ftensor | Trendshift" width="250" height="55"/></a>
+<a href="https://trendshift.io/repositories/82054?utm_source=repository-badge&amp;utm_medium=badge&amp;utm_campaign=badge-repository-82054" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/repositories/82054" alt="tensor-9%2Ftensor | Trendshift" width="250" height="55"/></a>
 
 **[Website](https://tensor.tools/de/) · [Anleitungen](https://tensor.tools/de/guides/) · [Fallstudien](https://tensor.tools/de/showcase/)**
 
@@ -29,7 +29,7 @@
 </div>
 
 > [!IMPORTANT]
-> Offizielle Quellen für Tensor: [morluto/tensor](https://github.com/morluto/tensor), [tensor.tools](https://tensor.tools/), [tensor-agents](https://www.npmjs.com/package/tensor-agents) (npm).
+> Offizielle Quellen für Tensor: [tensor-9/tensor](https://github.com/tensor-9/tensor), [tensor.tools](https://tensor.tools/), [tensor-agents](https://www.npmjs.com/package/tensor-agents) (npm).
 > Folge den Installations- und Release-Links aus diesen offiziellen Quellen. Ein ähnlicher Repository-Name oder eine kopierte README belegt nicht, dass ein Download offiziell ist.
 
 <div align="center">
@@ -245,7 +245,7 @@ Zeichne eine Webanwendungssitzung auf, verwandle ihre API in Werkzeuge und expor
 [Anleitung zum Erstellen einer Umgebung](https://tensor.tools/guides/rl-environments/) ·
 [Demo auf X ansehen](https://x.com/tensortools/status/2112574822584918075?s=20)
 
-Wenn du mit Tensor etwas Interessantes untersucht hast, würden wir es gern sehen. Teile deine Fallstudie in einem [Issue](https://github.com/morluto/tensor/issues) oder [Pull Request](https://github.com/morluto/tensor/pulls) und beschreibe das Ziel, deine Frage, wie Tensor geholfen hat und was du herausgefunden hast.
+Wenn du mit Tensor etwas Interessantes untersucht hast, würden wir es gern sehen. Teile deine Fallstudie in einem [Issue](https://github.com/tensor-9/tensor/issues) oder [Pull Request](https://github.com/tensor-9/tensor/pulls) und beschreibe das Ziel, deine Frage, wie Tensor geholfen hat und was du herausgefunden hast.
 
 <a id="build-rl-environments"></a>
 
@@ -350,7 +350,7 @@ Für die Agenteneinrichtung über `npx`:
 npx tensor-agents@latest setup
 ```
 
-Wenn du einen Agenten verwendest, schließe die [Aktualisierung der Einrichtung](#tensor-aktualisieren) ab und starte ihn neu. Wiederhole dieselbe Aufgabe. Besteht das Problem weiterhin, [öffne ein Issue](https://github.com/morluto/tensor/issues) mit deiner Tensor-Version, dem Zieltyp, den Reproduktionsschritten und der Fehlerausgabe.
+Wenn du einen Agenten verwendest, schließe die [Aktualisierung der Einrichtung](#tensor-aktualisieren) ab und starte ihn neu. Wiederhole dieselbe Aufgabe. Besteht das Problem weiterhin, [öffne ein Issue](https://github.com/tensor-9/tensor/issues) mit deiner Tensor-Version, dem Zieltyp, den Reproduktionsschritten und der Fehlerausgabe.
 
 </details>
 
@@ -372,11 +372,11 @@ Melde Sicherheitslücken gemäß [SECURITY.md](../../SECURITY.md).
 
 Danke an alle, die Tensor nutzen, Fehler melden, Funktionswünsche äußern, Builds testen und Fehlerbehebungen beitragen.
 
-<a href="https://www.star-history.com/?repos=morluto%2Ftensor&amp;type=date">
+<a href="https://www.star-history.com/?repos=tensor-9%2Ftensor&amp;type=date">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=morluto/tensor&amp;type=date&amp;theme=dark&amp;legend=top-left" />
-    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=morluto/tensor&amp;type=date" />
-    <img alt="GitHub-Sternverlauf von Tensor" src="https://api.star-history.com/chart?repos=morluto/tensor&amp;type=date" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=tensor-9/tensor&amp;type=date&amp;theme=dark&amp;legend=top-left" />
+    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=tensor-9/tensor&amp;type=date" />
+    <img alt="GitHub-Sternverlauf von Tensor" src="https://api.star-history.com/chart?repos=tensor-9/tensor&amp;type=date" />
   </picture>
 </a>
 
@@ -392,7 +392,7 @@ applicable licenses.
 
 ## Mitwirken
 
-Wir freuen uns über deine Hilfe bei Tensor! [Öffne ein Issue](https://github.com/morluto/tensor/issues), um einen Fehler zu melden oder eine Funktion vorzuschlagen, oder [sende einen Pull Request](https://github.com/morluto/tensor/pulls), um Code oder Dokumentation zu verbessern.
+Wir freuen uns über deine Hilfe bei Tensor! [Öffne ein Issue](https://github.com/tensor-9/tensor/issues), um einen Fehler zu melden oder eine Funktion vorzuschlagen, oder [sende einen Pull Request](https://github.com/tensor-9/tensor/pulls), um Code oder Dokumentation zu verbessern.
 
 Die Entwicklungsumgebung und Prüfungen beschreibt [CONTRIBUTING.md](../../CONTRIBUTING.md), die Verifikationspfade der [Testleitfaden](../development/testing.md).
 

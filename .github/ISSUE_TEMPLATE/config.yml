@@ -1,11 +1,11 @@
 blank_issues_enabled: false
 contact_links:
   - name: Contribution scope and integration requirements
-    url: https://github.com/morluto/tensor/blob/main/CONTRIBUTING.md#contribution-scope
+    url: https://github.com/tensor-9/tensor/blob/main/CONTRIBUTING.md#contribution-scope
     about: Check supported capabilities, excluded workflows, and the fail-closed integration rule before proposing a feature.
   - name: Tensor Documentation
-    url: https://github.com/morluto/tensor#readme
+    url: https://github.com/tensor-9/tensor#readme
     about: Read the README and AGENTS.md for usage guides and configuration details.
   - name: Question or Discussion
-    url: https://github.com/morluto/tensor/discussions
+    url: https://github.com/tensor-9/tensor/discussions
     about: Please ask questions and start discussions here.

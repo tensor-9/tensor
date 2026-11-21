@@ -299,7 +299,7 @@ async function exerciseTrustedRetentionWithLegacyTarget(
     cwd: runnerWorkspace,
     env: {
       PATH: join(runnerWorkspace, "bin"),
-      CI_REPOSITORY: "morluto/tensor",
+      CI_REPOSITORY: "tensor-9/tensor",
       CACHE_PREFIX: prefix,
       CACHE_KEEP_KEY: keepKey,
       FAKE_GH_LOG: ghLog,
@@ -322,7 +322,7 @@ async function exerciseTrustedRetentionWithLegacyTarget(
     listing!.slice("GET ".length),
     "https://example.test",
   );
-  expect(endpoint.pathname).toBe("/repos/morluto/tensor/actions/caches");
+  expect(endpoint.pathname).toBe("/repos/tensor-9/tensor/actions/caches");
   expect(Object.fromEntries(endpoint.searchParams)).toEqual({
     per_page: "100",
     page: "1",
@@ -330,7 +330,7 @@ async function exerciseTrustedRetentionWithLegacyTarget(
     direction: "desc",
     key: prefix,
   });
-  expect(deletion).toBe("DELETE repos/morluto/tensor/actions/caches/1");
+  expect(deletion).toBe("DELETE repos/tensor-9/tensor/actions/caches/1");
 }
 
 describe("hosted npm download-cache policy", () => {

@@ -167,7 +167,7 @@ export async function verifyPackagePack({ root, workspace, commands }) {
   const readPackedJson = async (archivePath) =>
     JSON.parse(await readPackedText(archivePath));
   const packedManifest = await readPackedJson("package/package.json");
-  if (packedManifest.mcpName !== "io.github.morluto/tensor")
+  if (packedManifest.mcpName !== "io.github.tensor-9/tensor")
     throw new Error("package did not retain its MCP Registry ownership marker");
   const packedLock = await readPackedJson("package/npm-shrinkwrap.json");
   if (

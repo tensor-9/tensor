@@ -12,11 +12,11 @@
 [![npm version](https://img.shields.io/npm/v/tensor-agents?style=flat-square&color=cb3837)](https://www.npmjs.com/package/tensor-agents)
 [![MCP tool catalog](https://img.shields.io/badge/MCP-tool_catalog-5c4ee5?style=flat-square)](../reference/mcp-contracts.md#generated-catalog)
 [![Node.js requirements](https://img.shields.io/badge/Node.js-requirements-339933?style=flat-square&logo=nodedotjs&logoColor=white)](#current-status)
-[![skills.sh](https://skills.sh/b/morluto/tensor?style=flat-square)](https://skills.sh/morluto/tensor/reverse-engineer-anything)
+[![skills.sh](https://skills.sh/b/tensor-9/tensor?style=flat-square)](https://skills.sh/tensor-9/tensor/reverse-engineer-anything)
 [![MIT license](https://img.shields.io/badge/license-MIT-f4c430?style=flat-square)](../../LICENSE)
 [![Discord](https://img.shields.io/discord/1556595354999332884?logo=discord&logoColor=white&label=Discord&color=5865F2)](https://discord.gg/GkcryMnJDM)
 
-<a href="https://trendshift.io/repositories/82054?utm_source=repository-badge&amp;utm_medium=badge&amp;utm_campaign=badge-repository-82054" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/repositories/82054" alt="morluto%2Ftensor | Trendshift" width="250" height="55"/></a>
+<a href="https://trendshift.io/repositories/82054?utm_source=repository-badge&amp;utm_medium=badge&amp;utm_campaign=badge-repository-82054" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/repositories/82054" alt="tensor-9%2Ftensor | Trendshift" width="250" height="55"/></a>
 
 **[เว็บไซต์](https://tensor.tools/th/) · [คู่มือ](https://tensor.tools/th/guides/) · [ตัวอย่างการใช้งาน](https://tensor.tools/th/showcase/)**
 
@@ -29,7 +29,7 @@
 </div>
 
 > [!IMPORTANT]
-> แหล่งทางการของ Tensor: [morluto/tensor](https://github.com/morluto/tensor), [tensor.tools](https://tensor.tools/), [tensor-agents](https://www.npmjs.com/package/tensor-agents) (npm).
+> แหล่งทางการของ Tensor: [tensor-9/tensor](https://github.com/tensor-9/tensor), [tensor.tools](https://tensor.tools/), [tensor-agents](https://www.npmjs.com/package/tensor-agents) (npm).
 > โปรดใช้ลิงก์ติดตั้งและรุ่นเผยแพร่จากแหล่งทางการเหล่านี้ ชื่อที่เก็บโค้ดที่คล้ายกันหรือ README ที่คัดลอกมาไม่ได้ยืนยันว่าไฟล์ดาวน์โหลดเป็นของทางการ
 
 <div align="center">
@@ -245,7 +245,7 @@ Tensor ต้องใช้ Node.js 22.x (>=22.23.4), 24.x (>=24.22.1) หร�
 [คู่มือสร้างสภาพแวดล้อม](https://tensor.tools/guides/rl-environments/) ·
 [ชมเดโมบน X](https://x.com/tensortools/status/2112574822584918075?s=20)
 
-หากคุณใช้ Tensor กับสิ่งที่น่าสนใจ เราอยากเห็นผลงานของคุณ แบ่งปันกรณีของคุณผ่าน [issue](https://github.com/morluto/tensor/issues) หรือ [pull request](https://github.com/morluto/tensor/pulls) พร้อมระบุเป้าหมาย คำถามของคุณ Tensor ช่วยอย่างไร และสิ่งที่คุณค้นพบ
+หากคุณใช้ Tensor กับสิ่งที่น่าสนใจ เราอยากเห็นผลงานของคุณ แบ่งปันกรณีของคุณผ่าน [issue](https://github.com/tensor-9/tensor/issues) หรือ [pull request](https://github.com/tensor-9/tensor/pulls) พร้อมระบุเป้าหมาย คำถามของคุณ Tensor ช่วยอย่างไร และสิ่งที่คุณค้นพบ
 
 <a id="build-rl-environments"></a>
 
@@ -350,7 +350,7 @@ tensor update
 npx tensor-agents@latest setup
 ```
 
-หากใช้เอเจนต์ ให้ทำ[การปรับปรุงการตั้งค่า](#อัปเดต-tensor) ให้เสร็จแล้วเริ่มเอเจนต์ใหม่ ลองงานเดิมอีกครั้ง หากยังพบปัญหา ให้[เปิด issue](https://github.com/morluto/tensor/issues) พร้อมระบุรุ่น Tensor ประเภทเป้าหมาย ขั้นตอนทำให้เกิดปัญหา และข้อความข้อผิดพลาด
+หากใช้เอเจนต์ ให้ทำ[การปรับปรุงการตั้งค่า](#อัปเดต-tensor) ให้เสร็จแล้วเริ่มเอเจนต์ใหม่ ลองงานเดิมอีกครั้ง หากยังพบปัญหา ให้[เปิด issue](https://github.com/tensor-9/tensor/issues) พร้อมระบุรุ่น Tensor ประเภทเป้าหมาย ขั้นตอนทำให้เกิดปัญหา และข้อความข้อผิดพลาด
 
 </details>
 
@@ -372,11 +372,11 @@ npx tensor-agents@latest setup
 
 ขอบคุณทุกคนที่ใช้ Tensor รายงานบั๊ก เสนอฟีเจอร์ ทดสอบบิลด์ และช่วยแก้ไข
 
-<a href="https://www.star-history.com/?repos=morluto%2Ftensor&amp;type=date">
+<a href="https://www.star-history.com/?repos=tensor-9%2Ftensor&amp;type=date">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=morluto/tensor&amp;type=date&amp;theme=dark&amp;legend=top-left" />
-    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=morluto/tensor&amp;type=date" />
-    <img alt="ประวัติดาว GitHub ของ Tensor" src="https://api.star-history.com/chart?repos=morluto/tensor&amp;type=date" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=tensor-9/tensor&amp;type=date&amp;theme=dark&amp;legend=top-left" />
+    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=tensor-9/tensor&amp;type=date" />
+    <img alt="ประวัติดาว GitHub ของ Tensor" src="https://api.star-history.com/chart?repos=tensor-9/tensor&amp;type=date" />
   </picture>
 </a>
 
@@ -392,7 +392,7 @@ applicable licenses.
 
 ## การมีส่วนร่วม
 
-เรายินดีรับความช่วยเหลือในการพัฒนา Tensor! [เปิด issue](https://github.com/morluto/tensor/issues) เพื่อรายงานบั๊กหรือเสนอฟีเจอร์ หรือ[ส่ง pull request](https://github.com/morluto/tensor/pulls) เพื่อปรับปรุงโค้ดหรือเอกสาร
+เรายินดีรับความช่วยเหลือในการพัฒนา Tensor! [เปิด issue](https://github.com/tensor-9/tensor/issues) เพื่อรายงานบั๊กหรือเสนอฟีเจอร์ หรือ[ส่ง pull request](https://github.com/tensor-9/tensor/pulls) เพื่อปรับปรุงโค้ดหรือเอกสาร
 
 ดู [CONTRIBUTING.md](../../CONTRIBUTING.md) สำหรับการตั้งค่าสภาพแวดล้อมพัฒนาและการตรวจสอบ ดู[การทดสอบ](../development/testing.md) สำหรับแนวทางการตรวจยืนยัน
 

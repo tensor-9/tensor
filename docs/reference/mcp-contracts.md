@@ -663,7 +663,7 @@ client deadline. Configure the client's tool timeout with execution, cleanup
 and delivery headroom, or report that change is needed when not authorized.
 Session status does not establish that all target-free work stopped. Detailed
 host settings and bounded retry guidance live in the shipped skill's
-[recovery reference](https://github.com/morluto/tensor/blob/main/.agents/skills/reverse-engineer-anything/references/connection-and-recovery.md#distinguish-client-and-server-deadlines).
+[recovery reference](https://github.com/tensor-9/tensor/blob/main/.agents/skills/reverse-engineer-anything/references/connection-and-recovery.md#distinguish-client-and-server-deadlines).
 
 ### Untrusted target content
 
@@ -1589,7 +1589,7 @@ instead carries `{kind: "retained-evidence", evidence_id: ...}` for the current
 session. The refused write adds neither a record nor an Unknown revision; a
 previously retained record or Unknown remains available.
 The broader retention decision is tracked in
-[#4276](https://github.com/morluto/tensor/issues/4276).
+[#4276](https://github.com/tensor-9/tensor/issues/4276).
 
 `analyze_javascript_application` also yields between reconstruction phases and
 during graph/result sealing, cross-graph binding checks, Evidence JSON validation,
@@ -2166,7 +2166,7 @@ OpenCode client behavior.
 Some function-calling providers reject a request while any single tool's
 `parameters` schema exceeds a literal serialized size cap; Moonshot clients
 such as kimi-cli have reported failures with the full catalog attached
-([#1484](https://github.com/morluto/tensor/issues/1484)). Tensor therefore renders
+([#1484](https://github.com/tensor-9/tensor/issues/1484)). Tensor therefore renders
 every advertised input schema within a 13,312-byte budget, measured to sit below
 Moonshot's observed cap (community measurements: a 13.7 KB schema is accepted
 while a ~15 KB one is rejected). This compact presentation is the only input
@@ -2175,10 +2175,10 @@ advertisement. `TENSOR_MCP_INPUT_SCHEMA_PROFILE` accepts only `compact`; the for
 startup with a configuration error naming the setting. Remove the setting, or
 set it to `compact`. Compact presentation
 also reduces schemas whose expanded JSON tree exceeds ten levels, the limit
-reported by strict-depth MCP clients in [#2813](https://github.com/morluto/tensor/issues/2813).
+reported by strict-depth MCP clients in [#2813](https://github.com/tensor-9/tensor/issues/2813).
 WorkBuddy/CodeBuddy gateways have also rejected uncompacted Tensor catalogs with
 an opaque `11133` error while accepting the compact profile
-([#2999](https://github.com/morluto/tensor/issues/2999)); compatibility depends on
+([#2999](https://github.com/tensor-9/tensor/issues/2999)); compatibility depends on
 the selected gateway and model. That report used ZCode through a gateway to a
 Kimi-K3 backend, not the WorkBuddy MCP client. Set the profile on Tensor's
 registration in the actual MCP host; the host's name alone does not identify
@@ -2188,9 +2188,9 @@ The compact presentation also projects every advertised input schema into the
 portable advertised dialect declared in `src/contracts/advertisedDialect.ts`:
 the subset of JSON Schema that the clients and gateways Tensor has met accept,
 with one rule per observed rejection (for example strict gateways in
-[#3800](https://github.com/morluto/tensor/issues/3800), Gemini item and literal
-rules in [#5201](https://github.com/morluto/tensor/issues/5201) and
-[#4025](https://github.com/morluto/tensor/issues/4025), and VS Code's required
+[#3800](https://github.com/tensor-9/tensor/issues/3800), Gemini item and literal
+rules in [#5201](https://github.com/tensor-9/tensor/issues/5201) and
+[#4025](https://github.com/tensor-9/tensor/issues/4025), and VS Code's required
 `items`). One projection (`src/contracts/advertisedDialectProjection.ts`)
 owns it, and every rewrite is exact or widening, so a canonical-valid call is
 never refused by the advertisement:
@@ -2391,7 +2391,7 @@ reads an output schema, MCP client validators only repeat Tensor's own result
 validation, and complete output schemas were about 92% of a default
 `tools/list` (4.3 of 4.6 MB). Some clients also reject a large `tools/list`
 frame or HTTP SSE event before they load any tools (the measured pi-web-ui
-failure is in [#2512](https://github.com/morluto/tensor/issues/2512)). Select
+failure is in [#2512](https://github.com/tensor-9/tensor/issues/2512)). Select
 `compact` to bound every advertised output schema to 4,096 bytes. The former
 `full` output profile was removed; a registration that still selects it fails
 at startup with a configuration error naming the setting. Both profiles keep the same named canonical tool contract for server-side result
@@ -2400,7 +2400,7 @@ the MCP specification does not require an output schema for
 `structuredContent`.
 
 For the 1 MiB FastMCP SSE limit reported by Unsloth in
-[#9093](https://github.com/morluto/tensor/issues/9093), see the
+[#9093](https://github.com/tensor-9/tensor/issues/9093), see the
 [tested catalog configuration](../getting-started/client-configuration.md#fastmcp-and-unsloth-sse-catalog-limits).
 Hot/cold selection alone does not bound later catalog refreshes.
 
@@ -2506,7 +2506,7 @@ Custom clients upgrading from 6.1 should follow the
 Run `npm run docs:generate` in a source checkout to generate the machine-readable
 catalog at `docs/public/product-catalog.json`. Run `npm run docs:build` and
 `npm run docs:preview` to serve it locally at `/tensor/product-catalog.json`. A
-successful [CI documentation job](https://github.com/morluto/tensor/blob/main/.github/workflows/ci.yml)
+successful [CI documentation job](https://github.com/tensor-9/tensor/blob/main/.github/workflows/ci.yml)
 uploads the catalog, packaged skill, and portable conformance projections in
 the `generated-docs` artifact. These copies describe the source revision that
 generated them. For a running server, use `binary_session` for catalog identity

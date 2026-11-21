@@ -6,8 +6,8 @@ for engine prerequisites and [client verification](client-verification.md) for
 installed-client and agent runs.
 
 Historical verification records may refer to `experiments/analysis-efficiency`.
-Those experiment scripts are available in the [archived source tree](https://github.com/morluto/tensor/tree/a2e2c29b59e8775b0e6aedb09a9eb16adf32646b/experiments/analysis-efficiency);
-they are not included in current checkouts. The retained [test support](https://github.com/morluto/tensor/blob/main/tests/support/analysis-efficiency/README.md)
+Those experiment scripts are available in the [archived source tree](https://github.com/tensor-9/tensor/tree/a2e2c29b59e8775b0e6aedb09a9eb16adf32646b/experiments/analysis-efficiency);
+they are not included in current checkouts. The retained [test support](https://github.com/tensor-9/tensor/blob/main/tests/support/analysis-efficiency/README.md)
 contains deterministic checkers and fixtures. The [allocation report](../verification/analysis-efficiency/mcp-integer-allocation.md)
 and its original receipt JSON remain documentation, checked by the report producer.
 
@@ -167,7 +167,7 @@ without the artifacts lock, so it can record hashes while `check:pr` or
 `check:ci:fast` and `check:ci:deep` commands.
 Use `npm run lint:details` or `npm run jscpd:details` for all console diagnostics.
 Both duplicate commands scan production and test code using the limit in
-[`.jscpd.json`](https://github.com/morluto/tensor/blob/main/.jscpd.json).
+[`.jscpd.json`](https://github.com/tensor-9/tensor/blob/main/.jscpd.json).
 The summary commands preserve checker failures and restore reports from cached
 static tasks. Both lint caches include the website, documentation configuration,
 and experiment code scanned by the checker; a regression compares the actual
@@ -262,7 +262,7 @@ does not cap the complete process family's memory; measure the full invocation
 when enforcing a host budget.
 
 Routine iterations and rebases need focused regressions and relevant checks.
-Follow the [contributor checks](https://github.com/morluto/tensor/blob/main/CONTRIBUTING.md#development-feedback-and-pr-verification)
+Follow the [contributor checks](https://github.com/tensor-9/tensor/blob/main/CONTRIBUTING.md#development-feedback-and-pr-verification)
 before handing off a PR. Use `check:pr` for broad changes or CI diagnosis.
 Architecture guards run in `check`, `check:fast`, and `check:ci:deep`.
 The standalone test-discovery check runs in `check:ci:deep`.
@@ -559,7 +559,7 @@ touched verifier uses these helpers.
 
 ## CodeQL production scope
 
-[The production configuration](https://github.com/morluto/tensor/blob/main/.github/codeql/production.yml) excludes
+[The production configuration](https://github.com/tensor-9/tensor/blob/main/.github/codeql/production.yml) excludes
 `tests/`, `scripts/fixtures/`, `*.test.*`, `*.fixture.*`, `test_*.py`, and `*_test.py` inputs
 during extraction. It retains the default queries and the existing `local`
 threat model. Production source, bridges, runtime scripts, installation and
@@ -575,7 +575,7 @@ These exclusions do not change which behavioral tests CI executes. CodeQL's
 JavaScript/TypeScript, Python, and Actions lanes do not add shell, Java, or Swift
 analysis; their existing checks remain responsible for those languages.
 
-[The production workflow](https://github.com/morluto/tensor/blob/main/.github/workflows/codeql.yml) is inactive until a
+[The production workflow](https://github.com/tensor-9/tensor/blob/main/.github/workflows/codeql.yml) is inactive until a
 repository administrator disables CodeQL **default setup** and sets the Actions
 repository variable `TENSOR_CODEQL_ADVANCED` to `true`. Disable default setup first:
 it rejects advanced CodeQL uploads. Then enable the variable and manually run
@@ -1100,11 +1100,11 @@ does not check those calls; run their orchestration tests against the built
 modules, including the verifier's failure and cleanup paths.
 
 Representative regressions include
-[process cleanup-time SIGINT](https://github.com/morluto/tensor/blob/e78455338fe2d06c4cd03d59cbf33473d754998b/tests/boundary/process/processCaptureCancellationAdapters.test.ts),
-[late authenticated cleanup](https://github.com/morluto/tensor/blob/e78455338fe2d06c4cd03d59cbf33473d754998b/tests/boundary/providers/hopper/hopperClient.handshakeRecovery.test.ts),
-[LLDB launch and finalization](https://github.com/morluto/tensor/blob/e78455338fe2d06c4cd03d59cbf33473d754998b/tests/boundary/providers/native/lldbCallTracerFailures.test.ts),
-[composed child ownership](https://github.com/morluto/tensor/blob/e78455338fe2d06c4cd03d59cbf33473d754998b/src/application/binary/CompositeProvider.test.ts),
-and [public CLI cleanup denial](https://github.com/morluto/tensor/blob/e78455338fe2d06c4cd03d59cbf33473d754998b/tests/boundary/cli/wasmCleanupCli.test.ts).
+[process cleanup-time SIGINT](https://github.com/tensor-9/tensor/blob/e78455338fe2d06c4cd03d59cbf33473d754998b/tests/boundary/process/processCaptureCancellationAdapters.test.ts),
+[late authenticated cleanup](https://github.com/tensor-9/tensor/blob/e78455338fe2d06c4cd03d59cbf33473d754998b/tests/boundary/providers/hopper/hopperClient.handshakeRecovery.test.ts),
+[LLDB launch and finalization](https://github.com/tensor-9/tensor/blob/e78455338fe2d06c4cd03d59cbf33473d754998b/tests/boundary/providers/native/lldbCallTracerFailures.test.ts),
+[composed child ownership](https://github.com/tensor-9/tensor/blob/e78455338fe2d06c4cd03d59cbf33473d754998b/src/application/binary/CompositeProvider.test.ts),
+and [public CLI cleanup denial](https://github.com/tensor-9/tensor/blob/e78455338fe2d06c4cd03d59cbf33473d754998b/tests/boundary/cli/wasmCleanupCli.test.ts).
 These controlled probes do not replace the matching real-provider lane. Record
 the base failure, passing control, exact host/provider, verified cleanup, and
 unavailable coverage; a missing engine is not a pass.
@@ -1147,7 +1147,7 @@ exceptions.
 
 The shared temporary-directory and workspace helpers preserve caller labels
 under an owned `tensor-` prefix when needed. Their
-[cleanup ownership differs](https://github.com/morluto/tensor/blob/main/CONTRIBUTING.md#temporary-files-and-diagnostics):
+[cleanup ownership differs](https://github.com/tensor-9/tensor/blob/main/CONTRIBUTING.md#temporary-files-and-diagnostics):
 `createTestTempDirectory` registers `onTestFinished` deletion, while
 `createTestWorkspace` requires caller cleanup. Close resources before removing
 their directory. `npm run verify:test-temp-hygiene`

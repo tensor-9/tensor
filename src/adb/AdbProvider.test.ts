@@ -977,7 +977,7 @@ it("projects package details from dumpsys package output", async () => {
 
 // Package Manager prints an absent installer as the text "null"; the
 // normalized result must report the absence, not a package named "null"
-// (morluto/tensor#3943).
+// (tensor-9/tensor#3943).
 it("reports a null installer declaration as an absent installer", async () => {
   const { binary } = await writeAdbStub(
     shellStub({

@@ -93,7 +93,7 @@ it("links to the workflow asset outside the documentation site's base", async ()
     "utf8",
   );
   expect(guide).toContain(
-    "[minimal workflow](https://github.com/morluto/tensor/blob/main/examples/github-actions/tensor-analysis.yml)",
+    "[minimal workflow](https://github.com/tensor-9/tensor/blob/main/examples/github-actions/tensor-analysis.yml)",
   );
 });
 

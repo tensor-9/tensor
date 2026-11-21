@@ -26,7 +26,7 @@ their distinct classifications.
 The host must already provide util-linux `prlimit`, normally `/usr/bin/prlimit`;
 `TENSOR_EVM_PRLIMIT_COMMAND` can select another absolute executable. Tensor installs
 no system tools and changes no user configuration. [Upstream provenance and
-license](https://github.com/morluto/tensor/blob/main/third_party/evmole/README.md) are packaged.
+license](https://github.com/tensor-9/tensor/blob/main/third_party/evmole/README.md) are packaged.
 
 Limiter discovery validates the selected path without launching it. A relative
 path or directory is reported as `not_configured`, a missing file as

@@ -134,7 +134,7 @@ configurations, and an image at most 8 hash nodes; the devicetree parser's
 node, property and depth bounds also apply. The sum of declared image sizes
 is bounded by the shared archive expansion budget. These are fixed resource
 bounds with no runtime override. Configurable ceilings are tracked in
-[#6176](https://github.com/morluto/tensor/issues/6176).
+[#6176](https://github.com/tensor-9/tensor/issues/6176).
 
 ## Analyzing an image
 

@@ -1,7 +1,7 @@
 # PSP static ELF analysis through Ghidra
 
 This specialization builds on [generic MIPS support](ghidra-mips.md) for
-[#1330](https://github.com/morluto/tensor/issues/1330). It reuses Tensor's existing
+[#1330](https://github.com/tensor-9/tensor/issues/1330). It reuses Tensor's existing
 CLI/MCP, Ghidra bridge, Evidence and snapshot workflows. Allegrex instructions,
 PSP loading and calling conventions remain owned by
 [ghidra-allegrex](https://github.com/kotcrab/ghidra-allegrex).

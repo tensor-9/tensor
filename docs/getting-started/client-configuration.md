@@ -112,7 +112,7 @@ for that prefix does not isolate Tensor permissions. Inspect that client's actua
 tool names and approval rules before selecting a permission scope. Tensor setup
 does not repair a client's naming behavior or infer permission drift from an
 unfamiliar prefix. The unavailable fork reported in
-[#5512](https://github.com/morluto/tensor/issues/5512) has not been reverified.
+[#5512](https://github.com/tensor-9/tensor/issues/5512) has not been reverified.
 
 <a id="hotcold-catalogs"></a>
 
@@ -201,7 +201,7 @@ initial tools in 33,903 bytes, then explicitly refreshed through 34 loaded
 tools. Hot/cold alone later exceeded the SSE limit during refresh. Follow
 the [refresh requirements](#hotcold-catalogs).
 
-The Unsloth report [#9093](https://github.com/morluto/tensor/issues/9093) fails at
+The Unsloth report [#9093](https://github.com/tensor-9/tensor/issues/9093) fails at
 catalog delivery; the Unsloth application itself was not exercised in this
 trial. Schema compaction does not bound analysis results. Continue to use
 summary/detail selection and tool-specific paging for larger results; client
@@ -234,7 +234,7 @@ for tool-selection settings.
 
 For GitHub Copilot CLI 1.0.95, `gpt-4.1` model metadata blocked ordinary
 chat with Tensor's former full input-schema profile before sending a model request
-(`compaction_static_context_blocked`; [#1554](https://github.com/morluto/tensor/issues/1554)).
+(`compaction_static_context_blocked`; [#1554](https://github.com/tensor-9/tensor/issues/1554)).
 That profile was removed. For the native offline OpenAI-compatible BYOK adapter,
 chat and analysis with it also passed with a distinct `COPILOT_PROVIDER_MODEL_ID` such as
 `tensor-gpt-4.1`, `COPILOT_PROVIDER_WIRE_MODEL=gpt-4.1`, and that distinct ID selected
@@ -270,7 +270,7 @@ in the file the installed app reads:
   and uninstall report an unresolved location. Migrated MSIX installations
   have been observed reading `claude_desktop_config.json` in this directory.
   Quit Claude Desktop and verify its active configuration before registering
-  manually. See [#8968](https://github.com/morluto/tensor/issues/8968).
+  manually. See [#8968](https://github.com/tensor-9/tensor/issues/8968).
 - If `%LOCALAPPDATA%\Packages` holds a `Claude_<publisher ID>` package from
   another publisher, an `AnthropicPBC.Claude_<publisher ID>` package, or cannot
   be read, Tensor cannot establish which file Claude
@@ -280,7 +280,7 @@ in the file the installed app reads:
   The reported `AnthropicPBC.Claude_fnn82j28hfe8t` build can use the `Claude-3p`
   deployment directory. Tensor recognizes that package as an unresolved location;
   it does not assume that it reads the legacy AppData file or automatically
-  register in `Claude-3p`. See [#4432](https://github.com/morluto/tensor/issues/4432)
+  register in `Claude-3p`. See [#4432](https://github.com/tensor-9/tensor/issues/4432)
   for the reported build and manual registration evidence.
 
 Quit Claude Desktop fully before approving setup; closing its window is not
@@ -336,7 +336,7 @@ Claude Code normally defers MCP tool definitions through tool search. It
 when `ANTHROPIC_BASE_URL` points to a non-first-party host, such as DeepSeek's
 Anthropic-compatible endpoint. It then sends every Tensor tool's name, description
 and input schema with every request
-([#2019](https://github.com/morluto/tensor/issues/2019)). On main at 04089d5be,
+([#2019](https://github.com/tensor-9/tensor/issues/2019)). On main at 04089d5be,
 that payload measured about 496 KB with the default profile and about 290 KB
 with `compact`. By the o200k and cl100k tokenizers, that is roughly
 120k and 68k tokens. Compaction cannot remove tool definitions. If they nearly
@@ -550,7 +550,7 @@ diagnostic, the actual running Tensor version, Gemini CLI version and selected
 model. For schema rejection, review the [input presentation profiles](../reference/mcp-contracts.md#compact-input-schema-profile)
 and reconnect after changing Tensor's registration environment. Compact is the
 current default; an explicitly stored `full` choice is preserved. The generic
-error in [#4620](https://github.com/morluto/tensor/issues/4620) does not establish
+error in [#4620](https://github.com/tensor-9/tensor/issues/4620) does not establish
 which constraint failed, and local schema checks do not prove live API acceptance.
 
 ## Codex and Devin
@@ -639,7 +639,7 @@ Tensor advertises compact input schemas. A registration that still sets
 (`~/.codex/config.toml` by default) fails at startup, so remove that key and
 restart/reconnect Codex. Compact advertisement preserves the
 tool inventory and canonical server validation while reducing advertised input
-detail. The probes in [#5160](https://github.com/morluto/tensor/issues/5160) covered
+detail. The probes in [#5160](https://github.com/tensor-9/tensor/issues/5160) covered
 individual tools through one gateway, not the entire current catalog or a
 model-driven analysis workflow.
 
@@ -692,7 +692,7 @@ also reads the outer selection, but
 resolves it beneath the configured `HERMES_HOME`. For nested overrides, confirm
 the profile Hermes actually uses and point `HERMES_HOME` directly at that
 `profiles/<name>` directory before setup. Compatibility is tracked in
-[#3939](https://github.com/morluto/tensor/issues/3939).
+[#3939](https://github.com/tensor-9/tensor/issues/3939).
 
 Tensor resolves existing ancestor directories before checking physical containment,
 including symlinks and junctions, even when the override directory does not exist.

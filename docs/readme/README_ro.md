@@ -12,11 +12,11 @@
 [![Versiunea npm](https://img.shields.io/npm/v/tensor-agents?style=flat-square&color=cb3837)](https://www.npmjs.com/package/tensor-agents)
 [![Catalogul uneltelor MCP](https://img.shields.io/badge/MCP-tool_catalog-5c4ee5?style=flat-square)](../reference/mcp-contracts.md#generated-catalog)
 [![Cerințe Node.js](https://img.shields.io/badge/Node.js-requirements-339933?style=flat-square&logo=nodedotjs&logoColor=white)](#ce-poți-analiza)
-[![skills.sh](https://skills.sh/b/morluto/tensor?style=flat-square)](https://skills.sh/morluto/tensor/reverse-engineer-anything)
+[![skills.sh](https://skills.sh/b/tensor-9/tensor?style=flat-square)](https://skills.sh/tensor-9/tensor/reverse-engineer-anything)
 [![Licența MIT](https://img.shields.io/badge/license-MIT-f4c430?style=flat-square)](../../LICENSE)
 [![Discord](https://img.shields.io/discord/1556595354999332884?logo=discord&logoColor=white&label=Discord&color=5865F2)](https://discord.gg/GkcryMnJDM)
 
-<a href="https://trendshift.io/repositories/82054?utm_source=repository-badge&amp;utm_medium=badge&amp;utm_campaign=badge-repository-82054" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/repositories/82054" alt="morluto%2Ftensor | Trendshift" width="250" height="55"/></a>
+<a href="https://trendshift.io/repositories/82054?utm_source=repository-badge&amp;utm_medium=badge&amp;utm_campaign=badge-repository-82054" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/repositories/82054" alt="tensor-9%2Ftensor | Trendshift" width="250" height="55"/></a>
 
 **[Site web](https://tensor.tools/) · [Ghiduri](https://tensor.tools/guides/) · [Studii de caz](https://tensor.tools/showcase/)**
 
@@ -29,7 +29,7 @@
 </div>
 
 > [!IMPORTANT]
-> Descarcă Tensor din [morluto/tensor](https://github.com/morluto/tensor),
+> Descarcă Tensor din [tensor-9/tensor](https://github.com/tensor-9/tensor),
 > de pe [tensor.tools](https://tensor.tools/) sau prin [pachetul npm tensor-agents](https://www.npmjs.com/package/tensor-agents).
 > Urmează linkurile de instalare și către versiunile publicate oferite de aceste surse oficiale.
 > Un nume de repository asemănător sau un README copiat nu dovedește că descărcarea provine dintr-o sursă oficială.
@@ -301,8 +301,8 @@ compară codul C++ reconstruit cu rezultatul compilatorului folosit la acea vrem
 [Vezi demonstrația pe X](https://x.com/tensortools/status/2112574822584918075?s=20)
 
 Dacă ai folosit Tensor pentru ceva interesant, ne-ar plăcea să vedem rezultatul.
-Prezintă cazul într-un [issue](https://github.com/morluto/tensor/issues) sau într-un
-[pull request](https://github.com/morluto/tensor/pulls), menționând ținta analizată,
+Prezintă cazul într-un [issue](https://github.com/tensor-9/tensor/issues) sau într-un
+[pull request](https://github.com/tensor-9/tensor/pulls), menționând ținta analizată,
 întrebarea ta, cum te-a ajutat Tensor și ce ai descoperit.
 
 <a id="build-rl-environments"></a>
@@ -425,7 +425,7 @@ npx tensor-agents@latest setup
 
 Dacă folosești un agent, finalizează [actualizarea configurării](#actualizează-tensor)
 și repornește-l. Reîncearcă aceeași sarcină. Dacă problema persistă,
-[deschide un issue](https://github.com/morluto/tensor/issues) și include versiunea Tensor,
+[deschide un issue](https://github.com/tensor-9/tensor/issues) și include versiunea Tensor,
 tipul țintei analizate, pașii de reproducere și mesajele de eroare.
 
 </details>
@@ -450,11 +450,11 @@ Raportează vulnerabilitățile conform [SECURITY.md](../../SECURITY.md).
 Mulțumim tuturor celor care folosesc Tensor, raportează erori, propun funcționalități,
 testează versiuni și contribuie cu remedieri.
 
-<a href="https://www.star-history.com/?repos=morluto%2Ftensor&amp;type=date">
+<a href="https://www.star-history.com/?repos=tensor-9%2Ftensor&amp;type=date">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=morluto/tensor&amp;type=date&amp;theme=dark&amp;legend=top-left" />
-    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=morluto/tensor&amp;type=date" />
-    <img alt="Istoricul stelelor Tensor pe GitHub" src="https://api.star-history.com/chart?repos=morluto/tensor&amp;type=date" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=tensor-9/tensor&amp;type=date&amp;theme=dark&amp;legend=top-left" />
+    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=tensor-9/tensor&amp;type=date" />
+    <img alt="Istoricul stelelor Tensor pe GitHub" src="https://api.star-history.com/chart?repos=tensor-9/tensor&amp;type=date" />
   </picture>
 </a>
 
@@ -472,9 +472,9 @@ să le examinezi.
 
 ## Contribuții
 
-Ne-ar bucura să contribui la Tensor! [Deschide un issue](https://github.com/morluto/tensor/issues)
+Ne-ar bucura să contribui la Tensor! [Deschide un issue](https://github.com/tensor-9/tensor/issues)
 pentru a raporta o eroare sau a propune o funcționalitate ori
-[trimite un pull request](https://github.com/morluto/tensor/pulls) pentru a îmbunătăți
+[trimite un pull request](https://github.com/tensor-9/tensor/pulls) pentru a îmbunătăți
 codul sau documentația.
 
 Consultă [CONTRIBUTING.md](../../CONTRIBUTING.md) pentru pregătirea mediului de dezvoltare

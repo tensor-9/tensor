@@ -20,7 +20,7 @@ Use the proposed version, including its prerelease suffix; do not change the
 
 ```bash
 node scripts/release-notes.mjs inventory \
-  --repository morluto/tensor --base tensor-agents-PREVIOUS \
+  --repository tensor-9/tensor --base tensor-agents-PREVIOUS \
   --target FULL_BASE_BRANCH_SHA --version VERSION \
   --manifest /tmp/tensor-VERSION.contributions.json
 node scripts/release-notes.mjs record \
@@ -72,7 +72,7 @@ Exclude GitHub bots and known agent accounts. Tensor's observed Anthropic, Curso
 Codex, and Copilot co-author trailers resolve to `@claude`, `@cursoragent`,
 `@codex`, and `@Copilot` with GitHub type `User`; the credit policy excludes
 them while retaining their metadata.
-At the Tensor maintainer's request, omit `@morluto` self-thanks while preserving
+At the Tensor maintainer's request, omit `@tensor-9` self-thanks while preserving
 authorship in the inventory. Other human contributors remain eligible.
 Use explicit GitHub links for cross-repository references to avoid ambiguous
 `#NNN` numbers. Unknown handles stay unknown; they are not fabricated credit.

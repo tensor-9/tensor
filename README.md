@@ -12,11 +12,11 @@
 [![npm version](https://img.shields.io/npm/v/tensor-agents?style=flat-square&color=cb3837)](https://www.npmjs.com/package/tensor-agents)
 [![MCP tool catalog](https://img.shields.io/badge/MCP-tool_catalog-5c4ee5?style=flat-square)](docs/reference/mcp-contracts.md#generated-catalog)
 [![Node.js requirements](https://img.shields.io/badge/Node.js-requirements-339933?style=flat-square&logo=nodedotjs&logoColor=white)](#what-you-can-analyze)
-[![skills.sh](https://skills.sh/b/morluto/tensor?style=flat-square)](https://skills.sh/morluto/tensor/reverse-engineer-anything)
+[![skills.sh](https://skills.sh/b/tensor-9/tensor?style=flat-square)](https://skills.sh/tensor-9/tensor/reverse-engineer-anything)
 [![MIT license](https://img.shields.io/badge/license-MIT-f4c430?style=flat-square)](LICENSE)
 [![Discord](https://img.shields.io/discord/1556595354999332884?logo=discord&logoColor=white&label=Discord&color=5865F2)](https://discord.gg/GkcryMnJDM)
 
-<a href="https://trendshift.io/repositories/82054?utm_source=repository-badge&amp;utm_medium=badge&amp;utm_campaign=badge-repository-82054" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/repositories/82054" alt="morluto%2Ftensor | Trendshift" width="250" height="55"/></a>
+<a href="https://trendshift.io/repositories/82054?utm_source=repository-badge&amp;utm_medium=badge&amp;utm_campaign=badge-repository-82054" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/repositories/82054" alt="tensor-9%2Ftensor | Trendshift" width="250" height="55"/></a>
 
 **[Website](https://tensor.tools/) · [Guides](https://tensor.tools/guides/) · [Showcases](https://tensor.tools/showcase/)**
 
@@ -29,7 +29,7 @@
 </div>
 
 > [!IMPORTANT]
-> Get Tensor from [morluto/tensor](https://github.com/morluto/tensor),
+> Get Tensor from [tensor-9/tensor](https://github.com/tensor-9/tensor),
 > [tensor.tools](https://tensor.tools/), or the [tensor-agents npm package](https://www.npmjs.com/package/tensor-agents).
 > Follow the installation and release links from these official sources. A similar
 > repository name or copied README does not establish that a download is official.
@@ -308,8 +308,8 @@ Record a web app session, turn its API into tools, and export an environment an 
 [Watch the video](https://x.com/tensortools/status/2112574822584918075?s=20)
 
 If you've used Tensor on something interesting, we'd love to see it. Share your
-case in an [issue](https://github.com/morluto/tensor/issues) or a
-[pull request](https://github.com/morluto/tensor/pulls), including the target,
+case in an [issue](https://github.com/tensor-9/tensor/issues) or a
+[pull request](https://github.com/tensor-9/tensor/pulls), including the target,
 your question, how Tensor helped, and what you found.
 
 ## Build RL environments
@@ -430,7 +430,7 @@ npx tensor-agents@latest setup
 ```
 
 If you're using an agent, complete the [setup refresh](#update-tensor) and restart
-it. Retry the same task. If the problem persists, [open an issue](https://github.com/morluto/tensor/issues)
+it. Retry the same task. If the problem persists, [open an issue](https://github.com/tensor-9/tensor/issues)
 with your Tensor version, target type, steps to reproduce and error output.
 
 </details>
@@ -454,11 +454,11 @@ Report vulnerabilities through [SECURITY.md](SECURITY.md).
 
 Thanks to everyone using Tensor, reporting bugs, requesting features, testing builds, and contributing fixes.
 
-<a href="https://www.star-history.com/?repos=morluto%2Ftensor&amp;type=date">
+<a href="https://www.star-history.com/?repos=tensor-9%2Ftensor&amp;type=date">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=morluto/tensor&amp;type=date&amp;theme=dark&amp;legend=top-left" />
-    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=morluto/tensor&amp;type=date" />
-    <img alt="Tensor GitHub star history" src="https://api.star-history.com/chart?repos=morluto/tensor&amp;type=date" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=tensor-9/tensor&amp;type=date&amp;theme=dark&amp;legend=top-left" />
+    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=tensor-9/tensor&amp;type=date" />
+    <img alt="Tensor GitHub star history" src="https://api.star-history.com/chart?repos=tensor-9/tensor&amp;type=date" />
   </picture>
 </a>
 
@@ -474,8 +474,8 @@ and analysis of software you own or are authorized to examine.
 
 ## Contributing
 
-We'd love your help with Tensor! [Open an issue](https://github.com/morluto/tensor/issues) to
-report a bug or suggest a feature, or [send a pull request](https://github.com/morluto/tensor/pulls)
+We'd love your help with Tensor! [Open an issue](https://github.com/tensor-9/tensor/issues) to
+report a bug or suggest a feature, or [send a pull request](https://github.com/tensor-9/tensor/pulls)
 to improve the code or docs.
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for development setup and checks. See the

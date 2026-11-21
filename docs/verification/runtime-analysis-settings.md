@@ -1,7 +1,7 @@
 # Runtime analysis settings verification
 
 Historical report added in
-[commit f3ed1657f82188fb90914f745a08849537342a23](https://github.com/morluto/tensor/commit/f3ed1657f82188fb90914f745a08849537342a23)
+[commit f3ed1657f82188fb90914f745a08849537342a23](https://github.com/tensor-9/tensor/commit/f3ed1657f82188fb90914f745a08849537342a23)
 on 2026-10-25. The exact source revisions used for the initial checks and
 measurements were not recorded here. Those results do not establish current
 verification. The initial checks describe the runtime-settings introduction;
@@ -95,7 +95,7 @@ active worker values are explicitly unobserved in the settings inspection.
 ## Ghidra budget recovery — 2026-11-09
 
 The existing
-[`verify-real-ghidra-decompile-timeout.mjs`](https://github.com/morluto/tensor/blob/main/scripts/verify-real-ghidra-decompile-timeout.mjs)
+[`verify-real-ghidra-decompile-timeout.mjs`](https://github.com/tensor-9/tensor/blob/main/scripts/verify-real-ghidra-decompile-timeout.mjs)
 now covers p-code projection budgets and native payload admission in the same
 real Program as deadline recovery. It replaces the branch fixture in that lane
 with 5,400 straight-line volatile statements. A preliminary 1,800-statement
@@ -122,7 +122,7 @@ when calibrating a different host. The verifier refuses a scenario that does
 not naturally exhaust the selected allowance instead of claiming a reproduced
 timeout or payload failure.
 
-The [compact receipt](https://github.com/morluto/tensor/blob/main/docs/verification/runtime-analysis-settings-ghidra-2026-11-09.json) retains
+The [compact receipt](https://github.com/tensor-9/tensor/blob/main/docs/verification/runtime-analysis-settings-ghidra-2026-11-09.json) retains
 the source/target hashes, profile digest, exact setting facts, native failure
 diagnostics, timings and cleanup lineage. Observed results were:
 
@@ -154,7 +154,7 @@ measured in the retained run.
 
 The installed Frida Node SDK and system LLDB also exercised the new capture
 controls through their real application service/provider boundaries on macOS
-arm64. The [compact receipt](https://github.com/morluto/tensor/blob/main/docs/verification/native-capture-budget-qualification-2026-11-09.json)
+arm64. The [compact receipt](https://github.com/tensor-9/tensor/blob/main/docs/verification/native-capture-budget-qualification-2026-11-09.json)
 records the selected/effective policies, observations and cleanup.
 
 Frida's existing local-spawn verifier observed its marker and reported no cleanup
@@ -184,7 +184,7 @@ recovery for read-only static analysis.
 
 After integration onto main `8dfc47b107afc0cf4b53322a10b94c666fe9e18b`, the
 retained Ghidra lane ran again against the integrated feature code. Its
-[integration receipt](https://github.com/morluto/tensor/blob/main/docs/verification/runtime-analysis-settings-ghidra-integration-2026-11-09.json)
+[integration receipt](https://github.com/tensor-9/tensor/blob/main/docs/verification/runtime-analysis-settings-ghidra-integration-2026-11-09.json)
 records the new source/target identities and observations. Payload and deadline
 recovery again used one Program with unchanged target bytes, and owned cleanup
 completed. This is a fresh correctness qualification, not a new performance

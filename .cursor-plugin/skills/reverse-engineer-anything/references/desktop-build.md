@@ -155,7 +155,7 @@ the first source that has the app:
 - Pass `computer_id` and the action's fields at the top level: click
   `{x, y, count}`, scroll `{x, y, direction, amount}`, a screenshot region
   `[x0, y0, x1, y1]`. The rest are in
-  [the build-computer guide](https://github.com/morluto/tensor/blob/main/docs/desktop-build-computer.md).
+  [the build-computer guide](https://github.com/tensor-9/tensor/blob/main/docs/desktop-build-computer.md).
 - Take a `screenshot` before pointing: points are pixels of the latest
   frame. If a response is too large, ask for a `region`, or `jpeg` with a
   lower `quality`. A screenshot with `region` does not capture the screen

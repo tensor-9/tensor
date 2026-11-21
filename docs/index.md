@@ -11,7 +11,7 @@ hero:
       link: /installation
     - theme: alt
       text: View on GitHub
-      link: https://github.com/morluto/tensor
+      link: https://github.com/tensor-9/tensor
 
 features:
   - title: Investigate with your agent

@@ -292,7 +292,7 @@ component should select the same index as their deb822 equivalents.
 A one-line component written as `"main extra"` should be withheld from
 replay because deb822 would read it as two components. Check the captured
 facts and the emitted or withheld declaration. Pin the reference reader
-version and record which steps ran. The [offline APT reproduction](https://github.com/morluto/tensor/issues/12694)
+version and record which steps ran. The [offline APT reproduction](https://github.com/tensor-9/tensor/issues/12694)
 checked source and index identity without installing or deploying the app.
 
 Keep format recognition, validation, and the operation's decision separate.
@@ -486,7 +486,7 @@ failed request's physical, cancellation and cleanup facts.
   or selected target establishes only its own fact. Publish available identity
   and exit observations even when launch fails; retain unknown ownership.
 - Process exit does not establish output closure. The
-  [shared supervisor](https://github.com/morluto/tensor/blob/main/src/process/ProviderProcess.ts)
+  [shared supervisor](https://github.com/tensor-9/tensor/blob/main/src/process/ProviderProcess.ts)
   owns diagnostic retention and bounded draining through cleanup and retries.
   Report incomplete output separately from process cleanup. After verified stop
   and bounded draining, release owned event-loop references even if output closure
@@ -557,16 +557,16 @@ failed request's physical, cancellation and cleanup facts.
   composition does not replace that semantic identity. Finalization reports
   remain attached to their owning envelope while cleanup is pending and after
   confirmed release. CLI adapters should reuse
-  [`finishAnalysisCommand`](https://github.com/morluto/tensor/blob/main/src/cli/finishAnalysisCommand.ts) where its contract
+  [`finishAnalysisCommand`](https://github.com/tensor-9/tensor/blob/main/src/cli/finishAnalysisCommand.ts) where its contract
   applies rather than duplicate close/finally handling. It projects
-  [`runOwned`](https://github.com/morluto/tensor/blob/main/src/providers/runOwned.ts),
+  [`runOwned`](https://github.com/tensor-9/tensor/blob/main/src/providers/runOwned.ts),
   which owns this precedence for owned work: a recorded failure stays primary,
   cancellation before commit keeps the completed value as a partial
   observation, cancellation after commit keeps the value, and unconfirmed
   cleanup reports `cleanup_incomplete` while keeping the completed value.
 - Give descriptor-backed reads an owner before opening the file. A rejected
   close must retain the exact handle and preserve any earlier failure.
-  Carry [`openRegularFile`](https://github.com/morluto/tensor/blob/main/src/filesystem/RegularFile.ts)'s
+  Carry [`openRegularFile`](https://github.com/tensor-9/tensor/blob/main/src/filesystem/RegularFile.ts)'s
   admitted handle and initial metadata rather than restatting only to rebuild
   those facts. Keep fresh descriptor and selected-path identity checks after
   work, comparing against the original baseline instead of replacing it with
@@ -606,7 +606,7 @@ Put provider wire-protocol parsing in adapters and shared CLI/MCP workflows in
 the application layer.
 
 CLI commands register through
-[`cliCommandRegistrations.ts`](https://github.com/morluto/tensor/blob/main/src/cli/cliCommandRegistrations.ts):
+[`cliCommandRegistrations.ts`](https://github.com/tensor-9/tensor/blob/main/src/cli/cliCommandRegistrations.ts):
 add the registrar to its family there and its module to `src/cli.ts`. The build
 records which registrar defines each top-level command, and a one-shot command
 loads only that registrar's module graph; help, completions, `--llms` and unknown
@@ -615,7 +615,7 @@ on other registrars, and `tests/boundary/cli/cliLazyRegistration.test.ts` checks
 that each one registers alone with the definitions the complete CLI gives it.
 Modules that every registrar imports set the startup cost of every command; load
 optional heavy services where a command needs them. Reusable format declarations may live in pure domain
-owners: [`peOptionalHeader.ts`](https://github.com/morluto/tensor/blob/main/src/domain/peOptionalHeader.ts)
+owners: [`peOptionalHeader.ts`](https://github.com/tensor-9/tensor/blob/main/src/domain/peOptionalHeader.ts)
 decodes PE structure, while consumers retain machine admission, directory-address
 interpretation, and file/mapping bounds. Share Evidence provenance, unknown
 projection, and session retention semantics; matching payloads alone do not
@@ -632,13 +632,13 @@ Evidence envelope.
 helpers and `createImmutableEvidenceSteps`. The cooperative constructor also
 requires an authenticated immutable result; preserve that ownership proof.
 For objects, proof comes from completed sealing by
-[`immutableJson.ts`](https://github.com/morluto/tensor/blob/main/src/domain/immutableJson.ts);
+[`immutableJson.ts`](https://github.com/tensor-9/tensor/blob/main/src/domain/immutableJson.ts);
 `readonly` or `Object.freeze` alone does not establish it. JSON primitives are
 directly eligible. Seal owned data and complete cooperative sealing before
 reusing its result.
 
 When a failed or cancelled operation retains completed, valid partial Evidence,
-use the shared [`ToolResultDelivery`](https://github.com/morluto/tensor/blob/main/src/server/ToolResultDelivery.ts)
+use the shared [`ToolResultDelivery`](https://github.com/tensor-9/tensor/blob/main/src/server/ToolResultDelivery.ts)
 path with the session's Evidence writer. Keep the original failure and the
 named contract's target-content marking; replace the inline partial with a
 retained reference only after recording succeeds. An absent writer or a writer
@@ -690,9 +690,9 @@ schema also need explicit minimum lengths. Check parser/schema parity for empty,
 short, overlong, and malformed values in both input and output projections.
 
 A CLI command for a tool contract is described by `describeContractCommand` in
-[`contractCliDescription.ts`](https://github.com/morluto/tensor/blob/main/src/cli/contractCliDescription.ts)
+[`contractCliDescription.ts`](https://github.com/tensor-9/tensor/blob/main/src/cli/contractCliDescription.ts)
 and rendered for the CLI framework by `registerContractCommand` in
-[`contractCommand.ts`](https://github.com/morluto/tensor/blob/main/src/cli/contractCommand.ts).
+[`contractCommand.ts`](https://github.com/tensor-9/tensor/blob/main/src/cli/contractCommand.ts).
 A contract with `cli: true` names its own command, the kebab-case spelling of
 its name; the CLI command inventory in `catalogIdentity.ts` is derived from
 those declarations, and the projection omits `command` for it. `CLI_COMMANDS`

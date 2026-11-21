@@ -14,9 +14,9 @@ from website import NOTES_FIXTURES, SITE_ORIGIN, authored_markdown, page_url, sy
 from website_i18n import is_language_code
 from website_references import markdown_references, split_reference
 
-LEGACY_ORIGIN = "morluto.github.io"
+LEGACY_ORIGIN = "tensor-9.github.io"
 SITE_TEXT_URL = re.compile(
-    r"https?://(?:tensor\.tools|morluto\.github\.io)/[^\s<>\"'`]+", re.IGNORECASE
+    r"https?://(?:tensor\.tools|tensor-9\.github\.io)/[^\s<>\"'`]+", re.IGNORECASE
 )
 
 
@@ -66,7 +66,7 @@ def check_repository_links(root):
                 errors.append(f"{path.relative_to(root)}: obsolete website URL: {reference}")
                 continue
             if url.hostname == "github.com":
-                match = re.match(r"^/morluto/tensor/(?:blob|tree)/main/(.+)$", url.path)
+                match = re.match(r"^/tensor-9/tensor/(?:blob|tree)/main/(.+)$", url.path)
                 if not match:
                     continue
                 target = (root / unquote(match[1])).resolve()

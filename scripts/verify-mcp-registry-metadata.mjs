@@ -16,8 +16,8 @@ const registryPackage = serverJson.packages?.[0];
 if (packageJson.name !== "tensor-agents") fail("unexpected npm package name");
 if (typeof packageJson.version !== "string")
   fail("package.json is missing a string version");
-if (packageJson.mcpName !== "io.github.morluto/tensor")
-  fail("package.json mcpName does not identify io.github.morluto/tensor");
+if (packageJson.mcpName !== "io.github.tensor-9/tensor")
+  fail("package.json mcpName does not identify io.github.tensor-9/tensor");
 if (serverJson.name !== packageJson.mcpName)
   fail("server.json name does not match package.json mcpName");
 if (serverJson.version !== packageJson.version)

@@ -169,7 +169,7 @@ gave `00 04 10`. A separate original-order import also gave `00 04 10`.
 The paired results agreed on both original-word relocation values and a direct
 read confirmed each final window. The run used the release archive with
 locally built macOS ARM64 native helpers. This evidence covers the authored
-fixtures and this runtime. [Verification issue](https://github.com/morluto/tensor/issues/12590)
+fixtures and this runtime. [Verification issue](https://github.com/tensor-9/tensor/issues/12590)
 
 The result is `verified`, `mismatch`, or `unsupported`. Every check retains its
 expected and observed values. A memory-digest mismatch identifies the source

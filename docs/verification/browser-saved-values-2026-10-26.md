@@ -22,7 +22,7 @@ and subsequent fixes through `9f5191ab0` were compared. Its query redaction and 
 pinning were incorporated. Existing heap-derived URL/JSON/envelope admission
 remains the owner of expansion bounds, rather than adding the upstream fixed
 fill ceiling. Original multi-app/model
-results are [attributed historical evidence](https://github.com/morluto/tensor/blob/3fcbabe593611435ebc26e1eac86706fe60abb6e/docs/specs/agent-environments/scenario-saved-values/verification.md),
+results are [attributed historical evidence](https://github.com/tensor-9/tensor/blob/3fcbabe593611435ebc26e1eac86706fe60abb6e/docs/specs/agent-environments/scenario-saved-values/verification.md),
 not executions performed here.
 
 ## Real application and correctness oracles
@@ -30,7 +30,7 @@ not executions performed here.
 PocketBase **0.40.6** runs on an owned loopback instance. Its official Linux amd64
 archive is 12,824,710 bytes, SHA-256
 `0e1f609158ed945f809f8a02ae012aa0427129c66ebb63c1aee76f2c0309373f`.
-The [owned frontend](https://github.com/morluto/tensor/blob/938052704/experiments/analysis-efficiency/fixtures/browser-saved-values/index.html)
+The [owned frontend](https://github.com/tensor-9/tensor/blob/938052704/experiments/analysis-efficiency/fixtures/browser-saved-values/index.html)
 uses actual superuser authentication and record APIs. It is a small test
 frontend rather than PocketBase's entire administrative application.
 Collection `tensor_items` has required text `title` and numeric `quantity`, public

@@ -135,7 +135,7 @@ validation current as work changes. AI agents must leave human declarations to
 the human owner and must not attest to a human review on their behalf.
 
 Maintainers review the **Author readiness** declaration in the PR body. PRs
-authored by @morluto, @kaoru0822-kitauji, @N0zoM1z0, @gensokyo-dev, or
+authored by @tensor-9, @kaoru0822-kitauji, @N0zoM1z0, @gensokyo-dev, or
 @vincentkoc are exempt from the declaration. Their human ownership, review,
 and evidence responsibilities above still apply. Existing PRs can copy the
 **Author readiness** section from the current template.

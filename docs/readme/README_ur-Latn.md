@@ -12,11 +12,11 @@
 [![npm version](https://img.shields.io/npm/v/tensor-agents?style=flat-square&color=cb3837)](https://www.npmjs.com/package/tensor-agents)
 [![MCP tool catalog](https://img.shields.io/badge/MCP-tool_catalog-5c4ee5?style=flat-square)](../reference/mcp-contracts.md#generated-catalog)
 [![Node.js requirements](https://img.shields.io/badge/Node.js-requirements-339933?style=flat-square&logo=nodedotjs&logoColor=white)](#kya-kuch-analyze-kar-sakte-hain)
-[![skills.sh](https://skills.sh/b/morluto/tensor?style=flat-square)](https://skills.sh/morluto/tensor/reverse-engineer-anything)
+[![skills.sh](https://skills.sh/b/tensor-9/tensor?style=flat-square)](https://skills.sh/tensor-9/tensor/reverse-engineer-anything)
 [![MIT license](https://img.shields.io/badge/license-MIT-f4c430?style=flat-square)](../../LICENSE)
 [![Discord](https://img.shields.io/discord/1556595354999332884?logo=discord&logoColor=white&label=Discord&color=5865F2)](https://discord.gg/GkcryMnJDM)
 
-<a href="https://trendshift.io/repositories/82054?utm_source=repository-badge&amp;utm_medium=badge&amp;utm_campaign=badge-repository-82054" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/repositories/82054" alt="morluto%2Ftensor | Trendshift" width="250" height="55"/></a>
+<a href="https://trendshift.io/repositories/82054?utm_source=repository-badge&amp;utm_medium=badge&amp;utm_campaign=badge-repository-82054" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/repositories/82054" alt="tensor-9%2Ftensor | Trendshift" width="250" height="55"/></a>
 
 **[Website](https://tensor.tools/) · [Guides](https://tensor.tools/guides/) · [Showcases](https://tensor.tools/showcase/)**
 
@@ -29,7 +29,7 @@
 </div>
 
 > [!IMPORTANT]
-> Tensor [morluto/tensor](https://github.com/morluto/tensor),
+> Tensor [tensor-9/tensor](https://github.com/tensor-9/tensor),
 > [tensor.tools](https://tensor.tools/) ya [tensor-agents npm package](https://www.npmjs.com/package/tensor-agents) se hasil karein.
 > Installation aur release ke links inhi official sources se kholein. Sirf milta-julta
 > repository naam ya copy kiya hua README kisi download ko official sabit nahi karta.
@@ -301,8 +301,8 @@ Web app session record karein, us ki API ko tools mein badlein aur AI agent ke l
 [X par demo dekhein](https://x.com/tensortools/status/2112574822584918075?s=20)
 
 Agar aapne Tensor se koi dilchasp kaam kiya hai to hum dekhna chahenge. Apna case
-[issue](https://github.com/morluto/tensor/issues) ya
-[pull request](https://github.com/morluto/tensor/pulls) mein share karein. Target,
+[issue](https://github.com/tensor-9/tensor/issues) ya
+[pull request](https://github.com/tensor-9/tensor/pulls) mein share karein. Target,
 apna sawal, Tensor ne kaise madad ki aur kya mila, yeh sab batayein.
 
 <a id="build-rl-environments"></a>
@@ -430,7 +430,7 @@ npx tensor-agents@latest setup
 Agar agent use kar rahe hain to [setup refresh](#tensor-update-karein) complete
 karke agent restart karein. Wohi task dobara try karein. Masla phir bhi ho to
 Tensor version, target type, reproduce karne ke steps aur error output ke saath
-[issue kholein](https://github.com/morluto/tensor/issues).
+[issue kholein](https://github.com/tensor-9/tensor/issues).
 
 </details>
 
@@ -454,11 +454,11 @@ Security vulnerabilities [SECURITY.md](../../SECURITY.md) ke zariye report karei
 Tensor use karne, bugs report karne, features suggest karne, builds test karne aur
 fixes contribute karne wale sab logon ka shukriya.
 
-<a href="https://www.star-history.com/?repos=morluto%2Ftensor&amp;type=date">
+<a href="https://www.star-history.com/?repos=tensor-9%2Ftensor&amp;type=date">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=morluto/tensor&amp;type=date&amp;theme=dark&amp;legend=top-left" />
-    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=morluto/tensor&amp;type=date" />
-    <img alt="Tensor ke GitHub stars ki history" src="https://api.star-history.com/chart?repos=morluto/tensor&amp;type=date" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=tensor-9/tensor&amp;type=date&amp;theme=dark&amp;legend=top-left" />
+    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=tensor-9/tensor&amp;type=date" />
+    <img alt="Tensor ke GitHub stars ki history" src="https://api.star-history.com/chart?repos=tensor-9/tensor&amp;type=date" />
   </picture>
 </a>
 
@@ -477,8 +477,8 @@ ijazat ho.
 ## Hissa dalein
 
 Tensor mein aapki madad ka khairmaqdam hai! Bug report karne ya feature suggest
-karne ke liye [issue kholein](https://github.com/morluto/tensor/issues), ya code aur
-docs behtar karne ke liye [pull request bhejein](https://github.com/morluto/tensor/pulls).
+karne ke liye [issue kholein](https://github.com/tensor-9/tensor/issues), ya code aur
+docs behtar karne ke liye [pull request bhejein](https://github.com/tensor-9/tensor/pulls).
 
 Development setup aur checks ke liye [CONTRIBUTING.md](../../CONTRIBUTING.md),
 verification lanes ke liye [testing](../development/testing.md) dekhein.

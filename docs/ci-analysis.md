@@ -1,6 +1,6 @@
 # Static analysis in GitHub Actions
 
-The [minimal workflow](https://github.com/morluto/tensor/blob/main/examples/github-actions/tensor-analysis.yml) builds a small
+The [minimal workflow](https://github.com/tensor-9/tensor/blob/main/examples/github-actions/tensor-analysis.yml) builds a small
 JavaScript application, analyzes its files without executing them, and uploads
 machine-readable results. It uses the existing CLI, not a separate GitHub Action
 or an MCP client. It does not promise support for every Tensor provider.

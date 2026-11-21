@@ -215,7 +215,7 @@ A fixed ceiling is the exception. Keep one only for a stated format, protocol,
 or representation reason.
 
 Inspection's separate
-[constraints](https://github.com/morluto/tensor/blob/main/src/server/analysisSettingsConstraints.ts)
+[constraints](https://github.com/tensor-9/tensor/blob/main/src/server/analysisSettingsConstraints.ts)
 describe operator-owned, external, and fixed controls. Tensor can report its
 configured response budget and parent heap limit; client deadlines and receive
 buffers remain explicitly unknown. These are not entries accepted by the
@@ -226,7 +226,7 @@ The failure names the limit and the effective value. Say this release has no
 runtime override, and name what does not raise it. Do not invent a setting.
 
 JSON values stop at `MAX_JSON_DEPTH` (1000) in
-[`jsonValue.ts`](https://github.com/morluto/tensor/blob/main/src/domain/jsonValue.ts):
+[`jsonValue.ts`](https://github.com/tensor-9/tensor/blob/main/src/domain/jsonValue.ts):
 "JSON value exceeds maximum nesting depth of 1000. This release has no runtime
 override."
 
@@ -234,7 +234,7 @@ override."
 
 A producer that refuses a request types the refusal instead of leaving
 recovery to the resource kind. The domain owner is
-[`analysisRefusal.ts`](https://github.com/morluto/tensor/blob/main/src/domain/analysisRefusal.ts).
+[`analysisRefusal.ts`](https://github.com/tensor-9/tensor/blob/main/src/domain/analysisRefusal.ts).
 It has three variants. Each one projects under `details.refusal` with the
 `operation` the error is attributed to:
 
@@ -290,7 +290,7 @@ request to change it.
   or known not to have started. If it may already have changed the target, or
   it fails again, tell the user and ask them to restart the MCP client. Do not
   start with `tensor doctor`
-  ([#6353](https://github.com/morluto/tensor/pull/6353)).
+  ([#6353](https://github.com/tensor-9/tensor/pull/6353)).
 - Tensor could not start its connection: retry once. If it fails again, tell the
   user and ask them to restart the MCP client, then run `tensor doctor`. Do not
   retry a startup that returns the same unchanged result: tell the user Tensor
@@ -302,7 +302,7 @@ request to change it.
 - `cleanup_incomplete`: the operation is not retryable. Retry that exact
   cleanup owner, named in `details.resources`, and wait until it confirms
   release before admitting new work on those resources
-  ([#6357](https://github.com/morluto/tensor/pull/6357)).
+  ([#6357](https://github.com/tensor-9/tensor/pull/6357)).
 - `resource_constraint` for capacity, when `retryable` is true: wait for the
   active admission to finish, then retry within the reported limits. Do not
   restart Tensor to free the slot.
@@ -359,7 +359,7 @@ MCP drop, a capacity wait, or retained cleanup.
 
 Cover the unset default, accepted overrides, rejected floor/maximum values,
 and invalid syntax through the owning parser and configuration boundary.
-[`regexMatchingDeadline.test.ts`](https://github.com/morluto/tensor/blob/main/src/config/regexMatchingDeadline.test.ts)
+[`regexMatchingDeadline.test.ts`](https://github.com/tensor-9/tensor/blob/main/src/config/regexMatchingDeadline.test.ts)
 is one example. Assert error codes, setting IDs, values, units, provenance,
 application points, and resulting behavior. Check that adapters deliver the
 canonical recovery guidance, with independent assertions for its underlying

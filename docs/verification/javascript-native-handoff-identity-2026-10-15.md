@@ -110,7 +110,7 @@ For a pre-fix observation, run the saved verifier on the baseline build without
 analyst task. Paths affect serialized requests and some Evidence identities.
 
 The exact resource runs additionally used the preserved
-[8 GiB observer](https://github.com/morluto/tensor/blob/b3bdabab694af1f9801eff7caf75001b92314a58/experiments/analysis-efficiency/resource-run.py)
+[8 GiB observer](https://github.com/tensor-9/tensor/blob/b3bdabab694af1f9801eff7caf75001b92314a58/experiments/analysis-efficiency/resource-run.py)
 and adjacent `resource_payload.py`; both hashes are pinned in the JSON.
 
 ## Completed workflow costs and limits
@@ -176,4 +176,4 @@ including five documentation consistency tests: 128.732 s wall, 115.518920 s CPU
 4,301,684,736 B peak cgroup memory, clean owned exit and no OOM.
 
 Final public and static/docs outcomes are recorded in the
-[compact measurements and source pins](https://github.com/morluto/tensor/blob/main/docs/verification/javascript-native-handoff-identity-2026-10-15.json).
+[compact measurements and source pins](https://github.com/tensor-9/tensor/blob/main/docs/verification/javascript-native-handoff-identity-2026-10-15.json).

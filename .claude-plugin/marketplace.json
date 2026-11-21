@@ -3,8 +3,8 @@
   "name": "tensor",
   "description": "Reverse engineer anything with agents, from app behavior down to native binaries.",
   "owner": {
-    "name": "morluto",
-    "url": "https://github.com/morluto"
+    "name": "tensor-9",
+    "url": "https://github.com/tensor-9"
   },
   "plugins": [
     {

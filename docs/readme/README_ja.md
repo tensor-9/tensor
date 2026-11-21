@@ -12,11 +12,11 @@
 [![npm version](https://img.shields.io/npm/v/tensor-agents?style=flat-square&color=cb3837)](https://www.npmjs.com/package/tensor-agents)
 [![MCP tool catalog](https://img.shields.io/badge/MCP-tool_catalog-5c4ee5?style=flat-square)](../reference/mcp-contracts.md#generated-catalog)
 [![Node.js requirements](https://img.shields.io/badge/Node.js-requirements-339933?style=flat-square&logo=nodedotjs&logoColor=white)](#current-status)
-[![skills.sh](https://skills.sh/b/morluto/tensor?style=flat-square)](https://skills.sh/morluto/tensor/reverse-engineer-anything)
+[![skills.sh](https://skills.sh/b/tensor-9/tensor?style=flat-square)](https://skills.sh/tensor-9/tensor/reverse-engineer-anything)
 [![MIT license](https://img.shields.io/badge/license-MIT-f4c430?style=flat-square)](../../LICENSE)
 [![Discord](https://img.shields.io/discord/1556595354999332884?logo=discord&logoColor=white&label=Discord&color=5865F2)](https://discord.gg/GkcryMnJDM)
 
-<a href="https://trendshift.io/repositories/82054?utm_source=repository-badge&amp;utm_medium=badge&amp;utm_campaign=badge-repository-82054" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/repositories/82054" alt="morluto%2Ftensor | Trendshift" width="250" height="55"/></a>
+<a href="https://trendshift.io/repositories/82054?utm_source=repository-badge&amp;utm_medium=badge&amp;utm_campaign=badge-repository-82054" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/repositories/82054" alt="tensor-9%2Ftensor | Trendshift" width="250" height="55"/></a>
 
 **[ウェブサイト](https://tensor.tools/ja/) · [ガイド](https://tensor.tools/ja/guides/) · [事例](https://tensor.tools/ja/showcase/)**
 
@@ -29,7 +29,7 @@
 </div>
 
 > [!IMPORTANT]
-> Tensor の公式配布元： [morluto/tensor](https://github.com/morluto/tensor), [tensor.tools](https://tensor.tools/), [tensor-agents](https://www.npmjs.com/package/tensor-agents) (npm).
+> Tensor の公式配布元： [tensor-9/tensor](https://github.com/tensor-9/tensor), [tensor.tools](https://tensor.tools/), [tensor-agents](https://www.npmjs.com/package/tensor-agents) (npm).
 > インストールとリリースのリンクは、これらの公式配布元からたどってください。似たリポジトリ名やコピーされた README だけでは、公式の配布物とは確認できません。
 
 <div align="center">
@@ -247,7 +247,7 @@ Web アプリのセッションを記録し、API をツールに変換して、
 [環境構築ガイド](https://tensor.tools/guides/rl-environments/) ·
 [X でデモを見る](https://x.com/tensortools/status/2112574822584918075?s=20)
 
-Tensor で興味深い対象を調べたら、ぜひ共有してください。[issue](https://github.com/morluto/tensor/issues) または [pull request](https://github.com/morluto/tensor/pulls) に、対象、調べたかったこと、Tensor がどう役立ったか、何が分かったかを記載してください。
+Tensor で興味深い対象を調べたら、ぜひ共有してください。[issue](https://github.com/tensor-9/tensor/issues) または [pull request](https://github.com/tensor-9/tensor/pulls) に、対象、調べたかったこと、Tensor がどう役立ったか、何が分かったかを記載してください。
 
 <a id="build-rl-environments"></a>
 
@@ -352,7 +352,7 @@ tensor update
 npx tensor-agents@latest setup
 ```
 
-エージェントを使っている場合は、[設定の更新](#tensor-を更新する)を完了し、再起動してください。同じタスクをもう一度試し、問題が続く場合は [issue を作成](https://github.com/morluto/tensor/issues)して、Tensor のバージョン、対象の種類、再現手順、エラー出力を記載してください。
+エージェントを使っている場合は、[設定の更新](#tensor-を更新する)を完了し、再起動してください。同じタスクをもう一度試し、問題が続く場合は [issue を作成](https://github.com/tensor-9/tensor/issues)して、Tensor のバージョン、対象の種類、再現手順、エラー出力を記載してください。
 
 </details>
 
@@ -374,11 +374,11 @@ npx tensor-agents@latest setup
 
 Tensor の利用、バグ報告、機能の要望、ビルドのテスト、修正への貢献に感謝します。
 
-<a href="https://www.star-history.com/?repos=morluto%2Ftensor&amp;type=date">
+<a href="https://www.star-history.com/?repos=tensor-9%2Ftensor&amp;type=date">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=morluto/tensor&amp;type=date&amp;theme=dark&amp;legend=top-left" />
-    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=morluto/tensor&amp;type=date" />
-    <img alt="Tensor の GitHub スター履歴" src="https://api.star-history.com/chart?repos=morluto/tensor&amp;type=date" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=tensor-9/tensor&amp;type=date&amp;theme=dark&amp;legend=top-left" />
+    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=tensor-9/tensor&amp;type=date" />
+    <img alt="Tensor の GitHub スター履歴" src="https://api.star-history.com/chart?repos=tensor-9/tensor&amp;type=date" />
   </picture>
 </a>
 
@@ -392,7 +392,7 @@ Tensor は、法令に従った研究、教育、相互運用性の確保、ソ�
 
 ## 貢献する
 
-Tensor への貢献を歓迎します！[issue を作成](https://github.com/morluto/tensor/issues)してバグや機能の提案を報告したり、[pull request を送信](https://github.com/morluto/tensor/pulls)してコードやドキュメントを改善したりできます。
+Tensor への貢献を歓迎します！[issue を作成](https://github.com/tensor-9/tensor/issues)してバグや機能の提案を報告したり、[pull request を送信](https://github.com/tensor-9/tensor/pulls)してコードやドキュメントを改善したりできます。
 
 開発環境とチェックは [CONTRIBUTING.md](../../CONTRIBUTING.md)、検証レーンは[テストガイド](../development/testing.md)を参照してください。
 

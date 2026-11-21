@@ -319,7 +319,7 @@ class WebsiteSearchChecks(unittest.TestCase):
             (
                 "index.html",
                 'rel="canonical" href="https://tensor.tools/"',
-                'rel="canonical" href="https://morluto.github.io/tensor/"',
+                'rel="canonical" href="https://tensor-9.github.io/tensor/"',
                 "needs exactly one head canonical",
             ),
             (
@@ -463,7 +463,7 @@ class WebsiteMaintenanceChecks(unittest.TestCase):
                 snapshot = root / "website/public/contributors/people.json"
                 snapshot.parent.mkdir(parents=True)
                 snapshot.write_bytes(json.dumps({
-                    "repository": "morluto/tensor", "updated": "2026-10-14", "contributors": people[:1],
+                    "repository": "tensor-9/tensor", "updated": "2026-10-14", "contributors": people[:1],
                 }).encode("utf-8"))
                 before = snapshot.read_bytes()
                 with patch.object(WEBSITE.subprocess, "run", return_value=response), failure as save:
@@ -540,7 +540,7 @@ class WebsiteMaintenanceChecks(unittest.TestCase):
             cases = (
                 ('<a href="https://tensor.tools/deleted/">Broken</a>', "missing local target: https://tensor.tools/deleted/"),
                 ('<code>https://tensor.tools/guides/native/#deleted</code>', "missing HTML fragment: https://tensor.tools/guides/native/#deleted"),
-                ('<code>https://morluto.github.io/tensor/examples/notes-web/</code>', "obsolete website URL: https://morluto.github.io/tensor/examples/notes-web/"),
+                ('<code>https://tensor-9.github.io/tensor/examples/notes-web/</code>', "obsolete website URL: https://tensor-9.github.io/tensor/examples/notes-web/"),
                 ('<button data-copy="deleted">Copy</button>', "missing copy target: deleted"),
                 ('<a href="https://[">Malformed</a>', "invalid URL 'https://[':"),
             )

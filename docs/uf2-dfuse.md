@@ -183,7 +183,7 @@ file once, serves elements as views of it, and retains at most 65,536 elements
 with bytes as entries; empty elements are only counted. These are fixed
 resource bounds, not format limits, and fail as limits (`file-size` and
 `capacity`) with no runtime override. Configurable ceilings are tracked in
-[#6176](https://github.com/morluto/tensor/issues/6176).
+[#6176](https://github.com/tensor-9/tensor/issues/6176).
 
 Decoded regions are cached only for the reader's lifetime, and each open checks
 the admitted carrier identity again. These readers share the Intel HEX

@@ -175,7 +175,7 @@ git submodule update --init third_party/binwalk third_party/unblob
 ```
 
 Normal Tensor builds and npm packages do not include or build these sources or
-engine binaries. See [upstream provenance](https://github.com/morluto/tensor/blob/main/third_party/README.md).
+engine binaries. See [upstream provenance](https://github.com/tensor-9/tensor/blob/main/third_party/README.md).
 
 ### Windows submodule checkout
 

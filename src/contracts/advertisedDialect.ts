@@ -101,7 +101,7 @@ export const ADVERTISED_BOUND_LIMIT = 1999;
 // parameters schema exceeds its literal serialized size cap. Community
 // measurements bound the cap between ~13.7 KB (accepted) and ~15 KB
 // (rejected); 13 KiB leaves margin under the lower bound. See
-// https://github.com/morluto/tensor/issues/1484 for the measured evidence.
+// https://github.com/tensor-9/tensor/issues/1484 for the measured evidence.
 export const ADVERTISED_INPUT_SCHEMA_MAX_BYTES = 13 * 1024;
 
 // ---- Portable regex grammar -------------------------------------------------

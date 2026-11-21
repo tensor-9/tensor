@@ -1,8 +1,8 @@
 # Electron cancellation verification, 2026-10-16
 
-[#4388](https://github.com/morluto/tensor/issues/4388), existing
-[#4387](https://github.com/morluto/tensor/pull/4387), umbrella
-[#4027](https://github.com/morluto/tensor/issues/4027).
+[#4388](https://github.com/tensor-9/tensor/issues/4388), existing
+[#4387](https://github.com/tensor-9/tensor/pull/4387), umbrella
+[#4027](https://github.com/tensor-9/tensor/issues/4027).
 
 The cancellation boundaries and retained cancellation cause are verified below.
 The complete real Linux Joplin workflow remains **partial or failed** because
@@ -62,7 +62,7 @@ real application runs. They do not establish a naturally occurring Joplin stall.
 Every fixed case preserves the `cancelled` category. Every real case still has
 unverified provider cleanup and a nonzero verifier exit; these are cancellation
 phase proofs, not complete runtime passes. The known Linux ownership gap is
-tracked in [#4282](https://github.com/morluto/tensor/issues/4282). Ownership was not
+tracked in [#4282](https://github.com/tensor-9/tensor/issues/4282). Ownership was not
 inferred from process names, PIDs or executable paths to make these tests pass.
 
 The public CLI trials send SIGTERM after actual Joplin startup logging. Main
@@ -84,7 +84,7 @@ early stop, no swap and 192 tasks. The passing static gate used 153.534 s wall,
 152.274161 family CPU seconds and 6,442,016,768 peak cgroup bytes. It reported
 no OOM and verified payload cleanup. Cgroup memory includes file cache, not RSS.
 Other trials' exact counters and failures are preserved in the
-[compact record](https://github.com/morluto/tensor/blob/main/docs/verification/electron-cancellation-2026-10-16.json).
+[compact record](https://github.com/tensor-9/tensor/blob/main/docs/verification/electron-cancellation-2026-10-16.json).
 
 Payload-exit counters are collected while the observer remains alive and are
 not final whole-scope counters. Some failed probes retain live app/Xvfb processes
@@ -100,7 +100,7 @@ diagnostic helper hashes were not captured at execution; the record marks that
 gap instead of assigning the later frozen hash to earlier runs.
 
 Build each pinned checkout, then run under the existing
-[resource observer](https://github.com/morluto/tensor/blob/42e1a17d6e6c0487f17be0bae248553c4caba7f7/experiments/analysis-efficiency/resource-counters.md)
+[resource observer](https://github.com/tensor-9/tensor/blob/42e1a17d6e6c0487f17be0bae248553c4caba7f7/experiments/analysis-efficiency/resource-counters.md)
 and a private Xvfb instance. The shared verifier supports all four named cases:
 
 ```sh

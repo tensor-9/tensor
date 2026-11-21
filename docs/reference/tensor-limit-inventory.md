@@ -1,12 +1,12 @@
 # Tensor limit inventory
 
-Audit for [#9881](https://github.com/morluto/tensor/issues/9881). Counts below are
+Audit for [#9881](https://github.com/tensor-9/tensor/issues/9881). Counts below are
 from this revision. The inventory includes numeric `TENSOR_` launch limits and
 the fixed reconnect control generated into the Hopper bridge.
 `scripts/verify/tensor-numeric-limits.mjs` checks recognized TypeScript source
 reads (tests excluded) against the environment seeds of
-[`ANALYSIS_SETTINGS`](https://github.com/morluto/tensor/blob/main/src/domain/analysisSettingDefinitions.ts) or an
-exception in [`numericLimitRegistry.ts`](https://github.com/morluto/tensor/blob/main/src/domain/numericLimitRegistry.ts)
+[`ANALYSIS_SETTINGS`](https://github.com/tensor-9/tensor/blob/main/src/domain/analysisSettingDefinitions.ts) or an
+exception in [`numericLimitRegistry.ts`](https://github.com/tensor-9/tensor/blob/main/src/domain/numericLimitRegistry.ts)
 with a reason. Static syntax recognition cannot prove arbitrary dynamic reads
 or how often a function executes.
 
