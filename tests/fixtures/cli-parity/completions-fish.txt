@@ -1,0 +1,8 @@
+$ tensor completions fish
+exit: 0
+--- stdout
+complete --keep-order --exclusive --command tensor \
+    --arguments "(COMPLETE=fish tensor -- (commandline --current-process --tokenize --cut-at-cursor) (commandline --current-token))"
+<end>
+--- stderr
+<end>

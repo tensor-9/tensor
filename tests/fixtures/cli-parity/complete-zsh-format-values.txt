@@ -1,0 +1,12 @@
+$ COMPLETE=zsh tensor -- tensor inspect-byte-entropy --format ""
+exit: 0
+--- stdout
+toon
+json
+yaml
+md
+jsonl
+csv
+tsv<end>
+--- stderr
+<end>

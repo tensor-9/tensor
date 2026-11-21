@@ -1,0 +1,1188 @@
+import { HOST_PLATFORM } from "../../../src/platform/HostPlatform.js";
+import { currentClientRegistrationCommand } from "../../../src/application/ClientRegistrationIdentity.js";
+import { access, mkdir, readFile, writeFile } from "node:fs/promises";
+import { spawnSync } from "node:child_process";
+import { join } from "node:path";
+import { expect, it } from "vitest";
+
+import {
+  clientRegistrationEntry,
+  effectiveClientServer,
+  parseClientConfiguration,
+  serializeClientConfiguration,
+} from "../../../src/application/ClientConfigurationDocument.js";
+import {
+  clientConfigurationAligned,
+  configureClientConfiguration,
+  inspectClientConfiguration,
+} from "../../../src/application/SetupClientConfiguration.js";
+import { createTestTempDirectory } from "../../fixtures/temporaryDirectory.js";
+import { readClientRegistrationStatuses } from "../../../src/application/ClientRegistrationStatus.js";
+import {
+  clientRegistrationEnvironment,
+  clientRegistrationEnvironmentDetails,
+  clientRegistrationEnvironmentDetailsWithBudget,
+} from "../../../src/application/ClientRegistrationEnvironment.js";
+import { snapshotEnvironment } from "../../../src/process/snapshotEnvironment.js";
+
+import { ok } from "../../../src/domain/result.js";
+import { MCP_STARTUP_POLICY } from "../../../src/config/mcpStartupPolicy.js";
+import { supportedClientRegistrationProfile } from "../../fixtures/clientRegistrationProfile.js";
+
+const staleOwnedCommand = ["npx", "-y", "tensor-agents@6.6.0", "mcp"] as const;
+
+it("awaits the owner-parsed provider request budget without changing caller strings", async () => {
+  const parsed = parseClientConfiguration(
+    JSON.stringify({
+      mcpServers: {
+        tensor: {
+          command: "tensor",
+          args: ["mcp"],
+          env: {
+            TENSOR_ANALYSIS_PROVIDER: "ida",
+            TENSOR_IDA_MCP_CONFIG: "/tmp/tensor-registration.json/",
+          },
+        },
+      },
+    }),
+    "json",
+  );
+  const details = await clientRegistrationEnvironmentDetailsWithBudget(
+    parsed,
+    undefined,
+    {},
+    "effective",
+    async (provider) => {
+      expect(provider).toBe("ida");
+      return ok(17);
+    },
+    HOST_PLATFORM.platform,
+  );
+  expect(details).toMatchObject({
+    ok: true,
+    value: {
+      values: { TENSOR_IDA_MCP_CONFIG: "/tmp/tensor-registration.json/" },
+      timeoutInputs: { providerRequestTimeoutMs: 17 },
+    },
+  });
+});
+
+it("preserves owner-parsed registration facts and revalidates later inspections", async () => {
+  const home = await createTestTempDirectory("tensor-registration-snapshot-");
+  const configPath = join(home, "mcp.json");
+  const environment = {
+    TENSOR_ANALYSIS_PROVIDER: "ida",
+    TENSOR_IDA_MCP_CONFIG: "/tmp/tensor-registration.json/",
+    TENSOR_MCP_INPUT_SCHEMA_PROFILE: "compact",
+  };
+  const original = JSON.stringify({
+    mcpServers: {
+      tensor: {
+        command: "tensor",
+        args: ["mcp"],
+        env: environment,
+        startupTimeoutMs: MCP_STARTUP_POLICY.kimiStartupTimeoutMs,
+        toolTimeoutMs: 450_000,
+      },
+    },
+  });
+  await writeFile(configPath, original);
+  const client = {
+    name: "kimi",
+    registrationProfile: supportedClientRegistrationProfile("kimi"),
+    format: "kimi",
+    configPath,
+  } as const;
+  let providerTimeoutMs = 17;
+  const observedBudgets = new Set<number>();
+  const resolveBudget = async (
+    provider: string,
+    observedEnvironment: Readonly<Record<string, string>>,
+  ) => {
+    expect(observedEnvironment.TENSOR_IDA_MCP_CONFIG).toBe(
+      environment.TENSOR_IDA_MCP_CONFIG,
+    );
+    expect(provider).toBe("ida");
+    observedBudgets.add(providerTimeoutMs);
+    return ok(providerTimeoutMs);
+  };
+
+  expect(
+    await clientConfigurationAligned(
+      client,
+      {},
+      ["tensor", "mcp"],
+      resolveBudget,
+    ),
+  ).toBe(true);
+  expect(observedBudgets.has(17)).toBe(true);
+
+  expect(
+    await inspectClientConfiguration(
+      client,
+      {},
+      ["tensor", "mcp"],
+      resolveBudget,
+    ),
+  ).toEqual({ status: "already_current" });
+  providerTimeoutMs = 1_000_000;
+  // Revalidate the budget while preserving the caller's positive timeout.
+  expect(
+    await inspectClientConfiguration(
+      client,
+      {},
+      ["tensor", "mcp"],
+      resolveBudget,
+    ),
+  ).toEqual({ status: "already_current" });
+  expect(observedBudgets.has(providerTimeoutMs)).toBe(true);
+  expect(await readFile(configPath, "utf8")).toBe(original);
+  await expect(access(`${configPath}.tensor.backup`)).rejects.toMatchObject({
+    code: "ENOENT",
+  });
+});
+
+it.each(["win32", "linux"] as const)(
+  "uses the selected %s identity when inspecting lowercase registration settings",
+  async (platform) => {
+    const home = await createTestTempDirectory("tensor-selected-platform-env-");
+    const path = join(home, ".cursor/mcp.json");
+    await mkdir(join(home, ".cursor"));
+    await writeFile(
+      path,
+      JSON.stringify({
+        mcpServers: {
+          tensor: clientRegistrationEntry(
+            "json",
+            currentClientRegistrationCommand({ platform }),
+            { tensor_analysis_provider: "invalid provider" },
+          ),
+        },
+      }),
+    );
+    const statuses = await readClientRegistrationStatuses(
+      home,
+      currentClientRegistrationCommand({ platform })[1],
+      {
+        platform,
+        environment: {},
+      },
+    );
+    expect(statuses.find(({ client }) => client === "cursor")).toMatchObject({
+      state: platform === "win32" ? "invalid" : "aligned",
+    });
+  },
+);
+
+it.skipIf(process.platform !== "win32").each([
+  {
+    key: "tensor_analysis_provider",
+    override: "TENSOR_ANALYSIS_PROVIDER",
+    value: "ghidra",
+    duplicate: false,
+  },
+  { key: "true", override: "TRUE", value: "chosen", duplicate: false },
+  { key: '"true"', override: "true", value: "chosen", duplicate: true },
+  {
+    key: "tensor_analysis_provider",
+    override: "TENSOR_ANALYSIS_PROVIDER",
+    value: "ghidra",
+    duplicate: true,
+  },
+])(
+  "preserves DSH scalar-key identity and comments when replacing $key",
+  async ({ key, override, value, duplicate }) => {
+    const root = await createTestTempDirectory("tensor-dsh-alias-comments-");
+    const configPath = join(root, "cordis.patch.yml");
+    const source = `- insert:\n    - id: tensor-mcp\n      name: "@deepseek-ai/dsh-mcp-client"\n      config:\n        serverName: tensor\n        transport: stdio\n        command: old-tensor\n        args: [mcp]\n        env:\n          # retain preceding rationale\n          ${key}: "hopper" # retain inline rationale\n${duplicate ? `          ${override}: "ghidra" # retain winning rationale\n` : ""}          CUSTOM: !!js caller.custom\n`;
+    await writeFile(configPath, source);
+    const client = {
+      name: "dsh",
+      registrationProfile: supportedClientRegistrationProfile("dsh"),
+      format: "dsh",
+      configPath,
+    } as const;
+    const result = await configureClientConfiguration(
+      client,
+      { [override]: value },
+      ["tensor", "mcp"],
+    );
+    expect(result, JSON.stringify(result)).toMatchObject({
+      status: "configured",
+    });
+    const text = await readFile(configPath, "utf8");
+    expect(text).toContain("# retain preceding rationale");
+    expect(text).toContain("# retain inline rationale");
+    if (duplicate) expect(text).toContain("# retain winning rationale");
+    expect(text).toContain("!!js caller.custom");
+    const env = clientRegistrationEnvironmentDetails(
+      parseClientConfiguration(text, "dsh"),
+      undefined,
+      HOST_PLATFORM.platform,
+    );
+    if (!env.ok) throw env.error;
+    expect(env.value.values).toHaveProperty(override, value);
+    expect(
+      Object.keys(env.value.values).filter(
+        (name) => name.toUpperCase() === override.toUpperCase(),
+      ),
+    ).toEqual([override]);
+    expect(await readFile(`${configPath}.tensor.backup`, "utf8")).toBe(source);
+    expect(
+      await configureClientConfiguration(client, { [override]: value }, [
+        "tensor",
+        "mcp",
+      ]),
+    ).toEqual({ status: "unchanged" });
+  },
+);
+
+it("preserves a lowercase explicit Kimi schema profile instead of inserting a conflicting default", async () => {
+  const home = await createTestTempDirectory("tensor-kimi-case-");
+  await mkdir(join(home, ".kimi-code"));
+  const configPath = join(home, ".kimi-code/mcp.json");
+  await writeFile(
+    configPath,
+    JSON.stringify({
+      mcpServers: {
+        tensor: {
+          command: staleOwnedCommand[0],
+          args: staleOwnedCommand.slice(1),
+          env: { tensor_mcp_input_schema_profile: "compact" },
+        },
+      },
+    }),
+  );
+  const client = {
+    name: "kimi",
+    registrationProfile: supportedClientRegistrationProfile("kimi"),
+    format: "kimi",
+    configPath,
+  } as const;
+  const command = currentClientRegistrationCommand();
+  expect(await configureClientConfiguration(client, {}, command)).toMatchObject(
+    { status: "configured" },
+  );
+  const parsed = parseClientConfiguration(
+    await readFile(configPath, "utf8"),
+    "kimi",
+  );
+  expect(effectiveClientServer(parsed, "tensor")).toHaveProperty("env", {
+    tensor_mcp_input_schema_profile: "compact",
+  });
+  const statuses = await readClientRegistrationStatuses(home, command[1], {
+    platform: HOST_PLATFORM.platform,
+    environment: {},
+  });
+  expect(statuses.find(({ client }) => client === "kimi")).toMatchObject({
+    state: "aligned",
+  });
+});
+
+it
+  .skipIf(process.platform !== "win32")
+  .each(["hopper", "!!js caller.provider"])(
+  "replaces a Windows DSH environment alias without evaluating %s",
+  async (stored) => {
+    const root = await createTestTempDirectory("tensor-dsh-case-");
+    const configPath = join(root, "cordis.patch.yml");
+    const source = `- insert:\n    - id: tensor-mcp\n      name: "@deepseek-ai/dsh-mcp-client"\n      config:\n        serverName: tensor\n        transport: stdio\n        command: old-tensor\n        args: [mcp]\n        env:\n          tensor_analysis_provider: ${stored}\n          CUSTOM: !!js caller.custom\n`;
+    await writeFile(configPath, source);
+    const client = {
+      name: "dsh",
+      registrationProfile: supportedClientRegistrationProfile("dsh"),
+      format: "dsh",
+      configPath,
+    } as const;
+    const overrides = { TENSOR_ANALYSIS_PROVIDER: "ghidra" };
+    const configured = await configureClientConfiguration(client, overrides, [
+      "tensor",
+      "mcp",
+    ]);
+    expect(configured, JSON.stringify(configured)).toMatchObject({
+      status: "configured",
+    });
+    const text = await readFile(configPath, "utf8");
+    expect(text).not.toContain("tensor_analysis_provider:");
+    expect(text).toContain("TENSOR_ANALYSIS_PROVIDER: ghidra");
+    expect(text).toContain("!!js caller.custom");
+    const details = clientRegistrationEnvironmentDetails(
+      parseClientConfiguration(text, "dsh"),
+      undefined,
+      HOST_PLATFORM.platform,
+    );
+    if (!details.ok) throw details.error;
+    expect(details.value.timeoutInputs?.analysisProvider).toBe("ghidra");
+    expect(
+      await configureClientConfiguration(client, overrides, ["tensor", "mcp"]),
+    ).toEqual({ status: "unchanged" });
+  },
+);
+
+it.skipIf(process.platform !== "win32").each([
+  {
+    existing: { tensor_analysis_provider: "hopper" },
+    overrides: { TENSOR_ANALYSIS_PROVIDER: "ghidra" },
+    expected: "ghidra",
+  },
+  {
+    existing: { TENSOR_ANALYSIS_PROVIDER: "ghidra" },
+    overrides: { tensor_analysis_provider: "hopper" },
+    expected: "hopper",
+  },
+])(
+  "keeps Windows override precedence consistent with the launched environment: $expected",
+  ({ existing, overrides, expected }) => {
+    const parsed = parseClientConfiguration(
+      JSON.stringify({
+        mcpServers: {
+          tensor: { command: "tensor", args: ["mcp"], env: existing },
+        },
+      }),
+      "json",
+    );
+    const result = clientRegistrationEnvironmentDetails(
+      parsed,
+      undefined,
+      HOST_PLATFORM.platform,
+      overrides,
+    );
+    if (!result.ok) throw result.error;
+    expect(result.value.timeoutInputs?.analysisProvider).toBe(expected);
+    expect(
+      snapshotEnvironment(result.value.values, process.platform)
+        .TENSOR_ANALYSIS_PROVIDER,
+    ).toBe(expected);
+    expect(Object.keys(result.value.values)).toHaveLength(1);
+    const child = spawnSync(
+      process.execPath,
+      [
+        "-e",
+        "process.stdout.write(process.env.TENSOR_ANALYSIS_PROVIDER ?? '')",
+      ],
+      {
+        env: result.value.values,
+        encoding: "utf8",
+        timeout: 5_000,
+      },
+    );
+    expect(child.status, child.stderr).toBe(0);
+    expect(child.stdout).toBe(expected);
+  },
+);
+
+it.skipIf(process.platform !== "win32")(
+  "rejects invalid lowercase known settings before writing a Windows registration",
+  async () => {
+    const root = await createTestTempDirectory(
+      "tensor-invalid-lowercase-environment-",
+    );
+    const configPath = join(root, "config.json");
+    const original = JSON.stringify({
+      mcpServers: {
+        tensor: {
+          command: "tensor",
+          args: ["mcp"],
+          env: { tensor_analysis_provider: "invalid provider" },
+        },
+      },
+    });
+    await writeFile(configPath, original);
+    const result = await configureClientConfiguration(
+      {
+        name: "cursor",
+        registrationProfile: supportedClientRegistrationProfile("cursor"),
+        format: "json",
+        configPath,
+      },
+      {},
+      ["tensor", "mcp"],
+    );
+    expect(result).toMatchObject({ status: "failed" });
+    expect(await readFile(configPath, "utf8")).toBe(original);
+    await expect(access(`${configPath}.tensor.backup`)).rejects.toMatchObject({
+      code: "ENOENT",
+    });
+  },
+);
+
+it.each([
+  ["cursor", "json", "mcpServers", "env"],
+  ["codex", "toml", "mcp_servers", "env"],
+  ["opencode", "opencode", "mcp", "environment"],
+  ["hermes", "hermes", "mcp_servers", "env"],
+] as const)(
+  "preserves %s server environment through command and provider updates",
+  async (name, format, serversKey, environmentKey) => {
+    const root = await createTestTempDirectory("tensor-setup-environment-");
+    const configPath = join(root, "config");
+    const client = {
+      name,
+      registrationProfile: supportedClientRegistrationProfile(name),
+      format,
+      configPath,
+    };
+    const custom = {
+      TENSOR_MCP_INPUT_SCHEMA_PROFILE: "compact",
+      TENSOR_MCP_OUTPUT_SCHEMA_PROFILE: "off",
+      TENSOR_MCP_MAX_RESPONSE_BYTES: "33554432",
+      TENSOR_BROWSER_EXECUTABLE: join(root, "custom-browser"),
+      GHIDRA_INSTALL_DIR: join(root, "old-ghidra"),
+      HOPPER_LOADER_ARGS_JSON: '["", "--loader", "Mach-O"]',
+      TENSOR_REFERENCE_SECRET_PATTERNS_JSON: '["*.private", "local/**"]',
+      TENSOR_GHIDRA_LANGUAGE_ID: "x86:LE:32:default",
+      TENSOR_GHIDRA_COMPILER_SPEC_ID: "borlandcpp",
+      CALLER_SETTING: "preserve exactly = caller value",
+      ["__proto__"]: "caller prototype setting",
+      constructor: "caller constructor setting",
+      toString: "caller string setting",
+    };
+    const serialized = serializeClientConfiguration(
+      {
+        ["__proto__"]: { caller: "retain root value" },
+        [serversKey]: {
+          tensor: clientRegistrationEntry(format, staleOwnedCommand, custom),
+          other: clientRegistrationEntry(format, ["other"], { OTHER: "keep" }),
+          ["__proto__"]: clientRegistrationEntry(format, ["peer"], {}),
+        },
+      },
+      format,
+    );
+    if (!serialized.ok) throw new Error("fixture serialization failed");
+    const original = serialized.value;
+    const originalParsed = parseClientConfiguration(original, format);
+    await writeFile(configPath, original);
+    const providers = { GHIDRA_INSTALL_DIR: join(root, "new-ghidra") };
+    const command = ["tensor", "mcp"];
+    expect(
+      await inspectClientConfiguration(client, providers, command),
+    ).toMatchObject({ status: "update" });
+    expect(
+      await configureClientConfiguration(client, providers, command),
+    ).toMatchObject({ status: "configured" });
+    const configured = await readFile(configPath, "utf8");
+    const parsed = parseClientConfiguration(configured, format);
+    expect(Object.hasOwn(parsed.document, "__proto__")).toBe(true);
+    expect(parsed.document["__proto__"]).toEqual({
+      caller: "retain root value",
+    });
+    expect(Object.hasOwn(parsed.servers, "__proto__")).toBe(true);
+    expect(effectiveClientServer(parsed, "__proto__")).toEqual(
+      effectiveClientServer(originalParsed, "__proto__"),
+    );
+    expect(effectiveClientServer(parsed, "tensor")).toHaveProperty(
+      environmentKey,
+      { ...custom, ...providers },
+    );
+    expect(effectiveClientServer(parsed, "other")).toEqual(
+      effectiveClientServer(originalParsed, "other"),
+    );
+    expect(await readFile(`${configPath}.tensor.backup`, "utf8")).toBe(
+      original,
+    );
+    expect(await clientConfigurationAligned(client, providers, command)).toBe(
+      true,
+    );
+    expect(
+      await inspectClientConfiguration(client, providers, command),
+    ).toEqual({ status: "already_current" });
+    expect(
+      await configureClientConfiguration(client, providers, command),
+    ).toEqual({ status: "unchanged" });
+    expect(await readFile(configPath, "utf8")).toBe(configured);
+  },
+);
+
+it.each(["linux", "win32"] as const)(
+  "retains every literal Cordis environment key for %s",
+  (platform) => {
+    const source = `- insert:
+    - id: tensor-mcp
+      name: "@deepseek-ai/dsh-mcp-client"
+      config:
+        serverName: tensor
+        transport: stdio
+        command: tensor
+        args: [mcp]
+        env:
+          "__proto__": selected
+          constructor: caller
+          CUSTOM: !!js caller.custom
+`;
+    const details = clientRegistrationEnvironmentDetails(
+      parseClientConfiguration(source, "dsh"),
+      undefined,
+      platform,
+      {},
+      "effective",
+    );
+    if (!details.ok) throw details.error;
+    expect(Object.entries(details.value.values)).toEqual([
+      ["__proto__", "selected"],
+      ["constructor", "caller"],
+    ]);
+    expect(details.value.unresolvedSettings).toEqual(new Set(["CUSTOM"]));
+    expect(details.value.timeoutInputs?.analysisProvider).toBe("auto");
+  },
+);
+
+it("retains an unresolved JEB endpoint expression until a selected literal replaces it", async () => {
+  const parsed = parseClientConfiguration(
+    `- insert:
+    - id: tensor-mcp
+      name: "@deepseek-ai/dsh-mcp-client"
+      config:
+        env:
+          TENSOR_JEB_MCP_URL: !!js caller.endpoint
+`,
+    "dsh",
+  );
+  const unresolved = await clientRegistrationEnvironmentDetailsWithBudget(
+    parsed,
+    undefined,
+    {},
+    "effective",
+    undefined,
+    HOST_PLATFORM.platform,
+  );
+  if (!unresolved.ok) throw unresolved.error;
+  expect(unresolved.value.unresolvedSettings).toEqual(
+    new Set(["TENSOR_JEB_MCP_URL"]),
+  );
+  const endpoint = "http://127.0.0.1:8426/mcp/";
+  const selected = clientRegistrationEnvironmentDetails(
+    parsed,
+    undefined,
+    HOST_PLATFORM.platform,
+    {
+      TENSOR_JEB_MCP_URL: endpoint,
+    },
+  );
+  if (!selected.ok) throw selected.error;
+  expect(selected.value.values.TENSOR_JEB_MCP_URL).toBe(endpoint);
+  expect(selected.value.unresolvedSettings.size).toBe(0);
+});
+
+it.each(
+  [
+    "TENSOR_ANALYSIS_PROVIDER",
+    "TENSOR_GHIDRA_DECOMPILE_TIMEOUT_SECONDS",
+    "TENSOR_GHIDRA_STARTUP_TIMEOUT_MS",
+    "TENSOR_HOPPER_STARTUP_TIMEOUT_MS",
+    "TENSOR_JEB_MCP_TIMEOUT_MS",
+  ].flatMap((setting) =>
+    (["linux", "win32"] as const).map((platform) => ({ setting, platform })),
+  ),
+)(
+  "keeps expression-backed $setting unknown on $platform when deriving timeout guidance",
+  async ({ setting, platform }) => {
+    const parsed = parseClientConfiguration(
+      `- insert:
+    - id: tensor-mcp
+      name: "@deepseek-ai/dsh-mcp-client"
+      config:
+        env:
+          ${platform === "win32" ? setting.toLowerCase() : setting}: !!js caller.setting
+          CALLER_SETTING: retained
+`,
+      "dsh",
+    );
+    const values = clientRegistrationEnvironment(
+      parsed,
+      undefined,
+      platform,
+      {},
+      "effective",
+    );
+    expect(values).toMatchObject({
+      ok: true,
+      value: { CALLER_SETTING: "retained" },
+    });
+    const details = clientRegistrationEnvironmentDetails(
+      parsed,
+      undefined,
+      platform,
+      {},
+      "effective",
+    );
+    if (!details.ok) throw details.error;
+    expect(details.value.values).toEqual({ CALLER_SETTING: "retained" });
+    expect(details.value.unresolvedSettings).toEqual(new Set([setting]));
+    expect(details.value.timeoutInputs).toBeUndefined();
+    let resolved = false;
+    const budget = await clientRegistrationEnvironmentDetailsWithBudget(
+      parsed,
+      undefined,
+      {},
+      "effective",
+      async () => {
+        resolved = true;
+        return ok(17);
+      },
+      platform,
+    );
+    expect(budget).toMatchObject({
+      ok: false,
+      error: { settings: [{ setting }] },
+    });
+    expect(resolved).toBe(false);
+    const overridden = clientRegistrationEnvironmentDetails(
+      parsed,
+      undefined,
+      platform,
+      {
+        [setting]: setting === "TENSOR_ANALYSIS_PROVIDER" ? "ghidra" : "17000",
+      },
+      "effective",
+    );
+    if (!overridden.ok) throw overridden.error;
+    expect(overridden.value.unresolvedSettings.size).toBe(0);
+    expect(overridden.value.timeoutInputs).toBeDefined();
+  },
+);
+
+it("retains an unknown companion while deriving unrelated literal timeout facts", () => {
+  const parsed = parseClientConfiguration(
+    `- insert:
+    - id: tensor-mcp
+      name: "@deepseek-ai/dsh-mcp-client"
+      config:
+        env:
+          TENSOR_GHIDRA_LANGUAGE_ID: !!js caller.language
+          TENSOR_GHIDRA_COMPILER_SPEC_ID: borlandcpp
+          TENSOR_GHIDRA_STARTUP_TIMEOUT_MS: "17000"
+`,
+    "dsh",
+  );
+  const details = clientRegistrationEnvironmentDetails(
+    parsed,
+    undefined,
+    HOST_PLATFORM.platform,
+  );
+  if (!details.ok) throw details.error;
+  expect(details.value.unresolvedSettings).toEqual(
+    new Set(["TENSOR_GHIDRA_LANGUAGE_ID"]),
+  );
+  expect(details.value.timeoutInputs?.ghidraStartupTimeoutMs).toBe(17000);
+});
+
+it("does not resolve a provider budget from an expression omitted from literal values", async () => {
+  const parsed = parseClientConfiguration(
+    `- insert:
+    - id: tensor-mcp
+      name: "@deepseek-ai/dsh-mcp-client"
+      config:
+        env:
+          TENSOR_ANALYSIS_PROVIDER: ida
+          TENSOR_IDA_MCP_CONFIG: !!js caller.idaConfig
+`,
+    "dsh",
+  );
+  const observations: string[] = [];
+  const resolveBudget = async (
+    provider: string,
+    environment: Readonly<Record<string, string>>,
+  ) => {
+    observations.push(provider, environment.TENSOR_IDA_MCP_CONFIG ?? "missing");
+    return ok(17);
+  };
+  expect(
+    await clientRegistrationEnvironmentDetailsWithBudget(
+      parsed,
+      undefined,
+      {},
+      "effective",
+      undefined,
+      HOST_PLATFORM.platform,
+    ),
+  ).toMatchObject({
+    ok: true,
+    value: { timeoutInputs: { analysisProvider: "ida" } },
+  });
+  expect(
+    await clientRegistrationEnvironmentDetailsWithBudget(
+      parsed,
+      undefined,
+      {},
+      "effective",
+      resolveBudget,
+      HOST_PLATFORM.platform,
+    ),
+  ).toMatchObject({
+    ok: false,
+    error: { settings: [{ setting: "TENSOR_IDA_MCP_CONFIG" }] },
+  });
+  expect(observations).toEqual([]);
+  const resolved = await clientRegistrationEnvironmentDetailsWithBudget(
+    parsed,
+    undefined,
+    { TENSOR_IDA_MCP_CONFIG: "/selected/ida.json" },
+    "effective",
+    resolveBudget,
+    HOST_PLATFORM.platform,
+  );
+  expect(resolved).toMatchObject({
+    ok: true,
+    value: { timeoutInputs: { providerRequestTimeoutMs: 17 } },
+  });
+  expect(observations).toEqual(["ida", "/selected/ida.json"]);
+});
+
+it("rejects a non-string caller environment key before editing configuration", async () => {
+  const root = await createTestTempDirectory("tensor-invalid-own-environment-");
+  const configPath = join(root, "config.json");
+  const source =
+    '{"mcpServers":{"tensor":{"command":"tensor","args":["mcp"],"env":{"__proto__":123}}}}';
+  await writeFile(configPath, source);
+  const details = clientRegistrationEnvironmentDetails(
+    parseClientConfiguration(source, "json"),
+    undefined,
+    HOST_PLATFORM.platform,
+  );
+  expect(details).toMatchObject({
+    ok: false,
+    error: { settings: [{ setting: "env.__proto__" }] },
+  });
+  expect(
+    await configureClientConfiguration(
+      {
+        name: "cursor",
+        registrationProfile: supportedClientRegistrationProfile("cursor"),
+        format: "json",
+        configPath,
+      },
+      {},
+      ["tensor", "mcp"],
+    ),
+  ).toEqual({ status: "failed", reason: "readback" });
+  expect(await readFile(configPath, "utf8")).toBe(source);
+  await expect(access(`${configPath}.tensor.backup`)).rejects.toMatchObject({
+    code: "ENOENT",
+  });
+});
+
+it("does not hide an invalid JEB endpoint in an untouched configuration layer", async () => {
+  const root = await createTestTempDirectory("tensor-jeb-layer-validation-");
+  const lower = join(root, "lower.json");
+  const configPath = join(root, "opencode.json");
+  const bad = JSON.stringify({
+    mcp: {
+      tensor: clientRegistrationEntry("opencode", ["tensor", "mcp"], {
+        TENSOR_JEB_MCP_URL: "https://example.com/mcp",
+      }),
+    },
+  });
+  await writeFile(lower, bad);
+  await writeFile(configPath, "{}\n");
+  const client = {
+    name: "opencode",
+    registrationProfile: supportedClientRegistrationProfile("opencode"),
+    format: "opencode",
+    configPath,
+    configPaths: [lower, configPath],
+  } as const;
+  const selected = { TENSOR_JEB_MCP_URL: "http://127.0.0.1:8426/mcp" };
+  expect(
+    await inspectClientConfiguration(client, selected, ["tensor", "mcp"]),
+  ).toMatchObject({
+    status: "invalid",
+    remediation: expect.stringContaining(lower),
+  });
+  expect(await readFile(lower, "utf8")).toBe(bad);
+  expect(await readFile(configPath, "utf8")).toBe("{}\n");
+});
+
+it("retains legacy OpenCode environment when migrating into a native server table", async () => {
+  const root = await createTestTempDirectory("tensor-opencode-environment-");
+  const configPath = join(root, "opencode.json");
+  const client = {
+    name: "opencode",
+    registrationProfile: supportedClientRegistrationProfile("opencode"),
+    format: "opencode",
+    configPath,
+  } as const;
+  const custom = { TENSOR_MCP_INPUT_SCHEMA_PROFILE: "compact" };
+  await writeFile(
+    configPath,
+    JSON.stringify({
+      mcp: {
+        tensor: clientRegistrationEntry("opencode", staleOwnedCommand, custom),
+        servers: {
+          other: clientRegistrationEntry("opencode_v2", ["other"], {}),
+        },
+      },
+    }),
+  );
+  expect(
+    await configureClientConfiguration(client, {}, ["tensor", "mcp"]),
+  ).toMatchObject({ status: "configured" });
+  const parsed = parseClientConfiguration(
+    await readFile(configPath, "utf8"),
+    "opencode",
+  );
+  expect(parsed.legacyServers).toEqual({});
+  expect(parsed.servers.tensor).toEqual(
+    clientRegistrationEntry("opencode_v2", ["tensor", "mcp"], custom),
+  );
+  expect(
+    await configureClientConfiguration(client, {}, ["tensor", "mcp"]),
+  ).toEqual({ status: "unchanged" });
+});
+
+it.each([
+  [
+    "environment name containing an equals delimiter",
+    { "CALLER=SETTING": "value" },
+    "CALLER=SETTING",
+  ],
+  [
+    "non-string member",
+    { TENSOR_MCP_INPUT_SCHEMA_PROFILE: "compact", PORT: 8080 },
+    "env.PORT",
+  ],
+  [
+    "boolean member",
+    { TENSOR_MCP_INPUT_SCHEMA_PROFILE: "compact", FLAG: true },
+    "env.FLAG",
+  ],
+  [
+    "null member",
+    { TENSOR_MCP_INPUT_SCHEMA_PROFILE: "compact", VALUE: null },
+    "env.VALUE",
+  ],
+  ["array", [], "env"],
+  ["string", "not-a-map", "env"],
+  ["null map", null, "env"],
+  [
+    "empty profile",
+    { TENSOR_MCP_INPUT_SCHEMA_PROFILE: "" },
+    "TENSOR_MCP_INPUT_SCHEMA_PROFILE",
+  ],
+  [
+    "invalid profile",
+    { TENSOR_MCP_INPUT_SCHEMA_PROFILE: "bogus" },
+    "TENSOR_MCP_INPUT_SCHEMA_PROFILE",
+  ],
+  [
+    "empty output profile",
+    { TENSOR_MCP_OUTPUT_SCHEMA_PROFILE: "" },
+    "TENSOR_MCP_OUTPUT_SCHEMA_PROFILE",
+  ],
+  [
+    "invalid output profile",
+    { TENSOR_MCP_OUTPUT_SCHEMA_PROFILE: "bogus" },
+    "TENSOR_MCP_OUTPUT_SCHEMA_PROFILE",
+  ],
+  [
+    "invalid response budget",
+    { TENSOR_MCP_MAX_RESPONSE_BYTES: "1" },
+    "TENSOR_MCP_MAX_RESPONSE_BYTES",
+  ],
+  [
+    "ASAR header admission above its maximum",
+    { TENSOR_ASAR_MAX_HEADER_BYTES: "268435457" },
+    "TENSOR_ASAR_MAX_HEADER_BYTES",
+  ],
+  [
+    "regex matching deadline of zero",
+    { TENSOR_REGEX_MATCHING_DEADLINE_MS: "0" },
+    "TENSOR_REGEX_MATCHING_DEADLINE_MS",
+  ],
+  [
+    "capture decoder heap below its floor",
+    { TENSOR_CAPTURE_DECODER_OLD_GENERATION_MIB: "7" },
+    "TENSOR_CAPTURE_DECODER_OLD_GENERATION_MIB",
+  ],
+  [
+    "regex worker heap request below its floor",
+    { TENSOR_REGEX_WORKER_HEAP_REQUEST_MIB: "6" },
+    "TENSOR_REGEX_WORKER_HEAP_REQUEST_MIB",
+  ],
+  [
+    "bridge request ceiling below its floor",
+    { TENSOR_BRIDGE_MAX_REQUEST_BYTES: "7463" },
+    "TENSOR_BRIDGE_MAX_REQUEST_BYTES",
+  ],
+  [
+    "bridge request ceiling above its maximum",
+    { TENSOR_BRIDGE_MAX_REQUEST_BYTES: "536870888" },
+    "TENSOR_BRIDGE_MAX_REQUEST_BYTES",
+  ],
+  [
+    "MCP initialize budget of zero",
+    { TENSOR_MCP_INITIALIZE_BUDGET_MS: "0" },
+    "TENSOR_MCP_INITIALIZE_BUDGET_MS",
+  ],
+  [
+    "MCP tools/list budget above its maximum",
+    { TENSOR_MCP_TOOLS_LIST_BUDGET_MS: "2147483648" },
+    "TENSOR_MCP_TOOLS_LIST_BUDGET_MS",
+  ],
+  [
+    "MCP first-catalog budget with a leading zero",
+    { TENSOR_MCP_FIRST_CATALOG_BUDGET_MS: "020000" },
+    "TENSOR_MCP_FIRST_CATALOG_BUDGET_MS",
+  ],
+  [
+    "MCP doctor deadline that is not decimal",
+    { TENSOR_MCP_DOCTOR_DEADLINE_MS: "30_000" },
+    "TENSOR_MCP_DOCTOR_DEADLINE_MS",
+  ],
+  [
+    "malformed loader JSON",
+    { HOPPER_LOADER_ARGS_JSON: "{" },
+    "HOPPER_LOADER_ARGS_JSON",
+  ],
+  [
+    "non-array loader JSON",
+    { HOPPER_LOADER_ARGS_JSON: "{}" },
+    "HOPPER_LOADER_ARGS_JSON",
+  ],
+  [
+    "NUL loader argument",
+    { HOPPER_LOADER_ARGS_JSON: JSON.stringify(["a\0b"]) },
+    "HOPPER_LOADER_ARGS_JSON",
+  ],
+  [
+    "malformed exclusion JSON",
+    { TENSOR_REFERENCE_SECRET_PATTERNS_JSON: "{" },
+    "TENSOR_REFERENCE_SECRET_PATTERNS_JSON",
+  ],
+  [
+    "empty exclusion pattern",
+    { TENSOR_REFERENCE_SECRET_PATTERNS_JSON: '[""]' },
+    "TENSOR_REFERENCE_SECRET_PATTERNS_JSON",
+  ],
+  [
+    "unpaired compiler specification",
+    { TENSOR_GHIDRA_COMPILER_SPEC_ID: "borlandcpp" },
+    "TENSOR_GHIDRA_COMPILER_SPEC_ID",
+  ],
+  [
+    "Windows ChangeTime drift window of zero",
+    { TENSOR_WINDOWS_CHANGE_TIME_DRIFT_MS: "0" },
+    "TENSOR_WINDOWS_CHANGE_TIME_DRIFT_MS",
+  ],
+  [
+    "Windows ChangeTime poll that is not decimal",
+    { TENSOR_WINDOWS_CHANGE_TIME_SETTLE_POLL_MS: "1e2" },
+    "TENSOR_WINDOWS_CHANGE_TIME_SETTLE_POLL_MS",
+  ],
+  [
+    "Windows ChangeTime poll budget above its maximum",
+    { TENSOR_WINDOWS_CHANGE_TIME_SETTLE_MAX_POLLS: "1001" },
+    "TENSOR_WINDOWS_CHANGE_TIME_SETTLE_MAX_POLLS",
+  ],
+] as const)(
+  "refuses %s before changing the configuration",
+  async (_name, env, setting) => {
+    const home = await createTestTempDirectory("tensor-invalid-environment-");
+    const directory = join(home, ".cursor");
+    const configPath = join(directory, "mcp.json");
+    await mkdir(directory);
+    const original = JSON.stringify({
+      mcpServers: { tensor: { command: "tensor", args: ["mcp"], env } },
+    });
+    await writeFile(configPath, original);
+    const client = {
+      name: "cursor",
+      registrationProfile: supportedClientRegistrationProfile("cursor"),
+      format: "json",
+      configPath,
+    } as const;
+    expect(
+      await inspectClientConfiguration(client, {}, ["tensor", "mcp"]),
+    ).toMatchObject({
+      status: "invalid",
+      remediation: expect.stringContaining(setting),
+    });
+    expect(
+      await configureClientConfiguration(client, {}, ["tensor", "mcp"]),
+    ).toEqual({ status: "failed", reason: "readback" });
+    expect(
+      await clientConfigurationAligned(client, {}, ["tensor", "mcp"]),
+    ).toBe(false);
+    const statuses = await readClientRegistrationStatuses(home, "tensor", {
+      platform: HOST_PLATFORM.platform,
+      environment: {},
+    });
+    expect(statuses.find(({ client }) => client === "cursor")).toMatchObject({
+      state: "invalid",
+      remediation: expect.stringContaining(setting),
+    });
+    expect(await readFile(configPath, "utf8")).toBe(original);
+    await expect(access(`${configPath}.tensor.backup`)).rejects.toMatchObject({
+      code: "ENOENT",
+    });
+  },
+);
+
+it("refuses an unidentified launch command before creating a client configuration", async () => {
+  const home = await createTestTempDirectory(
+    "tensor-registration-unidentified-",
+  );
+  const configPath = join(home, "missing", "mcp.json");
+  const result = await configureClientConfiguration(
+    {
+      name: "claude_code",
+      registrationProfile: supportedClientRegistrationProfile("claude_code"),
+      configPath,
+      format: "json",
+    },
+    {},
+    [],
+  );
+  expect(result).toMatchObject({
+    status: "failed",
+    reason: "registration_ownership",
+  });
+  await expect(access(join(home, "missing"))).rejects.toMatchObject({
+    code: "ENOENT",
+  });
+});
+
+it("treats a variable-expanding client's recorded expression as unresolved", () => {
+  const parsed = parseClientConfiguration(
+    JSON.stringify({
+      mcpServers: {
+        tensor: {
+          command: "tensor",
+          args: ["mcp"],
+          env: { PATH: "${PATH}:/opt/jdk/bin", JAVA_HOME: "/opt/jdk" },
+        },
+      },
+    }),
+    "json",
+  );
+  const qwen = clientRegistrationEnvironmentDetails(
+    parsed,
+    {
+      name: "qwen_code",
+      registrationProfile: supportedClientRegistrationProfile("qwen_code"),
+    },
+    HOST_PLATFORM.platform,
+  );
+  if (!qwen.ok) throw qwen.error;
+  // Qwen expands the expression from its own environment, so Tensor records the
+  // name as unresolved rather than treating the literal text as the value.
+  expect(qwen.value.unresolvedSettings).toEqual(new Set(["PATH"]));
+  expect(qwen.value.values.PATH).toBe("${PATH}:/opt/jdk/bin");
+
+  // A client that does not expand expressions keeps the same text as a value.
+  const cursor = clientRegistrationEnvironmentDetails(
+    parsed,
+    {
+      name: "cursor",
+      registrationProfile: supportedClientRegistrationProfile("cursor"),
+    },
+    HOST_PLATFORM.platform,
+  );
+  if (!cursor.ok) throw cursor.error;
+  expect(cursor.value.unresolvedSettings).toEqual(new Set());
+  expect(cursor.value.values.PATH).toBe("${PATH}:/opt/jdk/bin");
+});
+
+it("keeps a typed Qwen setting unresolved without discarding its recorded expression", () => {
+  const parsed = parseClientConfiguration(
+    JSON.stringify({
+      mcpServers: {
+        tensor: {
+          command: "tensor",
+          args: ["mcp"],
+          env: { TENSOR_GHIDRA_STARTUP_TIMEOUT_MS: "${JOBS}" },
+        },
+      },
+    }),
+    "json",
+  );
+  const details = clientRegistrationEnvironmentDetails(
+    parsed,
+    {
+      name: "qwen_code",
+      registrationProfile: supportedClientRegistrationProfile("qwen_code"),
+    },
+    HOST_PLATFORM.platform,
+  );
+  expect(details.ok).toBe(true);
+  if (!details.ok) return;
+  expect(details.value.values.TENSOR_GHIDRA_STARTUP_TIMEOUT_MS).toBe("${JOBS}");
+  expect(details.value.unresolvedSettings).toEqual(
+    new Set(["TENSOR_GHIDRA_STARTUP_TIMEOUT_MS"]),
+  );
+});
+
+it("keeps a differently cased Qwen expression unresolved on Windows", () => {
+  const parsed = parseClientConfiguration(
+    JSON.stringify({
+      mcpServers: {
+        tensor: {
+          command: "tensor",
+          args: ["mcp"],
+          env: { tensor_ghidra_startup_timeout_ms: "${JOBS}" },
+        },
+      },
+    }),
+    "json",
+  );
+  const details = clientRegistrationEnvironmentDetails(
+    parsed,
+    {
+      name: "qwen_code",
+      registrationProfile: supportedClientRegistrationProfile("qwen_code"),
+    },
+    "win32",
+    {},
+    "fragment",
+  );
+  expect(details.ok).toBe(true);
+  if (!details.ok) return;
+  expect(
+    [...details.value.unresolvedSettings].map((name) => name.toUpperCase()),
+  ).toEqual(["TENSOR_GHIDRA_STARTUP_TIMEOUT_MS"]);
+});
+
+it.each([
+  ["cline", "selected"],
+  ["cline", 42],
+  ["cursor", "metadata"],
+  ["cursor", 42],
+] as const)(
+  "reads only the profile-selected %s environment with nested value %j",
+  (name, value) => {
+    const parsed = parseClientConfiguration(
+      JSON.stringify({
+        mcpServers: {
+          tensor: {
+            command: "outer",
+            env: { SELECTED: "outer" },
+            transport: {
+              type: "stdio",
+              command: "nested",
+              env: { SELECTED: value },
+            },
+          },
+        },
+      }),
+      "json",
+    );
+    const details = clientRegistrationEnvironmentDetails(
+      parsed,
+      {
+        name,
+        registrationProfile: supportedClientRegistrationProfile(name),
+      },
+      HOST_PLATFORM.platform,
+    );
+    if (name === "cline" && typeof value !== "string") {
+      expect(details).toMatchObject({
+        ok: false,
+        error: { settings: [{ setting: "transport.env.SELECTED" }] },
+      });
+    } else {
+      expect(details).toMatchObject({
+        ok: true,
+        value: { values: { SELECTED: name === "cline" ? value : "outer" } },
+      });
+    }
+  },
+);

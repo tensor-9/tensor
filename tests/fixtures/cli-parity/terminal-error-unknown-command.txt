@@ -1,0 +1,11 @@
+$ tensor no-such-command  # stdout is a terminal
+exit: 1
+--- stdout
+Error: 'no-such-command' is not a command for 'tensor'. Did you mean 'cutter-command'?
+
+Suggested commands:
+  tensor cutter-command
+  tensor --help          # see all available commands
+<end>
+--- stderr
+<end>

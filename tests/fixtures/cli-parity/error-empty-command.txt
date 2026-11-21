@@ -1,0 +1,14 @@
+$ tensor ""
+exit: 1
+--- stdout
+code: COMMAND_NOT_FOUND
+message: '' is not a command for 'tensor'. Did you mean 'mcp'?
+cta:
+  description: "Suggested commands:"
+  commands[2]:
+    - command: tensor mcp
+    - command: tensor --help
+      description: see all available commands
+<end>
+--- stderr
+<end>

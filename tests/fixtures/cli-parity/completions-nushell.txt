@@ -1,0 +1,11 @@
+$ tensor completions nushell
+exit: 0
+--- stdout
+# External completer for tensor
+# Add to $env.config.completions.external.completer or use in a dispatch completer.
+let _incur_complete_tensor = {|spans|
+    COMPLETE=nushell tensor -- ...$spans | from json
+}
+<end>
+--- stderr
+<end>

@@ -1,0 +1,20 @@
+$ tensor completions --help
+exit: 0
+--- stdout
+tensor completions — Generate shell completion script
+
+Usage: tensor completions <bash|fish|nushell|zsh>
+
+Arguments:
+  shell  Shell to generate completions for
+
+Setup:
+  bash     eval "$(tensor completions bash)"  # add to ~/.bashrc
+  fish     tensor completions fish | source   # add to ~/.config/fish/config.fish
+  nushell  see `tensor completions nushell`   # add to config.nu
+  zsh      eval "$(tensor completions zsh)"   # add to ~/.zshrc
+
+Zsh: initialize completion with `autoload -Uz compinit; compinit` before evaluating the zsh hook. If your shell already runs compinit, place the hook after it.
+<end>
+--- stderr
+<end>

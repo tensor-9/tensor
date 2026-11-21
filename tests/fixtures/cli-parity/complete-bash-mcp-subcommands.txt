@@ -1,0 +1,6 @@
+$ COMPLETE=bash tensor -- tensor mcp ""
+exit: 0
+--- stdout
+add<0x0b>doctor<end>
+--- stderr
+<end>

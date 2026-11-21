@@ -1,0 +1,7 @@
+$ tensor completions bogus --json
+exit: 1
+--- stdout
+Error (INVALID_SHELL): Unknown shell 'bogus'. Supported: bash, fish, nushell, zsh
+<end>
+--- stderr
+<end>

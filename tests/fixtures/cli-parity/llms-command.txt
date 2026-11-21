@@ -1,0 +1,15 @@
+$ tensor inspect-byte-entropy --llms
+exit: 0
+--- stdout
+# tensor
+
+Reverse engineer anything from your terminal or agent.
+
+| Command | Description |
+|---------|-------------|
+| `tensor inspect-byte-entropy <path>` | Inspect file-wide and block byte entropy without executing the file |
+
+Run `tensor --llms-full` for full manifest. Run `tensor <command> --schema` for argument details.
+<end>
+--- stderr
+<end>

@@ -1,0 +1,18 @@
+$ tensor completions zsh
+exit: 0
+--- stdout
+#compdef tensor
+_incur_complete_tensor() {
+    local completions=("${(@f)$(
+        export _COMPLETE_INDEX=$(( CURRENT - 1 ))
+        export COMPLETE="zsh"
+        "tensor" -- "${words[@]}" 2>/dev/null
+    )}")
+    if [[ -n $completions ]]; then
+        _describe 'values' completions -S ''
+    fi
+}
+compdef _incur_complete_tensor tensor
+<end>
+--- stderr
+<end>

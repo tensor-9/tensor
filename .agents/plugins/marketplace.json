@@ -1,0 +1,21 @@
+{
+  "name": "tensor",
+  "interface": {
+    "displayName": "Tensor"
+  },
+  "plugins": [
+    {
+      "name": "tensor",
+      "source": {
+        "source": "npm",
+        "package": "tensor-agents",
+        "version": "6.10.1"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    }
+  ]
+}

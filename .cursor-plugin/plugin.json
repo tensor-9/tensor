@@ -1,0 +1,20 @@
+{
+  "name": "tensor",
+  "version": "6.10.1",
+  "description": "Reverse engineer anything with agents, from app behavior down to native binaries.",
+  "author": {
+    "name": "morluto",
+    "url": "https://github.com/morluto"
+  },
+  "homepage": "https://tensor.tools/",
+  "repository": "https://github.com/morluto/tensor",
+  "license": "MIT",
+  "keywords": [
+    "reverse-engineering",
+    "binary-analysis",
+    "decompiler",
+    "mcp-server"
+  ],
+  "skills": ".cursor-plugin/skills",
+  "logo": "assets/tensor-plugin.png"
+}

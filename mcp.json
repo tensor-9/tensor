@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "tensor": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "tensor-agents@6.10.1",
+        "mcp"
+      ]
+    }
+  }
+}
