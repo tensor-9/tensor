@@ -128,17 +128,33 @@ jobs:
                   time.sleep(5)
           if not served:
               sys.exit("Could not verify the published revision at " + base)
-          with open_public(urljoin(base, ".well-known/agent-skills/index.json")) as response:
-              skill, = json.load(response)["skills"]
-          artifact_url = urljoin(base, urlsplit(skill["url"]).path.lstrip("/"))
-          with open_public(artifact_url) as response:
-              digest = "sha256:" + hashlib.sha256(response.read()).hexdigest()
-          if digest != skill["digest"]:
-              sys.exit("GitHub Pages serves a skill archive with the wrong digest")
-          for manifest in ("ard.json", "ai-catalog.json"):
-              with open_public(urljoin(base, ".well-known/" + manifest)) as response:
-                  if not json.load(response).get("entries"):
-                      sys.exit("GitHub Pages serves an empty discovery manifest")
+          # Pages can answer the version marker before nested paths propagate, so
+          # retry the discovery resources instead of failing on first 404.
+          verified = False
+          for attempt in range(20):
+              try:
+                  with open_public(urljoin(base, ".well-known/agent-skills/index.json")) as response:
+                      skill, = json.load(response)["skills"]
+                  artifact_url = urljoin(base, urlsplit(skill["url"]).path.lstrip("/"))
+                  with open_public(artifact_url) as response:
+                      digest = "sha256:" + hashlib.sha256(response.read()).hexdigest()
+                  manifests = []
+                  for manifest in ("ard.json", "ai-catalog.json"):
+                      with open_public(urljoin(base, ".well-known/" + manifest)) as response:
+                          manifests.append(bool(json.load(response).get("entries")))
+                  if digest != skill["digest"]:
+                      print("Waiting for GitHub Pages: skill archive digest differs")
+                  elif not all(manifests):
+                      print("Waiting for GitHub Pages: empty discovery manifest")
+                  else:
+                      verified = True
+                      break
+              except (URLError, TimeoutError, ValueError) as error:
+                  print(f"Waiting for GitHub Pages discovery resources: {error}")
+              if attempt < 19:
+                  time.sleep(3)
+          if not verified:
+              sys.exit("Could not verify the discovery manifests and skill archive")
           print(f"GitHub Pages serves {expected} with the discovery manifests and verified skill archive")
           with open(os.environ["GITHUB_STEP_SUMMARY"], "a", encoding="utf-8") as summary:
               summary.write(f"Published commit `{expected}` to [GitHub Pages]({base}).\n")
