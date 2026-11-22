@@ -72,7 +72,7 @@ jobs:
   deploy:
     needs: prepare
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
     permissions:
       contents: read
       actions: read
@@ -134,7 +134,7 @@ jobs:
           # so the commit query makes each check read the current deployment.
           cache_bust = "?commit=" + expected
           verified = False
-          for attempt in range(48):
+          for attempt in range(120):
               try:
                   with open_public(urljoin(base, ".well-known/agent-skills/index.json") + cache_bust) as response:
                       skill, = json.load(response)["skills"]
@@ -154,7 +154,7 @@ jobs:
                       break
               except (URLError, TimeoutError, ValueError) as error:
                   print(f"Waiting for GitHub Pages discovery resources at {base}: {error}")
-              if attempt < 47:
+              if attempt < 119:
                   time.sleep(5)
           if not verified:
               sys.exit("Could not verify the discovery manifests and skill archive")
