@@ -18,7 +18,7 @@ const authoredSkill = async (
   files: Readonly<Record<string, string>>,
 ) => {
   for (const [path, content] of Object.entries(files)) {
-    const target = join(root, ".agents/skills/reverse-engineer-anything", path);
+    const target = join(root, ".agents/skills/tensor-reverse-engineering", path);
     await mkdir(join(target, ".."), { recursive: true });
     await writeFile(target, content);
   }
@@ -79,9 +79,9 @@ describe("Cursor Marketplace plugin", () => {
       },
       packageVersion: "6.8.0",
       logoExists: true,
-      skillNames: ["reverse-engineer-anything"],
+      skillNames: ["tensor-reverse-engineering"],
       skillFrontmatter: {
-        name: "reverse-engineer-anything",
+        name: "tensor-reverse-engineering",
         description: "Use Tensor",
       },
     };
@@ -96,7 +96,7 @@ describe("Cursor Marketplace plugin", () => {
           },
         },
         logoExists: false,
-        skillNames: ["tensor-tool-design", "reverse-engineer-anything"],
+        skillNames: ["tensor-tool-design", "tensor-reverse-engineering"],
       }).map(({ field }) => field),
     ).toEqual([
       "name",
@@ -111,16 +111,16 @@ describe("Cursor Marketplace plugin", () => {
     const root = await createTestTempDirectory("tensor-cursor-plugin-skill-");
     await authoredSkill(root, {
       "SKILL.md":
-        "---\nname: reverse-engineer-anything\ndescription: Use Tensor\n---\n\n# Tensor\n",
+        "---\nname: tensor-reverse-engineering\ndescription: Use Tensor\n---\n\n# Tensor\n",
       "references/guide.md": "# Guide\n",
     });
     await syncCursorPluginSkill({ root, check: false });
     const skill = join(
       root,
-      ".cursor-plugin/skills/reverse-engineer-anything/SKILL.md",
+      ".cursor-plugin/skills/tensor-reverse-engineering/SKILL.md",
     );
     expect(await readFile(skill, "utf8")).toBe(
-      "---\nname: reverse-engineer-anything\ndescription: Use Tensor\n---\n\n# Tensor\n",
+      "---\nname: tensor-reverse-engineering\ndescription: Use Tensor\n---\n\n# Tensor\n",
     );
     await expect(
       syncCursorPluginSkill({ root, check: true }),
@@ -133,7 +133,7 @@ describe("Cursor Marketplace plugin", () => {
     await writeFile(
       join(
         root,
-        ".cursor-plugin/skills/reverse-engineer-anything/references/extra.md",
+        ".cursor-plugin/skills/tensor-reverse-engineering/references/extra.md",
       ),
       "extra\n",
     );

@@ -39,11 +39,11 @@ it.runIf(process.platform === "win32").each([true, false])(
       await symlink(privateClaude, join(env.APPDATA, "Claude"), "junction");
     const agents = join(env.APPDATA, "dsh", "agents");
     const manifests = [
-      join(agents, "skills", "reverse-engineer-anything", "SKILL.md"),
-      join(home, ".claude", "skills", "reverse-engineer-anything", "SKILL.md"),
+      join(agents, "skills", "tensor-reverse-engineering", "SKILL.md"),
+      join(home, ".claude", "skills", "tensor-reverse-engineering", "SKILL.md"),
     ];
     const contents =
-      "---\nname: reverse-engineer-anything\n---\nmanaged fixture\n";
+      "---\nname: tensor-reverse-engineering\n---\nmanaged fixture\n";
     for (const manifest of manifests) {
       await mkdir(dirname(manifest), { recursive: true });
       await writeFile(manifest, contents);

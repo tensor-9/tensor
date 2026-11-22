@@ -340,7 +340,7 @@ for (const group of groups) {
       const profiles = group.cases.map((testCase) => ({
         ...testCase,
         config: join(home, testCase.config),
-        skillDirectory: join(home, testCase.skill, "reverse-engineer-anything"),
+        skillDirectory: join(home, testCase.skill, "tensor-reverse-engineering"),
       }));
       const clientArguments = profiles.flatMap(({ client }) => [
         "--client",
@@ -386,7 +386,7 @@ for (const group of groups) {
         await expect(access(config)).resolves.toBeUndefined();
         expect(
           await readFile(join(skillDirectory, "SKILL.md"), "utf8"),
-        ).toContain("reverse-engineer-anything");
+        ).toContain("tensor-reverse-engineering");
       }
       await expect(access(join(home, "config.toml"))).rejects.toMatchObject({
         code: "ENOENT",

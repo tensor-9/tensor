@@ -248,7 +248,7 @@ route. Setup is additive: a previous user-level Tensor registration and personal
 skill remain active in other projects. Back up the default configuration and
 Tensor skill first, then, with `CLAUDE_CONFIG_DIR` unset, remove the Tensor user
 registration with `claude mcp remove --scope user tensor` and remove the known
-Tensor-installed `~/.claude/skills/reverse-engineer-anything` directory. Preserve
+Tensor-installed `~/.claude/skills/tensor-reverse-engineering` directory. Preserve
 unrelated registrations and skills. `tensor uninstall` applies to other clients
 as well, so it is broader than this Claude-only migration.
 
@@ -289,7 +289,7 @@ profile after changing its registration.
 `claude mcp remove` removes only the registration. To remove Tensor from this
 profile without running the broader uninstall flow, first back up the profile's
 Tensor-managed skill directory, then remove
-`$CLAUDE_CONFIG_DIR/skills/reverse-engineer-anything` as well. Keep other skills
+`$CLAUDE_CONFIG_DIR/skills/tensor-reverse-engineering` as well. Keep other skills
 in the profile intact.
 
 The commands above use POSIX shell assignment syntax. In native Windows
@@ -663,12 +663,12 @@ archive](../desktop-build-computer.md#requirements) again.
 ## Skill-only installation
 
 ```bash
-npx skills add tensor-9/tensor --skill reverse-engineer-anything
+npx skills add tensor-9/tensor --skill tensor-reverse-engineering
 ```
 
 This installs agent instructions and bundled references, not Tensor MCP
 registration or analysis engines. Follow the skill's
-[conditional connection guide](https://github.com/tensor-9/tensor/blob/main/.agents/skills/reverse-engineer-anything/SKILL.md#connect-only-when-needed).
+[conditional connection guide](https://github.com/tensor-9/tensor/blob/main/.agents/skills/tensor-reverse-engineering/SKILL.md#connect-only-when-needed).
 Working tools can be used immediately. If tools are missing, inspect the current
 client's registration with `doctor --client codex --json` (substitute its client
 ID), then plan repairs with `setup --client codex --dry-run --json`. Show and
@@ -2080,14 +2080,14 @@ The server inherits the client's environment, so a setting such as
 ### Cursor Marketplace
 
 Cursor's Marketplace installs this public repository as one plugin. The
-install includes both the `reverse-engineer-anything` skill and the `tensor` MCP
+install includes both the `tensor-reverse-engineering` skill and the `tensor` MCP
 server. Tensor does not publish an MCP-only "Add to Cursor" install link, because
 that link would register the server without the skill.
 
 The manifest is `.cursor-plugin/plugin.json`. Cursor discovers `mcp.json` at
 the repository root and the skill directory named by `skills`. The committed
-skill is `.cursor-plugin/skills/reverse-engineer-anything`, a copy of the
-authored skill at `.agents/skills/reverse-engineer-anything`.
+skill is `.cursor-plugin/skills/tensor-reverse-engineering`, a copy of the
+authored skill at `.agents/skills/tensor-reverse-engineering`.
 `node scripts/generate-cursor-plugin-skill.mjs --check` fails when that copy
 drifts, including in `npm run docs:check` and package prepack. Marketplace
 installs are a Git checkout and do not contain `dist/`. The server entry
@@ -2116,7 +2116,7 @@ engine from a terminal, as shown above.
 
 A Marketplace install gives you:
 
-- the `reverse-engineer-anything` skill and its references
+- the `tensor-reverse-engineering` skill and its references
 - an `tensor` MCP server launched with `npx -y tensor-agents@<pinned version> mcp`
   (Cursor shows it as `plugin-tensor-tensor`)
 - the shared plugin logo at `assets/tensor-plugin.png`

@@ -154,7 +154,7 @@ and after it. When recording against your test app:
 
 Also record filters, searches, sorting, and paging if your tasks need them.
 The agent should check that every recording step completed before using it.
-The [recording workflow](https://github.com/tensor-9/tensor/blob/main/.agents/skills/reverse-engineer-anything/references/environments.md)
+The [recording workflow](https://github.com/tensor-9/tensor/blob/main/.agents/skills/tensor-reverse-engineering/references/environments.md)
 has the detailed browser instructions, including timeouts and handling IDs
 assigned by the app.
 

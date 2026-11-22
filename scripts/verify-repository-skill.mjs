@@ -76,7 +76,7 @@ export async function verifyRepositorySkill({ root, workspace, commands }) {
       "add",
       snapshot,
       "--skill",
-      "reverse-engineer-anything",
+      "tensor-reverse-engineering",
       "--agent",
       "codex",
       "--yes",
@@ -98,14 +98,14 @@ export async function verifyRepositorySkill({ root, workspace, commands }) {
   );
   const authoredRoot = join(
     snapshot,
-    ".agents/skills/reverse-engineer-anything",
+    ".agents/skills/tensor-reverse-engineering",
   );
   const installedSkills = join(consumer, ".agents/skills");
-  const installedRoot = join(installedSkills, "reverse-engineer-anything");
+  const installedRoot = join(installedSkills, "tensor-reverse-engineering");
   const files = await filePaths(authoredRoot);
   if (
     JSON.stringify(await readdir(installedSkills)) !==
-      JSON.stringify(["reverse-engineer-anything"]) ||
+      JSON.stringify(["tensor-reverse-engineering"]) ||
     JSON.stringify(await filePaths(installedRoot)) !== JSON.stringify(files)
   )
     throw new Error(

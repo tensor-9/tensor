@@ -46,7 +46,7 @@ const { path: lab } = await VerifierFixture.keepArtifacts({
 const profile = join(lab, "selected profile");
 const workspace = join(lab, "workspace");
 const configPath = join(profile, ".claude.json");
-const skillDirectory = join(profile, "skills", "reverse-engineer-anything");
+const skillDirectory = join(profile, "skills", "tensor-reverse-engineering");
 let clientVersion = null;
 let fixture;
 let passed = false;
@@ -256,7 +256,7 @@ await withVerifierCleanup(async () => {
           const skill = tools.find((t) => t.name === "Skill");
           assert(skill, "Claude must expose its native Skill tool");
           skillRequested = true;
-          return call(skill.name, { skill: "reverse-engineer-anything" });
+          return call(skill.name, { skill: "tensor-reverse-engineering" });
         }
         assert(
           skillLoaded,
@@ -339,7 +339,7 @@ await withVerifierCleanup(async () => {
       join(skillDirectory, "SKILL.md"),
       "utf8",
     );
-    assert(installedSkill.includes("name: reverse-engineer-anything"));
+    assert(installedSkill.includes("name: tensor-reverse-engineering"));
     const lines = installedSkill.split("\n");
     const headerEnd = lines.indexOf("---", 1);
     assert(

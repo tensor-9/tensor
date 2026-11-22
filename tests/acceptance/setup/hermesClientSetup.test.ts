@@ -227,7 +227,7 @@ cliTest(
     const home = sharedHome;
     const profile = join(home, "profile");
     const config = join(profile, "config.yaml");
-    const skill = join(profile, "skills/reverse-engineer-anything/SKILL.md");
+    const skill = join(profile, "skills/tensor-reverse-engineering/SKILL.md");
     const original =
       "# user settings\nmodel: custom\nmcp_servers:\n  other:\n    command: other-server\n";
     await mkdir(profile);
@@ -255,7 +255,7 @@ cliTest(
       plannedActions: expect.arrayContaining([
         expect.objectContaining({ target: config }),
         expect.objectContaining({
-          target: join(profile, "skills/reverse-engineer-anything"),
+          target: join(profile, "skills/tensor-reverse-engineering"),
         }),
       ]),
     });
@@ -279,10 +279,10 @@ cliTest(
     });
     expect(await readFile(config + ".tensor.backup", "utf8")).toBe(original);
     expect(await readFile(skill, "utf8")).toContain(
-      "reverse-engineer-anything",
+      "tensor-reverse-engineering",
     );
     await expect(
-      access(join(home, ".agents/skills/reverse-engineer-anything/SKILL.md")),
+      access(join(home, ".agents/skills/tensor-reverse-engineering/SKILL.md")),
     ).rejects.toMatchObject({ code: "ENOENT" });
     const doctor = await run([
       "doctor",
@@ -364,7 +364,7 @@ for (const selection of ["default", "custom", "suffix", "explicit"] as const) {
         plannedActions: expect.arrayContaining([
           expect.objectContaining({ target: config }),
           expect.objectContaining({
-            target: join(profile, "skills", "reverse-engineer-anything"),
+            target: join(profile, "skills", "tensor-reverse-engineering"),
           }),
         ]),
       });
@@ -386,11 +386,11 @@ for (const selection of ["default", "custom", "suffix", "explicit"] as const) {
       const skill = join(
         profile,
         "skills",
-        "reverse-engineer-anything",
+        "tensor-reverse-engineering",
         "SKILL.md",
       );
       expect(await readFile(skill, "utf8")).toContain(
-        "name: reverse-engineer-anything",
+        "name: tensor-reverse-engineering",
       );
       if (selection === "custom") {
         const doctor = await run([
@@ -428,7 +428,7 @@ for (const selection of ["default", "custom", "suffix", "explicit"] as const) {
         },
       );
       await expect(
-        access(join(root, "skills", "reverse-engineer-anything")),
+        access(join(root, "skills", "tensor-reverse-engineering")),
       ).rejects.toMatchObject({ code: "ENOENT" });
     },
   );
@@ -503,7 +503,7 @@ for (const selection of [
           plannedActions: expect.arrayContaining([
             expect.objectContaining({ target: join(selected, "config.yaml") }),
             expect.objectContaining({
-              target: join(selected, "skills", "reverse-engineer-anything"),
+              target: join(selected, "skills", "tensor-reverse-engineering"),
             }),
           ]),
           appliedActions: [],
@@ -603,7 +603,7 @@ for (const layout of ["symlinked-default", "escaping-prefix"] as const) {
             expect.objectContaining({
               id: "install_skill:hermes",
               kind: "install_skill",
-              target: join(selected, "skills", "reverse-engineer-anything"),
+              target: join(selected, "skills", "tensor-reverse-engineering"),
               operation: "install",
             }),
           ]),
@@ -733,7 +733,7 @@ cliTest.skipIf(process.platform === "win32")(
     const literalProfile = join(home, override);
     expect(literalProfile).not.toBe(temporary);
     const config = `${profile}/config.yaml`;
-    const skill = `${profile}/skills/reverse-engineer-anything/SKILL.md`;
+    const skill = `${profile}/skills/tensor-reverse-engineering/SKILL.md`;
     const original =
       "# owned fixture\nmodel: custom\nmcp_servers:\n  other:\n    command: other-server\n";
     await writeFile(config, original);
@@ -760,7 +760,7 @@ cliTest.skipIf(process.platform === "win32")(
       plannedActions: expect.arrayContaining([
         expect.objectContaining({ target: config }),
         expect.objectContaining({
-          target: `${profile}/skills/reverse-engineer-anything`,
+          target: `${profile}/skills/tensor-reverse-engineering`,
         }),
       ]),
     });
@@ -778,7 +778,7 @@ cliTest.skipIf(process.platform === "win32")(
     });
     expect(await readFile(`${config}.tensor.backup`, "utf8")).toBe(original);
     expect(await readFile(skill, "utf8")).toContain(
-      "name: reverse-engineer-anything",
+      "name: tensor-reverse-engineering",
     );
     expect(
       (await run(["doctor", "--client", "hermes", "--skill", "--json"])).json,
@@ -849,7 +849,7 @@ cliTest(
       code: "ENOENT",
     });
     await expect(
-      access(join(home, ".agents/skills/reverse-engineer-anything")),
+      access(join(home, ".agents/skills/tensor-reverse-engineering")),
     ).rejects.toMatchObject({ code: "ENOENT" });
   },
 );

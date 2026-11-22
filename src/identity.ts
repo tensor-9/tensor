@@ -12,7 +12,7 @@ export const PRODUCT_IDENTITY = {
   cliBinary: "tensor",
   mcpCommand: `npx -y ${PACKAGE_METADATA.name}@${PACKAGE_METADATA.version} mcp`,
   mcpServerKey: "tensor",
-  skillName: "reverse-engineer-anything",
+  skillName: "tensor-reverse-engineering",
   skillVersion: PACKAGE_METADATA.skillVersion,
   configFileName: "tensor.json",
 } as const;

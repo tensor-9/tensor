@@ -41,7 +41,7 @@ const skillDirectory = join(
   account,
   ".agents",
   "skills",
-  "reverse-engineer-anything",
+  "tensor-reverse-engineering",
 );
 const expectedDevices = TOOL_CONTRACTS.map(
   (tool) => "mcp__tensor_" + tool.name,
@@ -137,7 +137,7 @@ await withVerifierCleanup(async () => {
         if (requestIndex === 1)
           return call(requestIndex, "read", {
             i: "Load Tensor skill",
-            path: "skill://reverse-engineer-anything:raw",
+            path: "skill://tensor-reverse-engineering:raw",
           });
         assert(
           expectedSkillBody !== undefined &&

@@ -21,7 +21,7 @@ def write_json(path, value):
 
 def prepare_discovery(root, site):
     """Publish the complete skill, including its relative reference documents."""
-    source = root / ".agents/skills/reverse-engineer-anything"
+    source = root / ".agents/skills/tensor-reverse-engineering"
     manifest = source / "SKILL.md"
     skill = manifest.read_bytes()
     reader = Path(__file__).with_name("read-authored-skill-manifest.mjs")

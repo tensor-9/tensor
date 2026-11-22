@@ -21,10 +21,10 @@ cliTest.for(["root", "references"] as const)(
     const directory = await createTestTempDirectory("tensor-skill-preflight-");
     const selected = join(
       directory,
-      ".claude/skills/reverse-engineer-anything",
+      ".claude/skills/tensor-reverse-engineering",
     );
     const managed = join(directory, "user-managed");
-    const source = resolve("skills/reverse-engineer-anything");
+    const source = resolve("skills/tensor-reverse-engineering");
     await mkdir(kind === "root" ? dirname(selected) : selected, {
       recursive: true,
     });
@@ -85,11 +85,11 @@ cliTest(
     const managed = join(directory, "managed");
     const selected = join(
       directory,
-      ".claude/skills/reverse-engineer-anything",
+      ".claude/skills/tensor-reverse-engineering",
     );
     await mkdir(managed);
     await mkdir(join(directory, ".claude/skills"), { recursive: true });
-    await cp(resolve("skills/reverse-engineer-anything"), managed, {
+    await cp(resolve("skills/tensor-reverse-engineering"), managed, {
       recursive: true,
     });
     const original = await readFile(join(managed, "SKILL.md"), "utf8");
@@ -147,10 +147,10 @@ cliTest(
     );
     const selected = join(
       directory,
-      ".claude/skills/reverse-engineer-anything",
+      ".claude/skills/tensor-reverse-engineering",
     );
     const managed = join(directory, "user-managed-references");
-    const source = resolve("skills/reverse-engineer-anything");
+    const source = resolve("skills/tensor-reverse-engineering");
     await mkdir(selected, { recursive: true });
     await cp(join(source, "SKILL.md"), join(selected, "SKILL.md"));
     await cp(join(source, "references"), managed, { recursive: true });
@@ -199,9 +199,9 @@ cliTest(
     const directory = await createTestTempDirectory("tensor-selected-skill-");
     const selected = join(
       directory,
-      ".claude/skills/reverse-engineer-anything",
+      ".claude/skills/tensor-reverse-engineering",
     );
-    const shared = join(directory, ".agents/skills/reverse-engineer-anything");
+    const shared = join(directory, ".agents/skills/tensor-reverse-engineering");
     const run = (args: readonly string[]) =>
       cli.run({
         arguments: [...args, "--json"],
@@ -247,7 +247,7 @@ cliTest(
         identity: { skill: { state: "aligned" } },
       },
     });
-    const bundle = resolve("skills/reverse-engineer-anything");
+    const bundle = resolve("skills/tensor-reverse-engineering");
     const assertAligned = async () => {
       for (const entry of await readdir(bundle, {
         recursive: true,
@@ -336,13 +336,13 @@ cliTest(
     });
     await access(join(directory, ".codex/config.toml"));
     await access(
-      join(directory, ".claude/skills/reverse-engineer-anything/SKILL.md"),
+      join(directory, ".claude/skills/tensor-reverse-engineering/SKILL.md"),
     );
     await expect(access(join(directory, ".claude.json"))).rejects.toMatchObject(
       { code: "ENOENT" },
     );
     await expect(
-      access(join(directory, ".agents/skills/reverse-engineer-anything")),
+      access(join(directory, ".agents/skills/tensor-reverse-engineering")),
     ).rejects.toMatchObject({ code: "ENOENT" });
   },
 );

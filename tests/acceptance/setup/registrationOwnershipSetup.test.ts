@@ -104,7 +104,7 @@ for (const [identity, entry] of [
             home,
             ".claude",
             "skills",
-            "reverse-engineer-anything",
+            "tensor-reverse-engineering",
             "SKILL.md",
           ),
         ),

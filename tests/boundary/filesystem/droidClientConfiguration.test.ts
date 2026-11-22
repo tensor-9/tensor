@@ -40,7 +40,7 @@ describe("Factory Droid configuration paths", () => {
         ({ path }) => path,
       ),
     ).toEqual([
-      join("/home/a", ".factory", "skills", "reverse-engineer-anything"),
+      join("/home/a", ".factory", "skills", "tensor-reverse-engineering"),
     ]);
   });
 
@@ -58,7 +58,7 @@ describe("Factory Droid configuration paths", () => {
         process.platform,
       ).map(({ path }) => path),
     ).toEqual([
-      join("/selected/home", ".factory", "skills", "reverse-engineer-anything"),
+      join("/selected/home", ".factory", "skills", "tensor-reverse-engineering"),
     ]);
     expect(
       droidPath("/home/a", "darwin", { FACTORY_HOME_OVERRIDE: "" }),

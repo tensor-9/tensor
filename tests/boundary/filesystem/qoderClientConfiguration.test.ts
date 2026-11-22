@@ -50,7 +50,7 @@ describe("Qoder configuration paths", () => {
         ({ path }) => path,
       ),
     ).toEqual([
-      join("/home/a", ".qoder", "skills", "reverse-engineer-anything"),
+      join("/home/a", ".qoder", "skills", "tensor-reverse-engineering"),
     ]);
     expect(
       skillDestinations(
@@ -61,7 +61,7 @@ describe("Qoder configuration paths", () => {
         },
         process.platform,
       ).map(({ path }) => path),
-    ).toEqual([join("/opt/qoder", "skills", "reverse-engineer-anything")]);
+    ).toEqual([join("/opt/qoder", "skills", "tensor-reverse-engineering")]);
   });
 });
 

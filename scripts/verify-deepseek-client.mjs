@@ -45,7 +45,7 @@ const skillPath = join(
   account,
   ".agents",
   "skills",
-  "reverse-engineer-anything",
+  "tensor-reverse-engineering",
   "SKILL.md",
 );
 const cli = join(runtimeRoot, "scripts", "tensor.mjs");
@@ -181,7 +181,7 @@ await withVerifierCleanup(async () => {
           )
             return false;
           const open =
-            '<skill_content name="reverse-engineer-anything">\n<skill_resources>\n';
+            '<skill_content name="tensor-reverse-engineering">\n<skill_resources>\n';
           const start = message.content.indexOf(open);
           if (start < 0) return false;
           const resourcesStart = start + open.length;
@@ -238,7 +238,7 @@ await withVerifierCleanup(async () => {
         if (!skillRequested) {
           assert(tools.some((tool) => tool.name === "skill"));
           skillRequested = true;
-          return call("skill", { name: "reverse-engineer-anything" });
+          return call("skill", { name: "tensor-reverse-engineering" });
         }
         assert(
           skillLoaded,
@@ -319,7 +319,7 @@ await withVerifierCleanup(async () => {
     assert.deepEqual(withoutTensor(configured), withoutTensor(original));
     assert(configured.includes("!!js process.cwd()"));
     const installedSkill = await readFile(skillPath, "utf8");
-    assert(installedSkill.includes("name: reverse-engineer-anything"));
+    assert(installedSkill.includes("name: tensor-reverse-engineering"));
     const frontmatter = /^---\r?\n[\s\S]*?^---(?:\r?\n|$)/mu.exec(
       installedSkill,
     );

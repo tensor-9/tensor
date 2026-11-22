@@ -805,7 +805,7 @@ export const CI_LANES = {
   ),
   website: sameJobs(PATH_SCOPES.website, ["website"], {
     earlyInputs: [
-      ".agents/skills/reverse-engineer-anything/**",
+      ".agents/skills/tensor-reverse-engineering/**",
       "scripts/lib/verifier-source-loader.mjs",
       "src/domain/skillManifest.ts",
       "src/domain/result.ts",

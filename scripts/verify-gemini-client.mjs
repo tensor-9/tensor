@@ -58,7 +58,7 @@ const skillPath = join(
   profile,
   ".agents",
   "skills",
-  "reverse-engineer-anything",
+  "tensor-reverse-engineering",
   "SKILL.md",
 );
 let clientVersion = null;
@@ -205,7 +205,7 @@ await withVerifierCleanup(async () => {
       original,
     );
     const installedSkill = await readFile(skillPath, "utf8");
-    assert(installedSkill.includes("name: reverse-engineer-anything"));
+    assert(installedSkill.includes("name: tensor-reverse-engineering"));
     const frontmatter = /^---\r?\n([\s\S]*?)\r?\n---(?:\r?\n([\s\S]*))?/u.exec(
       installedSkill,
     );
@@ -295,7 +295,7 @@ await withVerifierCleanup(async () => {
             expectedSkillBody === undefined
           )
             return false;
-          const start = `<activated_skill name="reverse-engineer-anything">\n  <instructions>\n    ${expectedSkillBody}\n  </instructions>\n\n  <available_resources>\n    `;
+          const start = `<activated_skill name="tensor-reverse-engineering">\n  <instructions>\n    ${expectedSkillBody}\n  </instructions>\n\n  <available_resources>\n    `;
           const at = output.indexOf(start);
           if (at < 0) return false;
           const resourcesStart = at + start.length;
@@ -309,7 +309,7 @@ await withVerifierCleanup(async () => {
             !resources.includes("</activated_skill>") &&
             !resources.includes("</available_resources>") &&
             resources.includes(
-              join(profile, ".agents", "skills", "reverse-engineer-anything"),
+              join(profile, ".agents", "skills", "tensor-reverse-engineering"),
             )
           );
         });
@@ -340,7 +340,7 @@ await withVerifierCleanup(async () => {
             {
               functionCall: {
                 name: skill.name,
-                args: { name: "reverse-engineer-anything" },
+                args: { name: "tensor-reverse-engineering" },
               },
             },
           ];

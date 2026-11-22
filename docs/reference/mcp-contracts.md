@@ -663,7 +663,7 @@ client deadline. Configure the client's tool timeout with execution, cleanup
 and delivery headroom, or report that change is needed when not authorized.
 Session status does not establish that all target-free work stopped. Detailed
 host settings and bounded retry guidance live in the shipped skill's
-[recovery reference](https://github.com/tensor-9/tensor/blob/main/.agents/skills/reverse-engineer-anything/references/connection-and-recovery.md#distinguish-client-and-server-deadlines).
+[recovery reference](https://github.com/tensor-9/tensor/blob/main/.agents/skills/tensor-reverse-engineering/references/connection-and-recovery.md#distinguish-client-and-server-deadlines).
 
 ### Untrusted target content
 

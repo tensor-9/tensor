@@ -64,7 +64,7 @@ describe("ZCode configuration paths", () => {
         ({ path }) => path,
       ),
     ).toEqual([
-      join("/home/a", ".zcode", "skills", "reverse-engineer-anything"),
+      join("/home/a", ".zcode", "skills", "tensor-reverse-engineering"),
     ]);
   });
 });

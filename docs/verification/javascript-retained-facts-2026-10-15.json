@@ -23,7 +23,7 @@
   },
   "agent_v2_preformat": {
     "source_sha256": {
-      ".agents/skills/reverse-engineer-anything/references/javascript-applications.md": "90ae97bb91cfd5e3e6713e423f0b318e01e79ef60c4288a4f4999e69c89e3345",
+      ".agents/skills/tensor-reverse-engineering/references/javascript-applications.md": "90ae97bb91cfd5e3e6713e423f0b318e01e79ef60c4288a4f4999e69c89e3345",
       "docs/javascript-application-workflows.md": "545b062ab8975f98a53a0652766f1c844bb4e9793af9e45c6510958006356683",
       "experiments/analysis-efficiency/javascript-facts-agent-history.json": "8a9781029270eb13e1c43867ba0d46eeb3cb37aa454713bd1316cd8d97d1f8f0",
       "experiments/analysis-efficiency/javascript-facts-agent.mjs": "43a4d59016c1fec1a9a2957c9b32c32fb8a91e77311c2813f05fdf89ae388fca",
@@ -55,7 +55,7 @@
     "runtime_tree_sha256": "311fd78c7ca4717e56253413bc2725097929e0d6656efca69c9b3646a65ca348"
   },
   "current_source_sha256": {
-    ".agents/skills/reverse-engineer-anything/references/javascript-applications.md": "aaa78502a3e95268f6269e75f373908045291fedf6ddd106001555ed06bb2bf6",
+    ".agents/skills/tensor-reverse-engineering/references/javascript-applications.md": "aaa78502a3e95268f6269e75f373908045291fedf6ddd106001555ed06bb2bf6",
     "docs/javascript-application-workflows.md": "421b1aae8bf7830783f5c42b461dd10ae0b8e6ef7ca1e10fb3180fec15c19aad",
     "experiments/analysis-efficiency/javascript-facts-agent-history.json": "ac4d03088d17788b96eb0855850083bd0c22a54684d634f94f020a0491583b45",
     "experiments/analysis-efficiency/javascript-facts-agent.mjs": "9a6b4fc87fed586a2c64cdf6f483332872b1445911d644528bb2fc81b600c9e7",
@@ -7950,7 +7950,7 @@
     "runtime_tree_sha256": "6a5763452c1522a782e531e6dda227ea10140f9f9d52148fc1602a6ecf3cea5a"
   },
   "pre_lifecycle_integration_source_sha256": {
-    ".agents/skills/reverse-engineer-anything/references/javascript-applications.md": "aaa78502a3e95268f6269e75f373908045291fedf6ddd106001555ed06bb2bf6",
+    ".agents/skills/tensor-reverse-engineering/references/javascript-applications.md": "aaa78502a3e95268f6269e75f373908045291fedf6ddd106001555ed06bb2bf6",
     "docs/javascript-application-workflows.md": "dfc09de543015c0b24288d5b78dee5057122ae5e476a9512cb2c5f28006eb1a9",
     "experiments/analysis-efficiency/javascript-facts-agent-history.json": "ac4d03088d17788b96eb0855850083bd0c22a54684d634f94f020a0491583b45",
     "experiments/analysis-efficiency/javascript-facts-agent.mjs": "9a6b4fc87fed586a2c64cdf6f483332872b1445911d644528bb2fc81b600c9e7",

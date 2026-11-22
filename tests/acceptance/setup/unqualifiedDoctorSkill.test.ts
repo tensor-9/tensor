@@ -14,7 +14,7 @@ cliTest(
     );
     const skill = join(
       home,
-      ".claude/skills/reverse-engineer-anything/SKILL.md",
+      ".claude/skills/tensor-reverse-engineering/SKILL.md",
     );
     const run = (arguments_: readonly string[]) =>
       cli.run({
@@ -131,7 +131,7 @@ cliTest(
     );
     const foreignSkill = join(
       foreignHome,
-      ".claude/skills/reverse-engineer-anything/SKILL.md",
+      ".claude/skills/tensor-reverse-engineering/SKILL.md",
     );
     const foreignBytes = Buffer.from(
       "---\nname: another-skill\n---\nA caller-owned workflow.\n",

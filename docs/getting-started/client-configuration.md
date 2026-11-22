@@ -1035,7 +1035,7 @@ exposes tools as `mcp__tensor__<tool_name>`. Run `tensor setup --skill --dry-run
 review the destination, then `tensor setup --skill --yes` to install the workflow
 in `~/.agents/skills` (`$DSH_AGENTS_HOME/skills` when configured); Harness
 discovers that directory, and its native `skill` tool can load
-`reverse-engineer-anything`.
+`tensor-reverse-engineering`.
 
 Tensor's optional [native client verification](../development/testing.md#end-to-end-integration-and-golden-evidence)
 checks headless chat, skill loading, all tool input schemas and actual analysis

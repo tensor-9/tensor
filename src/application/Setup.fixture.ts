@@ -152,7 +152,7 @@ export class FakeSetupHost implements SetupHost {
       this.skill === "failed"
         ? err(
             new SetupSkillInstallError({
-              path: "/fixture/home/.agents/skills/reverse-engineer-anything/SKILL.md",
+              path: "/fixture/home/.agents/skills/tensor-reverse-engineering/SKILL.md",
               stage: "write",
               reason: "injected skill write failure",
               rollbackFailures: [],

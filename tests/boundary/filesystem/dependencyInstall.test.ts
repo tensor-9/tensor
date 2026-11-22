@@ -196,7 +196,7 @@ const createBuildCacheFixture = async (): Promise<string> => {
     "turbo.json",
     "tsconfig.json",
     "tsconfig.build.json",
-    ".agents/skills/reverse-engineer-anything/SKILL.md",
+    ".agents/skills/tensor-reverse-engineering/SKILL.md",
     "src/generatedPackageMetadata.ts",
   ];
   await Promise.all(

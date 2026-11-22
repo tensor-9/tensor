@@ -25,7 +25,7 @@ const README_FACT_FIXTURE_PATHS = [
   "docs/readme/README_ar.md",
   "website/locales/languages.json",
   "docs/getting-started/installation.md",
-  ".agents/skills/reverse-engineer-anything/references/connection-and-recovery.md",
+  ".agents/skills/tensor-reverse-engineering/references/connection-and-recovery.md",
   "AGENTS.md",
   ".github/pull_request_template.md",
 ] as const;
@@ -54,7 +54,7 @@ const seedReadmeFactFixture = async (directory: string) => {
     await mkdir(dirname(destination), { recursive: true });
     await copyFile(join(root, path), destination);
   }
-  await mkdir(join(directory, "skills/reverse-engineer-anything"), {
+  await mkdir(join(directory, "skills/tensor-reverse-engineering"), {
     recursive: true,
   });
 };

@@ -415,7 +415,7 @@ it("offers shared skill intent when the detected personal copy is current", asyn
         host.homeDirectory,
         ".agents",
         "skills",
-        "reverse-engineer-anything",
+        "tensor-reverse-engineering",
       ),
     }),
   ]);
