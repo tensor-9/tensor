@@ -218,11 +218,11 @@ together. Builds and offline checks use that snapshot, not the live API.
 
 ## Search and sharing metadata
 
-`https://tensor.tools/` is the preferred public origin. Each content page has one
-absolute canonical URL for its own route, including its trailing slash. The
-same HTML on GitHub Pages points to the corresponding tensor.tools page. Ordinary
-navigation and asset references remain relative so both hosts and local previews
-keep working.
+`https://tensor-9.github.io/tensor/` is the public origin. Each content page has
+one absolute canonical URL for its own route, including its trailing slash, and
+every GitHub Pages route sits under the project path `/tensor/`. Ordinary
+navigation and asset references remain relative so the published site and local
+previews keep working.
 
 Maintain a descriptive `<title>` and a short meta description in each page's
 `<head>`, then run `sync`. The title names the page's subject; visible headings
@@ -232,8 +232,8 @@ route. Search results and link previews should follow the same clear, concise
 writing standard as the page.
 
 `scripts/prepare-website.py` renders `public/` and the PO catalogs into `_site/`,
-then scans `_site/**/*.html` and generates `_site/sitemap.xml` with absolute
-tensor.tools URLs. An `index.html` maps to its
+then scans `_site/**/*.html` and generates `_site/sitemap.xml` with absolute URLs
+under the public origin. An `index.html` maps to its
 directory route; other HTML filenames retain their extension. Pages with
 `noindex` or `none` in a head `robots` or `googlebot` meta directive are excluded.
 The two Notes example applications use `noindex`; their guides and the dinosaur
@@ -243,14 +243,13 @@ It is ignored by Git and regenerated before checks and publication.
 
 `public/robots.txt` allows crawling and names the canonical sitemap. Keep example
 applications crawlable so search engines can read their `noindex` directives.
-Cloudflare may prepend managed rules or comments to the served file; inspect the
-live response after publication. The mirrored `/tensor/robots.txt` is not the
-hostname-root robots file for `tensor-9.github.io`; canonical HTML tags establish
-the mirror's preference.
+GitHub Pages serves this project from `/tensor/`, so the published file is
+`/tensor/robots.txt` and not the hostname-root robots file for
+`tensor-9.github.io`; the HTML canonical tags establish the site's preference.
 
 `public/assets/social-card.svg` is the maintained 1200 × 630 preview source.
 CairoSVG generates `social-card.png` for sharing clients. Commit the SVG, not the
-PNG. Both hosts receive the generated image in the same publishing artifact.
+PNG. The publishing artifact contains the generated image.
 The preview uses the site's typography, palette and direct headline.
 
 Verification checks route-specific canonicals, unique titles, descriptions,
@@ -265,19 +264,19 @@ python3 scripts/website.py check
 
 ### After publishing an SEO change
 
-1. Check the served `robots.txt`, `sitemap.xml`, HTML head and preview PNG at
-   tensor.tools. Confirm that both hosts contain the same page-specific canonicals.
-2. In the domain's Google Search Console property, submit
-   `https://tensor.tools/sitemap.xml`.
+1. Check the served `robots.txt`, `sitemap.xml`, HTML head and preview PNG under
+   `https://tensor-9.github.io/tensor/`. Confirm that each page advertises its own
+   canonical.
+2. In Google Search Console, add the `https://tensor-9.github.io` property and
+   submit `https://tensor-9.github.io/tensor/sitemap.xml`.
 3. Inspect the homepage, a guide and a case study. Check crawl access, indexing
-   and Google's selected canonical; inspect a GitHub Pages URL as well if that
-   property is available. Track indexing and search performance there afterward.
+   and Google's selected canonical. Track indexing and search performance there
+   afterward.
 
-These Search Console checks require the property owner's access. Local checks
-verify the website inputs; Google's indexing reports show how they were used.
-See Google's [canonical guidance](https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls)
-and [sitemap guidance](https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap),
-and Cloudflare's [managed robots behavior](https://developers.cloudflare.com/bots/additional-configurations/managed-robots-txt/).
+These Search Console checks require property access. Local checks verify the
+website inputs; Google's indexing reports show how they were used. See Google's
+[canonical guidance](https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls)
+and [sitemap guidance](https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap).
 
 ## Content
 
@@ -546,7 +545,7 @@ verified artifact; `--local` runs on your machine. Check HTML and Markdown,
 GET and HEAD, discovery CORS, the downloaded ZIP digest, and unknown routes.
 Production remains published only by the manual website workflow.
 
-## Cloudflare Workers
+## Optional Cloudflare Worker
 
 `wrangler.toml` serves `website/_site/` through Workers Static Assets. There is
 one small Worker (`worker.mjs`) for Markdown content negotiation and no frontend
@@ -579,72 +578,35 @@ npx wrangler@4.149.0 deploy --cwd website --env ""
 ```
 
 This creates `tensor-website-preview` at the `workers.dev` URL printed by Wrangler.
-It does not attach `tensor.tools`. Check the homepage, a nested guide, case studies,
+It does not attach a custom domain; the canonical site is on GitHub Pages. Check
+the homepage, a nested guide, case studies,
 the Notes browser example and the Electron ZIP at that URL.
 
-### Connect tensor.tools
+### Hosting
 
-Serving the custom hostname requires an
-[active Cloudflare zone](https://developers.cloudflare.com/workers/configuration/routing/custom-domains/).
-When DNS is managed elsewhere:
+GitHub Pages serves the canonical site at `https://tensor-9.github.io/tensor/`.
+No custom domain is attached: the Workers configuration above is an optional
+preview, and `wrangler.toml` no longer routes a hostname. Add a custom domain
+only after the project owns one, because the canonical tags, sitemap and
+discovery manifests all point at the Pages origin.
 
-1. Add `tensor.tools` to your Cloudflare account and choose the Free plan.
-2. Export or save the current DNS records. Review Cloudflare's imported records
-   against them, including subdomains, MX and TXT records for email and domain
-   verification; the automatic scan can miss records.
-3. If DNSSEC is enabled, follow Cloudflare's instructions to disable it at the
-   registrar before changing nameservers.
-4. At the domain registrar, replace the current nameservers with the two assigned
-   by Cloudflare. The domain can remain registered with the current registrar.
-5. Wait for Cloudflare to report the zone as Active. Re-enable DNSSEC through
-   Cloudflare afterward if required.
+Verify <https://tensor-9.github.io/tensor/>,
+<https://tensor-9.github.io/tensor/guides/javascript/>,
+<https://tensor-9.github.io/tensor/examples/notes-web/> and the Electron ZIP.
+Unknown paths return 404, and directory pages retain trailing slashes so
+relative assets and links resolve correctly. The root README and browser guide
+use `https://tensor-9.github.io/tensor/` as the public website URL.
 
-See Cloudflare's [nameserver setup procedure](https://developers.cloudflare.com/dns/zone-setups/full-setup/setup/)
-for the complete migration steps. A CNAME to the preview's `workers.dev` hostname
-at the current DNS provider does not configure a Workers Custom Domain.
+## Publishing
 
-The production environment creates or updates `tensor-website`, attaches `tensor.tools`, and lets Cloudflare
-manage its DNS record and HTTPS certificate. Deployment can succeed while the
-zone is pending; verify public HTTPS after activation and certificate issuance.
-An existing CNAME at `tensor.tools`
-must be resolved before adding the Custom Domain. The production Worker also
-retains its `workers.dev` address for direct checks. Only `tensor.tools` is attached;
-`www.tensor.tools` is not configured by this file.
+`.github/workflows/website-pages.yml` prepares `website/_site` and deploys it to
+GitHub Pages. It is the sole production publisher, manually triggered and
+restricted to `main`; ordinary pushes and pull requests do not publish the site.
 
-Verify <https://tensor.tools/>, <https://tensor.tools/guides/javascript/>,
-<https://tensor.tools/examples/notes-web/> and the Electron ZIP. Unknown paths return
-404, and directory pages retain trailing slashes so relative assets and links
-resolve correctly. The root README and browser guide use `https://tensor.tools/`
-as the public website URL.
-
-Production publication uses the synchronized GitHub Actions workflow below.
-Local Wrangler commands above publish only the separate preview Worker.
-
-## Synchronized production publishing
-
-`.github/workflows/website-pages.yml` prepares `website/_site` once and deploys
-the same artifact to Cloudflare (`tensor.tools`) and GitHub Pages. It is the sole
-production publisher, manually triggered and restricted to `main`;
-ordinary pushes and pull requests do not publish the site.
-
-Configure these repository **Actions secrets** before publishing:
-
-- `CLOUDFLARE_API_TOKEN`: a Cloudflare token using the **Edit Cloudflare Workers**
-  template, scoped to the website's account and zone.
-- `CLOUDFLARE_ACCOUNT_ID`: that Cloudflare account's ID.
-
-See Cloudflare's [GitHub Actions authentication instructions](https://developers.cloudflare.com/workers/ci-cd/external-cicd/github-actions/).
-The default `both` target checks that both secrets are present before preparing
-a release. Cloudflare deploys first; GitHub Pages deploys after that step succeeds.
-
-Preparation adds `deployment.json` with the workflow's commit SHA. Cloudflare
-receives the extracted Pages artifact through Wrangler's explicit assets path;
-the production environment disables Wrangler's preview custom build, so deployment
-uses the prepared artifact directly. The workflow then
-checks the selected public version markers and reports success only when they
-match that commit. A failed publication remains failed; fix its cause and rerun the
-workflow to complete both deployments. The two hosts can update at different
-times while a run is in progress.
+Preparation adds `deployment.json` with the workflow's commit SHA. The workflow
+then checks the served version marker, the discovery manifests and the skill
+archive digest, and reports success only when they match that commit. A failed
+publication remains failed; fix its cause and rerun the workflow.
 
 Website checks run only for pull requests that change `website/`, the website
 scripts or workflow definitions. They check local links, HTML fragments, SVG XML,
@@ -663,26 +625,15 @@ publishing job has been removed, so enabling this build workflow cannot publish
 the old site.
 
 After the site is approved and merged, select **GitHub Actions** under the
-repository's **Settings → Pages → Build and deployment**. Then run **Publish Tensor
-website** from the Actions tab on `main`. This publishes both production hosts.
-The workflow uses the `github-pages` environment, the official Pages actions and
-Cloudflare's Wrangler action.
+repository's **Settings → Pages → Build and deployment**. Then run **Publish
+Tensor website** from the Actions tab on `main`. The workflow uses the
+`github-pages` environment and the official Pages actions.
 
-The equivalent CLI command publishes both hosts:
+The equivalent CLI command publishes the site:
 
 ```sh
 gh workflow run website-pages.yml --repo tensor-9/tensor --ref main
 ```
-
-While Cloudflare credentials are being configured, an explicitly requested
-Pages-only publication uses the same workflow with `target=pages`:
-
-```sh
-gh workflow run website-pages.yml --repo tensor-9/tensor --ref main -f target=pages
-```
-
-This mode verifies the Pages commit marker. The default remains `both` for
-synchronized production releases.
 
 Local development does not change Pages settings or run the deployment workflow.
 Any environment protection rules are configured separately when publication is

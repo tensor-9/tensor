@@ -1,5 +1,5 @@
 /*
-  Link: <https://tensor.tools/.well-known/ard.json>; rel="ard", <https://tensor.tools/.well-known/ai-catalog.json>; rel="ai-catalog", <https://tensor.tools/.well-known/agent-skills/index.json>; rel="related"; type="application/json"; title="Agent skills index"
+  Link: <https://tensor-9.github.io/tensor/.well-known/ard.json>; rel="ard", <https://tensor-9.github.io/tensor/.well-known/ai-catalog.json>; rel="ai-catalog", <https://tensor-9.github.io/tensor/.well-known/agent-skills/index.json>; rel="related"; type="application/json"; title="Agent skills index"
 
 /.well-known/*
   Access-Control-Allow-Origin: *

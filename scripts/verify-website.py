@@ -14,7 +14,9 @@ from website import NOTES_FIXTURES, SITE_ORIGIN, authored_markdown, page_url, sy
 from website_i18n import is_language_code
 from website_references import markdown_references, split_reference
 
-LEGACY_ORIGIN = "tensor-9.github.io"
+SITE_HOST = "tensor-9.github.io"
+SITE_PATH = "/tensor"
+OBSOLETE_ORIGIN = "tensor.tools"
 SITE_TEXT_URL = re.compile(
     r"https?://(?:tensor\.tools|tensor-9\.github\.io)/[^\s<>\"'`]+", re.IGNORECASE
 )
@@ -62,8 +64,10 @@ def check_repository_links(root):
             except ValueError as error:
                 errors.append(f"{path.relative_to(root)}: invalid URL {reference!r}: {error}")
                 continue
-            if url.hostname == LEGACY_ORIGIN and (url.path == "/tensor" or url.path.startswith("/tensor/")):
-                errors.append(f"{path.relative_to(root)}: obsolete website URL: {reference}")
+            if url.hostname == OBSOLETE_ORIGIN:
+                errors.append(
+                    f"{path.relative_to(root)}: obsolete website URL: {reference}; use {SITE_ORIGIN}/"
+                )
                 continue
             if url.hostname == "github.com":
                 match = re.match(r"^/tensor-9/tensor/(?:blob|tree)/main/(.+)$", url.path)
@@ -249,10 +253,18 @@ def check_search_metadata(site, pages):
                 except ValueError as error:
                     errors.append(f"{label}: invalid hreflang URL {target!r}: {error}")
                     continue
-                if parsed.scheme != "https" or parsed.netloc != "tensor.tools":
-                    errors.append(f"{label}: hreflang needs absolute tensor.tools URLs")
+                if parsed.scheme != "https" or parsed.netloc != SITE_HOST:
+                    errors.append(f"{label}: hreflang needs absolute {SITE_ORIGIN}/ URLs")
                     continue
-                target_path = (site / unquote(parsed.path).lstrip("/")).resolve()
+                if not (
+                    parsed.path == SITE_PATH
+                    or parsed.path.startswith(f"{SITE_PATH}/")
+                ):
+                    errors.append(f"{label}: hreflang needs URLs under {SITE_ORIGIN}/")
+                    continue
+                target_path = (
+                    site / unquote(parsed.path[len(SITE_PATH):]).lstrip("/")
+                ).resolve()
                 if target_path.is_dir():
                     target_path /= "index.html"
                 other = pages.get(target_path)
@@ -272,7 +284,7 @@ def check_search_metadata(site, pages):
             errors.append("sitemap.xml: needs a sitemap-protocol urlset")
         if len(urls) != len(set(urls)) or set(urls) != indexable:
             errors.append(
-                "sitemap.xml: must contain each indexable page once, using its tensor.tools URL"
+                "sitemap.xml: must contain each indexable page once, using its canonical URL"
             )
         if any(
             len(entry) != 1 or entry[0].tag != f"{namespace}loc" for entry in sitemap
@@ -304,7 +316,7 @@ def check_search_metadata(site, pages):
         ]
         if directives != expected:
             errors.append(
-                "robots.txt: expected crawl access and one absolute tensor.tools sitemap directive"
+                "robots.txt: expected crawl access and one absolute sitemap directive"
             )
 
     image = site / "assets/social-card.png"
@@ -348,14 +360,25 @@ def check_site(site):
             except ValueError as error:
                 errors.append(f"{label}: invalid URL {reference!r}: {error}")
                 continue
-            if url.hostname == LEGACY_ORIGIN and (url.path == "/tensor" or url.path.startswith("/tensor/")):
-                errors.append(f"{label}: obsolete website URL: {reference}; use tensor.tools")
+            if url.hostname == OBSOLETE_ORIGIN:
+                errors.append(
+                    f"{label}: obsolete website URL: {reference}; use {SITE_ORIGIN}/"
+                )
                 continue
-            if url.hostname == "tensor.tools":
-                if url.scheme != "https" or url.netloc != "tensor.tools":
+            if url.hostname == SITE_HOST:
+                if (
+                    url.scheme != "https"
+                    or url.netloc != SITE_HOST
+                    or not (
+                        url.path == SITE_PATH
+                        or url.path.startswith(f"{SITE_PATH}/")
+                    )
+                ):
                     errors.append(f"{label}: website URL must use {SITE_ORIGIN}: {reference}")
                     continue
-                target = (site / unquote(url.path).lstrip("/")).resolve()
+                target = (
+                    site / unquote(url.path[len(SITE_PATH):]).lstrip("/")
+                ).resolve()
             elif url.scheme or url.netloc:
                 continue
             elif url.path.startswith("/"):

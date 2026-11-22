@@ -18,7 +18,7 @@
 
 <a href="https://trendshift.io/repositories/82054?utm_source=repository-badge&amp;utm_medium=badge&amp;utm_campaign=badge-repository-82054" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/repositories/82054" alt="tensor-9%2Ftensor | Trendshift" width="250" height="55"/></a>
 
-**[الموقع](https://tensor.tools/ar/) · [الأدلة](https://tensor.tools/ar/guides/) · [دراسات الحالة](https://tensor.tools/ar/showcase/)**
+**[الموقع](https://tensor-9.github.io/tensor/ar/) · [الأدلة](https://tensor-9.github.io/tensor/ar/guides/) · [دراسات الحالة](https://tensor-9.github.io/tensor/ar/showcase/)**
 
 <a href="https://discord.com/invite/GkcryMnJDM"><img alt="انضم إلى مجتمع Tensor على Discord" src="https://img.shields.io/badge/Join%20us%20on%20Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" height="40"></a>
 
@@ -29,7 +29,7 @@
 </div>
 
 > [!IMPORTANT]
-> المصادر الرسمية لـ Tensor: [tensor-9/tensor](https://github.com/tensor-9/tensor), [tensor.tools](https://tensor.tools/), [tensor-agents](https://www.npmjs.com/package/tensor-agents) (npm).
+> المصادر الرسمية لـ Tensor: [tensor-9/tensor](https://github.com/tensor-9/tensor), [tensor-9.github.io/tensor](https://tensor-9.github.io/tensor/), [tensor-agents](https://www.npmjs.com/package/tensor-agents) (npm).
 > استخدم روابط التثبيت والإصدارات المنشورة في هذه المصادر الرسمية. تشابه اسم المستودع أو نسخ ملف README لا يثبت أن التنزيل رسمي.
 
 <div align="center">
@@ -64,7 +64,7 @@
 
 يسجّل الإعداد Tensor لدى وكيلك ويثبّت تعليمات العمل المطابقة. يمكن للتحليل الأصلي استخدام Hopper أو Ghidra أو IDA أو Kuna المثبّت مسبقًا؛ ويمكن تثبيت Hopper بعد موافقتك. لا يحتاج التحليل الثابت لـ JavaScript إلى محرك تحليل أصلي.
 
-> **[زر موقع Tensor](https://tensor.tools/ar/)** للاطلاع على تعليمات الإعداد والأدلة المصوّرة ودراسات الحالة الفعلية.
+> **[زر موقع Tensor](https://tensor-9.github.io/tensor/ar/)** للاطلاع على تعليمات الإعداد والأدلة المصوّرة ودراسات الحالة الفعلية.
 
 ## البدء السريع
 
@@ -211,7 +211,7 @@ npx tensor-agents@latest setup
 
 ## دراسات الحالة
 
-<a href="https://tensor.tools/ar/showcase/">
+<a href="https://tensor-9.github.io/tensor/ar/showcase/">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="../assets/tensor-showcases-dark.svg" />
     <img alt="رسوم توضيحية لأمثلة توزيع الصوت في DX-Ball وجسر الحافظة في Notion وحلقة الطلقات في TH04" src="../assets/tensor-showcases.svg" />
@@ -222,27 +222,27 @@ npx tensor-agents@latest setup
 
 تتبّع استدعاء صوت إلى الدالة المساعدة التي تحوّل الموضع إلى توزيع بين القناتين، وافحص التعليمات، وحوّل الشيفرة شبه البرمجية غير المكتملة إلى C. تجتاز إعادة البناء 3,205 حالات اختبار على x86 الأصلي، وتعيد إنتاج جميع بايتات الدالة المترجمة البالغ عددها 63 بايتًا.
 
-[اقرأ دراسة الحالة](https://tensor.tools/ar/showcase/dx-ball/) ·
+[اقرأ دراسة الحالة](https://tensor-9.github.io/tensor/ar/showcase/dx-ball/) ·
 [مستودع إعادة البناء](https://github.com/N0zoM1z0/dx-ball)
 
 ### Notion: تتبّع جسر الحافظة في Electron
 
 اعثر على API الحافظة في عملية العرض، وتتبّعه عبر preload وIPC إلى العملية الرئيسية، وافحص صيغة الحافظة ذات التنسيق الغني.
 
-[اقرأ دراسة الحالة](https://tensor.tools/ar/showcase/notion/)
+[اقرأ دراسة الحالة](https://tensor-9.github.io/tensor/ar/showcase/notion/)
 
 ### TH04: استعادة حساب حلقة المقذوفات في DOS
 
 افحص تعليمات اللعبة الأصلية على PC-98 ذات 16 بت، واستعد حساب الزوايا الثابتة والموجّهة نحو الهدف، وقارن شيفرة C++ المعاد بناؤها بمخرجات المترجم المستخدم آنذاك.
 
-[اقرأ دراسة الحالة](https://tensor.tools/ar/showcase/th04/) ·
+[اقرأ دراسة الحالة](https://tensor-9.github.io/tensor/ar/showcase/th04/) ·
 [مستودع إعادة البناء](https://github.com/N0zoM1z0/th04)
 
 ### إنشاء بيئات التعلم المعزز باستخدام Tensor
 
 سجّل جلسة لتطبيق ويب، وحوّل API إلى أدوات، وصدّر بيئة يستطيع وكيل الذكاء الاصطناعي استخدامها. شغّلها باستخدام AgentEnv، ثم أضف المهام وفحوص المكافآت للتدريب بالتعلم المعزز أو التقييم.
 
-[دليل إنشاء بيئة](https://tensor.tools/guides/rl-environments/) ·
+[دليل إنشاء بيئة](https://tensor-9.github.io/tensor/guides/rl-environments/) ·
 [شاهد العرض على X](https://x.com/tensortools/status/2112574822584918075?s=20)
 
 إذا استخدمت Tensor لفحص هدف مثير للاهتمام، فنود الاطلاع عليه. شارك حالتك في [issue](https://github.com/tensor-9/tensor/issues) أو [pull request](https://github.com/tensor-9/tensor/pulls)، مع ذكر الهدف، وسؤالك، وكيف ساعدك Tensor، وما توصلت إليه.
@@ -279,7 +279,7 @@ agent-env run ./my-env
 
 يصدّر Tensor بيئة قابلة للتشغيل مع اختبار أساسي يتحقق من بدء تشغيلها واستجابتها. استخدمها مع إطار التعلم المعزز لتحديد أهداف المهام وإضافة فحوص المكافآت وتشغيل التدريب.
 
-[دليل إنشاء بيئة](https://tensor.tools/guides/rl-environments/) ·
+[دليل إنشاء بيئة](https://tensor-9.github.io/tensor/guides/rl-environments/) ·
 [مرجع البيئات](../agent-environments.md) ·
 [شاهد العرض على X](https://x.com/tensortools/status/2112574822584918075?s=20)
 
@@ -356,7 +356,7 @@ npx tensor-agents@latest setup
 
 ## التوثيق
 
-ابدأ بـ [الأدلة العملية](https://tensor.tools/ar/guides/) على الموقع. للخيارات الدقيقة والمتطلبات وعقود النتائج:
+ابدأ بـ [الأدلة العملية](https://tensor-9.github.io/tensor/ar/guides/) على الموقع. للخيارات الدقيقة والمتطلبات وعقود النتائج:
 
 - [التثبيت والإعداد](../getting-started/installation.md): تسجيل الوكلاء، وتهيئة الموفّرين، والتحديثات، وإلغاء التثبيت.
 - [الجاهزية واستكشاف الأخطاء](../getting-started/installation.md#check-readiness-for-your-task): تشخيص وكيل أو محرك تحليل محدد.

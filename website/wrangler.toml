@@ -22,12 +22,12 @@ watch_dir = [
   "../.agents/skills/tensor-reverse-engineering",
 ]
 
-# Public HTTPS depends on zone activation and certificate readiness.
+# Optional Worker preview. The canonical site is GitHub Pages, so this
+# environment attaches no custom domain.
 [env.production]
 name = "tensor-website"
 workers_dev = true
 preview_urls = false
-routes = [{ pattern = "tensor.tools", custom_domain = true }]
 
 # Production receives the already prepared and verified shared Pages artifact.
 # Override the preview build so deployment does not regenerate local assets.

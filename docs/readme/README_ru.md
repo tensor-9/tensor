@@ -18,7 +18,7 @@
 
 <a href="https://trendshift.io/repositories/82054?utm_source=repository-badge&amp;utm_medium=badge&amp;utm_campaign=badge-repository-82054" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/repositories/82054" alt="tensor-9%2Ftensor | Trendshift" width="250" height="55"/></a>
 
-**[Сайт](https://tensor.tools/ru/) · [Руководства](https://tensor.tools/ru/guides/) · [Примеры](https://tensor.tools/ru/showcase/)**
+**[Сайт](https://tensor-9.github.io/tensor/ru/) · [Руководства](https://tensor-9.github.io/tensor/ru/guides/) · [Примеры](https://tensor-9.github.io/tensor/ru/showcase/)**
 
 <a href="https://discord.com/invite/GkcryMnJDM"><img alt="Присоединяйтесь к сообществу Tensor в Discord" src="https://img.shields.io/badge/Join%20us%20on%20Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" height="40"></a>
 
@@ -29,7 +29,7 @@
 </div>
 
 > [!IMPORTANT]
-> Официальные источники Tensor: [tensor-9/tensor](https://github.com/tensor-9/tensor), [tensor.tools](https://tensor.tools/), [tensor-agents](https://www.npmjs.com/package/tensor-agents) (npm).
+> Официальные источники Tensor: [tensor-9/tensor](https://github.com/tensor-9/tensor), [tensor-9.github.io/tensor](https://tensor-9.github.io/tensor/), [tensor-agents](https://www.npmjs.com/package/tensor-agents) (npm).
 > Используйте ссылки на установку и выпуски из этих официальных источников. Похожее название репозитория или скопированный README не подтверждают, что скачиваемый файл является официальным.
 
 <div align="center">
@@ -64,7 +64,7 @@ Tensor подключает вашего агента к инструмента�
 
 Настройка регистрирует Tensor у агента и устанавливает соответствующие инструкции. Нативный анализ использует установленный Hopper, Ghidra, IDA или Kuna; Hopper можно установить после одобрения. Статическому анализу JavaScript нативный движок не нужен.
 
-> **[Посетите сайт Tensor](https://tensor.tools/ru/)**: там есть инструкции по настройке, иллюстрированные руководства и реальные исследования.
+> **[Посетите сайт Tensor](https://tensor-9.github.io/tensor/ru/)**: там есть инструкции по настройке, иллюстрированные руководства и реальные исследования.
 
 ## Быстрый старт
 
@@ -213,7 +213,7 @@ Tensor требует Node.js 22.x (>=22.23.4), 24.x (>=24.22.1) или 26+ (>=2
 
 ## Примеры
 
-<a href="https://tensor.tools/ru/showcase/">
+<a href="https://tensor-9.github.io/tensor/ru/showcase/">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="../assets/tensor-showcases-dark.svg" />
     <img alt="Иллюстрации примеров панорамирования звука в DX-Ball, моста буфера обмена Notion и кольца пуль в TH04" src="../assets/tensor-showcases.svg" />
@@ -224,25 +224,25 @@ Tensor требует Node.js 22.x (>=22.23.4), 24.x (>=24.22.1) или 26+ (>=2
 
 Проследите звуковой вызов до функции, преобразующей координату в значение панорамы, изучите инструкции и превратите неполный псевдокод в C. Восстановленная реализация проходит 3 205 тестов с исходным x86-кодом и воспроизводит все 63 байта скомпилированной функции.
 
-[Прочитать исследование](https://tensor.tools/ru/showcase/dx-ball/) · [Репозиторий реконструкции](https://github.com/N0zoM1z0/dx-ball)
+[Прочитать исследование](https://tensor-9.github.io/tensor/ru/showcase/dx-ball/) · [Репозиторий реконструкции](https://github.com/N0zoM1z0/dx-ball)
 
 ### Notion: исследование моста буфера обмена Electron
 
 Найдите API буфера обмена в процессе рендеринга, проследите его через preload и IPC до основного процесса и изучите формат буфера обмена с форматированием.
 
-[Прочитать исследование](https://tensor.tools/ru/showcase/notion/)
+[Прочитать исследование](https://tensor-9.github.io/tensor/ru/showcase/notion/)
 
 ### TH04: восстановление расчёта кольца пуль в DOS
 
 Изучите 16-битные инструкции оригинальной игры для PC-98, восстановите расчёты фиксированных и прицельных углов и сравните восстановленный C++ с выводом компилятора того времени.
 
-[Прочитать исследование](https://tensor.tools/ru/showcase/th04/) · [Репозиторий реконструкции](https://github.com/N0zoM1z0/th04)
+[Прочитать исследование](https://tensor-9.github.io/tensor/ru/showcase/th04/) · [Репозиторий реконструкции](https://github.com/N0zoM1z0/th04)
 
 ### Создавайте RL-окружения с Tensor
 
 Запишите сеанс веб-приложения, превратите его API в инструменты и экспортируйте окружение для ИИ-агента. Запустите его с AgentEnv, затем добавьте задания и проверки наград для RL-обучения или оценки.
 
-[Руководство по созданию окружения](https://tensor.tools/guides/rl-environments/) ·
+[Руководство по созданию окружения](https://tensor-9.github.io/tensor/guides/rl-environments/) ·
 [Смотреть демо в X](https://x.com/tensortools/status/2112574822584918075?s=20)
 
 Если вы исследовали с Tensor что-то интересное, поделитесь результатом. Создайте [issue](https://github.com/tensor-9/tensor/issues) или [pull request](https://github.com/tensor-9/tensor/pulls) и укажите цель, ваш вопрос, как помог Tensor и что удалось узнать.
@@ -279,7 +279,7 @@ agent-env run ./my-env
 
 Tensor экспортирует готовое к запуску окружение с базовым тестом запуска и ответов. Подключите его к своему RL-фреймворку, чтобы задать цели, добавить проверки наград и запустить обучение.
 
-[Руководство по созданию окружения](https://tensor.tools/guides/rl-environments/) ·
+[Руководство по созданию окружения](https://tensor-9.github.io/tensor/guides/rl-environments/) ·
 [Справочник окружений](../agent-environments.md) ·
 [Смотреть демо в X](https://x.com/tensortools/status/2112574822584918075?s=20)
 
@@ -356,7 +356,7 @@ npx tensor-agents@latest setup
 
 ## Документация
 
-Начните с [практических руководств](https://tensor.tools/ru/guides/) на сайте. Точные параметры, требования и контракты результатов описаны здесь:
+Начните с [практических руководств](https://tensor-9.github.io/tensor/ru/guides/) на сайте. Точные параметры, требования и контракты результатов описаны здесь:
 
 - [Установка и настройка](../getting-started/installation.md): регистрация агентов, настройка провайдеров, обновление и удаление.
 - [Готовность и устранение неполадок](../getting-started/installation.md#check-readiness-for-your-task): диагностика конкретного агента или движка анализа.

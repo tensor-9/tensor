@@ -18,7 +18,7 @@
 
 <a href="https://trendshift.io/repositories/82054?utm_source=repository-badge&amp;utm_medium=badge&amp;utm_campaign=badge-repository-82054" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/repositories/82054" alt="tensor-9%2Ftensor | Trendshift" width="250" height="55"/></a>
 
-**[Уебсайт](https://tensor.tools/) · [Ръководства](https://tensor.tools/guides/) · [Примери](https://tensor.tools/showcase/)**
+**[Уебсайт](https://tensor-9.github.io/tensor/) · [Ръководства](https://tensor-9.github.io/tensor/guides/) · [Примери](https://tensor-9.github.io/tensor/showcase/)**
 
 <a href="https://discord.com/invite/GkcryMnJDM"><img alt="Присъединете се към общността на Tensor в Discord" src="https://img.shields.io/badge/Join%20us%20on%20Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" height="40"></a>
 
@@ -30,7 +30,7 @@
 
 > [!IMPORTANT]
 > Изтегляйте Tensor от [tensor-9/tensor](https://github.com/tensor-9/tensor),
-> [tensor.tools](https://tensor.tools/) или [npm пакета tensor-agents](https://www.npmjs.com/package/tensor-agents).
+> [tensor-9.github.io/tensor](https://tensor-9.github.io/tensor/) или [npm пакета tensor-agents](https://www.npmjs.com/package/tensor-agents).
 > Следвайте връзките за инсталиране и издания от тези официални източници. Подобно
 > име на хранилище или копиран README не доказва, че дадено изтегляне е официално.
 
@@ -66,7 +66,7 @@ Tensor свързва агента ви с инструменти за изсл�
 
 Настройката регистрира Tensor в агента ви и инсталира съответните инструкции за работния процес. Нативният анализ може да използва вече инсталиран Hopper, Ghidra, IDA или Kuna; по желание настройката може да инсталира Hopper след ваше одобрение. Статичният анализ на JavaScript не изисква двигател за нативен анализ.
 
-> **[Посетете уебсайта на Tensor](https://tensor.tools/)** за инструкции за настройка, илюстрирани ръководства и реални казуси.
+> **[Посетете уебсайта на Tensor](https://tensor-9.github.io/tensor/)** за инструкции за настройка, илюстрирани ръководства и реални казуси.
 
 ## Бърз старт
 
@@ -273,7 +273,7 @@ Ghidra поддържа и [анализ на 16-битов DOS код](../provi
 
 ## Примери
 
-<a href="https://tensor.tools/showcase/">
+<a href="https://tensor-9.github.io/tensor/showcase/">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="../assets/tensor-showcases-dark.svg" />
     <img alt="Илюстрации на примерите DX-Ball (звукова панорама), Notion (мост за клипборда) и TH04 (пръстен от куршуми)" src="../assets/tensor-showcases.svg" />
@@ -287,7 +287,7 @@ Ghidra поддържа и [анализ на 16-битов DOS код](../provi
 Реконструкцията минава 3 205 тестови случая спрямо оригиналния x86 код и
 възпроизвежда всичките 63 байта на компилираната функция.
 
-[Прочетете казуса](https://tensor.tools/showcase/dx-ball/) ·
+[Прочетете казуса](https://tensor-9.github.io/tensor/showcase/dx-ball/) ·
 [Хранилище с реконструкцията](https://github.com/N0zoM1z0/dx-ball)
 
 ### Notion: проследяване на моста за клипборда в Electron
@@ -296,7 +296,7 @@ Ghidra поддържа и [анализ на 16-битов DOS код](../provi
 скрипта и IPC до главния процес и изследвайте формата за форматирано съдържание
 в клипборда.
 
-[Прочетете казуса](https://tensor.tools/showcase/notion/)
+[Прочетете казуса](https://tensor-9.github.io/tensor/showcase/notion/)
 
 ### TH04: възстановяване на изчислението на пръстена от куршуми в DOS
 
@@ -304,14 +304,14 @@ Ghidra поддържа и [анализ на 16-битов DOS код](../provi
 изчисленията на фиксираните и насочените ъгли и сравнете реконструирания C++ код
 с изхода на историческия компилатор.
 
-[Прочетете казуса](https://tensor.tools/showcase/th04/) ·
+[Прочетете казуса](https://tensor-9.github.io/tensor/showcase/th04/) ·
 [Хранилище с реконструкцията](https://github.com/N0zoM1z0/th04)
 
 ### Създавайте RL среди с Tensor
 
 Запишете сесия в уеб приложение, превърнете неговото API в инструменти и експортирайте среда, която AI агент може да използва. Стартирайте я с AgentEnv, след което добавете задачи и проверки за награда за RL обучение или оценка.
 
-[Прочетете ръководството](https://tensor.tools/guides/rl-environments/) ·
+[Прочетете ръководството](https://tensor-9.github.io/tensor/guides/rl-environments/) ·
 [Гледайте видеото](https://x.com/tensortools/status/2112574822584918075?s=20)
 
 Ако сте използвали Tensor за нещо интересно, ще се радваме да го видим. Споделете
@@ -353,7 +353,7 @@ agent-env run ./my-env
 
 Tensor експортира готова за стартиране среда с базов тест, който проверява дали тя стартира и отговаря. Използвайте я с вашата RL рамка, за да зададете целите на задачите, да добавите проверки за награда и да стартирате обучението.
 
-[Изградете среда](https://tensor.tools/guides/rl-environments/) ·
+[Изградете среда](https://tensor-9.github.io/tensor/guides/rl-environments/) ·
 [Справочник за средите](../agent-environments.md) ·
 [Гледайте демонстрацията в X](https://x.com/tensortools/status/2112574822584918075?s=20)
 
@@ -455,7 +455,7 @@ npx tensor-agents@latest setup
 
 ## Документация
 
-Започнете с [практическите ръководства](https://tensor.tools/guides/) на уебсайта.
+Започнете с [практическите ръководства](https://tensor-9.github.io/tensor/guides/) на уебсайта.
 За точните опции, предварителните изисквания и договорите за резултатите:
 
 - [Инсталиране и настройка](../getting-started/installation.md): регистриране на агенти, конфигуриране на доставчици, обновяване и деинсталиране.

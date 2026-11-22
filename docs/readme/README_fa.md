@@ -18,7 +18,7 @@
 
 <a href="https://trendshift.io/repositories/82054?utm_source=repository-badge&amp;utm_medium=badge&amp;utm_campaign=badge-repository-82054" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/repositories/82054" alt="tensor-9%2Ftensor | Trendshift" width="250" height="55" /></a>
 
-**[وب‌سایت](https://tensor.tools/fa/) · [راهنماها](https://tensor.tools/fa/guides/) · [نمونه‌های عملی](https://tensor.tools/fa/showcase/)**
+**[وب‌سایت](https://tensor-9.github.io/tensor/fa/) · [راهنماها](https://tensor-9.github.io/tensor/fa/guides/) · [نمونه‌های عملی](https://tensor-9.github.io/tensor/fa/showcase/)**
 
 <a href="https://discord.com/invite/GkcryMnJDM"><img alt="به انجمن Tensor در دیسکورد بپیوندید" src="https://img.shields.io/badge/Join%20us%20on%20Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" height="40"></a>
 
@@ -29,7 +29,7 @@
 </div>
 
 > [!IMPORTANT]
-> منابع رسمی Tensor: [tensor-9/tensor](https://github.com/tensor-9/tensor), [tensor.tools](https://tensor.tools/), [tensor-agents](https://www.npmjs.com/package/tensor-agents) (npm).
+> منابع رسمی Tensor: [tensor-9/tensor](https://github.com/tensor-9/tensor), [tensor-9.github.io/tensor](https://tensor-9.github.io/tensor/), [tensor-agents](https://www.npmjs.com/package/tensor-agents) (npm).
 > از پیوندهای نصب و انتشار در این منابع رسمی استفاده کنید. نام مشابه مخزن یا README کپی‌شده ثابت نمی‌کند که فایل دانلودی رسمی است.
 
 <div align="center" dir="rtl">
@@ -56,7 +56,7 @@ Tensor ایجنت شما را به ابزارهایی برای بررسی بای
 
 راه‌اندازی، Tensor را در ایجنت ثبت و دستورالعمل‌های متناظر را نصب می‌کند. تحلیل بومی می‌تواند از Hopper، Ghidra، IDA یا Kuna موجود استفاده کند؛ نصب Hopper پس از تأیید شما ممکن است. تحلیل ایستای JavaScript به موتور تحلیل بومی نیاز ندارد.
 
-> برای دستورالعمل‌های راه‌اندازی، راهنماهای تصویری و مطالعات موردی واقعی، **[به وب‌سایت Tensor مراجعه کنید](https://tensor.tools/fa/)**.
+> برای دستورالعمل‌های راه‌اندازی، راهنماهای تصویری و مطالعات موردی واقعی، **[به وب‌سایت Tensor مراجعه کنید](https://tensor-9.github.io/tensor/fa/)**.
 
 ## شروع سریع
 
@@ -205,7 +205,7 @@ Tensor به Node.js 22.x (>=22.23.4)، 24.x (>=24.22.1) یا 26+ (>=26.12.1)، �
 
 ## نمونه‌های عملی
 
-<a href="https://tensor.tools/fa/showcase/">
+<a href="https://tensor-9.github.io/tensor/fa/showcase/">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="../assets/tensor-showcases-dark.svg" />
     <img alt="تصویرهایی از نمونه‌های پنینگ صدای DX-Ball، پل کلیپ‌بورد Notion و حلقهٔ گلوله‌های TH04" src="../assets/tensor-showcases.svg" />
@@ -216,25 +216,25 @@ Tensor به Node.js 22.x (>=22.23.4)، 24.x (>=24.22.1) یا 26+ (>=26.12.1)، �
 
 یک فراخوانی صوتی را تا تابع کمکی تبدیل موقعیت به pan دنبال کنید، دستورالعمل‌ها را بررسی کنید و شبه‌کد ناقص را به C تبدیل کنید. بازسازی حاصل، هر ۳٬۲۰۵ مورد آزمایش x86 اصلی را با موفقیت پشت سر می‌گذارد و هر ۶۳ بایت تابع کامپایل‌شده را دقیقاً بازتولید می‌کند.
 
-[مطالعهٔ موردی](https://tensor.tools/fa/showcase/dx-ball/) · [مخزن بازسازی](https://github.com/N0zoM1z0/dx-ball)
+[مطالعهٔ موردی](https://tensor-9.github.io/tensor/fa/showcase/dx-ball/) · [مخزن بازسازی](https://github.com/N0zoM1z0/dx-ball)
 
 ### Notion: ردیابی پل کلیپ‌بورد Electron
 
 API کلیپ‌بورد در renderer را پیدا کنید، مسیر آن را از preload و IPC تا فرایند اصلی دنبال کنید و قالب غنی کلیپ‌بورد را بررسی کنید.
 
-[مطالعهٔ موردی](https://tensor.tools/fa/showcase/notion/)
+[مطالعهٔ موردی](https://tensor-9.github.io/tensor/fa/showcase/notion/)
 
 ### TH04: بازیابی محاسبهٔ حلقهٔ گلوله در DOS
 
 دستورالعمل‌های ۱۶بیتی بازی اصلی PC-98 را بررسی کنید، محاسبات زاویهٔ ثابت و هدف‌گیری‌شده را بازیابی کنید و کد C++ بازسازی‌شده را با خروجی کامپایلر تاریخی مقایسه کنید.
 
-[مطالعهٔ موردی](https://tensor.tools/fa/showcase/th04/) · [مخزن بازسازی](https://github.com/N0zoM1z0/th04)
+[مطالعهٔ موردی](https://tensor-9.github.io/tensor/fa/showcase/th04/) · [مخزن بازسازی](https://github.com/N0zoM1z0/th04)
 
 ### ساخت محیط‌های RL با Tensor
 
 یک نشست برنامهٔ وب را ضبط کنید، API آن را به ابزار تبدیل کنید و محیطی برای عامل هوش مصنوعی صادر کنید. آن را با AgentEnv اجرا کنید و کارها و بررسی پاداش را برای آموزش RL یا ارزیابی اضافه کنید.
 
-[راهنمای ساخت محیط](https://tensor.tools/guides/rl-environments/) ·
+[راهنمای ساخت محیط](https://tensor-9.github.io/tensor/guides/rl-environments/) ·
 [نمایش را در X ببینید](https://x.com/tensortools/status/2112574822584918075?s=20)
 
 اگر از Tensor برای بررسی موضوع جالبی استفاده کرده‌اید، خوشحال می‌شویم آن را به اشتراک بگذارید. یک [issue](https://github.com/tensor-9/tensor/issues) یا [pull request](https://github.com/tensor-9/tensor/pulls) ثبت کنید و هدف، پرسش خود، نقش Tensor و یافته‌هایتان را توضیح دهید.
@@ -271,7 +271,7 @@ agent-env run ./my-env
 
 Tensor محیطی آمادهٔ اجرا همراه با یک آزمون ساده برای بررسی شروع به کار و پاسخ‌گویی آن صادر می‌کند. آن را به چارچوب RL متصل کنید تا اهداف کارها و بررسی پاداش را تعریف و آموزش را اجرا کنید.
 
-[راهنمای ساخت محیط](https://tensor.tools/guides/rl-environments/) ·
+[راهنمای ساخت محیط](https://tensor-9.github.io/tensor/guides/rl-environments/) ·
 [مرجع محیط‌ها](../agent-environments.md) ·
 [نمایش را در X ببینید](https://x.com/tensortools/status/2112574822584918075?s=20)
 
@@ -341,7 +341,7 @@ npx tensor-agents@latest setup
 
 ## مستندات
 
-از [راهنماهای عملی وب‌سایت](https://tensor.tools/fa/guides/) شروع کنید. برای گزینه‌های دقیق، پیش‌نیازها و قراردادهای خروجی:
+از [راهنماهای عملی وب‌سایت](https://tensor-9.github.io/tensor/fa/guides/) شروع کنید. برای گزینه‌های دقیق، پیش‌نیازها و قراردادهای خروجی:
 
 - [نصب و راه‌اندازی](../getting-started/installation.md): ثبت ایجنت، پیکربندی ارائه‌دهنده، به‌روزرسانی و حذف نصب.
 - [آمادگی و رفع اشکال](../getting-started/installation.md#check-readiness-for-your-task): عیب‌یابی یک ایجنت یا موتور تحلیل.

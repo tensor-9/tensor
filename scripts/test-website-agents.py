@@ -23,7 +23,7 @@ class AgentPublishingChecks(unittest.TestCase):
         skill, = index["skills"]
         self.assertEqual(skill["name"], "tensor-reverse-engineering")
         self.assertEqual(skill["type"], "archive")
-        artifact = site / skill["url"].removeprefix("https://tensor.tools/")
+        artifact = site / skill["url"].removeprefix("https://tensor-9.github.io/tensor/")
         self.assertEqual(skill["digest"], "sha256:" + hashlib.sha256(artifact.read_bytes()).hexdigest())
         source = ROOT / ".agents/skills/tensor-reverse-engineering"
         with ZipFile(artifact) as archive:
@@ -36,7 +36,7 @@ class AgentPublishingChecks(unittest.TestCase):
         catalog = json.loads((site / ".well-known/ai-catalog.json").read_text())
         self.assertEqual(catalog["specVersion"], "1.0")
         entry, = catalog["entries"]
-        self.assertEqual(entry["identifier"], "urn:air:tensor.tools:skill:tensor-reverse-engineering")
+        self.assertEqual(entry["identifier"], "urn:air:tensor-9.github.io:skill:tensor-reverse-engineering")
         self.assertEqual(entry["url"], skill["url"])
         self.assertEqual(entry["description"], skill["description"])
         self.assertNotIn("data", entry)
@@ -107,14 +107,14 @@ class AgentPublishingChecks(unittest.TestCase):
             self.assertIn("Hidden evidence remains available.", markdown)
             self.assertIn("Shortened display paths.", markdown)
             self.assertRegex(markdown, r"Read\s+`input\.exe`\s+Keep evidence\.")
-            self.assertIn("https://tensor.tools/zh-CN/guides/other/?q=a%2Fb#code", markdown)
-            self.assertIn("https://tensor.tools/assets/diagram.svg", markdown)
+            self.assertIn("https://tensor-9.github.io/tensor/zh-CN/guides/other/?q=a%2Fb#code", markdown)
+            self.assertIn("https://tensor-9.github.io/tensor/assets/diagram.svg", markdown)
             for text in ("Outside navigation", "Contents navigation", "Copy code", "doNotPublish"):
                 self.assertNotIn(text, markdown)
             self.assertFalse(fixture.with_suffix(".md").exists())
             self.assertFalse(fallback.with_suffix(".md").exists())
             html = BeautifulSoup(page.read_text(), "html.parser")
-            self.assertEqual(html.find("link", rel="alternate")["href"], "https://tensor.tools/zh-CN/guides/test/index.md")
+            self.assertEqual(html.find("link", rel="alternate")["href"], "https://tensor-9.github.io/tensor/zh-CN/guides/test/index.md")
 
 
 if __name__ == "__main__":

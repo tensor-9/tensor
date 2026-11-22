@@ -196,7 +196,7 @@ class WebsiteLinkAuditChecks(unittest.TestCase):
             root = Path(directory)
             page = root / html
             page.parent.mkdir(parents=True)
-            page.write_text("".join(f'<a href="{url}">Link</a>' for url in (*invalid, valid, "https://tensor.tools/")))
+            page.write_text("".join(f'<a href="{url}">Link</a>' for url in (*invalid, valid, "https://tensor-9.github.io/tensor/")))
             (root / markdown).write_text(f"[Guide]({invalid[0]})")
             opener = build_opener(ProxyHandler({}))
             with (
@@ -299,18 +299,18 @@ class WebsiteSearchChecks(unittest.TestCase):
             self.assertEqual(
                 urls(),
                 {
-                    "https://tensor.tools/",
-                    "https://tensor.tools/guides/new/",
-                    "https://tensor.tools/code%20%26%20notes.html",
-                    "https://tensor.tools/visible/",
+                    "https://tensor-9.github.io/tensor/",
+                    "https://tensor-9.github.io/tensor/guides/new/",
+                    "https://tensor-9.github.io/tensor/code%20%26%20notes.html",
+                    "https://tensor-9.github.io/tensor/visible/",
                 },
             )
             nested.rename(site / "moved.html")
             moved = urls()
-            self.assertIn("https://tensor.tools/moved.html", moved)
-            self.assertNotIn("https://tensor.tools/guides/new/", moved)
+            self.assertIn("https://tensor-9.github.io/tensor/moved.html", moved)
+            self.assertNotIn("https://tensor-9.github.io/tensor/guides/new/", moved)
             (site / "moved.html").unlink()
-            self.assertNotIn("https://tensor.tools/moved.html", urls())
+            self.assertNotIn("https://tensor-9.github.io/tensor/moved.html", urls())
 
     def test_verifier_rejects_wrong_canonicals_stale_sitemaps_and_missing_previews(
         self,
@@ -318,26 +318,26 @@ class WebsiteSearchChecks(unittest.TestCase):
         cases = (
             (
                 "index.html",
-                'rel="canonical" href="https://tensor.tools/"',
                 'rel="canonical" href="https://tensor-9.github.io/tensor/"',
+                'rel="canonical" href="https://tensor.tools/"',
                 "needs exactly one head canonical",
             ),
             (
                 "faq/index.html",
-                'hreflang="zh-CN" href="https://tensor.tools/zh-CN/faq/"',
+                'hreflang="zh-CN" href="https://tensor-9.github.io/tensor/zh-CN/faq/"',
                 'hreflang="zh-CN" href="https://[::1/faq/"',
                 "invalid hreflang URL",
             ),
             (
                 "showcase/aegis/index.html",
-                'rel="canonical" href="https://tensor.tools/showcase/aegis/"',
-                'rel="canonical" href="https://tensor.tools/"',
+                'rel="canonical" href="https://tensor-9.github.io/tensor/showcase/aegis/"',
+                'rel="canonical" href="https://tensor-9.github.io/tensor/"',
                 "needs exactly one head canonical",
             ),
             (
                 "sitemap.xml",
-                "https://tensor.tools/faq/",
-                "https://tensor.tools/deleted/",
+                "https://tensor-9.github.io/tensor/faq/",
+                "https://tensor-9.github.io/tensor/deleted/",
                 "must contain each indexable page once",
             ),
             (
@@ -525,10 +525,10 @@ class WebsiteMaintenanceChecks(unittest.TestCase):
                 WEBSITE.new_page(root, "../outside", "Title", "Description")
             WEBSITE.sync_pages(root, check=True)
             PREPARE.prepare_sitemap(site)
-            self.assertNotIn("https://tensor.tools/blog/new-example/", (site / "sitemap.xml").read_text())
+            self.assertNotIn("https://tensor-9.github.io/tensor/blog/new-example/", (site / "sitemap.xml").read_text())
             page.write_text(source.replace('    <meta name="robots" content="noindex" />\n', ''))
             PREPARE.prepare_sitemap(site)
-            self.assertIn("https://tensor.tools/blog/new-example/", (site / "sitemap.xml").read_text())
+            self.assertIn("https://tensor-9.github.io/tensor/blog/new-example/", (site / "sitemap.xml").read_text())
             self.assertEqual(VERIFY.check_site(site)[3], [])
 
     def test_links_in_prompts_fragments_and_copy_controls_are_verified(self):
@@ -538,9 +538,9 @@ class WebsiteMaintenanceChecks(unittest.TestCase):
             page = site / "faq/index.html"
             original = page.read_text()
             cases = (
-                ('<a href="https://tensor.tools/deleted/">Broken</a>', "missing local target: https://tensor.tools/deleted/"),
-                ('<code>https://tensor.tools/guides/native/#deleted</code>', "missing HTML fragment: https://tensor.tools/guides/native/#deleted"),
-                ('<code>https://tensor-9.github.io/tensor/examples/notes-web/</code>', "obsolete website URL: https://tensor-9.github.io/tensor/examples/notes-web/"),
+                ('<a href="https://tensor-9.github.io/tensor/deleted/">Broken</a>', "missing local target: https://tensor-9.github.io/tensor/deleted/"),
+                ('<code>https://tensor-9.github.io/tensor/guides/native/#deleted</code>', "missing HTML fragment: https://tensor-9.github.io/tensor/guides/native/#deleted"),
+                ('<code>https://tensor.tools/examples/notes-web/</code>', "obsolete website URL: https://tensor.tools/examples/notes-web/"),
                 ('<button data-copy="deleted">Copy</button>', "missing copy target: deleted"),
                 ('<a href="https://[">Malformed</a>', "invalid URL 'https://[':"),
             )
@@ -588,7 +588,7 @@ class WebsiteMaintenanceChecks(unittest.TestCase):
             page.write_text('<html lang="en"><head><title>Fixture</title><meta name="robots" content="noindex"></head><body><h1>Fixture</h1><a href="guide.html#answer">Guide</a></body></html>')
             (site / "guide.html").write_text('<html lang="en"><head><title>Guide</title><meta name="robots" content="noindex"></head><body><h1 id="answer">Answer</h1></body></html>')
             (site / "sitemap.xml").write_text('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"/>')
-            (site / "robots.txt").write_text("User-agent: *\nAllow: /\nSitemap: https://tensor.tools/sitemap.xml\n")
+            (site / "robots.txt").write_text("User-agent: *\nAllow: /\nSitemap: https://tensor-9.github.io/tensor/sitemap.xml\n")
             alias = Path(directory) / "site-alias"
             alias.symlink_to(site, target_is_directory=True)
             # The tiny link fixture intentionally omits the social preview.
@@ -597,7 +597,7 @@ class WebsiteMaintenanceChecks(unittest.TestCase):
             self.assertEqual(VERIFY.check_site(alias)[3], expected)
             (site.parent / "outside.html").write_text("<p>Outside</p>")
             content = page.read_text()
-            for reference in ("../outside.html", "https://tensor.tools/../outside.html"):
+            for reference in ("../outside.html", "https://tensor-9.github.io/tensor/../outside.html"):
                 page.write_text(content.replace("guide.html#answer", reference))
                 for boundary in (site, alias):
                     with self.subTest(boundary=boundary, reference=reference):
@@ -688,8 +688,8 @@ class WebsiteTranslationChecks(unittest.TestCase):
             picker = next(node for node in nodes if node.attrs.get("data-language") == "zh-CN")
             alternate = next(node for node in nodes if node.attrs.get("hreflang") == "zh-CN")
             encoded = "guides/Notes%20%231%3F%2523%20caf%C3%A9/"
-            self.assertEqual(canonical, "https://tensor.tools/" + encoded)
-            self.assertEqual(alternate.attrs["href"], "https://tensor.tools/zh-CN/" + encoded)
+            self.assertEqual(canonical, "https://tensor-9.github.io/tensor/" + encoded)
+            self.assertEqual(alternate.attrs["href"], "https://tensor-9.github.io/tensor/zh-CN/" + encoded)
             for prefix in ("/", "/tensor/"):
                 with self.subTest(prefix=prefix):
                     base = "https://example.com" + prefix
@@ -725,7 +725,7 @@ class WebsiteTranslationChecks(unittest.TestCase):
             for code in ("ur-Latn", "ur-Latn-PK"):
                 path = site / code / "index.html"
                 path.parent.mkdir()
-                url = f"https://tensor.tools/{code}/"
+                url = f"https://tensor-9.github.io/tensor/{code}/"
                 source = dedent(f'''\
                     <!doctype html>
                     <html lang="{code}" dir="ltr">
@@ -739,7 +739,7 @@ class WebsiteTranslationChecks(unittest.TestCase):
                       <meta property="og:title" content="Tensor ka ta'aruf" />
                       <meta property="og:description" content="Tensor ko samjhein." />
                       <meta property="og:url" content="{url}" />
-                      <meta property="og:image" content="https://tensor.tools/assets/social-card.png" />
+                      <meta property="og:image" content="https://tensor-9.github.io/tensor/assets/social-card.png" />
                       <meta property="og:image:type" content="image/png" />
                       <meta property="og:image:width" content="1200" />
                       <meta property="og:image:height" content="630" />
@@ -747,7 +747,7 @@ class WebsiteTranslationChecks(unittest.TestCase):
                       <meta name="twitter:card" content="summary_large_image" />
                       <meta name="twitter:title" content="Tensor ka ta'aruf" />
                       <meta name="twitter:description" content="Tensor ko samjhein." />
-                      <meta name="twitter:image" content="https://tensor.tools/assets/social-card.png" />
+                      <meta name="twitter:image" content="https://tensor-9.github.io/tensor/assets/social-card.png" />
                       <meta name="twitter:image:alt" content="Tensor" />
                     </head>
                     <body><h1>Tensor ka ta'aruf</h1></body>
@@ -804,7 +804,7 @@ class WebsiteTranslationChecks(unittest.TestCase):
             self.assertTrue(fallback.translation_fallback)
             self.assertTrue(fallback.noindex())
             self.assertEqual(fallback.lang, "en")
-            self.assertNotIn("https://tensor.tools/zh-CN/faq/", (site / "sitemap.xml").read_text())
+            self.assertNotIn("https://tensor-9.github.io/tensor/zh-CN/faq/", (site / "sitemap.xml").read_text())
             self.assertNotIn('hreflang="zh-CN"', (site / "faq/index.html").read_text())
             new.msgstr = "现在如何安装 Tensor？"
             new.flags.append("fuzzy")
@@ -820,7 +820,7 @@ class WebsiteTranslationChecks(unittest.TestCase):
             self.assertNotIn("data-translation-fallback", result)
             self.assertIn('href="../assets/styles.css"', (site / "zh-CN/index.html").read_text())
             self.assertIn('hreflang="zh-CN"', (site / "faq/index.html").read_text())
-            self.assertIn("https://tensor.tools/zh-CN/faq/", (site / "sitemap.xml").read_text())
+            self.assertIn("https://tensor-9.github.io/tensor/zh-CN/faq/", (site / "sitemap.xml").read_text())
 
     def test_broken_placeholders_and_inline_markup_fail_before_replacing_preview(self):
         with self.translated_project() as root:

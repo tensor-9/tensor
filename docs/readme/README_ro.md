@@ -18,7 +18,7 @@
 
 <a href="https://trendshift.io/repositories/82054?utm_source=repository-badge&amp;utm_medium=badge&amp;utm_campaign=badge-repository-82054" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/repositories/82054" alt="tensor-9%2Ftensor | Trendshift" width="250" height="55"/></a>
 
-**[Site web](https://tensor.tools/) · [Ghiduri](https://tensor.tools/guides/) · [Studii de caz](https://tensor.tools/showcase/)**
+**[Site web](https://tensor-9.github.io/tensor/) · [Ghiduri](https://tensor-9.github.io/tensor/guides/) · [Studii de caz](https://tensor-9.github.io/tensor/showcase/)**
 
 <a href="https://discord.com/invite/GkcryMnJDM"><img alt="Alătură-te comunității Tensor pe Discord" src="https://img.shields.io/badge/Join%20us%20on%20Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" height="40"></a>
 
@@ -30,7 +30,7 @@
 
 > [!IMPORTANT]
 > Descarcă Tensor din [tensor-9/tensor](https://github.com/tensor-9/tensor),
-> de pe [tensor.tools](https://tensor.tools/) sau prin [pachetul npm tensor-agents](https://www.npmjs.com/package/tensor-agents).
+> de pe [tensor-9.github.io/tensor](https://tensor-9.github.io/tensor/) sau prin [pachetul npm tensor-agents](https://www.npmjs.com/package/tensor-agents).
 > Urmează linkurile de instalare și către versiunile publicate oferite de aceste surse oficiale.
 > Un nume de repository asemănător sau un README copiat nu dovedește că descărcarea provine dintr-o sursă oficială.
 
@@ -66,7 +66,7 @@ Tensor conectează agentul tău la unelte pentru inspectarea fișierelor binare 
 
 Programul de configurare înregistrează Tensor în agentul tău și instalează instrucțiunile corespunzătoare pentru fluxul de lucru. Analiza nativă poate folosi o instalare existentă de Hopper, Ghidra, IDA sau Kuna; programul de configurare poate instala opțional Hopper, cu aprobarea ta. Analiza statică JavaScript nu necesită un motor de analiză nativă.
 
-> **[Vizitează site-ul Tensor](https://tensor.tools/)** pentru instrucțiuni de configurare, ghiduri ilustrate și studii de caz reale.
+> **[Vizitează site-ul Tensor](https://tensor-9.github.io/tensor/)** pentru instrucțiuni de configurare, ghiduri ilustrate și studii de caz reale.
 
 ## Pornire rapidă
 
@@ -260,7 +260,7 @@ pentru funcționalitățile adăugate după cea mai recentă versiune npm.
 
 ## Studii de caz
 
-<a href="https://tensor.tools/showcase/">
+<a href="https://tensor-9.github.io/tensor/showcase/">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="../assets/tensor-showcases-dark.svg" />
     <img alt="Ilustrații pentru studiile de caz despre panoramarea sunetului în DX-Ball, legătura cu clipboardul în Notion și inelele de proiectile din TH04" src="../assets/tensor-showcases.svg" />
@@ -274,7 +274,7 @@ panoramare stereo, inspectează instrucțiunile și transformă pseudocodul inco
 în C. Reconstrucția trece 3.205 cazuri de test comparate cu originalul x86 și
 reproduce toți cei 63 de octeți ai funcției compilate.
 
-[Citește studiul de caz](https://tensor.tools/showcase/dx-ball/) ·
+[Citește studiul de caz](https://tensor-9.github.io/tensor/showcase/dx-ball/) ·
 [Repository-ul reconstrucției](https://github.com/N0zoM1z0/dx-ball)
 
 ### Notion: urmărește legătura Electron cu clipboardul
@@ -282,7 +282,7 @@ reproduce toți cei 63 de octeți ai funcției compilate.
 Găsește API-ul pentru clipboard din procesul de randare, urmărește-l prin preload
 și IPC până în procesul principal și inspectează formatul datelor cu formatare din clipboard.
 
-[Citește studiul de caz](https://tensor.tools/showcase/notion/)
+[Citește studiul de caz](https://tensor-9.github.io/tensor/showcase/notion/)
 
 ### TH04: recuperează calculul unui inel de proiectile DOS
 
@@ -290,14 +290,14 @@ Inspectează instrucțiunile pe 16 biți ale jocului original pentru PC-98,
 recuperează calculele unghiurilor fixe și ale celor orientate spre țintă și
 compară codul C++ reconstruit cu rezultatul compilatorului folosit la acea vreme.
 
-[Citește studiul de caz](https://tensor.tools/showcase/th04/) ·
+[Citește studiul de caz](https://tensor-9.github.io/tensor/showcase/th04/) ·
 [Repository-ul reconstrucției](https://github.com/N0zoM1z0/th04)
 
 ### Construiește medii RL cu Tensor
 
 Înregistrează o sesiune de aplicație web, transformă API-ul în instrumente și exportă un mediu pe care un agent AI îl poate folosi. Rulează cu AgentEnv, apoi adaugă sarcini și verificări de recompensă pentru antrenare RL sau evaluare.
 
-[Ghid pentru construirea unui mediu](https://tensor.tools/guides/rl-environments/) ·
+[Ghid pentru construirea unui mediu](https://tensor-9.github.io/tensor/guides/rl-environments/) ·
 [Vezi demonstrația pe X](https://x.com/tensortools/status/2112574822584918075?s=20)
 
 Dacă ai folosit Tensor pentru ceva interesant, ne-ar plăcea să vedem rezultatul.
@@ -337,7 +337,7 @@ agent-env run ./my-env
 
 Tensor exportă un mediu executabil cu un test de bază care verifică pornirea și răspunsurile. Conectează-l la frameworkul RL pentru a defini obiectivele, a adăuga verificări de recompensă și a rula antrenarea.
 
-[Ghid pentru construirea unui mediu](https://tensor.tools/guides/rl-environments/) ·
+[Ghid pentru construirea unui mediu](https://tensor-9.github.io/tensor/guides/rl-environments/) ·
 [Referință pentru medii](../agent-environments.md) ·
 [Vezi demonstrația pe X](https://x.com/tensortools/status/2112574822584918075?s=20)
 
@@ -432,7 +432,7 @@ tipul țintei analizate, pașii de reproducere și mesajele de eroare.
 
 ## Documentație
 
-Începe cu [ghidurile practice](https://tensor.tools/guides/) de pe site.
+Începe cu [ghidurile practice](https://tensor-9.github.io/tensor/guides/) de pe site.
 Pentru opțiunile exacte, cerințele preliminare și contractele rezultatelor:
 
 - [Instalare și configurare](../getting-started/installation.md): înregistrarea agenților, configurarea motoarelor de analiză, actualizări și dezinstalare.

@@ -6,7 +6,7 @@
     "name": "tensor-9",
     "url": "https://github.com/tensor-9"
   },
-  "homepage": "https://tensor.tools/",
+  "homepage": "https://tensor-9.github.io/tensor/",
   "repository": "https://github.com/tensor-9/tensor",
   "license": "MIT",
   "keywords": [
@@ -28,7 +28,7 @@
       "Read",
       "Write"
     ],
-    "websiteURL": "https://tensor.tools/",
+    "websiteURL": "https://tensor-9.github.io/tensor/",
     "defaultPrompt": [
       "Use Tensor to explain how this binary implements a feature.",
       "Use Tensor to compare two versions of this application.",

@@ -343,8 +343,7 @@ The manual VitePress workflow in `.github/workflows/pages.yml` builds these
 guides for verification.
 
 The product website in `website/public/` has a separate
-[publishing workflow](website/README.md#synchronized-production-publishing) for
-`tensor.tools` and GitHub Pages.
+[publishing workflow](website/README.md#publishing) for the GitHub Pages site.
 
 ### Translation corrections
 

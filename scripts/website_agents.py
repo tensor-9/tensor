@@ -52,7 +52,7 @@ def prepare_discovery(root, site):
         }],
     })
     entry = {
-        "identifier": f"urn:air:tensor.tools:skill:{name}",
+        "identifier": f"urn:air:tensor-9.github.io:skill:{name}",
         "displayName": "Tensor reverse engineering skill",
         "description": description,
         "type": "application/zip",

@@ -18,7 +18,7 @@
 
 <a href="https://trendshift.io/repositories/82054?utm_source=repository-badge&amp;utm_medium=badge&amp;utm_campaign=badge-repository-82054" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/repositories/82054" alt="tensor-9%2Ftensor | Trendshift" width="250" height="55"/></a>
 
-**[Site](https://tensor.tools/pt-BR/) · [Guias](https://tensor.tools/pt-BR/guides/) · [Casos de uso](https://tensor.tools/pt-BR/showcase/)**
+**[Site](https://tensor-9.github.io/tensor/pt-BR/) · [Guias](https://tensor-9.github.io/tensor/pt-BR/guides/) · [Casos de uso](https://tensor-9.github.io/tensor/pt-BR/showcase/)**
 
 <a href="https://discord.com/invite/GkcryMnJDM"><img alt="Participe da comunidade Tensor no Discord" src="https://img.shields.io/badge/Join%20us%20on%20Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" height="40"></a>
 
@@ -29,7 +29,7 @@
 </div>
 
 > [!IMPORTANT]
-> Fontes oficiais do Tensor: [tensor-9/tensor](https://github.com/tensor-9/tensor), [tensor.tools](https://tensor.tools/), [tensor-agents](https://www.npmjs.com/package/tensor-agents) (npm).
+> Fontes oficiais do Tensor: [tensor-9/tensor](https://github.com/tensor-9/tensor), [tensor-9.github.io/tensor](https://tensor-9.github.io/tensor/), [tensor-agents](https://www.npmjs.com/package/tensor-agents) (npm).
 > Use os links de instalação e de versões dessas fontes oficiais. Um nome de repositório parecido ou um README copiado não comprova que um download seja oficial.
 
 <div align="center">
@@ -64,7 +64,7 @@ O Tensor conecta seu agente a ferramentas para inspecionar binários nativos, ap
 
 A configuração registra o Tensor no seu agente e instala as instruções de trabalho correspondentes. A análise nativa pode usar Hopper, Ghidra, IDA ou Kuna já instalados; o Hopper pode ser instalado após sua aprovação. A análise estática de JavaScript não precisa de um mecanismo de análise nativa.
 
-> **[Visite o site do Tensor](https://tensor.tools/pt-BR/)** para instruções de configuração, guias ilustrados e estudos de caso reais.
+> **[Visite o site do Tensor](https://tensor-9.github.io/tensor/pt-BR/)** para instruções de configuração, guias ilustrados e estudos de caso reais.
 
 ## Início rápido
 
@@ -213,7 +213,7 @@ Os formatos nativos e os sistemas anfitriões compatíveis variam por provedor. 
 
 ## Casos de uso
 
-<a href="https://tensor.tools/pt-BR/showcase/">
+<a href="https://tensor-9.github.io/tensor/pt-BR/showcase/">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="../assets/tensor-showcases-dark.svg" />
     <img alt="Ilustrações dos estudos de panoramização de áudio do DX-Ball, da ponte da átensor de transferência do Notion e do anel de projéteis do TH04" src="../assets/tensor-showcases.svg" />
@@ -224,25 +224,25 @@ Os formatos nativos e os sistemas anfitriões compatíveis variam por provedor. 
 
 Siga uma chamada de áudio até a função auxiliar que converte posição em panorâmica, inspecione as instruções e transforme pseudocódigo incompleto em C. A reconstrução passa em 3.205 casos com o x86 original e reproduz todos os 63 bytes da função compilada.
 
-[Leia o estudo de caso](https://tensor.tools/pt-BR/showcase/dx-ball/) · [Repositório da reconstrução](https://github.com/N0zoM1z0/dx-ball)
+[Leia o estudo de caso](https://tensor-9.github.io/tensor/pt-BR/showcase/dx-ball/) · [Repositório da reconstrução](https://github.com/N0zoM1z0/dx-ball)
 
 ### Notion: rastrear a ponte da átensor de transferência do Electron
 
 Encontre a API da átensor de transferência do renderizador, siga-a por preload e IPC até o processo principal e inspecione o formato da átensor de transferência com seus dados de formatação.
 
-[Leia o estudo de caso](https://tensor.tools/pt-BR/showcase/notion/)
+[Leia o estudo de caso](https://tensor-9.github.io/tensor/pt-BR/showcase/notion/)
 
 ### TH04: recuperar o cálculo de um anel de projéteis no DOS
 
 Inspecione as instruções de 16 bits do jogo original para PC-98, recupere os cálculos de ângulos fixos e direcionados e compare o C++ reconstruído com a saída do compilador da época.
 
-[Leia o estudo de caso](https://tensor.tools/pt-BR/showcase/th04/) · [Repositório da reconstrução](https://github.com/N0zoM1z0/th04)
+[Leia o estudo de caso](https://tensor-9.github.io/tensor/pt-BR/showcase/th04/) · [Repositório da reconstrução](https://github.com/N0zoM1z0/th04)
 
 ### Criar ambientes de RL com o Tensor
 
 Grave uma sessão de aplicativo web, transforme sua API em ferramentas e exporte um ambiente que um agente de IA possa usar. Execute com o AgentEnv e adicione tarefas e verificações de recompensa para treinamento RL ou avaliação.
 
-[Guia para criar um ambiente](https://tensor.tools/guides/rl-environments/) ·
+[Guia para criar um ambiente](https://tensor-9.github.io/tensor/guides/rl-environments/) ·
 [Veja a demonstração no X](https://x.com/tensortools/status/2112574822584918075?s=20)
 
 Se você usou o Tensor em algo interessante, gostaríamos de conhecer. Compartilhe seu caso em uma [issue](https://github.com/tensor-9/tensor/issues) ou um [pull request](https://github.com/tensor-9/tensor/pulls), incluindo o alvo, sua pergunta, como o Tensor ajudou e o que descobriu.
@@ -279,7 +279,7 @@ agent-env run ./my-env
 
 O Tensor exporta um ambiente executável com um teste básico para verificar se ele inicia e responde. Use com seu framework de RL para definir objetivos, adicionar verificações de recompensa e executar o treinamento.
 
-[Guia para criar um ambiente](https://tensor.tools/guides/rl-environments/) ·
+[Guia para criar um ambiente](https://tensor-9.github.io/tensor/guides/rl-environments/) ·
 [Referência de ambientes](../agent-environments.md) ·
 [Veja a demonstração no X](https://x.com/tensortools/status/2112574822584918075?s=20)
 
@@ -356,7 +356,7 @@ Se você usa um agente, conclua a [atualização da configuração](#atualize-o-
 
 ## Documentação
 
-Comece pelos [guias práticos](https://tensor.tools/pt-BR/guides/) do site. Para opções exatas, pré-requisitos e contratos dos resultados:
+Comece pelos [guias práticos](https://tensor-9.github.io/tensor/pt-BR/guides/) do site. Para opções exatas, pré-requisitos e contratos dos resultados:
 
 - [Instalação e configuração](../getting-started/installation.md): registro de agentes, configuração de provedores, atualizações e desinstalação.
 - [Prontidão e solução de problemas](../getting-started/installation.md#check-readiness-for-your-task): diagnóstico de um agente ou motor de análise específico.

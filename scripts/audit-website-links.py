@@ -106,7 +106,7 @@ def audit_url(item):
         host, port = url.hostname, url.port
     except ValueError as error:
         return dict(result, status="broken", reason=f"Invalid URL: {error}")
-    if host in ("tensor.tools", "localhost", "127.0.0.1", "::1"):
+    if host in ("tensor-9.github.io", "localhost", "127.0.0.1", "::1"):
         return None
 
     try:

@@ -18,7 +18,7 @@
 
 <a href="https://trendshift.io/repositories/82054?utm_source=repository-badge&amp;utm_medium=badge&amp;utm_campaign=badge-repository-82054" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/repositories/82054" alt="tensor-9%2Ftensor | Trendshift" width="250" height="55"/></a>
 
-**[Website](https://tensor.tools/de/) · [Anleitungen](https://tensor.tools/de/guides/) · [Fallstudien](https://tensor.tools/de/showcase/)**
+**[Website](https://tensor-9.github.io/tensor/de/) · [Anleitungen](https://tensor-9.github.io/tensor/de/guides/) · [Fallstudien](https://tensor-9.github.io/tensor/de/showcase/)**
 
 <a href="https://discord.com/invite/GkcryMnJDM"><img alt="Der Tensor-Community auf Discord beitreten" src="https://img.shields.io/badge/Join%20us%20on%20Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" height="40"></a>
 
@@ -29,7 +29,7 @@
 </div>
 
 > [!IMPORTANT]
-> Offizielle Quellen für Tensor: [tensor-9/tensor](https://github.com/tensor-9/tensor), [tensor.tools](https://tensor.tools/), [tensor-agents](https://www.npmjs.com/package/tensor-agents) (npm).
+> Offizielle Quellen für Tensor: [tensor-9/tensor](https://github.com/tensor-9/tensor), [tensor-9.github.io/tensor](https://tensor-9.github.io/tensor/), [tensor-agents](https://www.npmjs.com/package/tensor-agents) (npm).
 > Folge den Installations- und Release-Links aus diesen offiziellen Quellen. Ein ähnlicher Repository-Name oder eine kopierte README belegt nicht, dass ein Download offiziell ist.
 
 <div align="center">
@@ -64,7 +64,7 @@ Tensor verbindet deinen Agenten mit Werkzeugen zum Untersuchen nativer Binärdat
 
 Die Einrichtung registriert Tensor bei deinem Agenten und installiert passende Workflow-Anweisungen. Native Analysen nutzen eine vorhandene Installation von Hopper, Ghidra, IDA oder Kuna; nach Zustimmung kann die Einrichtung Hopper installieren. Statische JavaScript-Analysen benötigen keine native Analyse-Engine.
 
-> **[Besuche die Tensor-Website](https://tensor.tools/de/)** für Einrichtungshinweise, bebilderte Anleitungen und echte Fallstudien.
+> **[Besuche die Tensor-Website](https://tensor-9.github.io/tensor/de/)** für Einrichtungshinweise, bebilderte Anleitungen und echte Fallstudien.
 
 ## Schnellstart
 
@@ -213,7 +213,7 @@ Native Formate und unterstützte Hostsysteme unterscheiden sich je nach Provider
 
 ## Fallstudien
 
-<a href="https://tensor.tools/de/showcase/">
+<a href="https://tensor-9.github.io/tensor/de/showcase/">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="../assets/tensor-showcases-dark.svg" />
     <img alt="Illustrationen der Fallstudien zu DX-Balls Klangbalance, Notions Zwischenablage-Brücke und TH04s Geschossring" src="../assets/tensor-showcases.svg" />
@@ -224,25 +224,25 @@ Native Formate und unterstützte Hostsysteme unterscheiden sich je nach Provider
 
 Verfolge einen Sound-Aufruf zur Hilfsfunktion, die Positionen in Panning-Werte umrechnet, untersuche die Anweisungen und überführe unvollständigen Pseudocode in C. Die Rekonstruktion besteht 3.205 Tests mit dem ursprünglichen x86-Code und reproduziert alle 63 Bytes der kompilierten Funktion.
 
-[Fallstudie lesen](https://tensor.tools/de/showcase/dx-ball/) · [Rekonstruktionsrepository](https://github.com/N0zoM1z0/dx-ball)
+[Fallstudie lesen](https://tensor-9.github.io/tensor/de/showcase/dx-ball/) · [Rekonstruktionsrepository](https://github.com/N0zoM1z0/dx-ball)
 
 ### Notion: Die Electron-Zwischenablagebrücke verfolgen
 
 Finde die Zwischenablage-API des Renderers, verfolge sie über preload und IPC bis zum Hauptprozess und untersuche das Zwischenablageformat samt Formatierungsdaten.
 
-[Fallstudie lesen](https://tensor.tools/de/showcase/notion/)
+[Fallstudie lesen](https://tensor-9.github.io/tensor/de/showcase/notion/)
 
 ### TH04: Eine DOS-Geschossring-Berechnung wiederherstellen
 
 Untersuche die 16-Bit-Anweisungen des ursprünglichen PC-98-Spiels, rekonstruiere die festen und zielgerichteten Winkelberechnungen und vergleiche das rekonstruierte C++ mit der Ausgabe des damaligen Compilers.
 
-[Fallstudie lesen](https://tensor.tools/de/showcase/th04/) · [Rekonstruktionsrepository](https://github.com/N0zoM1z0/th04)
+[Fallstudie lesen](https://tensor-9.github.io/tensor/de/showcase/th04/) · [Rekonstruktionsrepository](https://github.com/N0zoM1z0/th04)
 
 ### RL-Umgebungen mit Tensor erstellen
 
 Zeichne eine Webanwendungssitzung auf, verwandle ihre API in Werkzeuge und exportiere eine Umgebung für einen KI-Agenten. Starte sie mit AgentEnv und ergänze Aufgaben und Belohnungsprüfungen für RL-Training oder Bewertung.
 
-[Anleitung zum Erstellen einer Umgebung](https://tensor.tools/guides/rl-environments/) ·
+[Anleitung zum Erstellen einer Umgebung](https://tensor-9.github.io/tensor/guides/rl-environments/) ·
 [Demo auf X ansehen](https://x.com/tensortools/status/2112574822584918075?s=20)
 
 Wenn du mit Tensor etwas Interessantes untersucht hast, würden wir es gern sehen. Teile deine Fallstudie in einem [Issue](https://github.com/tensor-9/tensor/issues) oder [Pull Request](https://github.com/tensor-9/tensor/pulls) und beschreibe das Ziel, deine Frage, wie Tensor geholfen hat und was du herausgefunden hast.
@@ -279,7 +279,7 @@ agent-env run ./my-env
 
 Tensor exportiert eine lauffähige Umgebung mit einem einfachen Test, der prüft, ob sie startet und antwortet. Nutze sie mit deinem RL-Framework, um Aufgabenziele und Belohnungsprüfungen festzulegen und das Training auszuführen.
 
-[Anleitung zum Erstellen einer Umgebung](https://tensor.tools/guides/rl-environments/) ·
+[Anleitung zum Erstellen einer Umgebung](https://tensor-9.github.io/tensor/guides/rl-environments/) ·
 [Umgebungsreferenz](../agent-environments.md) ·
 [Demo auf X ansehen](https://x.com/tensortools/status/2112574822584918075?s=20)
 
@@ -356,7 +356,7 @@ Wenn du einen Agenten verwendest, schließe die [Aktualisierung der Einrichtung]
 
 ## Dokumentation
 
-Beginne mit den [praxisnahen Anleitungen](https://tensor.tools/de/guides/) auf der Website. Genaue Optionen, Voraussetzungen und Ergebniskontrakte findest du hier:
+Beginne mit den [praxisnahen Anleitungen](https://tensor-9.github.io/tensor/de/guides/) auf der Website. Genaue Optionen, Voraussetzungen und Ergebniskontrakte findest du hier:
 
 - [Installation und Einrichtung](../getting-started/installation.md): Agentenregistrierung, Provider-Konfiguration, Updates und Deinstallation.
 - [Bereitschaft und Fehlerbehebung](../getting-started/installation.md#check-readiness-for-your-task): Diagnose eines bestimmten Agenten oder einer Analyse-Engine.

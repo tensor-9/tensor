@@ -40,13 +40,13 @@ const readmeLinkTargets = (root, from, content, language = "en") =>
     .map((target) => {
       if (language === "en" || !URL.canParse(target)) return target;
       const url = new URL(target);
-      const prefix = `/${language}/`;
+      const prefix = `/tensor/${language}/`;
       if (
-        url.origin !== "https://tensor.tools" ||
+        url.origin !== "https://tensor-9.github.io" ||
         !url.pathname.startsWith(prefix)
       )
         return target;
-      url.pathname = url.pathname.slice(prefix.length - 1);
+      url.pathname = `/tensor/${url.pathname.slice(prefix.length)}`;
       return url.href;
     })
     .sort();

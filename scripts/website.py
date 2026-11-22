@@ -16,7 +16,7 @@ from textwrap import indent
 from urllib.parse import quote, urlsplit
 
 
-SITE_ORIGIN = "https://tensor.tools"
+SITE_ORIGIN = "https://tensor-9.github.io/tensor"
 NOTES_FIXTURES = {"examples/notes-electron/index.html", "examples/notes-web/index.html"}
 NAVIGATION = (
     ("Get started", "get-started/"),

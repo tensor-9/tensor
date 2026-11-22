@@ -18,7 +18,7 @@
 
 <a href="https://trendshift.io/repositories/82054?utm_source=repository-badge&amp;utm_medium=badge&amp;utm_campaign=badge-repository-82054" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/repositories/82054" alt="tensor-9%2Ftensor | Trendshift" width="250" height="55"/></a>
 
-**[ウェブサイト](https://tensor.tools/ja/) · [ガイド](https://tensor.tools/ja/guides/) · [事例](https://tensor.tools/ja/showcase/)**
+**[ウェブサイト](https://tensor-9.github.io/tensor/ja/) · [ガイド](https://tensor-9.github.io/tensor/ja/guides/) · [事例](https://tensor-9.github.io/tensor/ja/showcase/)**
 
 <a href="https://discord.com/invite/GkcryMnJDM"><img alt="DiscordのTensorコミュニティに参加" src="https://img.shields.io/badge/Join%20us%20on%20Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" height="40"></a>
 
@@ -29,7 +29,7 @@
 </div>
 
 > [!IMPORTANT]
-> Tensor の公式配布元： [tensor-9/tensor](https://github.com/tensor-9/tensor), [tensor.tools](https://tensor.tools/), [tensor-agents](https://www.npmjs.com/package/tensor-agents) (npm).
+> Tensor の公式配布元： [tensor-9/tensor](https://github.com/tensor-9/tensor), [tensor-9.github.io/tensor](https://tensor-9.github.io/tensor/), [tensor-agents](https://www.npmjs.com/package/tensor-agents) (npm).
 > インストールとリリースのリンクは、これらの公式配布元からたどってください。似たリポジトリ名やコピーされた README だけでは、公式の配布物とは確認できません。
 
 <div align="center">
@@ -64,7 +64,7 @@ Tensor はエージェントを分析ツールにつなぎ、ネイティブバ�
 
 セットアップはエージェントに Tensor を登録し、対応するワークフロー指示をインストールします。ネイティブ解析には既存の Hopper、Ghidra、IDA、Kuna を使用でき、承認すれば Hopper をインストールできます。静的 JavaScript 解析にネイティブ解析エンジンは不要です。
 
-> **[Tensor のウェブサイト](https://tensor.tools/ja/)**で、セットアップ手順、図解ガイド、実際の事例を確認できます。
+> **[Tensor のウェブサイト](https://tensor-9.github.io/tensor/ja/)**で、セットアップ手順、図解ガイド、実際の事例を確認できます。
 
 ## クイックスタート
 
@@ -213,7 +213,7 @@ Tensor には Node.js 22.x（>=22.23.4）、24.x（>=24.22.1）、または 26+ 
 
 ## 事例
 
-<a href="https://tensor.tools/ja/showcase/">
+<a href="https://tensor-9.github.io/tensor/ja/showcase/">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="../assets/tensor-showcases-dark.svg" />
     <img alt="DX-Ball の音声パン、Notion のクリップボードブリッジ、TH04 の弾幕リングの事例を表すイラスト" src="../assets/tensor-showcases.svg" />
@@ -224,27 +224,27 @@ Tensor には Node.js 22.x（>=22.23.4）、24.x（>=24.22.1）、または 26+ 
 
 音声の呼び出しから位置をパンに変換する補助関数をたどり、命令を調べ、不完全な疑似コードを C に書き直します。再構築した実装は、元の x86 に対する 3,205 ケースの検証を通過し、コンパイル後の関数の全 63 バイトを再現しています。
 
-[事例を読む](https://tensor.tools/ja/showcase/dx-ball/) ·
+[事例を読む](https://tensor-9.github.io/tensor/ja/showcase/dx-ball/) ·
 [再構築リポジトリ](https://github.com/N0zoM1z0/dx-ball)
 
 ### Notion：Electron のクリップボードブリッジを追跡する
 
 レンダラーのクリップボード API を見つけ、preload と IPC を経由してメインプロセスまでたどり、リッチなクリップボード形式を調べます。
 
-[事例を読む](https://tensor.tools/ja/showcase/notion/)
+[事例を読む](https://tensor-9.github.io/tensor/ja/showcase/notion/)
 
 ### TH04：DOS の弾幕リングの計算を復元する
 
 元の PC-98 ゲームの 16 ビット命令を調べ、固定角度と自機を狙う角度の計算を復元し、再構築した C++ を当時のコンパイラーの出力と比較します。
 
-[事例を読む](https://tensor.tools/ja/showcase/th04/) ·
+[事例を読む](https://tensor-9.github.io/tensor/ja/showcase/th04/) ·
 [再構築リポジトリ](https://github.com/N0zoM1z0/th04)
 
 ### Tensor で RL 環境を構築する
 
 Web アプリのセッションを記録し、API をツールに変換して、AI エージェントが使える環境をエクスポートします。AgentEnv で実行し、タスクと報酬のチェックを追加して、RL の学習や評価に使えます。
 
-[環境構築ガイド](https://tensor.tools/guides/rl-environments/) ·
+[環境構築ガイド](https://tensor-9.github.io/tensor/guides/rl-environments/) ·
 [X でデモを見る](https://x.com/tensortools/status/2112574822584918075?s=20)
 
 Tensor で興味深い対象を調べたら、ぜひ共有してください。[issue](https://github.com/tensor-9/tensor/issues) または [pull request](https://github.com/tensor-9/tensor/pulls) に、対象、調べたかったこと、Tensor がどう役立ったか、何が分かったかを記載してください。
@@ -281,7 +281,7 @@ agent-env run ./my-env
 
 Tensor は実行可能な環境と、起動して応答することを確認する基本テストをエクスポートします。RL フレームワークに接続して、タスクの目標や報酬のチェックを定義し、学習を実行できます。
 
-[環境構築ガイド](https://tensor.tools/guides/rl-environments/) ·
+[環境構築ガイド](https://tensor-9.github.io/tensor/guides/rl-environments/) ·
 [環境リファレンス](../agent-environments.md) ·
 [X でデモを見る](https://x.com/tensortools/status/2112574822584918075?s=20)
 
@@ -358,7 +358,7 @@ npx tensor-agents@latest setup
 
 ## ドキュメント
 
-まずはウェブサイトの[実践ガイド](https://tensor.tools/ja/guides/)を参照してください。正確なオプション、前提条件、結果の契約については、以下を参照してください。
+まずはウェブサイトの[実践ガイド](https://tensor-9.github.io/tensor/ja/guides/)を参照してください。正確なオプション、前提条件、結果の契約については、以下を参照してください。
 
 - [インストールとセットアップ](../getting-started/installation.md)：エージェントの登録、プロバイダーの設定、更新、アンインストール。
 - [準備状況の確認とトラブルシューティング](../getting-started/installation.md#check-readiness-for-your-task)：特定のエージェントや分析エンジンを診断。

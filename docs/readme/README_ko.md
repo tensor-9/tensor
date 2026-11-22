@@ -18,7 +18,7 @@
 
 <a href="https://trendshift.io/repositories/82054?utm_source=repository-badge&amp;utm_medium=badge&amp;utm_campaign=badge-repository-82054" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/repositories/82054" alt="tensor-9%2Ftensor | Trendshift" width="250" height="55"/></a>
 
-**[웹사이트](https://tensor.tools/ko/) · [가이드](https://tensor.tools/ko/guides/) · [사례](https://tensor.tools/ko/showcase/)**
+**[웹사이트](https://tensor-9.github.io/tensor/ko/) · [가이드](https://tensor-9.github.io/tensor/ko/guides/) · [사례](https://tensor-9.github.io/tensor/ko/showcase/)**
 
 <a href="https://discord.com/invite/GkcryMnJDM"><img alt="Discord에서 Tensor 커뮤니티에 참여하세요" src="https://img.shields.io/badge/Join%20us%20on%20Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" height="40"></a>
 
@@ -29,7 +29,7 @@
 </div>
 
 > [!IMPORTANT]
-> Tensor 공식 배포처: [tensor-9/tensor](https://github.com/tensor-9/tensor), [tensor.tools](https://tensor.tools/), [tensor-agents](https://www.npmjs.com/package/tensor-agents) (npm).
+> Tensor 공식 배포처: [tensor-9/tensor](https://github.com/tensor-9/tensor), [tensor-9.github.io/tensor](https://tensor-9.github.io/tensor/), [tensor-agents](https://www.npmjs.com/package/tensor-agents) (npm).
 > 이 공식 배포처에서 제공하는 설치 및 릴리스 링크를 이용하세요. 비슷한 저장소 이름이나 복사된 README만으로는 공식 배포 파일인지 확인할 수 없습니다.
 
 <div align="center">
@@ -64,7 +64,7 @@ Tensor는 에이전트를 분석 도구에 연결해 네이티브 바이너리, 
 
 설정 과정은 에이전트에 Tensor를 등록하고 해당 버전에 맞는 워크플로 지침을 설치합니다. 네이티브 분석에는 기존 Hopper, Ghidra, IDA 또는 Kuna 설치를 사용할 수 있습니다. 승인하면 설정 과정에서 Hopper를 설치할 수도 있습니다. 정적 JavaScript 분석에는 네이티브 분석 엔진이 필요하지 않습니다.
 
-> <strong>[Tensor 웹사이트](https://tensor.tools/ko/)</strong>에서 설정 방법, 그림으로 설명한 가이드, 실제 사례를 확인하세요.
+> <strong>[Tensor 웹사이트](https://tensor-9.github.io/tensor/ko/)</strong>에서 설정 방법, 그림으로 설명한 가이드, 실제 사례를 확인하세요.
 
 ## 빠른 시작
 
@@ -211,7 +211,7 @@ Tensor에는 Node.js 22.x(>=22.23.4), 24.x(>=24.22.1) 또는 26+ (>=26.12.1)와 
 
 ## 사례
 
-<a href="https://tensor.tools/ko/showcase/">
+<a href="https://tensor-9.github.io/tensor/ko/showcase/">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="../assets/tensor-showcases-dark.svg" />
     <img alt="DX-Ball 사운드 패닝, Notion 클립보드 브리지, TH04 탄환 고리 사례를 보여 주는 그림" src="../assets/tensor-showcases.svg" />
@@ -222,27 +222,27 @@ Tensor에는 Node.js 22.x(>=22.23.4), 24.x(>=24.22.1) 또는 26+ (>=26.12.1)와 
 
 사운드 호출에서 위치를 패닝 값으로 변환하는 보조 함수까지 추적하고, 명령을 검사하여 불완전한 의사 코드를 C로 옮깁니다. 재구현한 코드는 원본 x86에 대한 3,205개 테스트 케이스를 통과했으며, 컴파일된 함수의 63바이트 전체를 재현합니다.
 
-[사례 읽기](https://tensor.tools/ko/showcase/dx-ball/) ·
+[사례 읽기](https://tensor-9.github.io/tensor/ko/showcase/dx-ball/) ·
 [재구현 저장소](https://github.com/N0zoM1z0/dx-ball)
 
 ### Notion: Electron 클립보드 브리지 추적
 
 렌더러의 클립보드 API를 찾고, preload와 IPC를 거쳐 메인 프로세스까지 추적한 뒤, 서식 있는 클립보드 형식을 검사합니다.
 
-[사례 읽기](https://tensor.tools/ko/showcase/notion/)
+[사례 읽기](https://tensor-9.github.io/tensor/ko/showcase/notion/)
 
 ### TH04: DOS 원형 탄막 계산 복원
 
 원본 PC-98 게임의 16비트 명령을 검사하고 고정 각도와 조준 각도의 계산을 복원합니다. 재구현한 C++를 당시 컴파일러의 출력과 비교합니다.
 
-[사례 읽기](https://tensor.tools/ko/showcase/th04/) ·
+[사례 읽기](https://tensor-9.github.io/tensor/ko/showcase/th04/) ·
 [재구현 저장소](https://github.com/N0zoM1z0/th04)
 
 ### Tensor로 RL 환경 만들기
 
 웹 앱 세션을 기록하고 API를 도구로 바꿔 AI 에이전트가 사용할 수 있는 환경을 내보냅니다. AgentEnv로 실행한 뒤 작업과 보상 검사를 추가해 RL 학습이나 평가에 사용하세요.
 
-[환경 만들기 가이드](https://tensor.tools/guides/rl-environments/) ·
+[환경 만들기 가이드](https://tensor-9.github.io/tensor/guides/rl-environments/) ·
 [X에서 데모 보기](https://x.com/tensortools/status/2112574822584918075?s=20)
 
 Tensor로 흥미로운 대상을 분석했다면 알려 주세요. [issue](https://github.com/tensor-9/tensor/issues) 또는 [pull request](https://github.com/tensor-9/tensor/pulls)에 대상, 조사하려던 질문, Tensor가 어떻게 도움이 되었는지, 무엇을 알아냈는지를 담아 공유하세요.
@@ -279,7 +279,7 @@ agent-env run ./my-env
 
 Tensor는 실행 가능한 환경과 시작 및 응답 여부를 확인하는 기본 테스트를 내보냅니다. RL 프레임워크에 연결해 작업 목표와 보상 검사를 정의하고 학습을 실행할 수 있습니다.
 
-[환경 만들기 가이드](https://tensor.tools/guides/rl-environments/) ·
+[환경 만들기 가이드](https://tensor-9.github.io/tensor/guides/rl-environments/) ·
 [환경 참조 문서](../agent-environments.md) ·
 [X에서 데모 보기](https://x.com/tensortools/status/2112574822584918075?s=20)
 
@@ -356,7 +356,7 @@ npx tensor-agents@latest setup
 
 ## 문서
 
-웹사이트의 [실습 가이드](https://tensor.tools/ko/guides/)부터 읽어 보세요. 정확한 옵션, 사전 요구 사항, 결과 계약은 다음 문서를 참고하세요.
+웹사이트의 [실습 가이드](https://tensor-9.github.io/tensor/ko/guides/)부터 읽어 보세요. 정확한 옵션, 사전 요구 사항, 결과 계약은 다음 문서를 참고하세요.
 
 - [설치 및 설정](../getting-started/installation.md): 에이전트 등록, 제공자 설정, 업데이트, 제거.
 - [준비 상태 확인 및 문제 해결](../getting-started/installation.md#check-readiness-for-your-task): 특정 에이전트 또는 분석 엔진 진단.

@@ -18,7 +18,7 @@
 
 <a href="https://trendshift.io/repositories/82054?utm_source=repository-badge&amp;utm_medium=badge&amp;utm_campaign=badge-repository-82054" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/repositories/82054" alt="tensor-9%2Ftensor | Trendshift" width="250" height="55"/></a>
 
-**[Website](https://tensor.tools/) · [Guides](https://tensor.tools/guides/) · [Showcases](https://tensor.tools/showcase/)**
+**[Website](https://tensor-9.github.io/tensor/) · [Guides](https://tensor-9.github.io/tensor/guides/) · [Showcases](https://tensor-9.github.io/tensor/showcase/)**
 
 <a href="https://discord.com/invite/GkcryMnJDM"><img alt="Join the Tensor community on Discord" src="https://img.shields.io/badge/Join%20us%20on%20Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" height="40"></a>
 
@@ -30,7 +30,7 @@
 
 > [!IMPORTANT]
 > Get Tensor from [tensor-9/tensor](https://github.com/tensor-9/tensor),
-> [tensor.tools](https://tensor.tools/), or the [tensor-agents npm package](https://www.npmjs.com/package/tensor-agents).
+> [tensor-9.github.io/tensor](https://tensor-9.github.io/tensor/), or the [tensor-agents npm package](https://www.npmjs.com/package/tensor-agents).
 > Follow the installation and release links from these official sources. A similar
 > repository name or copied README does not establish that a download is official.
 
@@ -66,7 +66,7 @@ Tensor connects your agent to tools for inspecting native binaries, JavaScript a
 
 Setup registers Tensor with your agent and installs matching workflow instructions. Native analysis can use an existing Hopper, Ghidra, IDA or Kuna installation; setup can optionally install Hopper with approval. Static JavaScript analysis needs no native analysis engine.
 
-> **[Visit the Tensor website](https://tensor.tools/)** for setup instructions, illustrated guides, and real case studies.
+> **[Visit the Tensor website](https://tensor-9.github.io/tensor/)** for setup instructions, illustrated guides, and real case studies.
 
 ## Quick start
 
@@ -268,7 +268,7 @@ for features added since the latest npm release.
 
 ## Showcases
 
-<a href="https://tensor.tools/showcase/">
+<a href="https://tensor-9.github.io/tensor/showcase/">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="docs/assets/tensor-showcases-dark.svg" />
     <img alt="Illustrations of the DX-Ball sound-pan, Notion clipboard-bridge, and TH04 bullet-ring showcases" src="docs/assets/tensor-showcases.svg" />
@@ -281,7 +281,7 @@ Follow a sound call into its position-to-pan helper, inspect the instructions,
 and turn incomplete pseudocode into C. The reconstruction passes 3,205
 original-x86 cases and reproduces all 63 compiled function bytes.
 
-[Read the case study](https://tensor.tools/showcase/dx-ball/) ·
+[Read the case study](https://tensor-9.github.io/tensor/showcase/dx-ball/) ·
 [Reconstruction repository](https://github.com/N0zoM1z0/dx-ball)
 
 ### Notion: trace the Electron clipboard bridge
@@ -289,7 +289,7 @@ original-x86 cases and reproduces all 63 compiled function bytes.
 Find the renderer's clipboard API, follow it through preload and IPC into the
 main process, and inspect the rich clipboard format.
 
-[Read the case study](https://tensor.tools/showcase/notion/)
+[Read the case study](https://tensor-9.github.io/tensor/showcase/notion/)
 
 ### TH04: recover a DOS bullet-ring calculation
 
@@ -297,14 +297,14 @@ Inspect the original PC-98 game's 16-bit instructions, recover the fixed and
 aimed angle calculations, and compare the reconstructed C++ with the
 historical compiler output.
 
-[Read the case study](https://tensor.tools/showcase/th04/) ·
+[Read the case study](https://tensor-9.github.io/tensor/showcase/th04/) ·
 [Reconstruction repository](https://github.com/N0zoM1z0/th04)
 
 ### Build RL environments with Tensor
 
 Record a web app session, turn its API into tools, and export an environment an AI agent can use. Run it with AgentEnv, then add tasks and reward checks for RL training or evaluation.
 
-[Read the guide](https://tensor.tools/guides/rl-environments/) ·
+[Read the guide](https://tensor-9.github.io/tensor/guides/rl-environments/) ·
 [Watch the video](https://x.com/tensortools/status/2112574822584918075?s=20)
 
 If you've used Tensor on something interesting, we'd love to see it. Share your
@@ -343,7 +343,7 @@ agent-env run ./my-env
 
 Tensor exports a runnable environment with a basic test to check that it starts and responds. Use it with your RL framework to define task goals, add reward checks, and run training.
 
-[Build an environment](https://tensor.tools/guides/rl-environments/) ·
+[Build an environment](https://tensor-9.github.io/tensor/guides/rl-environments/) ·
 [Environment reference](docs/agent-environments.md) ·
 [Watch the demo on X](https://x.com/tensortools/status/2112574822584918075?s=20)
 
@@ -437,7 +437,7 @@ with your Tensor version, target type, steps to reproduce and error output.
 
 ## Documentation
 
-Start with the website's [worked guides](https://tensor.tools/guides/).
+Start with the website's [worked guides](https://tensor-9.github.io/tensor/guides/).
 For exact options, prerequisites and result contracts:
 
 - [Installation and setup](docs/getting-started/installation.md): agent registration, provider configuration, updates and uninstall.

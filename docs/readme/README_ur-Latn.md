@@ -18,7 +18,7 @@
 
 <a href="https://trendshift.io/repositories/82054?utm_source=repository-badge&amp;utm_medium=badge&amp;utm_campaign=badge-repository-82054" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/repositories/82054" alt="tensor-9%2Ftensor | Trendshift" width="250" height="55"/></a>
 
-**[Website](https://tensor.tools/) · [Guides](https://tensor.tools/guides/) · [Showcases](https://tensor.tools/showcase/)**
+**[Website](https://tensor-9.github.io/tensor/) · [Guides](https://tensor-9.github.io/tensor/guides/) · [Showcases](https://tensor-9.github.io/tensor/showcase/)**
 
 <a href="https://discord.com/invite/GkcryMnJDM"><img alt="Discord par Tensor community mein shamil hon" src="https://img.shields.io/badge/Join%20us%20on%20Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" height="40"></a>
 
@@ -30,7 +30,7 @@
 
 > [!IMPORTANT]
 > Tensor [tensor-9/tensor](https://github.com/tensor-9/tensor),
-> [tensor.tools](https://tensor.tools/) ya [tensor-agents npm package](https://www.npmjs.com/package/tensor-agents) se hasil karein.
+> [tensor-9.github.io/tensor](https://tensor-9.github.io/tensor/) ya [tensor-agents npm package](https://www.npmjs.com/package/tensor-agents) se hasil karein.
 > Installation aur release ke links inhi official sources se kholein. Sirf milta-julta
 > repository naam ya copy kiya hua README kisi download ko official sabit nahi karta.
 
@@ -66,7 +66,7 @@ Tensor aapke agent ko native binaries, JavaScript aur Electron apps, .NET assemb
 
 Setup Tensor ko aapke agent ke saath register karta hai aur uske mutabiq workflow instructions install karta hai. Native analysis ke liye pehle se installed Hopper, Ghidra, IDA ya Kuna use ho sakta hai; aapki approval par setup Hopper bhi install kar sakta hai. Static JavaScript analysis ke liye native analysis engine ki zaroorat nahi.
 
-> Setup instructions, tasveeron ke saath guides aur asli case studies ke liye **[Tensor ki website dekhein](https://tensor.tools/)**.
+> Setup instructions, tasveeron ke saath guides aur asli case studies ke liye **[Tensor ki website dekhein](https://tensor-9.github.io/tensor/)**.
 
 ## Jaldi shuru karein
 
@@ -260,7 +260,7 @@ Latest npm release ke baad add hone wale features ki
 
 ## Amli misaalein
 
-<a href="https://tensor.tools/showcase/">
+<a href="https://tensor-9.github.io/tensor/showcase/">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="../assets/tensor-showcases-dark.svg" />
     <img alt="DX-Ball sound-pan, Notion clipboard-bridge aur TH04 bullet-ring case studies ki tasveerein" src="../assets/tensor-showcases.svg" />
@@ -274,7 +274,7 @@ karein aur adhoore pseudocode ko C mein badlein. Dobara banaya gaya code 3,205
 original-x86 cases pass karta hai aur compiled function ke tamam 63 bytes
 dobara hasil karta hai.
 
-[Case study parhein](https://tensor.tools/showcase/dx-ball/) ·
+[Case study parhein](https://tensor-9.github.io/tensor/showcase/dx-ball/) ·
 [Reconstruction repository](https://github.com/N0zoM1z0/dx-ball)
 
 ### Notion: Electron clipboard bridge trace karein
@@ -282,7 +282,7 @@ dobara hasil karta hai.
 Renderer ki clipboard API dhoondein, preload aur IPC ke raste main process tak
 uska flow follow karein aur rich clipboard format inspect karein.
 
-[Case study parhein](https://tensor.tools/showcase/notion/)
+[Case study parhein](https://tensor-9.github.io/tensor/showcase/notion/)
 
 ### TH04: DOS bullet-ring calculation recover karein
 
@@ -290,14 +290,14 @@ Original PC-98 game ki 16-bit instructions inspect karein, fixed aur aimed angle
 calculations recover karein aur dobara banaye gaye C++ ko purane compiler ke
 output se compare karein.
 
-[Case study parhein](https://tensor.tools/showcase/th04/) ·
+[Case study parhein](https://tensor-9.github.io/tensor/showcase/th04/) ·
 [Reconstruction repository](https://github.com/N0zoM1z0/th04)
 
 ### Tensor se RL environments banayein
 
 Web app session record karein, us ki API ko tools mein badlein aur AI agent ke liye environment export karein. AgentEnv ke saath chalayein, phir RL training ya evaluation ke liye tasks aur reward checks shamil karein.
 
-[Environment banane ki rehnumai](https://tensor.tools/guides/rl-environments/) ·
+[Environment banane ki rehnumai](https://tensor-9.github.io/tensor/guides/rl-environments/) ·
 [X par demo dekhein](https://x.com/tensortools/status/2112574822584918075?s=20)
 
 Agar aapne Tensor se koi dilchasp kaam kiya hai to hum dekhna chahenge. Apna case
@@ -337,7 +337,7 @@ agent-env run ./my-env
 
 Tensor chalne ke liye tayyar environment aur aik bunyadi test export karta hai jo us ka shuru hona aur jawab dena check karta hai. Apne RL framework ke saath task goals aur reward checks tay karein aur training chalayein.
 
-[Environment banane ki rehnumai](https://tensor.tools/guides/rl-environments/) ·
+[Environment banane ki rehnumai](https://tensor-9.github.io/tensor/guides/rl-environments/) ·
 [Environment reference](../agent-environments.md) ·
 [X par demo dekhein](https://x.com/tensortools/status/2112574822584918075?s=20)
 
@@ -436,7 +436,7 @@ Tensor version, target type, reproduce karne ke steps aur error output ke saath
 
 ## Documentation
 
-Website ki [amli guides](https://tensor.tools/guides/) se shuru karein.
+Website ki [amli guides](https://tensor-9.github.io/tensor/guides/) se shuru karein.
 Exact options, prerequisites aur result contracts ke liye:
 
 - [Installation aur setup](../getting-started/installation.md): agent registration, provider configuration, updates aur uninstall.

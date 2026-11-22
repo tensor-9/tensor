@@ -1,7 +1,7 @@
 # Documentation directory
 
 Find an installation step, investigation guide, or contributor reference by task.
-The [Tensor website](https://tensor.tools/) has worked examples and product pages.
+The [Tensor website](https://tensor-9.github.io/tensor/) has worked examples and product pages.
 
 ## Getting started
 

@@ -18,7 +18,7 @@
 
 <a href="https://trendshift.io/repositories/82054?utm_source=repository-badge&amp;utm_medium=badge&amp;utm_campaign=badge-repository-82054" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/repositories/82054" alt="tensor-9%2Ftensor | Trendshift" width="250" height="55"/></a>
 
-**[Web sitesi](https://tensor.tools/tr/) · [Rehberler](https://tensor.tools/tr/guides/) · [Örnek çalışmalar](https://tensor.tools/tr/showcase/)**
+**[Web sitesi](https://tensor-9.github.io/tensor/tr/) · [Rehberler](https://tensor-9.github.io/tensor/tr/guides/) · [Örnek çalışmalar](https://tensor-9.github.io/tensor/tr/showcase/)**
 
 <a href="https://discord.com/invite/GkcryMnJDM"><img alt="Discord'da Tensor topluluğuna katılın" src="https://img.shields.io/badge/Join%20us%20on%20Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" height="40"></a>
 
@@ -29,7 +29,7 @@
 </div>
 
 > [!IMPORTANT]
-> Tensor’nın resmî kaynakları: [tensor-9/tensor](https://github.com/tensor-9/tensor), [tensor.tools](https://tensor.tools/), [tensor-agents](https://www.npmjs.com/package/tensor-agents) (npm).
+> Tensor’nın resmî kaynakları: [tensor-9/tensor](https://github.com/tensor-9/tensor), [tensor-9.github.io/tensor](https://tensor-9.github.io/tensor/), [tensor-agents](https://www.npmjs.com/package/tensor-agents) (npm).
 > Kurulum ve sürüm bağlantılarını bu resmî kaynaklardan takip edin. Benzer bir depo adı veya kopyalanmış bir README, indirilen dosyanın resmî olduğunu kanıtlamaz.
 
 <div align="center">
@@ -64,7 +64,7 @@ Tensor, ajanınızı yerel makine kodu içeren ikili dosyaları, JavaScript ve E
 
 Kurulum, Tensor'yı ajanınıza kaydeder ve uyumlu iş akışı talimatlarını yükler. Yerel makine kodu analizi mevcut bir Hopper, Ghidra, IDA veya Kuna kurulumunu kullanabilir; kurulum işlemi, onayınızla isteğe bağlı olarak Hopper da yükleyebilir. Statik JavaScript analizi bu yerel analiz motorlarından hiçbirine ihtiyaç duymaz.
 
-> Kurulum talimatları, görselli rehberler ve gerçek örnek çalışmalar için **[Tensor web sitesini ziyaret edin](https://tensor.tools/tr/)**.
+> Kurulum talimatları, görselli rehberler ve gerçek örnek çalışmalar için **[Tensor web sitesini ziyaret edin](https://tensor-9.github.io/tensor/tr/)**.
 
 ## Hızlı başlangıç
 
@@ -207,7 +207,7 @@ Yerel makine kodu içeren ikili dosya biçimleri ve ana bilgisayar desteği sağ
 
 ## Örnek çalışmalar
 
-<a href="https://tensor.tools/tr/showcase/">
+<a href="https://tensor-9.github.io/tensor/tr/showcase/">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="../assets/tensor-showcases-dark.svg" />
     <img alt="DX-Ball ses kaydırma, Notion pano köprüsü ve TH04 mermi halkası örneklerinin çizimleri" src="../assets/tensor-showcases.svg" />
@@ -218,25 +218,25 @@ Yerel makine kodu içeren ikili dosya biçimleri ve ana bilgisayar desteği sağ
 
 Bir ses çağrısından konumu stereo konumlandırmaya dönüştüren yardımcı fonksiyona ilerleyin, talimatları inceleyin ve eksik sözde kodu C'ye dönüştürün. Yeniden oluşturulan kod, özgün x86 üzerinde 3.205 test durumunu geçer ve derlenmiş fonksiyonun 63 baytının tamamını yeniden üretir.
 
-[Örnek çalışmayı okuyun](https://tensor.tools/tr/showcase/dx-ball/) · [Yeniden oluşturma deposu](https://github.com/N0zoM1z0/dx-ball)
+[Örnek çalışmayı okuyun](https://tensor-9.github.io/tensor/tr/showcase/dx-ball/) · [Yeniden oluşturma deposu](https://github.com/N0zoM1z0/dx-ball)
 
 ### Notion: Electron pano köprüsünü izleme
 
 İşleyici sürecin pano API'sini bulun, preload ve IPC üzerinden ana sürece kadar izleyin ve zengin pano biçimini inceleyin.
 
-[Örnek çalışmayı okuyun](https://tensor.tools/tr/showcase/notion/)
+[Örnek çalışmayı okuyun](https://tensor-9.github.io/tensor/tr/showcase/notion/)
 
 ### TH04: DOS mermi halkası hesabını geri çıkarma
 
 Özgün PC-98 oyununun 16 bit talimatlarını inceleyin, sabit ve hedefe yönelik açı hesaplarını geri çıkarın ve yeniden oluşturulan C++ kodunu dönemin derleyici çıktısıyla karşılaştırın.
 
-[Örnek çalışmayı okuyun](https://tensor.tools/tr/showcase/th04/) · [Yeniden oluşturma deposu](https://github.com/N0zoM1z0/th04)
+[Örnek çalışmayı okuyun](https://tensor-9.github.io/tensor/tr/showcase/th04/) · [Yeniden oluşturma deposu](https://github.com/N0zoM1z0/th04)
 
 ### Tensor ile RL ortamları oluşturun
 
 Bir web uygulaması oturumunu kaydedin, API’sini araçlara dönüştürün ve bir yapay zekâ ajanının kullanabileceği ortamı dışa aktarın. AgentEnv ile çalıştırın, ardından RL eğitimi veya değerlendirmesi için görevler ve ödül kontrolleri ekleyin.
 
-[Ortam oluşturma rehberi](https://tensor.tools/guides/rl-environments/) ·
+[Ortam oluşturma rehberi](https://tensor-9.github.io/tensor/guides/rl-environments/) ·
 [Demoyu X’te izleyin](https://x.com/tensortools/status/2112574822584918075?s=20)
 
 Tensor'yı ilginç bir konuda kullandıysanız görmek isteriz. Hedefi, sorunuzu, Tensor'nın nasıl yardımcı olduğunu ve bulgularınızı bir [issue](https://github.com/tensor-9/tensor/issues) veya [pull request](https://github.com/tensor-9/tensor/pulls) ile paylaşın.
@@ -273,7 +273,7 @@ agent-env run ./my-env
 
 Tensor, çalıştırılabilir bir ortamı ve başlayıp yanıt verdiğini kontrol eden temel bir testi dışa aktarır. Görev hedeflerini ve ödül kontrollerini tanımlamak, ardından eğitim çalıştırmak için RL çerçevenizle kullanın.
 
-[Ortam oluşturma rehberi](https://tensor.tools/guides/rl-environments/) ·
+[Ortam oluşturma rehberi](https://tensor-9.github.io/tensor/guides/rl-environments/) ·
 [Ortam referansı](../agent-environments.md) ·
 [Demoyu X’te izleyin](https://x.com/tensortools/status/2112574822584918075?s=20)
 
@@ -350,7 +350,7 @@ Ajan kullanıyorsanız [kurulum yenilemesini](#reayı-güncelleyin) tamamlayın 
 
 ## Belgeler
 
-Web sitesindeki [uygulamalı rehberlerden](https://tensor.tools/tr/guides/) başlayın. Kesin seçenekler, ön koşullar ve sonuç sözleşmeleri için:
+Web sitesindeki [uygulamalı rehberlerden](https://tensor-9.github.io/tensor/tr/guides/) başlayın. Kesin seçenekler, ön koşullar ve sonuç sözleşmeleri için:
 
 - [Yükleme ve kurulum](../getting-started/installation.md): ajan kaydı, sağlayıcı yapılandırması, güncellemeler ve kaldırma.
 - [Hazırlık ve sorun giderme](../getting-started/installation.md#check-readiness-for-your-task): belirli bir ajanı veya analiz motorunu tanılama.
