@@ -1,6 +1,6 @@
 {
   "name": "tensor",
-  "version": "6.10.1",
+  "version": "6.10.2",
   "description": "Reverse engineer anything with agents, from app behavior down to native binaries.",
   "author": {
     "name": "tensor-9",

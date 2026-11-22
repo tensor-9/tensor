@@ -4,7 +4,7 @@
       "command": "npx",
       "args": [
         "-y",
-        "tensor-agents@6.10.1",
+        "tensor-agents@6.10.2",
         "mcp"
       ]
     }
