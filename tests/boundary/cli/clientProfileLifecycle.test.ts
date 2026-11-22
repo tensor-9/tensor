@@ -340,7 +340,11 @@ for (const group of groups) {
       const profiles = group.cases.map((testCase) => ({
         ...testCase,
         config: join(home, testCase.config),
-        skillDirectory: join(home, testCase.skill, "tensor-reverse-engineering"),
+        skillDirectory: join(
+          home,
+          testCase.skill,
+          "tensor-reverse-engineering",
+        ),
       }));
       const clientArguments = profiles.flatMap(({ client }) => [
         "--client",

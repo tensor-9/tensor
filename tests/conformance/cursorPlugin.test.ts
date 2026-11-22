@@ -18,7 +18,11 @@ const authoredSkill = async (
   files: Readonly<Record<string, string>>,
 ) => {
   for (const [path, content] of Object.entries(files)) {
-    const target = join(root, ".agents/skills/tensor-reverse-engineering", path);
+    const target = join(
+      root,
+      ".agents/skills/tensor-reverse-engineering",
+      path,
+    );
     await mkdir(join(target, ".."), { recursive: true });
     await writeFile(target, content);
   }

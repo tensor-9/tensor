@@ -35,8 +35,14 @@ const README_LINK_DRIFT_MUTATIONS = [
     "(../getting-started/installation.md#supported-agents)",
     "(../getting-started/installation.md#missing-agents)",
   ],
-  ["https://tensor-9.github.io/tensor/zh-CN/guides/", "https://tensor-9.github.io/tensor/zh-CN/missing/"],
-  ["https://tensor-9.github.io/tensor/zh-CN/guides/", "https://tensor-9.github.io/tensor/zh-TW/guides/"],
+  [
+    "https://tensor-9.github.io/tensor/zh-CN/guides/",
+    "https://tensor-9.github.io/tensor/zh-CN/missing/",
+  ],
+  [
+    "https://tensor-9.github.io/tensor/zh-CN/guides/",
+    "https://tensor-9.github.io/tensor/zh-TW/guides/",
+  ],
   [
     "https://tensor-9.github.io/tensor/zh-CN/guides/",
     "https://tensor-9.github.io/tensor/zh-CN/guides/?other=1",
