@@ -131,7 +131,7 @@ jobs:
           # Pages can answer the version marker before nested paths propagate, so
           # retry the discovery resources instead of failing on first 404.
           verified = False
-          for attempt in range(20):
+          for attempt in range(48):
               try:
                   with open_public(urljoin(base, ".well-known/agent-skills/index.json")) as response:
                       skill, = json.load(response)["skills"]
@@ -150,9 +150,9 @@ jobs:
                       verified = True
                       break
               except (URLError, TimeoutError, ValueError) as error:
-                  print(f"Waiting for GitHub Pages discovery resources: {error}")
-              if attempt < 19:
-                  time.sleep(3)
+                  print(f"Waiting for GitHub Pages discovery resources at {base}: {error}")
+              if attempt < 47:
+                  time.sleep(5)
           if not verified:
               sys.exit("Could not verify the discovery manifests and skill archive")
           print(f"GitHub Pages serves {expected} with the discovery manifests and verified skill archive")
