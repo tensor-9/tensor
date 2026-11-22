@@ -52,7 +52,7 @@ const skillDirectory = join(
   account,
   ".agents",
   "skills",
-  "reverse-engineer-anything",
+  "tensor-reverse-engineering",
 );
 const expectedNames = TOOL_CONTRACTS.map(
   (tool) => "mcp__tensor__" + tool.name,
@@ -174,7 +174,7 @@ await withVerifierCleanup(async () => {
             tools
               .find((tool) => tool.name === "activate_skill")
               ?.parameters.properties.name.enum.includes(
-                "reverse-engineer-anything",
+                "tensor-reverse-engineering",
               ),
           );
           inventoryChecked = true;
@@ -192,7 +192,7 @@ await withVerifierCleanup(async () => {
         }
         if (stage === 0) {
           const request = call("activate_skill", {
-            name: "reverse-engineer-anything",
+            name: "tensor-reverse-engineering",
           });
           skillCallId = request.tool_calls[0].id;
           return request;

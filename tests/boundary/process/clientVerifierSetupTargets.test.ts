@@ -46,7 +46,7 @@ export async function createVerifierCommands(){return {
     const client=process.env.CLIENT; const kind=process.env.KIND;
     const profile=client==='gemini'?options.env.GEMINI_CLI_HOME:client==='copilot'?options.env.COPILOT_HOME:options.env.QWEN_HOME;
     const skills=join(client==='gemini'?profile:options.env.HOME,'.agents','skills');
-    const skill=join(skills,'reverse-engineer-anything');
+    const skill=join(skills,'tensor-reverse-engineering');
     const config=join(profile,client==='gemini'?'.gemini/settings.json':client==='copilot'?'mcp-config.json':'settings.json');
     const candidate=kind==='relative path'?'relative/AGENTS.md':kind==='profile root alias'?profile+'/child/..':kind==='skill root alias'?skills+'/child/..':kind==='profile traversal'?profile+'/../outside/AGENTS.md':kind==='skill traversal'?(client==='copilot'?skill:skills)+'/../outside/AGENTS.md':kind==='sibling'?skill+'-sibling/AGENTS.md':kind==='profile child'?config:join(skill,'SKILL.md');
     const selectedSkill=(kind==='skill traversal'||kind==='skill root alias')&&client==='gemini'?candidate:join(skill,'SKILL.md');

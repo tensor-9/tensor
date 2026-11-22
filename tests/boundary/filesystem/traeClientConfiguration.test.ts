@@ -57,7 +57,7 @@ describe("Trae configuration paths", () => {
         ({ path }) => path,
       ),
     ).toEqual([
-      join("/home/a", ".trae", "skills", "reverse-engineer-anything"),
+      join("/home/a", ".trae", "skills", "tensor-reverse-engineering"),
     ]);
     expect(
       skillDestinations("C:\\Users\\a", ["trae"], {}, "win32").map(
@@ -68,7 +68,7 @@ describe("Trae configuration paths", () => {
         "C:\\Users\\a",
         ".trae",
         "skills",
-        "reverse-engineer-anything",
+        "tensor-reverse-engineering",
       ),
     ]);
   });

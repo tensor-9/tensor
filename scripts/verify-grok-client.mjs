@@ -42,7 +42,7 @@ const skillDirectory = join(
   account,
   ".agents",
   "skills",
-  "reverse-engineer-anything",
+  "tensor-reverse-engineering",
 );
 const expectedNames = TOOL_CONTRACTS.map(
   (tool) => "tensor__" + tool.name,

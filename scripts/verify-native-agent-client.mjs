@@ -48,7 +48,7 @@ const artifactPath = join(workspace, "evidence.json");
 const skillPath = join(
   client === "pi" ? join(account, ".agents") : selectedProfile,
   "skills",
-  "reverse-engineer-anything",
+  "tensor-reverse-engineering",
   "SKILL.md",
 );
 const verifier = createVerifierRun();
@@ -167,7 +167,7 @@ await withVerifierCleanup(async () => {
     );
     assert(
       (await readFile(skillPath, "utf8")).includes(
-        "name: reverse-engineer-anything",
+        "name: tensor-reverse-engineering",
       ),
     );
     const decodeNativeAgentResult = (text) => {
@@ -268,7 +268,7 @@ await withVerifierCleanup(async () => {
             );
           skillLoaded ||=
             serializedTools.includes(skillPath) &&
-            serializedTools.includes("reverse-engineer-anything");
+            serializedTools.includes("tensor-reverse-engineering");
           for (const message of toolMessages) {
             const evidence = findClientResult(
               message.content,
@@ -297,14 +297,14 @@ await withVerifierCleanup(async () => {
           );
           callRequested = true;
           return call(tool.name, {
-            code: `await describeNamespace("tensor"); const skill = await tools.read({path:${JSON.stringify(skillPath)}}); const result = await tools.mcp__tensor__analyze_javascript_application({input_path:${JSON.stringify(target)},format:"directory"}); if(result.isError) throw new Error(JSON.stringify(result)); const evidence = result.structuredContent ?? JSON.parse(result.content.find(c=>c.type==="text").text); await tools.write({path:${JSON.stringify(artifactPath)},content:JSON.stringify(evidence)}); text({TENSOR_CLIENT_FIXTURE:true,skill_loaded:typeof skill==="string"&&skill.includes("name: reverse-engineer-anything"),catalog:ALL_TOOLS.filter(t=>t.name.startsWith("mcp__tensor__")).map(t=>t.name.slice(10))});`,
+            code: `await describeNamespace("tensor"); const skill = await tools.read({path:${JSON.stringify(skillPath)}}); const result = await tools.mcp__tensor__analyze_javascript_application({input_path:${JSON.stringify(target)},format:"directory"}); if(result.isError) throw new Error(JSON.stringify(result)); const evidence = result.structuredContent ?? JSON.parse(result.content.find(c=>c.type==="text").text); await tools.write({path:${JSON.stringify(artifactPath)},content:JSON.stringify(evidence)}); text({TENSOR_CLIENT_FIXTURE:true,skill_loaded:typeof skill==="string"&&skill.includes("name: tensor-reverse-engineering"),catalog:ALL_TOOLS.filter(t=>t.name.startsWith("mcp__tensor__")).map(t=>t.name.slice(10))});`,
           });
         }
         if (!skillRequested) {
           const tool = tools.find((t) => t.name === "skill_view");
           assert(tool, "Hermes skill_view must be available.");
           skillRequested = true;
-          return call(tool.name, { name: "reverse-engineer-anything" });
+          return call(tool.name, { name: "tensor-reverse-engineering" });
         }
         if (!searchRequested) {
           const tool = tools.find((t) => t.name === "tool_search");

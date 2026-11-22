@@ -170,7 +170,7 @@ await withVerifierCleanup(async () => {
     });
     const skillFile = join(
       sharedSkills,
-      "reverse-engineer-anything",
+      "tensor-reverse-engineering",
       "SKILL.md",
     );
     const normalizedSkill = (await readFile(skillFile, "utf8"))
@@ -234,7 +234,7 @@ await withVerifierCleanup(async () => {
           messages.find(
             (message) => message.role === "tool" && message.callId === callId,
           )?.text ?? "";
-        const expectedSkill = `Base directory for this skill: ${join(sharedSkills, "reverse-engineer-anything")}\nImportant: ALWAYS resolve absolute paths from this base directory when working with skills.\n\n${expectedSkillBody}\n`;
+        const expectedSkill = `Base directory for this skill: ${join(sharedSkills, "tensor-reverse-engineering")}\nImportant: ALWAYS resolve absolute paths from this base directory when working with skills.\n\n${expectedSkillBody}\n`;
         selectedSkillLoaded ||=
           skillCallId !== undefined &&
           toolResponseText(skillCallId).includes(expectedSkill);
@@ -313,7 +313,7 @@ await withVerifierCleanup(async () => {
           };
         } else if (skill && !skillRequested) {
           skillRequested = true;
-          message = call(skill.name, { skill: "reverse-engineer-anything" });
+          message = call(skill.name, { skill: "tensor-reverse-engineering" });
           skillCallId = message.tool_calls[0].id;
         } else if (persisted && shell) {
           artifactPath = persisted[1];

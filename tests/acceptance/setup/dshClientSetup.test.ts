@@ -110,7 +110,7 @@ cliTest.for([
       root,
       agentsRoot,
       "skills",
-      "reverse-engineer-anything",
+      "tensor-reverse-engineering",
     );
     const skill = join(skillRoot, "SKILL.md");
     await mkdir(home);
@@ -153,7 +153,7 @@ cliTest.for([
     expect(text).toContain("tensor-mcp");
     expect(await readFile(`${config}.tensor.backup`, "utf8")).toBe(original);
     expect(await readFile(skill, "utf8")).toContain(
-      "name: reverse-engineer-anything",
+      "name: tensor-reverse-engineering",
     );
     const doctor = await run(["doctor", "--client", "dsh", "--skill"]);
     expect(doctor.exitCode).toBe(0);
@@ -190,7 +190,7 @@ cliTest(
     const config = join(profile, "cordis.patch.yml");
     const skill = join(
       home,
-      ".agents/skills/reverse-engineer-anything/SKILL.md",
+      ".agents/skills/tensor-reverse-engineering/SKILL.md",
     );
     await mkdir(profile);
     const original = `# caller home patch

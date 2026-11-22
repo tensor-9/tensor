@@ -19,7 +19,7 @@ watch_dir = [
   "./public",
   "./locales",
   "./templates",
-  "../.agents/skills/reverse-engineer-anything",
+  "../.agents/skills/tensor-reverse-engineering",
 ]
 
 # Public HTTPS depends on zone activation and certificate readiness.

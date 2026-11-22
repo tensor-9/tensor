@@ -28,7 +28,7 @@ if (
 )
   throw new Error(".nvmrc must pin an exact major.minor.patch Node.js version");
 const skill = await readFile(
-  join(root, ".agents/skills/reverse-engineer-anything/SKILL.md"),
+  join(root, ".agents/skills/tensor-reverse-engineering/SKILL.md"),
   "utf8",
 );
 const skillMetadata = parseAuthoredSkillManifest(skill);

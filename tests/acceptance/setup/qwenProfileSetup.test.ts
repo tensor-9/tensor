@@ -17,7 +17,7 @@ cliTest(
       home,
       ".agents",
       "skills",
-      "reverse-engineer-anything",
+      "tensor-reverse-engineering",
       "SKILL.md",
     );
     const environment = { USERPROFILE: home, QWEN_HOME: profile };
@@ -36,7 +36,7 @@ cliTest(
         { kind: "configure_client", target: settings },
         {
           kind: "install_skill",
-          target: join(home, ".agents", "skills", "reverse-engineer-anything"),
+          target: join(home, ".agents", "skills", "tensor-reverse-engineering"),
         },
       ],
     });
@@ -60,7 +60,7 @@ cliTest(
       },
     });
     expect(await readFile(skill, "utf8")).toContain(
-      "name: reverse-engineer-anything",
+      "name: tensor-reverse-engineering",
     );
 
     const doctor = await run(["doctor", "--client", "qwen_code", "--skill"]);

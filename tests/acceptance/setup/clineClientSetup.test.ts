@@ -134,7 +134,7 @@ cliTest(
     );
     expect(skill).toHaveLength(1);
     expect(skill[0]!.target).toBe(
-      join(home, ".agents", "skills", "reverse-engineer-anything"),
+      join(home, ".agents", "skills", "tensor-reverse-engineering"),
     );
   },
 );

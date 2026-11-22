@@ -23,7 +23,7 @@ Tensor's skill walks an agent from a request such as "build me an Inkscape
 environment where the agent changes a poster's headline" to a witnessed
 bundle with these tools: the questions it asks first, when it stops for the
 person, the install, the seed, the task, the witness and its final report.
-See [desktop builds](https://github.com/tensor-9/tensor/blob/main/.agents/skills/reverse-engineer-anything/references/desktop-build.md).
+See [desktop builds](https://github.com/tensor-9/tensor/blob/main/.agents/skills/tensor-reverse-engineering/references/desktop-build.md).
 
 ## Build
 

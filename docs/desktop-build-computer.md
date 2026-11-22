@@ -16,7 +16,7 @@ as the Tensor MCP server that started it, or until it is closed. Capturing the
 app, exporting its bundle and witnessing the task on such a computer are in
 [Building and witnessing an environment](desktop-build-witness.md), and Tensor's
 skill for doing all of it from a request is
-[desktop builds](https://github.com/tensor-9/tensor/blob/main/.agents/skills/reverse-engineer-anything/references/desktop-build.md).
+[desktop builds](https://github.com/tensor-9/tensor/blob/main/.agents/skills/tensor-reverse-engineering/references/desktop-build.md).
 
 ## Set up a build host
 

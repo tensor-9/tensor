@@ -6,7 +6,7 @@ import { expect } from "vitest";
 import { createTestTempDirectory } from "../../fixtures/temporaryDirectory.js";
 import { cliTest } from "../../support/cli/cliFixture.js";
 
-const sharedSkill = ".agents/skills/reverse-engineer-anything/SKILL.md";
+const sharedSkill = ".agents/skills/tensor-reverse-engineering/SKILL.md";
 
 cliTest.for([true, false])(
   "automatic setup excludes detected manual hosted connectors (skill: %s)",
@@ -39,7 +39,7 @@ cliTest.for([true, false])(
     expect(first.json).toHaveProperty("clients", {});
     if (skill) {
       const installed = await readFile(skillPath, "utf8");
-      expect(installed).toContain("name: reverse-engineer-anything");
+      expect(installed).toContain("name: tensor-reverse-engineering");
       const repeated = await run();
       expect(repeated.exitCode, repeated.stdout).toBe(0);
       expect(repeated.json).toMatchObject({

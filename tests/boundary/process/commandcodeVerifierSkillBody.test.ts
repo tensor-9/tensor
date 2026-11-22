@@ -38,7 +38,7 @@ export async function createVerifierCommands() {
       const account = options.env.USERPROFILE;
       const profile = join(account, ".commandcode");
       const config = join(profile, "mcp.json");
-      const skill = join(account, ".agents", "skills", "reverse-engineer-anything");
+      const skill = join(account, ".agents", "skills", "tensor-reverse-engineering");
       if (args.includes("setup") && args.includes("--dry-run")) {
         return { stdout: JSON.stringify({ status: "planned", plannedActions: [{ target: config }, { target: skill }] }), stderr: "" };
       }
@@ -46,7 +46,7 @@ export async function createVerifierCommands() {
         if (setup++ === 0) {
           await writeFile(config + ".tensor.backup", await readFile(config));
           await mkdir(skill, { recursive: true });
-          const frontmatter = "---\nname: reverse-engineer-anything\n---\n";
+          const frontmatter = "---\nname: tensor-reverse-engineering\n---\n";
           const body = 'Complete "authored" instructions\nKeep a \\ literal\n';
           await writeFile(join(skill, "SKILL.md"), process.env.MODE === "empty" ? "" : frontmatter + (process.env.MODE === "empty body" ? "" : body));
           return { stdout: JSON.stringify({ status: "ready" }), stderr: "" };
@@ -56,7 +56,7 @@ export async function createVerifierCommands() {
       if (args.includes("doctor")) return { stdout: JSON.stringify({ healthy: true }), stderr: "" };
       const tools = [
         { name: "search_tools" },
-        { name: "activate_skill", parameters: { properties: { name: { enum: ["reverse-engineer-anything"] } } } },
+        { name: "activate_skill", parameters: { properties: { name: { enum: ["tensor-reverse-engineering"] } } } },
       ];
       const system = { role: "system", content: TOOL_CONTRACTS.map((t) => "mcp__tensor__" + t.name).join(" ") };
       const first = await globalThis.fakeRequest({ body: { messages: [system] }, tools });

@@ -44,7 +44,7 @@ Use "none" or "not applicable" only when established. -->
 - Provider, bridge, target-format, or platform compatibility:
 - Evidence, artifact, provenance, or reconstruction contract:
 - Target selection, authority, upstream behavior, and cleanup details (if applicable):
-- Generated metadata (`docs/public/product-catalog.json`), package, or installation impact (CI generates and validates ignored catalogs and `skills/`; edit authored instructions in `.agents/skills/reverse-engineer-anything/` and never commit build outputs):
+- Generated metadata (`docs/public/product-catalog.json`), package, or installation impact (CI generates and validates ignored catalogs and `skills/`; edit authored instructions in `.agents/skills/tensor-reverse-engineering/` and never commit build outputs):
 
 Expected effects (check known effects; use documentation-only on its own).
 Unchecked items do not establish absence; leave uncertainties visible.

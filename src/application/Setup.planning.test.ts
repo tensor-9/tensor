@@ -13,7 +13,7 @@ import { HopperReleaseError } from "./HopperReleaseFeed.js";
 
 const linkedSkillFailure = () =>
   new SetupSkillInstallError({
-    path: "/fixture/home/.claude/skills/reverse-engineer-anything",
+    path: "/fixture/home/.claude/skills/tensor-reverse-engineering",
     stage: "prepare",
     reason: "Skill directory is a symbolic link",
     rollbackFailures: [],
@@ -157,7 +157,7 @@ describe("selected skill admission", () => {
             "/fixture/home",
             ".agents",
             "skills",
-            "reverse-engineer-anything",
+            "tensor-reverse-engineering",
           ),
         },
       ]);
@@ -234,7 +234,7 @@ describe("skill plan destinations", () => {
         "/fixture/home",
         ".claude",
         "skills",
-        "reverse-engineer-anything",
+        "tensor-reverse-engineering",
       ),
     ]);
   });
@@ -269,13 +269,13 @@ describe("skill plan destinations", () => {
         "/fixture/home",
         ".agents",
         "skills",
-        "reverse-engineer-anything",
+        "tensor-reverse-engineering",
       ),
       posix.join(
         "/fixture/home",
         ".claude",
         "skills",
-        "reverse-engineer-anything",
+        "tensor-reverse-engineering",
       ),
     ]);
   });
@@ -862,7 +862,7 @@ it("records verified skill installation while its staging cleanup remains incomp
   host.installSkill = async () =>
     err(
       new SetupSkillInstallError({
-        path: "/fixture/home/.agents/skills/reverse-engineer-anything/SKILL.md",
+        path: "/fixture/home/.agents/skills/tensor-reverse-engineering/SKILL.md",
         stage: "readback",
         reason: "Skill publication cleanup incomplete",
         completed: true,

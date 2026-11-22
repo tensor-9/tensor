@@ -160,7 +160,7 @@ describe("FreeBuff configuration paths", () => {
     ).toEqual([
       {
         client: "shared",
-        path: join("/home/a", ".agents", "skills", "reverse-engineer-anything"),
+        path: join("/home/a", ".agents", "skills", "tensor-reverse-engineering"),
       },
     ]);
   });

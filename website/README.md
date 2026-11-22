@@ -496,7 +496,7 @@ It generates these public files in ignored `_site/`:
 
 - `.well-known/agent-skills/index.json`: the draft v0.2.0 skills discovery index.
   Its archive contains the maintained
-  `.agents/skills/reverse-engineer-anything/SKILL.md` and Markdown references.
+  `.agents/skills/tensor-reverse-engineering/SKILL.md` and Markdown references.
   The name and description come from the same authored manifest reader used
   during packaging. The website archives the original manifest as it appears in
   the repository. SHA-256 covers the complete, reproducible ZIP, so reference

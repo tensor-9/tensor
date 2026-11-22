@@ -316,7 +316,7 @@ describe("manual connector approval", () => {
       expect(output.slice(0, prompt)).toContain(remediation);
       const skill = join(
         home,
-        ".agents/skills/reverse-engineer-anything/SKILL.md",
+        ".agents/skills/tensor-reverse-engineering/SKILL.md",
       );
       if (approved) {
         expect(exitCode, output).toBe(1);
@@ -389,7 +389,7 @@ describe("TTY setup dry run", () => {
       "tensor-cli-setup-linked-dry-run-",
     );
     const managed = join(home, "managed-skill");
-    const linked = join(home, ".claude/skills/reverse-engineer-anything");
+    const linked = join(home, ".claude/skills/tensor-reverse-engineering");
     const original = "user-managed skill bytes\n";
     await mkdir(managed);
     await writeFile(join(managed, "SKILL.md"), original);

@@ -53,7 +53,7 @@ const skillDirectory = join(
   account,
   ".agents",
   "skills",
-  "reverse-engineer-anything",
+  "tensor-reverse-engineering",
 );
 let clientVersion = null;
 let fixture;
@@ -223,7 +223,7 @@ await withVerifierCleanup(async () => {
           const skill = tools.find((t) => t.name === "skill");
           assert(skill, "Copilot CLI must expose its native skill tool");
           skillRequested = true;
-          return call(skill.name, { skill: "reverse-engineer-anything" });
+          return call(skill.name, { skill: "tensor-reverse-engineering" });
         }
         assert(
           skillLoaded,
@@ -338,7 +338,7 @@ await withVerifierCleanup(async () => {
       join(skillDirectory, "SKILL.md"),
       "utf8",
     );
-    assert(installedSkill.includes("name: reverse-engineer-anything"));
+    assert(installedSkill.includes("name: tensor-reverse-engineering"));
     const skillLines = installedSkill.split("\n");
     const headerEnd = skillLines.indexOf("---", 1);
     assert(
@@ -365,7 +365,7 @@ await withVerifierCleanup(async () => {
       await writeFile(join(lab, `${name}.stderr`), result.stderr);
       if (name === "mcp-list") assert(result.stdout.includes("tensor"));
       if (name === "skill-list")
-        assert(result.stdout.includes("reverse-engineer-anything"));
+        assert(result.stdout.includes("tensor-reverse-engineering"));
     }
     const response = await saveVerifierCommandOutput(
       () =>

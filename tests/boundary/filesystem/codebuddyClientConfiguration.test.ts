@@ -43,7 +43,7 @@ describe("CodeBuddy configuration paths", () => {
         ({ path }) => path,
       ),
     ).toEqual([
-      join("/home/a", ".codebuddy", "skills", "reverse-engineer-anything"),
+      join("/home/a", ".codebuddy", "skills", "tensor-reverse-engineering"),
     ]);
   });
 });

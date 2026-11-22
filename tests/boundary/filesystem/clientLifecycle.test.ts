@@ -1779,7 +1779,7 @@ describe("client configuration filesystem removal", () => {
     const cursor = join(home, ".cursor/mcp.json");
     const skill = join(
       home,
-      ".agents/skills/reverse-engineer-anything/SKILL.md",
+      ".agents/skills/tensor-reverse-engineering/SKILL.md",
     );
     await mkdir(dirname(cursor), { recursive: true });
     await mkdir(dirname(skill), { recursive: true });
@@ -1819,8 +1819,8 @@ describe("client configuration filesystem removal", () => {
 
   it("removes emptied skill directories and keeps ones with user files", async () => {
     const home = await createTestTempDirectory("tensor-uninstall-skill-dirs-");
-    const shared = join(home, ".agents/skills/reverse-engineer-anything");
-    const claude = join(home, ".claude/skills/reverse-engineer-anything");
+    const shared = join(home, ".agents/skills/tensor-reverse-engineering");
+    const claude = join(home, ".claude/skills/tensor-reverse-engineering");
     for (const root of [shared, claude]) {
       await mkdir(join(root, "references"), { recursive: true });
       await writeFile(join(root, "SKILL.md"), ownedSkillManifest);
@@ -1854,7 +1854,7 @@ describe("client configuration filesystem removal", () => {
         "tensor-uninstall-skill-perm-",
       );
       const parent = join(home, ".agents/skills");
-      const root = join(parent, "reverse-engineer-anything");
+      const root = join(parent, "tensor-reverse-engineering");
       await mkdir(join(root, "references"), { recursive: true });
       await writeFile(join(root, "SKILL.md"), ownedSkillManifest);
       await chmod(parent, 0o555);
@@ -2188,7 +2188,7 @@ describe("uninstall configuration preflight", () => {
     const cursor = join(home, ".cursor/mcp.json");
     const skillMarker = join(
       home,
-      ".agents/skills/reverse-engineer-anything/marker.txt",
+      ".agents/skills/tensor-reverse-engineering/marker.txt",
     );
     const managed = [
       skillMarker,
@@ -2286,7 +2286,7 @@ describe("client configuration changed during uninstall", () => {
     const cursor = join(home, ".cursor/mcp.json");
     const skill = join(
       home,
-      ".agents/skills/reverse-engineer-anything/SKILL.md",
+      ".agents/skills/tensor-reverse-engineering/SKILL.md",
     );
     const cursorConfig = JSON.stringify({
       mcpServers: { tensor: { command: "tensor", args: ["mcp"] } },
@@ -2443,7 +2443,7 @@ describe("client configuration filesystem failure reporting", () => {
 describe("managed skill removal outcomes", () => {
   it("reports a managed-path removal failure", async () => {
     const home = await createTestTempDirectory("tensor-uninstall-remove-");
-    const skillRoot = join(home, ".agents/skills/reverse-engineer-anything");
+    const skillRoot = join(home, ".agents/skills/tensor-reverse-engineering");
     await mkdir(skillRoot, { recursive: true });
     await writeFile(join(skillRoot, "SKILL.md"), ownedSkillManifest);
     const result = await runUninstall(
@@ -2469,8 +2469,8 @@ describe("managed skill removal outcomes", () => {
     const home = await createTestTempDirectory("tensor-uninstall-skills-");
     const customClaudeDirectory = join(home, "claude-config");
     const rootsToRemove = [
-      join(home, ".agents/skills/reverse-engineer-anything"),
-      join(customClaudeDirectory, "skills/reverse-engineer-anything"),
+      join(home, ".agents/skills/tensor-reverse-engineering"),
+      join(customClaudeDirectory, "skills/tensor-reverse-engineering"),
     ];
     await Promise.all(
       rootsToRemove.map(async (path) => {
@@ -2504,10 +2504,10 @@ describe("skill root client identifier labels", () => {
       "tensor-uninstall-skill-labels-",
     );
     const customClaudeDirectory = join(home, "claude-config");
-    const sharedRoot = join(home, ".agents/skills/reverse-engineer-anything");
+    const sharedRoot = join(home, ".agents/skills/tensor-reverse-engineering");
     const claudeRoot = join(
       customClaudeDirectory,
-      "skills/reverse-engineer-anything",
+      "skills/tensor-reverse-engineering",
     );
     await mkdir(sharedRoot, { recursive: true });
     await mkdir(claudeRoot, { recursive: true });

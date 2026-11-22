@@ -143,7 +143,7 @@ export async function verifyPackagePack({ root, workspace, commands }) {
     "package/package.json",
     "package/npm-shrinkwrap.json",
     "package/node_modules/@lydell/node-pty/package.json",
-    "package/skills/reverse-engineer-anything/SKILL.md",
+    "package/skills/tensor-reverse-engineering/SKILL.md",
     "package/.claude-plugin/plugin.json",
     "package/.codex-plugin/plugin.json",
     "package/.codex-plugin/mcp.json",
@@ -227,7 +227,7 @@ export async function verifyPackagePack({ root, workspace, commands }) {
   if (packedFiles.some((path) => path.startsWith("package/.cache/")))
     throw new Error("package included development cache or test metadata");
   const skill = await readPackedText(
-    "package/skills/reverse-engineer-anything/SKILL.md",
+    "package/skills/tensor-reverse-engineering/SKILL.md",
   );
   const skillMetadata = parseSkillManifestMetadata(skill);
   if (
@@ -282,7 +282,7 @@ export async function verifyPackagePack({ root, workspace, commands }) {
   const cursorServer = await readPackedJson("package/mcp.json");
   const cursorLogo = String(cursorManifest.logo ?? "").replace(/^\.\//u, "");
   const cursorSkill =
-    "package/.cursor-plugin/skills/reverse-engineer-anything/SKILL.md";
+    "package/.cursor-plugin/skills/tensor-reverse-engineering/SKILL.md";
   if (
     cursorManifest.version !== packedManifest.version ||
     cursorManifest.skills !== ".cursor-plugin/skills" ||

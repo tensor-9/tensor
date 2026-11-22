@@ -35,7 +35,7 @@ export async function createVerifierCommands(){return {
   if(command==='git')return {stdout:'',stderr:''};
   if(args[0]==='--version')return {stdout:'fake client',stderr:''};
   if(args.includes('setup') && args.includes('--dry-run')){
-    const client=process.env.CLIENT; const profile=client==='claude'?options.env.CLAUDE_CONFIG_DIR:options.env.OPENCODE_CONFIG_DIR; const skill=client==='claude'?join(profile,'skills','reverse-engineer-anything'):join(options.env.USERPROFILE,'.agents','skills','reverse-engineer-anything');
+    const client=process.env.CLIENT; const profile=client==='claude'?options.env.CLAUDE_CONFIG_DIR:options.env.OPENCODE_CONFIG_DIR; const skill=client==='claude'?join(profile,'skills','tensor-reverse-engineering'):join(options.env.USERPROFILE,'.agents','skills','tensor-reverse-engineering');
     const candidate=process.env.KIND==='relative path' ? relative(process.cwd(),join(skill,'AGENTS.md')) : process.env.KIND==='sibling' ? skill+'-sibling/AGENTS.md' : process.env.KIND==='parent traversal' ? skill+'/../outside/AGENTS.md' : skill+'/AGENTS.md';
     if (process.env.KIND==='relative path' && (candidate==='' || isAbsolute(candidate))) throw Error('Fixture expected a relative target');
     return {stdout:JSON.stringify({status:'planned',plannedActions:[{target:join(profile,client==='claude'?'.claude.json':'opencode.jsonc')},{target:skill},{target:candidate}]}),stderr:''};
