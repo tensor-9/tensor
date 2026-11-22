@@ -1,5 +1,15 @@
 # Changelog
 
+## [6.10.2](https://github.com/tensor-9/tensor/compare/tensor-agents-6.10.1...tensor-agents-6.10.2) (2026-11-22)
+
+### Changes
+
+- The bundled agent skill installs as `tensor-reverse-engineering` and is available as `--skill tensor-reverse-engineering`. `tensor setup` reinstalls it under the new directory, and agents that referenced `reverse-engineer-anything` need the new name. ([45c19a3](https://github.com/tensor-9/tensor/commit/45c19a353b0fe502c207703e75cf1dac98f46558))
+
+### ⚠ BREAKING CHANGES
+
+- The agent skill directory and identifier changed from `reverse-engineer-anything` to `tensor-reverse-engineering`. Run `tensor setup` again to install it, and update any `--skill` argument, plugin path, or skills.sh reference that used the old name. An installed copy under the old directory remains until setup rewrites it.
+
 ## [6.10.1](https://github.com/tensor-9/tensor/compare/tensor-agents-6.10.0...tensor-agents-6.10.1) (2026-11-20)
 
 

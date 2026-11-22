@@ -1,7 +1,7 @@
 {
   "name": "tensor-agents",
   "mcpName": "io.github.tensor-9/tensor",
-  "version": "6.10.1",
+  "version": "6.10.2",
   "description": "Reverse engineer anything from your terminal or agent with one CLI and MCP server.",
   "license": "MIT",
   "repository": {

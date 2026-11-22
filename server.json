@@ -8,13 +8,13 @@
     "url": "https://github.com/tensor-9/tensor",
     "source": "github"
   },
-  "version": "6.10.1",
+  "version": "6.10.2",
   "packages": [
     {
       "registryType": "npm",
       "registryBaseUrl": "https://registry.npmjs.org",
       "identifier": "tensor-agents",
-      "version": "6.10.1",
+      "version": "6.10.2",
       "runtimeHint": "npx",
       "transport": {
         "type": "stdio"
