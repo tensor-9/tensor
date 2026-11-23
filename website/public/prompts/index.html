@@ -1,0 +1,1547 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Prompt Library — Tensor</title>
+    <meta
+      name="description"
+      content="Copy-ready Tensor prompts and workflows for understanding, analyzing, comparing and reconstructing applications."
+    />
+    <!-- website:sharing:start -->
+    <!-- prettier-ignore -->
+    <link rel="canonical" href="https://tensor-9.github.io/tensor/prompts/" />
+    <!-- website:languages:start -->
+    <!-- prettier-ignore -->
+    <link rel="alternate" hreflang="en" href="https://tensor-9.github.io/tensor/prompts/" />
+    <!-- prettier-ignore -->
+    <link rel="alternate" hreflang="zh-CN" href="https://tensor-9.github.io/tensor/zh-CN/prompts/" />
+    <!-- prettier-ignore -->
+    <link rel="alternate" hreflang="zh-TW" href="https://tensor-9.github.io/tensor/zh-TW/prompts/" />
+    <!-- prettier-ignore -->
+    <link rel="alternate" hreflang="ja" href="https://tensor-9.github.io/tensor/ja/prompts/" />
+    <!-- prettier-ignore -->
+    <link rel="alternate" hreflang="ko" href="https://tensor-9.github.io/tensor/ko/prompts/" />
+    <!-- prettier-ignore -->
+    <link rel="alternate" hreflang="tr" href="https://tensor-9.github.io/tensor/tr/prompts/" />
+    <!-- prettier-ignore -->
+    <link rel="alternate" hreflang="ru" href="https://tensor-9.github.io/tensor/ru/prompts/" />
+    <!-- prettier-ignore -->
+    <link rel="alternate" hreflang="vi" href="https://tensor-9.github.io/tensor/vi/prompts/" />
+    <!-- prettier-ignore -->
+    <link rel="alternate" hreflang="th" href="https://tensor-9.github.io/tensor/th/prompts/" />
+    <!-- prettier-ignore -->
+    <link rel="alternate" hreflang="de" href="https://tensor-9.github.io/tensor/de/prompts/" />
+    <!-- prettier-ignore -->
+    <link rel="alternate" hreflang="es" href="https://tensor-9.github.io/tensor/es/prompts/" />
+    <!-- prettier-ignore -->
+    <link rel="alternate" hreflang="fr" href="https://tensor-9.github.io/tensor/fr/prompts/" />
+    <!-- prettier-ignore -->
+    <link rel="alternate" hreflang="uk" href="https://tensor-9.github.io/tensor/uk/prompts/" />
+    <!-- prettier-ignore -->
+    <link rel="alternate" hreflang="pl" href="https://tensor-9.github.io/tensor/pl/prompts/" />
+    <!-- prettier-ignore -->
+    <link rel="alternate" hreflang="pt-BR" href="https://tensor-9.github.io/tensor/pt-BR/prompts/" />
+    <!-- prettier-ignore -->
+    <link rel="alternate" hreflang="ar" href="https://tensor-9.github.io/tensor/ar/prompts/" />
+    <!-- prettier-ignore -->
+    <link rel="alternate" hreflang="fa" href="https://tensor-9.github.io/tensor/fa/prompts/" />
+    <!-- prettier-ignore -->
+    <link rel="alternate" hreflang="id" href="https://tensor-9.github.io/tensor/id/prompts/" />
+    <!-- prettier-ignore -->
+    <link rel="alternate" hreflang="it" href="https://tensor-9.github.io/tensor/it/prompts/" />
+    <!-- prettier-ignore -->
+    <link rel="alternate" hreflang="el" href="https://tensor-9.github.io/tensor/el/prompts/" />
+    <!-- prettier-ignore -->
+    <link rel="alternate" hreflang="ml" href="https://tensor-9.github.io/tensor/ml/prompts/" />
+    <!-- prettier-ignore -->
+    <link rel="alternate" hreflang="ur-Latn" href="https://tensor-9.github.io/tensor/ur-Latn/prompts/" />
+    <!-- prettier-ignore -->
+    <link rel="alternate" hreflang="ro" href="https://tensor-9.github.io/tensor/ro/prompts/" />
+    <!-- prettier-ignore -->
+    <link rel="alternate" hreflang="bg" href="https://tensor-9.github.io/tensor/bg/prompts/" />
+    <!-- prettier-ignore -->
+    <link rel="alternate" hreflang="x-default" href="https://tensor-9.github.io/tensor/prompts/" />
+    <!-- website:languages:end -->
+    <!-- prettier-ignore -->
+    <meta property="og:type" content="website" />
+    <!-- prettier-ignore -->
+    <meta property="og:site_name" content="Tensor" />
+    <!-- prettier-ignore -->
+    <meta property="og:title" content="Prompt Library — Tensor" />
+    <!-- prettier-ignore -->
+    <meta property="og:description" content="Copy-ready Tensor prompts and workflows for understanding, analyzing, comparing and reconstructing applications." />
+    <!-- prettier-ignore -->
+    <meta property="og:url" content="https://tensor-9.github.io/tensor/prompts/" />
+    <!-- prettier-ignore -->
+    <meta property="og:image" content="https://tensor-9.github.io/tensor/assets/social-card.png" />
+    <!-- prettier-ignore -->
+    <meta property="og:image:type" content="image/png" />
+    <!-- prettier-ignore -->
+    <meta property="og:image:width" content="1200" />
+    <!-- prettier-ignore -->
+    <meta property="og:image:height" content="630" />
+    <!-- prettier-ignore -->
+    <meta
+      property="og:image:alt"
+      content="Tensor: Find out how software works. Reverse engineering with your coding agent."
+    />
+    <!-- prettier-ignore -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <!-- prettier-ignore -->
+    <meta name="twitter:title" content="Prompt Library — Tensor" />
+    <!-- prettier-ignore -->
+    <meta name="twitter:description" content="Copy-ready Tensor prompts and workflows for understanding, analyzing, comparing and reconstructing applications." />
+    <!-- prettier-ignore -->
+    <meta name="twitter:image" content="https://tensor-9.github.io/tensor/assets/social-card.png" />
+    <!-- prettier-ignore -->
+    <meta
+      name="twitter:image:alt"
+      content="Tensor: Find out how software works. Reverse engineering with your coding agent."
+    />
+    <!-- website:sharing:end -->
+    <!-- website:theme:start -->
+    <meta name="theme-color" content="#ffffff" />
+    <!-- Apply the saved theme before styles load, to avoid a flash on navigation. -->
+    <script src="../assets/theme.js"></script>
+    <!-- website:theme:end -->
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="../assets/styles.css" />
+    <script src="../assets/main.js" defer></script>
+  </head>
+  <body id="top">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <!-- website:header:start -->
+    <!-- prettier-ignore -->
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="../" aria-label="Tensor home"
+          ><span class="brand-name">Tensor</span
+          ><span class="brand-caption" data-i18n-skip>Reverse Engineer Anything</span></a
+        >
+        <nav class="navigation" aria-label="Main navigation">
+          <a href="../get-started/" class="nav-start">Get started</a>
+          <a href="../prompts/" aria-current="page">Prompts</a>
+          <a href="../showcase/">Showcases</a>
+          <a href="../blog/">Blog</a>
+          <a href="../guides/">Guides</a>
+        </nav>
+        <div class="header-social">
+          <details class="language-picker" data-i18n-skip><summary><span aria-hidden="true">文 / A</span> <span>English</span></summary><nav aria-label="English"><a href="../prompts/" lang="en" dir="ltr" data-language="en" aria-current="true">English</a><a href="../zh-CN/prompts/" lang="zh-CN" dir="ltr" data-language="zh-CN">简体中文</a><a href="../zh-TW/prompts/" lang="zh-TW" dir="ltr" data-language="zh-TW">繁體中文</a><a href="../ja/prompts/" lang="ja" dir="ltr" data-language="ja">日本語</a><a href="../ko/prompts/" lang="ko" dir="ltr" data-language="ko">한국어</a><a href="../tr/prompts/" lang="tr" dir="ltr" data-language="tr">Türkçe</a><a href="../ru/prompts/" lang="ru" dir="ltr" data-language="ru">Русский</a><a href="../vi/prompts/" lang="vi" dir="ltr" data-language="vi">Tiếng Việt</a><a href="../th/prompts/" lang="th" dir="ltr" data-language="th">ไทย</a><a href="../de/prompts/" lang="de" dir="ltr" data-language="de">Deutsch</a><a href="../es/prompts/" lang="es" dir="ltr" data-language="es">Español</a><a href="../fr/prompts/" lang="fr" dir="ltr" data-language="fr">Français</a><a href="../uk/prompts/" lang="uk" dir="ltr" data-language="uk">Українська</a><a href="../pl/prompts/" lang="pl" dir="ltr" data-language="pl">Polski</a><a href="../pt-BR/prompts/" lang="pt-BR" dir="ltr" data-language="pt-BR">Português (Brasil)</a><a href="../ar/prompts/" lang="ar" dir="rtl" data-language="ar">العربية</a><a href="../fa/prompts/" lang="fa" dir="rtl" data-language="fa">فارسی</a><a href="../id/prompts/" lang="id" dir="ltr" data-language="id">Bahasa Indonesia</a><a href="../it/prompts/" lang="it" dir="ltr" data-language="it">Italiano</a><a href="../el/prompts/" lang="el" dir="ltr" data-language="el">Ελληνικά</a><a href="../ml/prompts/" lang="ml" dir="ltr" data-language="ml">മലയാളം</a><a href="../ur-Latn/prompts/" lang="ur-Latn" dir="ltr" data-language="ur-Latn">Roman Urdu</a><a href="../ro/prompts/" lang="ro" dir="ltr" data-language="ro">Română</a><a href="../bg/prompts/" lang="bg" dir="ltr" data-language="bg">Български</a></nav></details>
+          <button class="theme-toggle" type="button" data-theme-toggle hidden>
+            <svg class="theme-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+              <path d="M20.9 13a9 9 0 0 1-9.9-9.9A9 9 0 1 0 20.9 13Z" />
+            </svg>
+            <svg class="theme-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true" focusable="false">
+              <circle cx="12" cy="12" r="4" />
+              <path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42" />
+            </svg>
+          </button>
+          <a
+            class="nav-github"
+            href="https://github.com/tensor-9/tensor"
+            aria-label="Tensor on GitHub"
+            title="Tensor on GitHub"
+          >
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 16 16"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path
+                fill="currentColor"
+                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.65 7.65 0 0 1 2-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"
+              />
+            </svg>
+            <span class="nav-github-count" hidden aria-hidden="true"></span>
+          </a>
+          <a
+            class="nav-discord"
+            href="https://discord.gg/GkcryMnJDM"
+            aria-label="Join Tensor on Discord"
+            title="Join Tensor on Discord"
+          >
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path
+                fill="currentColor"
+                d="M20.317 4.3698a19.7913 19.7913 0 0 0-4.8851-1.5152.0741.0741 0 0 0-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 0 0-.0785-.037 19.7363 19.7363 0 0 0-4.8852 1.515.0699.0699 0 0 0-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 0 0 .0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 0 0 .0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 0 0-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 0 1-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 0 1 .0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 0 1 .0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 0 1-.0066.1276 12.2986 12.2986 0 0 1-1.873.8914.0766.0766 0 0 0-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 0 0 .0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 0 0 .0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 0 0-.0312-.0286ZM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189Zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"
+              />
+            </svg>
+          </a>
+          <a
+            class="nav-x"
+            href="https://x.com/tensortools"
+            aria-label="Follow Tensor on X"
+            title="Follow Tensor on X"
+          >
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path
+                fill="currentColor"
+                d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"
+              />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </header>
+    <!-- website:header:end -->
+    <main id="main" class="container">
+      <div class="page-heading">
+        <p class="breadcrumb"><a href="../">Home</a> / Prompts</p>
+        <h1>Prompt library</h1>
+        <p class="lede">
+          Copy-ready questions and workflows for your coding agent, from a first
+          look at an app to a verified reconstruction. Start at beginner and
+          move down as you need more.
+        </p>
+      </div>
+      <nav class="contents" aria-label="On this page">
+        <a href="#core-engine">Core engine</a>
+        <a href="#quick-start">Quick start</a>
+        <a href="#command-library">Command library</a>
+        <a href="#workflow-library">Workflow library</a>
+      </nav>
+      <article class="article">
+        <section class="article-section" id="core-engine">
+          <h2>Core engine</h2>
+          <p>
+            Every prompt below drives the same loop. Tensor inspects the target,
+            returns Evidence, and your coding agent explains what it found. What
+            changes between prompts is only the question and how deep it goes.
+          </p>
+          <ol class="numbered-notes">
+            <li>
+              <strong>Name the target.</strong> Open the app in your agent, or
+              give its absolute path. One target at a time keeps the evidence
+              attributable.
+            </li>
+            <li>
+              <strong>Ask one clear question.</strong> A question that fits in a
+              sentence is easier to answer and easier to check.
+            </li>
+            <li>
+              <strong>Demand evidence.</strong> Observations come from returned
+              Evidence. Reasoning is labeled as inference, and gaps stay
+              unknown.
+            </li>
+            <li>
+              <strong>Pick the next step.</strong> Follow up only where the
+              answer left a concrete gap.
+            </li>
+          </ol>
+          <p>
+            Replace anything in
+            <code translate="no">&lt;angle brackets&gt;</code>
+            before you paste. Tensor needs a connected agent: see
+            <a href="../get-started/">get started</a>. The same library is
+            available offline in the terminal, which is handy when you want the
+            text without the page.
+          </p>
+          <div class="code-block">
+            <div class="code-header">
+              <span>Terminal</span
+              ><button
+                class="copy-button"
+                type="button"
+                data-copy="prompts-command"
+                aria-label="Copy the prompt library command"
+              >
+                Copy
+              </button>
+            </div>
+            <pre><code id="prompts-command">npx -y tensor-agents@latest prompts --level beginner</code></pre>
+          </div>
+        </section>
+
+        <section class="article-section" id="quick-start">
+          <h2>Quick start</h2>
+          <p>
+            Pick a level, not a tool. Beginner prompts answer questions you can
+            see on screen. Intermediate prompts trace one path. Advanced prompts
+            produce findings you can hand to someone else.
+          </p>
+
+          <h3>Beginner prompts</h3>
+          <details class="evidence-details" data-prompt="first-look">
+            <summary>What am I looking at?</summary>
+            <p>
+              Identify an application, its platform and its build shape before
+              asking anything harder.
+            </p>
+            <div class="agent-terminal">
+              <div class="terminal-header">
+                <span class="terminal-title">Beginner · Any target</span
+                ><button
+                  class="copy-button"
+                  type="button"
+                  data-copy="prompt-first-look"
+                  aria-label="Copy the what am I looking at prompt"
+                >
+                  Copy
+                </button>
+              </div>
+              <p class="terminal-prompt">
+                <span class="prompt-symbol" aria-hidden="true">›</span
+                ><span id="prompt-first-look"
+                  >Use Tensor to look at the application I have open. Tell me
+                  what kind of application it is, which platform it targets,
+                  what it appears to be built with, and which files carry the
+                  real logic. Base the answer only on what you can actually
+                  observe, and list what you could not determine.</span
+                >
+              </p>
+            </div>
+            <p class="page-meta">
+              <strong>You should get:</strong> a short target profile — format,
+              platform, runtime or framework, main files, and explicit unknowns.
+            </p>
+          </details>
+
+          <details class="evidence-details" data-prompt="what-does-it-do">
+            <summary>Explain what this app does</summary>
+            <p>
+              Get a plain-language tour of the features a user sees, with no
+              jargon.
+            </p>
+            <div class="agent-terminal">
+              <div class="terminal-header">
+                <span class="terminal-title">Beginner · Any target</span
+                ><button
+                  class="copy-button"
+                  type="button"
+                  data-copy="prompt-what-does-it-do"
+                  aria-label="Copy the explain what this app does prompt"
+                >
+                  Copy
+                </button>
+              </div>
+              <p class="terminal-prompt">
+                <span class="prompt-symbol" aria-hidden="true">›</span
+                ><span id="prompt-what-does-it-do"
+                  >Use Tensor to explain this application in plain language.
+                  What is it for, what are the main things a user can do, which
+                  screens or commands expose those features, and how do the
+                  parts connect? Mark anything you inferred instead of observed,
+                  and skip details that need a deeper investigation.</span
+                >
+              </p>
+            </div>
+            <p class="page-meta">
+              <strong>You should get:</strong> a readable overview of the
+              user-facing features and how they join, with inferences labeled.
+            </p>
+          </details>
+
+          <details class="evidence-details" data-prompt="find-text">
+            <summary>Find where a text appears</summary>
+            <p>
+              Start from a string you can see on screen, such as an error
+              message or a label.
+            </p>
+            <div class="agent-terminal">
+              <div class="terminal-header">
+                <span class="terminal-title">Beginner · Any target</span
+                ><button
+                  class="copy-button"
+                  type="button"
+                  data-copy="prompt-find-text"
+                  aria-label="Copy the find where a text appears prompt"
+                >
+                  Copy
+                </button>
+              </div>
+              <p class="terminal-prompt">
+                <span class="prompt-symbol" aria-hidden="true">›</span
+                ><span id="prompt-find-text"
+                  >Use Tensor to find the text "<code translate="no"
+                    >&lt;paste the text here&gt;</code
+                  >" in this application. Show every place it appears, what
+                  file, module or address holds it, and what uses it. If it
+                  appears in more than one place, list each one instead of
+                  picking a favourite.</span
+                >
+              </p>
+            </div>
+            <p class="page-meta">
+              <strong>You should get:</strong> each occurrence with its location
+              and nearby code, plus the parts of the application that reference
+              it.
+            </p>
+          </details>
+
+          <h3>Intermediate prompts</h3>
+          <details class="evidence-details" data-prompt="trace-screen-action">
+            <summary>Trace one UI action</summary>
+            <p>
+              Follow a single click, command or keystroke from the event to its
+              effect.
+            </p>
+            <div class="agent-terminal">
+              <div class="terminal-header">
+                <span class="terminal-title">Intermediate · Any target</span
+                ><button
+                  class="copy-button"
+                  type="button"
+                  data-copy="prompt-trace-screen-action"
+                  aria-label="Copy the trace one UI action prompt"
+                >
+                  Copy
+                </button>
+              </div>
+              <p class="terminal-prompt">
+                <span class="prompt-symbol" aria-hidden="true">›</span
+                ><span id="prompt-trace-screen-action"
+                  >Use Tensor to trace what happens when I use "<code
+                    translate="no"
+                    >&lt;the button, menu item or command&gt;</code
+                  >" in this application. Find the handler, follow the work it
+                  performs, and describe the result the user sees. Name the
+                  files or functions on the path, and say where the trail
+                  stopped if you could not follow it all the way.</span
+                >
+              </p>
+            </div>
+            <p class="page-meta">
+              <strong>You should get:</strong> an ordered path from the event to
+              the visible result, with the evidence for each hop and any break
+              in the chain.
+            </p>
+          </details>
+
+          <details class="evidence-details" data-prompt="find-data-source">
+            <summary>Where does this data come from?</summary>
+            <p>
+              Connect something shown on screen to the file, network call or
+              service behind it.
+            </p>
+            <div class="agent-terminal">
+              <div class="terminal-header">
+                <span class="terminal-title">Intermediate · Any target</span
+                ><button
+                  class="copy-button"
+                  type="button"
+                  data-copy="prompt-find-data-source"
+                  aria-label="Copy the where does this data come from prompt"
+                >
+                  Copy
+                </button>
+              </div>
+              <p class="terminal-prompt">
+                <span class="prompt-symbol" aria-hidden="true">›</span
+                ><span id="prompt-find-data-source"
+                  >Use Tensor to find where the data on "<code translate="no"
+                    >&lt;the screen or field&gt;</code
+                  >" comes from. Identify the code that loads it, the file,
+                  network endpoint or service it reads, and the format it
+                  expects. Show the loading path and what happens when the
+                  source is missing or malformed.</span
+                >
+              </p>
+            </div>
+            <p class="page-meta">
+              <strong>You should get:</strong> a data path from source to
+              display, the format involved, and the failure behavior when data
+              is absent.
+            </p>
+          </details>
+
+          <details class="evidence-details" data-prompt="compare-two-builds">
+            <summary>Compare two versions</summary>
+            <p>
+              Find what changed between two builds without assuming every
+              difference matters.
+            </p>
+            <div class="agent-terminal">
+              <div class="terminal-header">
+                <span class="terminal-title">Intermediate · Any target</span
+                ><button
+                  class="copy-button"
+                  type="button"
+                  data-copy="prompt-compare-two-builds"
+                  aria-label="Copy the compare two versions prompt"
+                >
+                  Copy
+                </button>
+              </div>
+              <p class="terminal-prompt">
+                <span class="prompt-symbol" aria-hidden="true">›</span
+                ><span id="prompt-compare-two-builds"
+                  >Use Tensor to compare the two versions of this application
+                  that I have open or supplied. List what changed in files, code
+                  and user-visible behavior, and what stayed the same. Treat a
+                  difference as a possible behavior change until you have
+                  evidence for both sides, and call out anything you could not
+                  compare.</span
+                >
+              </p>
+            </div>
+            <p class="page-meta">
+              <strong>You should get:</strong> a change list grouped by file,
+              code and behavior, with the same-as and could-not-compare results
+              kept separate.
+            </p>
+          </details>
+
+          <h3>Advanced prompts</h3>
+          <details
+            class="evidence-details"
+            data-prompt="trace-feature-end-to-end"
+          >
+            <summary>Trace a feature end to end</summary>
+            <p>
+              Answer a real product question with one finding ledger instead of
+              scattered calls.
+            </p>
+            <div class="agent-terminal">
+              <div class="terminal-header">
+                <span class="terminal-title">Advanced · Any target</span
+                ><button
+                  class="copy-button"
+                  type="button"
+                  data-copy="prompt-trace-feature-end-to-end"
+                  aria-label="Copy the trace a feature end to end prompt"
+                >
+                  Copy
+                </button>
+              </div>
+              <p class="terminal-prompt">
+                <span class="prompt-symbol" aria-hidden="true">›</span
+                ><span id="prompt-trace-feature-end-to-end"
+                  >Use Tensor to trace how "<code translate="no"
+                    >&lt;the feature&gt;</code
+                  >" works end to end. Start from the user action, follow it
+                  through the code and data it touches, and finish with a
+                  finding ledger: what you observed with its evidence, what you
+                  inferred and how confident you are, and what remains unknown.
+                  Do not fill gaps with plausible-sounding guesses.</span
+                >
+              </p>
+            </div>
+            <p class="page-meta">
+              <strong>You should get:</strong> a finding ledger that ties every
+              conclusion to observed evidence and states the remaining unknowns.
+            </p>
+          </details>
+
+          <details class="evidence-details" data-prompt="audit-unknowns">
+            <summary>Audit what is still unknown</summary>
+            <p>
+              Review open questions before trusting an investigation's
+              conclusions.
+            </p>
+            <div class="agent-terminal">
+              <div class="terminal-header">
+                <span class="terminal-title">Advanced · Any target</span
+                ><button
+                  class="copy-button"
+                  type="button"
+                  data-copy="prompt-audit-unknowns"
+                  aria-label="Copy the audit what is still unknown prompt"
+                >
+                  Copy
+                </button>
+              </div>
+              <p class="terminal-prompt">
+                <span class="prompt-symbol" aria-hidden="true">›</span
+                ><span id="prompt-audit-unknowns"
+                  >Use Tensor to review the open questions from this
+                  investigation. For each one, say whether the evidence we now
+                  have answers it, contradicts it, or still cannot resolve it,
+                  and name the authority or environment that would settle it. Do
+                  not close a question just because it is inconvenient.</span
+                >
+              </p>
+            </div>
+            <p class="page-meta">
+              <strong>You should get:</strong> a per-question status with the
+              evidence that decides it and the specific next probe for the rest.
+            </p>
+          </details>
+
+          <details class="evidence-details" data-prompt="reconstruct-module">
+            <summary>Reconstruct one module</summary>
+            <p>
+              Turn observed behavior of a small area into readable source you
+              can keep.
+            </p>
+            <div class="agent-terminal">
+              <div class="terminal-header">
+                <span class="terminal-title">Advanced · Any target</span
+                ><button
+                  class="copy-button"
+                  type="button"
+                  data-copy="prompt-reconstruct-module"
+                  aria-label="Copy the reconstruct one module prompt"
+                >
+                  Copy
+                </button>
+              </div>
+              <p class="terminal-prompt">
+                <span class="prompt-symbol" aria-hidden="true">›</span
+                ><span id="prompt-reconstruct-module"
+                  >Use Tensor to reconstruct "<code translate="no"
+                    >&lt;the module, class or set of functions&gt;</code
+                  >" as readable source that reproduces the behavior you can
+                  observe. Keep the original interfaces and error behavior where
+                  they are visible, comment the places where you had to infer
+                  intent, and list what the reconstruction does not cover.</span
+                >
+              </p>
+            </div>
+            <p class="page-meta">
+              <strong>You should get:</strong> compilable or runnable code for
+              the named area, with inferred decisions marked and unverified
+              behavior listed.
+            </p>
+          </details>
+        </section>
+
+        <section class="article-section" id="command-library">
+          <h2>Command library</h2>
+          <p>
+            One question per job. Use these when you already know what kind of
+            answer you need and want a proven way to ask for it.
+          </p>
+
+          <h3>Software Analysis</h3>
+          <details class="evidence-details" data-prompt="inventory-target">
+            <summary>Inventory an application</summary>
+            <p>
+              Get the file-level picture: formats, entry points, dependencies
+              and metadata.
+            </p>
+            <div class="agent-terminal">
+              <div class="terminal-header">
+                <span class="terminal-title">Beginner · Any target</span
+                ><button
+                  class="copy-button"
+                  type="button"
+                  data-copy="prompt-inventory-target"
+                  aria-label="Copy the inventory an application prompt"
+                >
+                  Copy
+                </button>
+              </div>
+              <p class="terminal-prompt">
+                <span class="prompt-symbol" aria-hidden="true">›</span
+                ><span id="prompt-inventory-target"
+                  >Use Tensor to inventory this application. Summarize the
+                  top-level files, their formats, the declared entry points,
+                  bundled dependencies, embedded resources and any signing or
+                  integrity metadata. Group the findings so I can see what is
+                  application code, what is third-party, and what is data.</span
+                >
+              </p>
+            </div>
+            <p class="page-meta">
+              <strong>You should get:</strong> a structured inventory that
+              separates application code, dependencies, resources and metadata.
+            </p>
+          </details>
+
+          <details class="evidence-details" data-prompt="map-entry-points">
+            <summary>Map the entry points</summary>
+            <p>
+              Find how execution starts and which code the platform calls first.
+            </p>
+            <div class="agent-terminal">
+              <div class="terminal-header">
+                <span class="terminal-title">Intermediate · Native binary</span
+                ><button
+                  class="copy-button"
+                  type="button"
+                  data-copy="prompt-map-entry-points"
+                  aria-label="Copy the map the entry points prompt"
+                >
+                  Copy
+                </button>
+              </div>
+              <p class="terminal-prompt">
+                <span class="prompt-symbol" aria-hidden="true">›</span
+                ><span id="prompt-map-entry-points"
+                  >Use Tensor to find the entry points of this native
+                  application. Identify the platform start routine, the
+                  application's own initialization, and how control reaches its
+                  main features. Show the chain from entry to the first
+                  feature-level function, and say which links are
+                  uncertain.</span
+                >
+              </p>
+            </div>
+            <p class="page-meta">
+              <strong>You should get:</strong> an entry-point list with the
+              initialization chain and the evidence for each hop.
+            </p>
+          </details>
+
+          <details class="evidence-details" data-prompt="find-network-calls">
+            <summary>Find network calls</summary>
+            <p>
+              List the endpoints an application talks to and where each request
+              starts.
+            </p>
+            <div class="agent-terminal">
+              <div class="terminal-header">
+                <span class="terminal-title">Intermediate · Any target</span
+                ><button
+                  class="copy-button"
+                  type="button"
+                  data-copy="prompt-find-network-calls"
+                  aria-label="Copy the find network calls prompt"
+                >
+                  Copy
+                </button>
+              </div>
+              <p class="terminal-prompt">
+                <span class="prompt-symbol" aria-hidden="true">›</span
+                ><span id="prompt-find-network-calls"
+                  >Use Tensor to find every outbound network request this
+                  application can make. For each one, give the endpoint or
+                  template, the method, the payload shape if visible, and the
+                  code that triggers it. Mark requests you inferred from strings
+                  or configuration as unconfirmed until you see the call
+                  site.</span
+                >
+              </p>
+            </div>
+            <p class="page-meta">
+              <strong>You should get:</strong> a request inventory with
+              endpoints, triggers and confidence, separating observed calls from
+              inferred ones.
+            </p>
+          </details>
+
+          <details
+            class="evidence-details"
+            data-prompt="check-signing-integrity"
+          >
+            <summary>Check signing and integrity</summary>
+            <p>
+              Establish whether a build is signed as shipped and whether it was
+              modified.
+            </p>
+            <div class="agent-terminal">
+              <div class="terminal-header">
+                <span class="terminal-title">Intermediate · Any target</span
+                ><button
+                  class="copy-button"
+                  type="button"
+                  data-copy="prompt-check-signing-integrity"
+                  aria-label="Copy the check signing and integrity prompt"
+                >
+                  Copy
+                </button>
+              </div>
+              <p class="terminal-prompt">
+                <span class="prompt-symbol" aria-hidden="true">›</span
+                ><span id="prompt-check-signing-integrity"
+                  >Use Tensor to check the signing and integrity information of
+                  this application. Report the signature type, the signer, the
+                  digest algorithms used, and whether any file appears modified
+                  after signing. Explain what each result proves and what it
+                  does not prove.</span
+                >
+              </p>
+            </div>
+            <p class="page-meta">
+              <strong>You should get:</strong> a signing summary with the
+              verification steps, their results and the limits of each claim.
+            </p>
+          </details>
+
+          <h3>Architecture</h3>
+          <details class="evidence-details" data-prompt="map-modules">
+            <summary>Map modules and dependencies</summary>
+            <p>
+              See the real module boundaries and which direction dependencies
+              run.
+            </p>
+            <div class="agent-terminal">
+              <div class="terminal-header">
+                <span class="terminal-title">Intermediate · Any target</span
+                ><button
+                  class="copy-button"
+                  type="button"
+                  data-copy="prompt-map-modules"
+                  aria-label="Copy the map modules and dependencies prompt"
+                >
+                  Copy
+                </button>
+              </div>
+              <p class="terminal-prompt">
+                <span class="prompt-symbol" aria-hidden="true">›</span
+                ><span id="prompt-map-modules"
+                  >Use Tensor to map the modules of this application and the
+                  dependencies between them. Group related files into modules
+                  using observed references, not filenames alone, and show the
+                  dependency direction. Point out cycles, hub modules and
+                  anything that looks like a boundary the code does not
+                  respect.</span
+                >
+              </p>
+            </div>
+            <p class="page-meta">
+              <strong>You should get:</strong> a module map with dependency
+              directions, plus cycles and boundary violations called out.
+            </p>
+          </details>
+
+          <details class="evidence-details" data-prompt="trace-request-path">
+            <summary>Follow one request path</summary>
+            <p>
+              Document one path from input to storage, including the layers it
+              crosses.
+            </p>
+            <div class="agent-terminal">
+              <div class="terminal-header">
+                <span class="terminal-title">Advanced · Any target</span
+                ><button
+                  class="copy-button"
+                  type="button"
+                  data-copy="prompt-trace-request-path"
+                  aria-label="Copy the follow one request path prompt"
+                >
+                  Copy
+                </button>
+              </div>
+              <p class="terminal-prompt">
+                <span class="prompt-symbol" aria-hidden="true">›</span
+                ><span id="prompt-trace-request-path"
+                  >Use Tensor to follow one request through this application:
+                  from where it enters, through validation, business logic and
+                  any persistence or network step, to its response. Name the
+                  layer each step belongs to, and stop at any step where the
+                  evidence runs out instead of assuming the rest.</span
+                >
+              </p>
+            </div>
+            <p class="page-meta">
+              <strong>You should get:</strong> a layer-by-layer path with the
+              evidence for each step and explicit gaps.
+            </p>
+          </details>
+
+          <details class="evidence-details" data-prompt="find-state-owners">
+            <summary>Find who owns state</summary>
+            <p>
+              Identify the owner of each piece of persistent or shared state.
+            </p>
+            <div class="agent-terminal">
+              <div class="terminal-header">
+                <span class="terminal-title">Advanced · Any target</span
+                ><button
+                  class="copy-button"
+                  type="button"
+                  data-copy="prompt-find-state-owners"
+                  aria-label="Copy the find who owns state prompt"
+                >
+                  Copy
+                </button>
+              </div>
+              <p class="terminal-prompt">
+                <span class="prompt-symbol" aria-hidden="true">›</span
+                ><span id="prompt-find-state-owners"
+                  >Use Tensor to identify which components own the persistent
+                  and shared state in this application. For each store, cache or
+                  settings file, name the code that reads it, the code that
+                  writes it, the format, and what happens on conflicting or
+                  partial writes. Say where ownership is unclear.</span
+                >
+              </p>
+            </div>
+            <p class="page-meta">
+              <strong>You should get:</strong> a state inventory with owners,
+              formats, read/write sites and unclear ownership flagged.
+            </p>
+          </details>
+
+          <details
+            class="evidence-details"
+            data-prompt="document-extension-points"
+          >
+            <summary>Document extension points</summary>
+            <p>
+              Find plugins, scripts, updates and other places where outside code
+              enters.
+            </p>
+            <div class="agent-terminal">
+              <div class="terminal-header">
+                <span class="terminal-title">Advanced · Any target</span
+                ><button
+                  class="copy-button"
+                  type="button"
+                  data-copy="prompt-document-extension-points"
+                  aria-label="Copy the document extension points prompt"
+                >
+                  Copy
+                </button>
+              </div>
+              <p class="terminal-prompt">
+                <span class="prompt-symbol" aria-hidden="true">›</span
+                ><span id="prompt-document-extension-points"
+                  >Use Tensor to find the extension points in this application:
+                  plugins, scripts, macros, update channels and configuration
+                  hooks. For each one, explain what it can do, what it is
+                  allowed to trust, and how the application validates it. Treat
+                  a missing validation as an observation to verify, not
+                  automatically as a vulnerability.</span
+                >
+              </p>
+            </div>
+            <p class="page-meta">
+              <strong>You should get:</strong> an extension-point list with
+              capabilities, trust decisions and the evidence behind each.
+            </p>
+          </details>
+
+          <h3>UI Analysis</h3>
+          <details class="evidence-details" data-prompt="map-screens">
+            <summary>Map every screen</summary>
+            <p>
+              Inventory the user interface: screens, dialogs and how you reach
+              them.
+            </p>
+            <div class="agent-terminal">
+              <div class="terminal-header">
+                <span class="terminal-title">Beginner · Any target</span
+                ><button
+                  class="copy-button"
+                  type="button"
+                  data-copy="prompt-map-screens"
+                  aria-label="Copy the map every screen prompt"
+                >
+                  Copy
+                </button>
+              </div>
+              <p class="terminal-prompt">
+                <span class="prompt-symbol" aria-hidden="true">›</span
+                ><span id="prompt-map-screens"
+                  >Use Tensor to map the user interface of this application.
+                  List the screens and dialogs, how each one is reached, the
+                  data it shows, and the actions or settings it writes. Note any
+                  screen or menu that exists in the resources but is not
+                  reachable from normal navigation.</span
+                >
+              </p>
+            </div>
+            <p class="page-meta">
+              <strong>You should get:</strong> a screen map with navigation
+              paths, displayed data, written settings and hidden surfaces called
+              out.
+            </p>
+          </details>
+
+          <details class="evidence-details" data-prompt="trace-ui-action">
+            <summary>Trace a UI action in detail</summary>
+            <p>
+              Follow one interaction through validation, update and error paths.
+            </p>
+            <div class="agent-terminal">
+              <div class="terminal-header">
+                <span class="terminal-title">Intermediate · Any target</span
+                ><button
+                  class="copy-button"
+                  type="button"
+                  data-copy="prompt-trace-ui-action"
+                  aria-label="Copy the trace a UI action in detail prompt"
+                >
+                  Copy
+                </button>
+              </div>
+              <p class="terminal-prompt">
+                <span class="prompt-symbol" aria-hidden="true">›</span
+                ><span id="prompt-trace-ui-action"
+                  >Use Tensor to trace the interaction behind "<code
+                    translate="no"
+                    >&lt;the control&gt;</code
+                  >" in detail: the event, the validation it performs, the state
+                  it updates, the UI it refreshes and every error path the user
+                  could hit. Show the code for each step and say which branch
+                  you exercised only by reading.</span
+                >
+              </p>
+            </div>
+            <p class="page-meta">
+              <strong>You should get:</strong> a step-by-step interaction trace
+              with validation, state changes, redraws and error paths.
+            </p>
+          </details>
+
+          <details class="evidence-details" data-prompt="inspect-ui-assets">
+            <summary>Inspect UI resources</summary>
+            <p>
+              Read layouts, strings, icons and styles for what they reveal about
+              the product.
+            </p>
+            <div class="agent-terminal">
+              <div class="terminal-header">
+                <span class="terminal-title">Intermediate · Any target</span
+                ><button
+                  class="copy-button"
+                  type="button"
+                  data-copy="prompt-inspect-ui-assets"
+                  aria-label="Copy the inspect UI resources prompt"
+                >
+                  Copy
+                </button>
+              </div>
+              <p class="terminal-prompt">
+                <span class="prompt-symbol" aria-hidden="true">›</span
+                ><span id="prompt-inspect-ui-assets"
+                  >Use Tensor to inspect the UI resources of this application:
+                  layouts, string tables, icons, styles and localized text.
+                  Summarize what they reveal about features, languages,
+                  unfinished work or hidden screens, and link each observation
+                  to the resource it came from.</span
+                >
+              </p>
+            </div>
+            <p class="page-meta">
+              <strong>You should get:</strong> a resource summary tied to
+              specific files, including features or languages the UI hides.
+            </p>
+          </details>
+
+          <details class="evidence-details" data-prompt="compare-ui-versions">
+            <summary>Compare the UI across versions</summary>
+            <p>
+              Diff two builds from the user's point of view: screens, labels and
+              flows.
+            </p>
+            <div class="agent-terminal">
+              <div class="terminal-header">
+                <span class="terminal-title">Advanced · Any target</span
+                ><button
+                  class="copy-button"
+                  type="button"
+                  data-copy="prompt-compare-ui-versions"
+                  aria-label="Copy the compare the UI across versions prompt"
+                >
+                  Copy
+                </button>
+              </div>
+              <p class="terminal-prompt">
+                <span class="prompt-symbol" aria-hidden="true">›</span
+                ><span id="prompt-compare-ui-versions"
+                  >Use Tensor to compare the user interface of two versions of
+                  this application. Report screens added, removed or renamed,
+                  labels and defaults that changed, and flows whose steps
+                  differ. Separate what you observed in resources from what you
+                  inferred about the running app.</span
+                >
+              </p>
+            </div>
+            <p class="page-meta">
+              <strong>You should get:</strong> a UI change list by screen and
+              label, with observed and inferred changes separated.
+            </p>
+          </details>
+
+          <h3>Code Analysis</h3>
+          <details class="evidence-details" data-prompt="explain-function">
+            <summary>Explain a function</summary>
+            <p>
+              Understand one function's intent, inputs, outputs and side
+              effects.
+            </p>
+            <div class="agent-terminal">
+              <div class="terminal-header">
+                <span class="terminal-title">Beginner · Native binary</span
+                ><button
+                  class="copy-button"
+                  type="button"
+                  data-copy="prompt-explain-function"
+                  aria-label="Copy the explain a function prompt"
+                >
+                  Copy
+                </button>
+              </div>
+              <p class="terminal-prompt">
+                <span class="prompt-symbol" aria-hidden="true">›</span
+                ><span id="prompt-explain-function"
+                  >Use Tensor to explain what "<code translate="no"
+                    >&lt;function name or address&gt;</code
+                  >" does. Cover its inputs, return value, side effects, error
+                  handling and any global state it touches, then give a short
+                  plain-language summary of its purpose. Quote the evidence you
+                  relied on.</span
+                >
+              </p>
+            </div>
+            <p class="page-meta">
+              <strong>You should get:</strong> a function dossier with
+              signature, behavior, side effects and a plain-language purpose.
+            </p>
+          </details>
+
+          <details class="evidence-details" data-prompt="find-callers">
+            <summary>Find callers and conditions</summary>
+            <p>See who reaches a function and under which conditions.</p>
+            <div class="agent-terminal">
+              <div class="terminal-header">
+                <span class="terminal-title">Intermediate · Native binary</span
+                ><button
+                  class="copy-button"
+                  type="button"
+                  data-copy="prompt-find-callers"
+                  aria-label="Copy the find callers and conditions prompt"
+                >
+                  Copy
+                </button>
+              </div>
+              <p class="terminal-prompt">
+                <span class="prompt-symbol" aria-hidden="true">›</span
+                ><span id="prompt-find-callers"
+                  >Use Tensor to find every caller of "<code translate="no"
+                    >&lt;function name or address&gt;</code
+                  >" and the condition under which each call happens. Include
+                  indirect calls through pointers or tables when you can resolve
+                  them, and label the references you could not confirm instead
+                  of dropping them.</span
+                >
+              </p>
+            </div>
+            <p class="page-meta">
+              <strong>You should get:</strong> a caller list with call
+              conditions, plus unresolved indirect references labeled as such.
+            </p>
+          </details>
+
+          <details class="evidence-details" data-prompt="recover-types">
+            <summary>Recover data types</summary>
+            <p>
+              Rebuild the structures a piece of code relies on, field by field.
+            </p>
+            <div class="agent-terminal">
+              <div class="terminal-header">
+                <span class="terminal-title">Advanced · Native binary</span
+                ><button
+                  class="copy-button"
+                  type="button"
+                  data-copy="prompt-recover-types"
+                  aria-label="Copy the recover data types prompt"
+                >
+                  Copy
+                </button>
+              </div>
+              <p class="terminal-prompt">
+                <span class="prompt-symbol" aria-hidden="true">›</span
+                ><span id="prompt-recover-types"
+                  >Use Tensor to recover the data types used by "<code
+                    translate="no"
+                    >&lt;function, module or area&gt;</code
+                  >". For each structure, list the fields you can justify, their
+                  widths and offsets, and how the code validates or initializes
+                  them. Mark padding, unknown fields and guessed names, and
+                  explain the evidence for each layout claim.</span
+                >
+              </p>
+            </div>
+            <p class="page-meta">
+              <strong>You should get:</strong> recovered type definitions with
+              offsets, field evidence and guessed or unknown fields clearly
+              marked.
+            </p>
+          </details>
+
+          <details class="evidence-details" data-prompt="review-error-handling">
+            <summary>Review error handling</summary>
+            <p>
+              Check failure paths, swallowed errors and what the user is told.
+            </p>
+            <div class="agent-terminal">
+              <div class="terminal-header">
+                <span class="terminal-title">Advanced · Any target</span
+                ><button
+                  class="copy-button"
+                  type="button"
+                  data-copy="prompt-review-error-handling"
+                  aria-label="Copy the review error handling prompt"
+                >
+                  Copy
+                </button>
+              </div>
+              <p class="terminal-prompt">
+                <span class="prompt-symbol" aria-hidden="true">›</span
+                ><span id="prompt-review-error-handling"
+                  >Use Tensor to review the error handling in "<code
+                    translate="no"
+                    >&lt;area or feature&gt;</code
+                  >". List the failure paths you can find, the errors that are
+                  swallowed or logged without a recovery action, retries and
+                  their limits, and the messages the user actually sees. Rank
+                  the findings by user impact and cite the code for each.</span
+                >
+              </p>
+            </div>
+            <p class="page-meta">
+              <strong>You should get:</strong> an error-handling review with
+              failure paths, swallowed errors, retry behavior and user-visible
+              messages.
+            </p>
+          </details>
+
+          <h3>Reconstruction</h3>
+          <details class="evidence-details" data-prompt="rebuild-module">
+            <summary>Rebuild a module</summary>
+            <p>
+              Produce working source for one module that matches observed
+              behavior.
+            </p>
+            <div class="agent-terminal">
+              <div class="terminal-header">
+                <span class="terminal-title">Advanced · Any target</span
+                ><button
+                  class="copy-button"
+                  type="button"
+                  data-copy="prompt-rebuild-module"
+                  aria-label="Copy the rebuild a module prompt"
+                >
+                  Copy
+                </button>
+              </div>
+              <p class="terminal-prompt">
+                <span class="prompt-symbol" aria-hidden="true">›</span
+                ><span id="prompt-rebuild-module"
+                  >Use Tensor to rebuild "<code translate="no"
+                    >&lt;module&gt;</code
+                  >" as working source in "<code translate="no"
+                    >&lt;language or framework&gt;</code
+                  >". Match the interfaces and behavior you can observe, keep
+                  the original error handling, and leave a comment wherever you
+                  had to choose an implementation detail. List the behavior the
+                  rebuild does not reproduce.</span
+                >
+              </p>
+            </div>
+            <p class="page-meta">
+              <strong>You should get:</strong> source code for the module with
+              inferred choices marked and unreproduced behavior listed.
+            </p>
+          </details>
+
+          <details
+            class="evidence-details"
+            data-prompt="rank-reconstruction-gaps"
+          >
+            <summary>Rank the remaining gaps</summary>
+            <p>
+              Decide what to investigate next instead of chasing every unknown.
+            </p>
+            <div class="agent-terminal">
+              <div class="terminal-header">
+                <span class="terminal-title">Advanced · Any target</span
+                ><button
+                  class="copy-button"
+                  type="button"
+                  data-copy="prompt-rank-reconstruction-gaps"
+                  aria-label="Copy the rank the remaining gaps prompt"
+                >
+                  Copy
+                </button>
+              </div>
+              <p class="terminal-prompt">
+                <span class="prompt-symbol" aria-hidden="true">›</span
+                ><span id="prompt-rank-reconstruction-gaps"
+                  >Use Tensor to list what is still missing from this
+                  reconstruction and rank it. For each gap, give the behavior at
+                  risk, how likely it is to matter, what evidence would close
+                  it, and the cost of getting that evidence. Put the
+                  highest-risk, cheapest-to-settle gaps first.</span
+                >
+              </p>
+            </div>
+            <p class="page-meta">
+              <strong>You should get:</strong> a ranked gap list with risk,
+              required evidence and cost, ordered for the next session.
+            </p>
+          </details>
+
+          <details class="evidence-details" data-prompt="verify-reconstruction">
+            <summary>Verify a reconstruction</summary>
+            <p>
+              Test a rebuild claim by claim instead of declaring it equivalent.
+            </p>
+            <div class="agent-terminal">
+              <div class="terminal-header">
+                <span class="terminal-title">Advanced · Any target</span
+                ><button
+                  class="copy-button"
+                  type="button"
+                  data-copy="prompt-verify-reconstruction"
+                  aria-label="Copy the verify a reconstruction prompt"
+                >
+                  Copy
+                </button>
+              </div>
+              <p class="terminal-prompt">
+                <span class="prompt-symbol" aria-hidden="true">›</span
+                ><span id="prompt-verify-reconstruction"
+                  >Use Tensor to verify this reconstruction against the original
+                  for the behaviors I list: "<code translate="no"
+                    >&lt;behavior 1, behavior 2&gt;</code
+                  >". Give a pass, fail or unknown result per claim with the
+                  evidence behind it, and state plainly that the result covers
+                  only those claims, not the whole application.</span
+                >
+              </p>
+            </div>
+            <p class="page-meta">
+              <strong>You should get:</strong> per-claim results with evidence
+              and an explicit statement of what the verification does not cover.
+            </p>
+          </details>
+
+          <details class="evidence-details" data-prompt="rebuild-bundle">
+            <summary>Rebuild a runnable bundle</summary>
+            <p>Turn an extracted bundle into a project that runs again.</p>
+            <div class="agent-terminal">
+              <div class="terminal-header">
+                <span class="terminal-title">Advanced · JavaScript bundle</span
+                ><button
+                  class="copy-button"
+                  type="button"
+                  data-copy="prompt-rebuild-bundle"
+                  aria-label="Copy the rebuild a runnable bundle prompt"
+                >
+                  Copy
+                </button>
+              </div>
+              <p class="terminal-prompt">
+                <span class="prompt-symbol" aria-hidden="true">›</span
+                ><span id="prompt-rebuild-bundle"
+                  >Use Tensor to help me rebuild a runnable project from this
+                  extracted JavaScript bundle. Identify the entry points, module
+                  format, assets and configuration, then scaffold a project that
+                  starts the same way. Keep a list of what you had to add,
+                  rename or stub, and note anything that still depends on the
+                  original runtime.</span
+                >
+              </p>
+            </div>
+            <p class="page-meta">
+              <strong>You should get:</strong> a runnable scaffold with entry
+              points wired, plus the list of additions, renames and remaining
+              runtime dependencies.
+            </p>
+          </details>
+        </section>
+
+        <section class="article-section" id="workflow-library">
+          <h2>Workflow library</h2>
+          <p>
+            Workflows run several commands in order and finish with one result.
+            Start with the smallest workflow that answers your question, and
+            open the individual prompts when a step needs more detail.
+          </p>
+
+          <details class="evidence-details" data-prompt="understand-software">
+            <summary>Understand a piece of software</summary>
+            <p>Go from a first look to a working mental model in one pass.</p>
+            <div class="agent-terminal">
+              <div class="terminal-header">
+                <span class="terminal-title">Beginner · 4 steps</span
+                ><button
+                  class="copy-button"
+                  type="button"
+                  data-copy="prompt-understand-software"
+                  aria-label="Copy the understand a piece of software workflow"
+                >
+                  Copy
+                </button>
+              </div>
+              <p class="terminal-prompt">
+                <span class="prompt-symbol" aria-hidden="true">›</span
+                ><span id="prompt-understand-software"
+                  >Use Tensor to help me understand this software from scratch.
+                  Start with a plain-language overview, then inventory the files
+                  and dependencies, then map the modules and entry points.
+                  Finish with a one-page summary: what it is, what it does, how
+                  it is organized, and what still needs a deeper look.</span
+                >
+              </p>
+            </div>
+            <p class="page-meta">
+              <strong>You should get:</strong> one summary page that carries the
+              overview, inventory, module map and entry points, with open
+              questions listed.
+            </p>
+            <ol class="numbered-notes">
+              <li>What am I looking at?</li>
+              <li>Inventory an application</li>
+              <li>Map modules and dependencies</li>
+              <li>Map the entry points</li>
+            </ol>
+          </details>
+
+          <details class="evidence-details" data-prompt="analyze-application">
+            <summary>Analyze an application</summary>
+            <p>
+              Build a behavior map of screens, actions, data sources and network
+              calls.
+            </p>
+            <div class="agent-terminal">
+              <div class="terminal-header">
+                <span class="terminal-title">Intermediate · 4 steps</span
+                ><button
+                  class="copy-button"
+                  type="button"
+                  data-copy="prompt-analyze-application"
+                  aria-label="Copy the analyze an application workflow"
+                >
+                  Copy
+                </button>
+              </div>
+              <p class="terminal-prompt">
+                <span class="prompt-symbol" aria-hidden="true">›</span
+                ><span id="prompt-analyze-application"
+                  >Use Tensor to analyze how this application behaves. Map the
+                  screens, trace the main action on each one, find where the
+                  data comes from and which network calls are involved. Produce
+                  a behavior map that links each user action to its handler, its
+                  data source and its visible result.</span
+                >
+              </p>
+            </div>
+            <p class="page-meta">
+              <strong>You should get:</strong> a behavior map from screens to
+              actions to handlers to data sources, with evidence at each link.
+            </p>
+            <ol class="numbered-notes">
+              <li>Map every screen</li>
+              <li>Trace one UI action</li>
+              <li>Where does this data come from?</li>
+              <li>Find network calls</li>
+            </ol>
+          </details>
+
+          <details class="evidence-details" data-prompt="compare-versions">
+            <summary>Compare two versions</summary>
+            <p>Produce a defensible change report between two builds.</p>
+            <div class="agent-terminal">
+              <div class="terminal-header">
+                <span class="terminal-title">Advanced · 4 steps</span
+                ><button
+                  class="copy-button"
+                  type="button"
+                  data-copy="prompt-compare-versions"
+                  aria-label="Copy the compare two versions workflow"
+                >
+                  Copy
+                </button>
+              </div>
+              <p class="terminal-prompt">
+                <span class="prompt-symbol" aria-hidden="true">›</span
+                ><span id="prompt-compare-versions"
+                  >Use Tensor to compare these two versions and report the
+                  differences that matter. Compare the files and code, then the
+                  user interface, then signing and integrity metadata. Separate
+                  confirmed changes from possible ones, say what you could not
+                  compare, and audit the changes you are unsure about before
+                  finishing.</span
+                >
+              </p>
+            </div>
+            <p class="page-meta">
+              <strong>You should get:</strong> a comparison report grouped by
+              code, UI and integrity, with confirmed, possible and incomparable
+              changes kept apart.
+            </p>
+            <ol class="numbered-notes">
+              <li>Compare two versions</li>
+              <li>Compare the UI across versions</li>
+              <li>Check signing and integrity</li>
+              <li>Audit what is still unknown</li>
+            </ol>
+          </details>
+
+          <details
+            class="evidence-details"
+            data-prompt="reconstruct-application"
+          >
+            <summary>Reconstruct an application</summary>
+            <p>
+              Move from one module rebuild to a verified, prioritized
+              reconstruction.
+            </p>
+            <div class="agent-terminal">
+              <div class="terminal-header">
+                <span class="terminal-title">Advanced · 5 steps</span
+                ><button
+                  class="copy-button"
+                  type="button"
+                  data-copy="prompt-reconstruct-application"
+                  aria-label="Copy the reconstruct an application workflow"
+                >
+                  Copy
+                </button>
+              </div>
+              <p class="terminal-prompt">
+                <span class="prompt-symbol" aria-hidden="true">›</span
+                ><span id="prompt-reconstruct-application"
+                  >Use Tensor to reconstruct this application in stages. Rebuild
+                  one module first and check it, then rank what is still
+                  missing, verify the claims you can actually test, and assemble
+                  a runnable bundle where that makes sense. Keep the verified
+                  and unverified parts of the result clearly separated.</span
+                >
+              </p>
+            </div>
+            <p class="page-meta">
+              <strong>You should get:</strong> a staged reconstruction with the
+              rebuilt module, a ranked gap list, verification results and a
+              runnable assembly where possible.
+            </p>
+            <ol class="numbered-notes">
+              <li>Reconstruct one module</li>
+              <li>Rebuild a module</li>
+              <li>Rank the remaining gaps</li>
+              <li>Verify a reconstruction</li>
+              <li>Rebuild a runnable bundle</li>
+            </ol>
+          </details>
+
+          <p>
+            Ready for a real case study? Read
+            <a href="../guides/">the guides</a> or open
+            <a href="../get-started/">get started</a> to connect Tensor first.
+          </p>
+        </section>
+      </article>
+    </main>
+    <!-- website:footer:start -->
+    <!-- prettier-ignore -->
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>Tensor · Reverse Engineer Anything</p>
+        <div class="footer-links">
+          <a href="../faq/">FAQ</a
+          ><a href="../contributors/">Contributors</a
+          ><a href="https://github.com/tensor-9/tensor">Source</a
+          ><a href="https://github.com/tensor-9/tensor/blob/main/LICENSE">MIT license</a
+          ><a href="https://discord.gg/GkcryMnJDM">Join the community</a
+          ><a href="https://x.com/tensortools">Follow us on X</a>
+        </div>
+      </div>
+    </footer>
+    <p class="sr-only" id="copy-status" role="status" aria-live="polite"></p>
+    <a class="back-to-top" href="#top" aria-label="Back to top">
+      <span aria-hidden="true">↑</span> Top
+    </a>
+    <!-- website:footer:end -->
+  </body>
+</html>

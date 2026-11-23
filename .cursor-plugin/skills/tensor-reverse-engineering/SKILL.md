@@ -612,6 +612,10 @@ observed client-policy rejection.
 
 ## Plan broader investigations
 
+When the reader asks what to try, or supplies a target without a question, offer
+one prompt from [references/starter-prompts.md](references/starter-prompts.md)
+that fits their target instead of a generic tour of Tensor.
+
 For requests that span multiple features or subsystems, use a staged workflow:
 
 1. Turn the request into a checklist of questions and the evidence each answer
@@ -656,6 +660,8 @@ as complete while required questions remain open.
 - Native instrumentation, debugger and process capture; browser/Electron
   observation; static/runtime comparison:
   [references/runtime-observation.md](references/runtime-observation.md)
+- Starting questions and repeatable workflows for a new or unfamiliar target:
+  [references/starter-prompts.md](references/starter-prompts.md)
 - Evidence paging, comparisons, residual unknowns, and verification:
   [references/evidence-workflows.md](references/evidence-workflows.md)
 - Agent environments (AgentEnv bundles) of a web application, recorded from

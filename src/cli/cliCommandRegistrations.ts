@@ -335,6 +335,11 @@ export const CLI_COMMAND_REGISTRATIONS = {
     (module, context) =>
       module.registerGuidedWorkflowCommands(context.cli, context.logger),
   ),
+  promptLibrary: plain(
+    () => import("./promptLibraryCommands.js"),
+    (module, context) =>
+      module.registerPromptLibraryCommands(context.cli, context.logger),
+  ),
   analysisView: plain(
     () => import("./analysisViewCommands.js"),
     (module, context) =>
@@ -486,6 +491,7 @@ const CLI_FAMILY_REGISTRATIONS: {
   application: [
     "guidance",
     "guidedWorkflow",
+    "promptLibrary",
     "analysisView",
     "evidence",
     "environment",

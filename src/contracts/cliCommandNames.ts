@@ -26,6 +26,7 @@ export const CLI_COMMANDS = Object.freeze({
   capabilities: "capabilities",
   providers: "providers",
   guidance: "guidance",
+  prompts: "prompts",
   function: "function",
   instructions: "instructions",
   search: "search",
