@@ -56,6 +56,7 @@ import * as electronModule from "./cli/electronCommands.js";
 import * as javaScriptRuntimeObservationModule from "./cli/javascriptRuntimeCommands.js";
 import * as guidanceModule from "./cli/guidanceCommands.js";
 import * as guidedWorkflowModule from "./cli/guidedWorkflowCommands.js";
+import * as promptLibraryModule from "./cli/promptLibraryCommands.js";
 import * as analysisViewModule from "./cli/analysisViewCommands.js";
 import * as evidenceModule from "./cliEvidenceCommands.js";
 import * as environmentModule from "./cli/environmentCommands.js";
@@ -115,6 +116,7 @@ const CLI_COMMAND_MODULES: CliCommandModules = {
   javaScriptRuntimeObservation: javaScriptRuntimeObservationModule,
   guidance: guidanceModule,
   guidedWorkflow: guidedWorkflowModule,
+  promptLibrary: promptLibraryModule,
   analysisView: analysisViewModule,
   evidence: evidenceModule,
   environment: environmentModule,
