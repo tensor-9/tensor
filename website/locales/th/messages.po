@@ -10020,27 +10020,27 @@ msgctxt "page:showcase/th04/index.html"
 msgid "Back to top"
 msgstr "กลับขึ้นด้านบน"
 
-#: website/public/assets/main.js:21
+#: website/public/assets/main.js:26
 msgctxt "runtime"
 msgid "Copied"
 msgstr "คัดลอก"
 
-#: website/public/assets/main.js:32
+#: website/public/assets/main.js:37
 msgctxt "runtime"
 msgid "Selected"
 msgstr "เลือก"
 
-#: website/public/assets/main.js:23
+#: website/public/assets/main.js:28
 msgctxt "runtime"
 msgid "Code copied to clipboard."
 msgstr "รหัสคัดลอกไปยังคลิปบอร์ด"
 
-#: website/public/assets/main.js:34
+#: website/public/assets/main.js:39
 msgctxt "runtime"
 msgid "Code selected. Use your keyboard to copy it."
 msgstr "รหัสที่เลือก ใช้แป้นพิมพ์ของคุณเพื่อคัดลอก"
 
-#: website/public/assets/main.js:161
+#: website/public/assets/main.js:166
 #, python-brace-format
 msgctxt "runtime"
 msgid "Tensor on GitHub ({count})"

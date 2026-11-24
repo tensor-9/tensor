@@ -1,33 +1,33 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520" role="img" aria-labelledby="title description">
   <title id="title">TH04: spacing and aiming a ring of bullets</title>
   <desc id="description">A full clockwise turn has 256 angle units. Sixteen bullets start at angles zero, sixteen, thirty-two, through 240. Adding an example player direction of forty turns all sixteen directions together; the first bullet points at the player. Template rotation is zero.</desc>
-  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#294f82" /></marker></defs>
-  <style>text { font-family: Arial, Helvetica, sans-serif; fill: #20252b; } .heading { font-size: 26px; font-weight: 600; } .note { font-size: 19px; fill: #5b6570; } .mono { font-family: Consolas, 'Liberation Mono', monospace; font-size: 19px; } .accent { fill: #294f82; } .spoke { stroke: #d2dbe4; stroke-width: 1.6; } .bullet { fill: #9eafc0; } .first { fill: #294f82; } 
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#5a63c9" /></marker></defs>
+  <style>text { font-family: Arial, Helvetica, sans-serif; fill: #08090a; } .heading { font-size: 26px; font-weight: 600; } .note { font-size: 19px; fill: #64686f; } .mono { font-family: Consolas, 'Liberation Mono', monospace; font-size: 19px; } .accent { fill: #5a63c9; } .spoke { stroke: #e6e7eb; stroke-width: 1.6; } .bullet { fill: #b9bcc4; } .first { fill: #5a63c9; } 
 @media (prefers-color-scheme: dark){
-svg{background-color:#181825}
-[fill="#20252b"]{fill:#cdd6f4}
-[fill="#294f82"]{fill:#89b4fa}
-[stroke="#294f82"]{stroke:#89b4fa}
-[stroke="#e0e5ea"]{stroke:#45475a}
-[fill="#edf2f8"]{fill:#313244}
-[fill="#ffffff"]{fill:#181825}
-text{fill:#cdd6f4}
-.note{fill:#a6adc8}
-.accent{fill:#89b4fa}
-.spoke{stroke:#6c7086}
-.bullet{fill:#9399b2}
-.first{fill:#89b4fa}
+svg{background-color:#08090a}
+[fill="#08090a"]{fill:#f7f8f8}
+[fill="#5a63c9"]{fill:#a3a6ff}
+[stroke="#5a63c9"]{stroke:#a3a6ff}
+[stroke="#e6e7eb"]{stroke:#23252a}
+[fill="#eef0fd"]{fill:#111214}
+[fill="#ffffff"]{fill:#08090a}
+text{fill:#f7f8f8}
+.note{fill:#8a8f98}
+.accent{fill:#a3a6ff}
+.spoke{stroke:#4a4d55}
+.bullet{fill:#8a8f98}
+.first{fill:#a3a6ff}
 }
 </style>
   <rect width="1000" height="520" fill="#ffffff" />
-  <line x1="500" y1="42" x2="500" y2="428" stroke="#e0e5ea" />
+  <line x1="500" y1="42" x2="500" y2="428" stroke="#e6e7eb" />
   <text x="42" y="58" class="heading">Fixed ring</text>
   <text x="42" y="88" class="note">First bullet: angle 0</text>
   <text x="542" y="58" class="heading">Aimed ring</text>
   <text x="542" y="88" class="note">First bullet: player direction</text>
   <g id="fixed-ring" data-count="16" data-aim="0">
-    <circle cx="245" cy="246" r="118" fill="none" stroke="#e0e5ea" stroke-dasharray="3 5" />
-    <line x1="245" y1="246" x2="363.000" y2="246.000" stroke="#294f82" stroke-width="2.5" />
+    <circle cx="245" cy="246" r="118" fill="none" stroke="#e6e7eb" stroke-dasharray="3 5" />
+    <line x1="245" y1="246" x2="363.000" y2="246.000" stroke="#5a63c9" stroke-width="2.5" />
     <circle cx="363.000" cy="246.000" r="6" class="first" data-index="0" data-angle="0" />
     <line x1="245" y1="246" x2="354.018" y2="291.157" class="spoke" />
     <circle cx="354.018" cy="291.157" r="4.5" class="bullet" data-index="1" data-angle="16" />
@@ -59,13 +59,13 @@ text{fill:#cdd6f4}
     <circle cx="328.439" cy="162.561" r="4.5" class="bullet" data-index="14" data-angle="224" />
     <line x1="245" y1="246" x2="354.018" y2="200.843" class="spoke" />
     <circle cx="354.018" cy="200.843" r="4.5" class="bullet" data-index="15" data-angle="240" />
-    <circle cx="245" cy="246" r="7" fill="#20252b" />
+    <circle cx="245" cy="246" r="7" fill="#08090a" />
     <rect x="215" y="261" width="60" height="26" fill="#ffffff" />
     <text x="245" y="280" text-anchor="middle" class="note">Origin</text>
   </g>
   <g id="aimed-ring" data-count="16" data-aim="40">
-    <circle cx="730" cy="246" r="118" fill="none" stroke="#e0e5ea" stroke-dasharray="3 5" />
-    <line x1="730" y1="246" x2="795.557" y2="344.113" stroke="#294f82" stroke-width="2.5" />
+    <circle cx="730" cy="246" r="118" fill="none" stroke="#e6e7eb" stroke-dasharray="3 5" />
+    <line x1="730" y1="246" x2="795.557" y2="344.113" stroke="#5a63c9" stroke-width="2.5" />
     <circle cx="795.557" cy="344.113" r="6" class="first" data-index="0" data-angle="40" />
     <line x1="730" y1="246" x2="753.021" y2="361.733" class="spoke" />
     <circle cx="753.021" cy="361.733" r="4.5" class="bullet" data-index="1" data-angle="56" />
@@ -97,15 +97,15 @@ text{fill:#cdd6f4}
     <circle cx="845.733" cy="269.021" r="4.5" class="bullet" data-index="14" data-angle="8" />
     <line x1="730" y1="246" x2="828.113" y2="311.557" class="spoke" />
     <circle cx="828.113" cy="311.557" r="4.5" class="bullet" data-index="15" data-angle="24" />
-    <circle cx="730" cy="246" r="7" fill="#20252b" />
+    <circle cx="730" cy="246" r="7" fill="#08090a" />
     <rect x="700" y="261" width="60" height="26" fill="#ffffff" />
     <text x="730" y="280" text-anchor="middle" class="note">Origin</text>
-    <line x1="800.557" y1="351.597" x2="829.447" y2="394.833" stroke="#294f82" stroke-width="1.8" stroke-dasharray="4 4" marker-end="url(#arrow)" />
-    <path d="M 832.225 391.990 l 7 7 l -7 7 l -7 -7 z" fill="#294f82" />
+    <line x1="800.557" y1="351.597" x2="829.447" y2="394.833" stroke="#5a63c9" stroke-width="1.8" stroke-dasharray="4 4" marker-end="url(#arrow)" />
+    <path d="M 832.225 391.990 l 7 7 l -7 7 l -7 -7 z" fill="#5a63c9" />
     <text x="848.225" y="405.990" class="note accent">Player</text>
   </g>
   <text x="42" y="413" class="mono">0, 16, 32, …, 240</text>
   <text x="542" y="413" class="mono">40, 56, 72, …, 24</text>
-  <rect x="24" y="451" width="952" height="47" rx="4" fill="#edf2f8" />
+  <rect x="24" y="451" width="952" height="47" rx="4" fill="#eef0fd" />
   <text x="500" y="481" text-anchor="middle" class="note accent">Same spacing: 256 ÷ 16 = 16 angle units = 22.5°</text>
 </svg>

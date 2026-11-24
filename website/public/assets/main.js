@@ -1,6 +1,11 @@
 async function initializeWebsite() {
   const { t } = await import("./i18n.js");
 
+  // Decorative motion is optional: a failed import must never block the page.
+  import("./scene.js").catch((cause) => {
+    console.error("Website motion failed to load", cause);
+  });
+
   function initializeCopyButtons() {
     document.querySelectorAll("[data-copy]").forEach((button) => {
       const label = button.textContent;

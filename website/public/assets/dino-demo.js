@@ -37,7 +37,7 @@ function initializeDinoDemo(demo) {
     getComputedStyle(canvas).getPropertyValue(name).trim() || fallback;
 
   const draw = () => {
-    const ink = color("--dino-ink", "#5b6570");
+    const ink = color("--dino-ink", "#64686f");
     context.clearRect(0, 0, canvas.width, canvas.height);
     context.strokeStyle = color("--dino-ground", "#b7c0c9");
     context.beginPath();
@@ -65,7 +65,7 @@ function initializeDinoDemo(demo) {
     context.translate(dinosaurX, ground - 59 - height);
     context.fillStyle = crashed
       ? color("--dino-crash", "#8c4b40")
-      : color("--dino-player", "#294f82");
+      : color("--dino-player", "#5a63c9");
     context.fill(dinosaur);
     context.fillStyle = color("--dino-eye", "#ffffff");
     context.fillRect(39, 7, 4, 4);

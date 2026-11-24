@@ -102,7 +102,7 @@ Present each example in the same reading order: the question, the rule found
 in the program, then a reconstruction to try. Use plain language in that path;
 keep original code, source details and verification in the disclosure below it.
 Prefer ordinary paragraphs to repeated goal, finding and role panels. Reserve
-bold text and blue highlights for a meaningful code selection or action, not
+bold text and accent highlights for a meaningful code selection or action, not
 every takeaway. Keep source, interpretation and new code attributed to their
 respective roles. On mobile, the demo can precede its supporting code once its
 purpose is clear. Show the full Calculator manual/agent comparison by default,
@@ -236,14 +236,17 @@ display size; scaling small labels down is not a mobile layout.
 
 The shared stylesheet defines the site. Its core colors are:
 
-| Token      | Light     | Dark      | Use                              |
-| ---------- | --------- | --------- | -------------------------------- |
-| `--page`   | `#ffffff` | `#1e1e2e` | Page background                  |
-| `--ink`    | `#20252b` | `#cdd6f4` | Main text                        |
-| `--muted`  | `#5b6570` | `#a6adc8` | Secondary text                   |
-| `--line`   | `#e0e5e9` | `#45475a` | Section and component boundaries |
-| `--soft`   | `#f4f6f8` | `#181825` | Code and supporting surfaces     |
-| `--accent` | `#294f82` | `#89b4fa` | Links and meaningful highlights  |
+| Token      | Light     | Dark      | Use                                |
+| ---------- | --------- | --------- | ---------------------------------- |
+| `--page`   | `#ffffff` | `#08090a` | Page background                    |
+| `--ink`    | `#08090a` | `#f7f8f8` | Main text and primary buttons      |
+| `--body`   | `#3c3f45` | `#c9ccd3` | Long-form article text             |
+| `--muted`  | `#64686f` | `#8a8f98` | Secondary text                     |
+| `--line`   | `#e6e7eb` | `#23252a` | Section and component boundaries   |
+| `--soft`   | `#f7f8f8` | `#101113` | Code and supporting surfaces       |
+| `--accent` | `#5a63c9` | `#a3a6ff` | Links and meaningful highlights    |
+| `--panel`  | `#ffffff` | `#111214` | Raised cards and floating surfaces |
+| `--glow`   | gradient  | gradient  | Soft gradient at the top of a page |
 
 The header's sun/moon button switches between light and dark. On the first visit,
 the site follows the system preference; a manual choice is saved for later visits
@@ -251,29 +254,47 @@ and shared across pages and languages on that host. Without JavaScript, the site
 uses the light palette and hides the switch.
 
 `assets/theme.js` applies the choice before styles load and owns theme changes.
-The stylesheet scopes the dark palette to `data-theme="dark"` on the root,
-using [Catppuccin Mocha](https://github.com/catppuccin/palette) colors (MIT).
-Any new fixed color needs a dark counterpart in that section. Keep selector
-specificity unchanged with `:where()` when scoping component rules.
+It also updates the browser's `theme-color` to the active page color.
+The stylesheet scopes the dark palette to `data-theme="dark"` on the root. The
+look follows Linear: a near-black canvas, a lavender accent, hairline borders,
+8–14px radii, tight display tracking and one soft top gradient (`--glow`) that
+fades before the first section. Any new fixed color needs a dark counterpart in
+that section. Keep selector specificity unchanged with `:where()` when scoping
+component rules.
 Embedded SVGs inherit the page's `color-scheme`; canvas demos listen for
-`website-theme-change` to redraw. Check both themes, including a manual choice
+`website-theme-change` to redraw. Standalone figure SVGs served from
+`assets/figures/` cannot inherit the page tokens, so they repeat the palette
+literally: `#08090a` ink, `#64686f` secondary text, `#e6e7eb` hairlines,
+`#f7f8f8` supporting fills and `#5a63c9` accent. Their own
+`prefers-color-scheme` block swaps in `#f7f8f8`, `#8a8f98`, `#23252a`,
+`#111214` and `#a3a6ff`. Keep those two sets in step with the tokens above. Check both themes, including a manual choice
 that differs from the system preference.
 
-Use the system sans-serif stack for prose and the shared monospace stack for
-code. Korean editions use Noto Sans KR from Google Fonts, with local Korean
+Use the system sans-serif stack for prose, preferring Inter when the reader has
+it installed, and the shared monospace stack for code. Korean editions use Noto Sans KR from Google Fonts, with local Korean
 fonts as fallbacks; code retains the shared monospace fonts for Latin glyphs.
 The homepage content container is at most 1200px wide. Other pages use 1080px,
 with article text limited to 760px. The header has its own 1320px container.
-Keep its primary navigation to Get started, Showcases, Blog and Guides, with
-FAQ and Contributors in the footer. Utility controls have quiet borders and
+Keep its primary navigation to Get started, Prompts, Showcases, Blog and
+Guides, with FAQ and Contributors in the footer. Utility controls have quiet borders and
 clear hover and keyboard focus states. At 1100px and below, navigation moves
 to a separate row and the homepage introduction and setup stack. Reuse the
 existing heading sizes, line heights, section spacing and component classes.
 
 Whitespace separates ideas. Thin rules identify sections. Headings establish
-hierarchy. The blue accent identifies something useful. Keep these elements
+hierarchy. The accent identifies something useful. Keep these elements
 consistent rather than adding a new treatment for each page. Decorative
-gradients, large shadows and scroll effects do not help explain the examples.
+gradients, large shadows and scroll effects do not help explain the examples, so
+depth comes from the shared motion layer rather than from per-page effects.
+
+`assets/scene.js` owns that layer: a perspective grid behind the hero,
+pointer-driven parallax, a slight tilt with a cursor sheen on homepage cards and
+workflow figures, one-time scroll reveals, and a slow dark-only field of code
+tokens on wide screens. It loads from `assets/main.js`, adds its own classes and
+returns immediately for `prefers-reduced-motion: reduce` or a coarse pointer, so
+pages stay static, readable and unchanged without it. Keep tilt under 3°, keep it
+on decorative surfaces rather than on text or focusable controls, and add new
+motion through that module instead of inline styles.
 
 Agent terminals contain short, copyable prompts. Use the existing continuous
 cursor animation and reduced-motion behavior. Label an example prompt as an

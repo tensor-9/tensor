@@ -9586,27 +9586,27 @@ msgctxt "page:showcase/th04/index.html"
 msgid "Back to top"
 msgstr "ページ上部へ"
 
-#: website/public/assets/main.js:21
+#: website/public/assets/main.js:26
 msgctxt "runtime"
 msgid "Copied"
 msgstr "コピーされた"
 
-#: website/public/assets/main.js:32
+#: website/public/assets/main.js:37
 msgctxt "runtime"
 msgid "Selected"
 msgstr "選択された"
 
-#: website/public/assets/main.js:23
+#: website/public/assets/main.js:28
 msgctxt "runtime"
 msgid "Code copied to clipboard."
 msgstr "クリップボードにコピーされたコード。"
 
-#: website/public/assets/main.js:34
+#: website/public/assets/main.js:39
 msgctxt "runtime"
 msgid "Code selected. Use your keyboard to copy it."
 msgstr "コードが選択されています。 キーボードを使ってコピーします。"
 
-#: website/public/assets/main.js:161
+#: website/public/assets/main.js:166
 #, python-brace-format
 msgctxt "runtime"
 msgid "Tensor on GitHub ({count})"

@@ -10211,27 +10211,27 @@ msgctxt "page:showcase/th04/index.html"
 msgid "Back to top"
 msgstr "Về đầu trang"
 
-#: website/public/assets/main.js:21
+#: website/public/assets/main.js:26
 msgctxt "runtime"
 msgid "Copied"
 msgstr "Sao chép"
 
-#: website/public/assets/main.js:32
+#: website/public/assets/main.js:37
 msgctxt "runtime"
 msgid "Selected"
 msgstr "Đã chọn"
 
-#: website/public/assets/main.js:23
+#: website/public/assets/main.js:28
 msgctxt "runtime"
 msgid "Code copied to clipboard."
 msgstr "Mã sao chép vào clipboard."
 
-#: website/public/assets/main.js:34
+#: website/public/assets/main.js:39
 msgctxt "runtime"
 msgid "Code selected. Use your keyboard to copy it."
 msgstr "Mã được chọn. Sử dụng bàn phím của bạn để sao chép nó."
 
-#: website/public/assets/main.js:161
+#: website/public/assets/main.js:166
 #, python-brace-format
 msgctxt "runtime"
 msgid "Tensor on GitHub ({count})"

@@ -17,7 +17,7 @@ The published diagrams are SVG source assets:
 
 Two original layout references were generated with the built-in image generation
 tool and reviewed visually. Their prompts are retained below. The final SVGs
-preserve the white background, charcoal/slate/blue palette and layout while
+preserve the white background, ink/slate/lavender palette and layout while
 using Tensor as the reader-facing subject. Provider details remain in configuration
 guides and the evidence provenance document. The SVGs keep text sharp when
 zoomed and can be maintained without committing raster binaries.
@@ -46,7 +46,7 @@ rendering at desktop and mobile widths.
 ## Sharing preview
 
 `public/assets/social-card.svg` is the 1200 × 630 preview source. It uses the
-homepage's direct headline, the site's white/charcoal/slate/blue palette, and a
+homepage's direct headline, the site's white/ink/slate/lavender palette, and a
 short agent → Tensor → evidence flow. CairoSVG renders the ignored PNG during asset
 preparation. Check the rendered image for readable text and spacing before
 publishing. The build uses DejaVu Sans for consistent typography; only the SVG
@@ -221,7 +221,7 @@ compare its code with the recorded target 55 (`7`). Labels and selected cells
 come from the fresh Tensor byte reads documented in
 [evidence/ctf-masked-squares.md](evidence/ctf-masked-squares.md).
 
-The diagram is maintained as SVG source using the shared blue/gray palette.
+The diagram is maintained as SVG source using the shared lavender/gray palette.
 It illustrates one equation; the downloadable Python solver uses all 26.
 Keep code selectable in HTML and use the existing scrollable figure viewport
 on smaller screens.
