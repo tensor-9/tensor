@@ -2067,7 +2067,7 @@ terminal, use the package runner at the version the plugin pins:
 <!-- x-release-please-start-version -->
 
 ```bash
-npx -y tensor-agents@6.10.2 doctor --provider ghidra --json
+npx -y tensor-agents@6.11.0 doctor --provider ghidra --json
 ```
 
 <!-- x-release-please-end -->
@@ -2100,7 +2100,7 @@ therefore runs the published package instead of a local build:
   "mcpServers": {
     "tensor": {
       "command": "npx",
-      "args": ["-y", "tensor-agents@6.10.2", "mcp"]
+      "args": ["-y", "tensor-agents@6.11.0", "mcp"]
     }
   }
 }
