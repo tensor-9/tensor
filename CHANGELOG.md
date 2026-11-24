@@ -1,5 +1,23 @@
 # Changelog
 
+## [6.11.0](https://github.com/tensor-9/tensor/compare/tensor-agents-6.10.2...tensor-agents-6.11.0) (2026-11-24)
+
+
+### Features
+
+* **prompts:** add a starter prompt and workflow library ([abca136](https://github.com/tensor-9/tensor/commit/abca1361fafe7c5558fb73ba7c925e205f53197b))
+* **site:** serve the canonical website from GitHub Pages ([81bed1e](https://github.com/tensor-9/tensor/commit/81bed1eed72e16f3d5e9e3e974d3afa23da02bf6))
+* **website:** restyle in Linear's visual language and add a motion layer ([a0461e7](https://github.com/tensor-9/tensor/commit/a0461e7414edadc94e20bb1d2f364b4c9906ef17))
+
+
+### Bug Fixes
+
+* **ci:** allow for slower Pages propagation in the publish check ([92a3e63](https://github.com/tensor-9/tensor/commit/92a3e63ef5a7896aac2d880f812cdb54f90db5bc))
+* **ci:** bypass Pages' cached 404s when verifying discovery files ([3727097](https://github.com/tensor-9/tensor/commit/37270972fe2a1c497a8143e3d1dad060bf437abc))
+* **ci:** retry discovery checks after publishing Pages ([896498b](https://github.com/tensor-9/tensor/commit/896498bc73ba9599be831c1468f70ceeba0986de))
+* **ci:** wait longer for Pages to serve newly published discovery paths ([693647d](https://github.com/tensor-9/tensor/commit/693647d87ecb573ae1d06959815c6e4c8062c1a2))
+* **ci:** warn when discovery files lag the Pages deployment ([6915534](https://github.com/tensor-9/tensor/commit/6915534ccc8be479e123291cbc38a674b00508a9))
+
 ## [6.10.2](https://github.com/tensor-9/tensor/compare/tensor-agents-6.10.1...tensor-agents-6.10.2) (2026-11-22)
 
 ### Changes
