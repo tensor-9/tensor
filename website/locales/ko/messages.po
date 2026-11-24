@@ -9609,27 +9609,27 @@ msgctxt "page:showcase/th04/index.html"
 msgid "Back to top"
 msgstr "맨 위로"
 
-#: website/public/assets/main.js:21
+#: website/public/assets/main.js:26
 msgctxt "runtime"
 msgid "Copied"
 msgstr "복사됨"
 
-#: website/public/assets/main.js:32
+#: website/public/assets/main.js:37
 msgctxt "runtime"
 msgid "Selected"
 msgstr "선택됨"
 
-#: website/public/assets/main.js:23
+#: website/public/assets/main.js:28
 msgctxt "runtime"
 msgid "Code copied to clipboard."
 msgstr "코드를 클립보드에 복사했습니다."
 
-#: website/public/assets/main.js:34
+#: website/public/assets/main.js:39
 msgctxt "runtime"
 msgid "Code selected. Use your keyboard to copy it."
 msgstr "코드를 선택했습니다. 키보드로 복사하세요."
 
-#: website/public/assets/main.js:161
+#: website/public/assets/main.js:166
 #, python-brace-format
 msgctxt "runtime"
 msgid "Tensor on GitHub ({count})"

@@ -167,7 +167,7 @@ for (const [directory, fails] of ${JSON.stringify([
     console: { error: (...arguments_) => { errors.push(arguments_); finish(); } },
   });
   assert.equal(root.dataset.theme, "dark");
-  assert.equal(meta.content, "#1e1e2e");
+  assert.equal(meta.content, "#08090a");
   assert.equal(hidden, true);
   ready(); // No event dispatcher awaits this return value.
   await settled;
@@ -175,7 +175,7 @@ for (const [directory, fails] of ${JSON.stringify([
     assert.deepEqual(errors, [["Theme toggle initialization failed", globalThis.translationFailure]]);
     assert.equal(hidden, true);
     assert.equal(root.dataset.theme, "dark");
-    assert.equal(meta.content, "#1e1e2e");
+    assert.equal(meta.content, "#08090a");
     assert.equal(clicks.size, 0);
   } else {
     assert.deepEqual(errors, []);

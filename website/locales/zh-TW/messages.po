@@ -9359,27 +9359,27 @@ msgctxt "page:showcase/th04/index.html"
 msgid "Back to top"
 msgstr "回到頂部"
 
-#: website/public/assets/main.js:21
+#: website/public/assets/main.js:26
 msgctxt "runtime"
 msgid "Copied"
 msgstr "已複製"
 
-#: website/public/assets/main.js:32
+#: website/public/assets/main.js:37
 msgctxt "runtime"
 msgid "Selected"
 msgstr "已選中"
 
-#: website/public/assets/main.js:23
+#: website/public/assets/main.js:28
 msgctxt "runtime"
 msgid "Code copied to clipboard."
 msgstr "程式碼已複製到剪貼簿。"
 
-#: website/public/assets/main.js:34
+#: website/public/assets/main.js:39
 msgctxt "runtime"
 msgid "Code selected. Use your keyboard to copy it."
 msgstr "程式碼已選中，請用鍵盤快捷鍵複製。"
 
-#: website/public/assets/main.js:161
+#: website/public/assets/main.js:166
 #, python-brace-format
 msgctxt "runtime"
 msgid "Tensor on GitHub ({count})"
