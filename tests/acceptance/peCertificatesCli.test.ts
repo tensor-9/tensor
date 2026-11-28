@@ -89,7 +89,12 @@ cliTest.for([false, true])(
   async (plus, { cli }) => {
     const root = await createTestTempDirectory("tensor-pe-alignment-cli-");
     const path = join(root, "signed.exe");
-    const valid = peCertificateFixture(plus);
+    // The entry must end aligned but short of the table, so the signed
+    // image carries alignment bytes outside dwLength.
+    const base = pkcs7SignedDataFixture();
+    const payload =
+      (8 + base.length) % 8 === 0 ? pkcs7SignedDataFixture("A") : base;
+    const valid = peCertificateFixture(plus, payload);
     const directoryAt = 0x98 + (plus ? 112 : 96) + 4 * 8;
     const tableSize = valid.readUInt32LE(directoryAt + 4);
     const length = valid.readUInt32LE(0x200);
