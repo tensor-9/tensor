@@ -245,7 +245,11 @@ it.each([false, true])(
 );
 
 it("rejects nonzero or excessive bytes after the encoded PKCS#7 value", () => {
-  const payload = pkcs7SignedDataFixture();
+  // The entry needs at least one alignment byte inside dwLength to mutate.
+  const base = pkcs7SignedDataFixture();
+  const payload =
+    (8 + base.length) % 8 === 0 ? pkcs7SignedDataFixture("A") : base;
+  expect((8 + payload.length) % 8).not.toBe(0);
   const nonzero = peCertificateFixture(false, payload, 2, true);
   nonzero[0x200 + 8 + payload.length] = 1;
   expect(() => parse(nonzero)).toThrow(/invalid PKCS#7 alignment padding/u);

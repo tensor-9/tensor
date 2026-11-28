@@ -1,3 +1,4 @@
+// oxlint-disable max-lines-per-function -- These regression scenarios exceed the 150-line test limit; splitting them would scatter the single case under test.
 import {
   Client,
   StreamableHTTPClientTransport,

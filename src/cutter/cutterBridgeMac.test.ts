@@ -12,8 +12,8 @@ it("matches one update of the joined client and response preimages", () => {
   const request = JSON.stringify({ command: "雪" });
   const clientPrefix = `tensor-cutter-client-v2:${SESSION}:${NONCE}:${NONCE}:`;
   const responsePrefix = `tensor-cutter-response-v2:${SESSION}:${NONCE}:${NONCE}:`;
-  expect(clientPrefix).toHaveLength(188);
-  expect(responsePrefix).toHaveLength(190);
+  expect(clientPrefix).toHaveLength(191);
+  expect(responsePrefix).toHaveLength(193);
   expect(cutterBridgeMac(TOKEN, [clientPrefix, request]).toString("hex")).toBe(
     createHmac("sha256", TOKEN)
       .update(`${clientPrefix}${request}`)

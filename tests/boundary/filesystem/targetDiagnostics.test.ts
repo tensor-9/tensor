@@ -1,3 +1,4 @@
+// oxlint-disable max-lines-per-function -- These regression scenarios exceed the 150-line test limit; splitting them would scatter the single case under test.
 import { chmod, readFile, realpath, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";

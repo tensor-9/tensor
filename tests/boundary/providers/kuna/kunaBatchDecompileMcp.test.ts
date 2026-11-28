@@ -1,3 +1,4 @@
+// oxlint-disable max-lines-per-function -- These regression scenarios exceed the 150-line test limit; splitting them would scatter the single case under test.
 import { withVerifierCleanup } from "../../../../scripts/lib/verifier-cleanup.mjs";
 import { batchDecompileResultSchema } from "../../../../src/domain/native/batchDecompile.js";
 import { writeFile } from "node:fs/promises";

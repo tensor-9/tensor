@@ -120,7 +120,7 @@ describe("JSON client configuration repeated-member edits", () => {
     const inactive = `{"tensor":${JSON.stringify(foreign)}}`;
     const text =
       `{"mcpServers":${inactive},` +
-      `"mcpServers":{"r\\u0065a":${JSON.stringify(foreign)},` +
+      `"mcpServers":{"t\\u0065nsor":${JSON.stringify(foreign)},` +
       `"peer":2,"tensor":${JSON.stringify(owned)}}}`;
     const result = removeTensor(text, "claude_code", {
       removeShadowedMembersAt: [["mcpServers", "tensor"]],
@@ -136,7 +136,7 @@ describe("JSON client configuration repeated-member edits", () => {
   it("preserves JSONC comments and parses BOM/CRLF output independently", () => {
     const text =
       `\uFEFF{\r\n  // top comment\r\n  "mcp": {\r\n` +
-      `    "r\\u0065a": ${JSON.stringify(foreign)}, // first\r\n` +
+      `    "t\\u0065nsor": ${JSON.stringify(foreign)}, // first\r\n` +
       `    "peer": { "command": "peer" },\r\n` +
       `    /* second */ "tensor": ${JSON.stringify(owned)},\r\n` +
       `  },\r\n}\r\n`;

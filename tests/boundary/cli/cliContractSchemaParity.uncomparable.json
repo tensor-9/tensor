@@ -9,6 +9,7 @@
   "project-managed-application-graph: no object shape project_managed_application_graph",
   "compare-web-captures: no object shape compare_web_captures",
   "guided-workflows: no object shape guided_workflows",
+  "prompts: no contract prompts",
   "inspect-evidence-bundle: no contract inspect_evidence_bundle",
   "evidence-import: no contract evidence_import",
   "evidence-export: no contract evidence_export",

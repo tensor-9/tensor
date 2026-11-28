@@ -1,3 +1,4 @@
+// oxlint-disable max-lines-per-function -- These regression scenarios exceed the 150-line test limit; splitting them would scatter the single case under test.
 import { createHash } from "node:crypto";
 import { appendFile, readFile, unlink, writeFile } from "node:fs/promises";
 import { join } from "node:path";
