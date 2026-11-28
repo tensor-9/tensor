@@ -4,6 +4,9 @@ import {
   assertVerifierFilesUnchanged,
 } from "./verifier-file-snapshots.mjs";
 
+const SETUP_EXIT_MARKER = "__TENSOR_SETUP_EXIT__";
+const REDIRECTED_SETUP_MARKER = "__TENSOR_REDIRECTED_SETUP__";
+
 export const terminalModesRestored = (termios) => {
   if (typeof termios !== "string") return false;
   const modes = new Set(termios.trim().split(/\s+/u));
@@ -25,7 +28,7 @@ export async function verifyInteractiveSetup({
       const terminal = process.platform === "win32"
         ? spawnSync("cmd.exe", ["/c", "mode", "CON"], { encoding: "utf8", stdio: ["inherit", "pipe", "inherit"] })
         : spawnSync("stty", ["-a"], { encoding: "utf8", stdio: ["inherit", "pipe", "inherit"] });
-      process.stdout.write("\\n__TENSOR_SETUP_EXIT__" + JSON.stringify({ status: child.status, termios: terminal.stdout, error: child.error?.message }));
+      process.stdout.write("\\n${SETUP_EXIT_MARKER}" + JSON.stringify({ status: child.status, termios: terminal.stdout, error: child.error?.message }));
       process.exit(child.status ?? 1);
     `;
   let result;
@@ -53,11 +56,13 @@ export async function verifyInteractiveSetup({
     throw cause;
   }
   const { output, exitCode } = result;
-  const marker = output.lastIndexOf("__TENSOR_SETUP_EXIT__");
+  const marker = output.lastIndexOf(SETUP_EXIT_MARKER);
   let childResult;
   try {
     childResult =
-      marker < 0 ? undefined : JSON.parse(output.slice(marker + 18).trim());
+      marker < 0
+        ? undefined
+        : JSON.parse(output.slice(marker + SETUP_EXIT_MARKER.length).trim());
   } catch {
     childResult = undefined;
   }
@@ -90,7 +95,7 @@ export async function verifyRedirectedStdoutSetup({
   const wrapper = `
       const { spawnSync } = require("node:child_process");
       const child = spawnSync(process.argv[1], ["setup"], { encoding: "utf8", env: process.env, stdio: ["inherit", "pipe", "inherit"], shell: process.platform === "win32" });
-      process.stdout.write("\\n__TENSOR_REDIRECTED_SETUP__" + JSON.stringify({ status: child.status, stdout: child.stdout, error: child.error?.message, stdinTTY: process.stdin.isTTY, stderrTTY: process.stderr.isTTY, stdoutRedirected: true }));
+      process.stdout.write("\\n${REDIRECTED_SETUP_MARKER}" + JSON.stringify({ status: child.status, stdout: child.stdout, error: child.error?.message, stdinTTY: process.stdin.isTTY, stderrTTY: process.stderr.isTTY, stdoutRedirected: true }));
       process.exit(child.status ?? 1);
     `;
   let result;
@@ -112,11 +117,15 @@ export async function verifyRedirectedStdoutSetup({
     throw cause;
   }
   const { output, exitCode } = result;
-  const marker = output.lastIndexOf("__TENSOR_REDIRECTED_SETUP__");
+  const marker = output.lastIndexOf(REDIRECTED_SETUP_MARKER);
   let childResult;
   try {
     childResult =
-      marker < 0 ? undefined : JSON.parse(output.slice(marker + 24).trim());
+      marker < 0
+        ? undefined
+        : JSON.parse(
+            output.slice(marker + REDIRECTED_SETUP_MARKER.length).trim(),
+          );
   } catch {
     childResult = undefined;
   }
