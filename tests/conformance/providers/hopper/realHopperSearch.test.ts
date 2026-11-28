@@ -28,7 +28,7 @@ const expectation = {
 const fragments = [
   {
     ...item,
-    value: "TENSOR_",
+    value: value.slice(0, 4),
     string: { ...item.string, termination: "missing" as const, byte_length: 4 },
   },
   {
