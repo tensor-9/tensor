@@ -133,10 +133,10 @@ export const parsePeCertificates = (
         // trailing data.
         const root = readAsn1(entryPayload);
         const paddingBytes = entryPayload.length - root.end;
-        const alignedLength = align8(8 + root.end);
+        const expectedPadding = align8(8 + root.end) - (8 + root.end);
         if (
           paddingBytes !== 0 &&
-          (8 + entryPayload.length !== alignedLength ||
+          (paddingBytes !== expectedPadding ||
             !entryPayload.subarray(root.end).every((byte) => byte === 0))
         )
           fail("WIN_CERTIFICATE has invalid PKCS#7 alignment padding.");

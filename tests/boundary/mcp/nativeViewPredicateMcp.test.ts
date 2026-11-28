@@ -1,3 +1,4 @@
+// oxlint-disable max-lines-per-function -- These regression scenarios exceed the 150-line test limit; splitting them would scatter the single case under test.
 import { fileSubjectTarget } from "../../fixtures/evidenceSubject.js";
 import { unknownTarget } from "../../../src/domain/targetIdentity.js";
 import { withCanonicalOutputSchema } from "../../fixtures/canonicalOutputSchema.js";
